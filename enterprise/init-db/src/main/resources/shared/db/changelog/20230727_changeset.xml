@@ -1,0 +1,118 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230727-001" author="Shawn" labels="ai">
+        <comment>create ai base table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS `${table.prefix}ai`
+            (
+                `id`                          bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id`                    varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Space ID',
+                `node_id`                     varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Node ID in Workspace',
+                `ai_id`                       varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'AI Unique ID',
+                `name`                        varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Name',
+                `description`                 varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'AI Description',
+                `picture`                     varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'AI Picture',
+                `model`                       varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci           DEFAULT NULL COMMENT 'AI Model',
+                `prologue`                    varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'AI Prologue on beginning',
+                `idk`                         varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'Words when response nothing',
+                `is_enabled_suggestion_tips`  tinyint unsigned NOT NULL DEFAULT '1' COMMENT 'Whether enable suggestion tips',
+                `is_enabled_recommended_hint` tinyint unsigned NOT NULL DEFAULT '1' COMMENT 'Whether enable recommend hint',
+                `is_deleted`                  tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by`                  bigint                                                        NOT NULL COMMENT 'Creator',
+                `updated_by`                  bigint                                                        NOT NULL COMMENT 'Last Update By',
+                `created_at`                  timestamp                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`                  timestamp                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_ai_id` (`ai_id`) USING BTREE,
+                KEY                           `uk_space_id` (`space_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='AI - Base Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230727-002" author="Shawn" labels="ai">
+        <comment>create ai node relation table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS `${table.prefix}ai_node`
+            (
+                `id`         bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `ai_id`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Unique ID',
+                `node_id`    varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Node ID',
+                `node_type`  tinyint                                                      NOT NULL COMMENT 'Node type',
+                `setting`    json                                                         NOT NULL COMMENT 'Metadata setting',
+                `version`    int unsigned DEFAULT '1' COMMENT 'Current update version',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete tag(0:No,1:Yes)',
+                `created_by` bigint                                                       NOT NULL COMMENT 'Creator',
+                `updated_by` bigint                                                       NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY          `k_ai_id` (`ai_id`) USING BTREE,
+                KEY          `k_node_id` (`node_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='AI - Node Relation Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230727-003" author="Shawn" labels="ai">
+        <comment>create ai conversation table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS `${table.prefix}ai_conversation`
+            (
+                `id`              bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `ai_id`           varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Unique ID',
+                `conversation_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Conversation ID',
+                `title`           varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         DEFAULT NULL COMMENT 'Conversation Title',
+                `origin`          varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'Conversation Origin',
+                `origin_type`     varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'Conversation Origin Type',
+                `is_deleted`      tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by`      bigint                                                       NOT NULL COMMENT 'Creator',
+                `updated_by`      bigint                                                       NOT NULL COMMENT 'Last Update By',
+                `created_at`      timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`      timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY               `k_ai_id` (`ai_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='AI - Conversation Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230727-004" author="Shawn" labels="ai">
+        <comment>create ai prompt table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS `${table.prefix}ai_prompt`
+            (
+                `id`         bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `ai_id`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Unique ID',
+                `prompt`     longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT 'Ai Prompt',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint                                                       NOT NULL COMMENT 'Creator',
+                `updated_by` bigint                                                       NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_ai_id` (`ai_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='AI - Prompt Table';
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

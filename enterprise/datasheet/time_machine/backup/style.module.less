@@ -1,0 +1,225 @@
+@import '~pc/styles/lib_var.less';
+
+.loading {
+  padding: 0 12px;
+  .loadingBottom {
+    display: flex;
+    svg {
+      width: 12px !important;
+      height: 12px !important;
+    }
+  }
+}
+
+.backup {
+  height: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+  .backupPreview {
+    position: fixed;
+    left: calc(50% - 320px);
+    bottom: 24px;
+    width: 640px;
+    height: 48px;
+    border: 1px solid var(--borderOnbrandLight);
+    background: linear-gradient(0deg, var(--bgBrandLightDefault) 0%, var(--bgBrandLightDefault) 100%), var(--bgCommonDefault);
+    & > div {
+      display: block;
+    }
+    .previewContent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        min-width: 68px;
+        margin-right: 8px;
+        span {
+          vertical-align: baseline;
+        }
+      }
+    }
+  }
+  .backupCreate {
+    margin: 0 0 8px 8px;
+    @keyframes rotate {
+      0% {
+          transform: rotate(0);
+      }
+
+      25% {
+          transform: rotate(90deg);
+      }
+
+      50% {
+          transform: rotate(180deg);
+      }
+
+      75% {
+          transform: rotate(270deg);
+      }
+
+      100% {
+          transform: rotate(360deg);
+      }
+    }
+    &.loading {
+      svg {
+        animation: rotate 3s linear infinite;
+      }
+    }
+  }
+  .bottomTip {
+    font-size: 12px;
+    color: var(--textCommonTertiary);
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}
+
+.backupList {
+  height: calc(100% - 40px);
+}
+
+.backupItemWarpper {
+  &:last-child {
+    .left {
+      height: 0;
+    }
+  }
+}
+
+.backupItem {
+  padding: 8px 8px 8px 12px;
+  display: flex;
+  position: relative;
+  height: 104px;
+  cursor: pointer;
+  border-radius: 4px;
+  align-items: flex-start;
+  &.disabled {
+    cursor: inherit;
+    .title,
+    .time,
+    .name {
+      color: var(--textCommonDisabled) !important;
+    }
+  }
+  &.active {
+    background-color: var(--bgBrandLightDefault);
+    .middle {
+      .title {
+        color: var(--primaryColor);
+      }
+    }
+    .left::after {
+      border-color: var(--primaryColor);
+    }
+  }
+  &:not(.disabled, .active):hover {
+    background-color: var(--bgBglessHover);
+    .right {
+      display: block;
+    }
+  }
+  .left {
+    border-left: 1px var(--borderCommonDefault) solid;
+    position: relative;
+    margin-right: 8px;
+    top: 8px;
+    height: 104px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      left: -5px;
+      top: -1px;
+      background-color: var(--defaultBg);
+      border: 2px var(--borderCommonDefault) solid;
+    }
+  }
+  .middle {
+    width: calc(100% - 2px);
+    input {
+      width: calc(100% - 32px);
+    }
+    .title {
+      color: var(--textCommonPrimary);
+      max-width: calc(100% - 32px);
+    }
+    .middleTop {
+      display: flex;
+    }
+    .deleted {
+      border-radius: 4px;
+      border: 1px solid var(--borderCommonDefault);
+      background: var(--bgTagDefault);
+      color: var(--textCommonTertiary);
+      font-size: 12px;
+      line-height: 18px;
+      margin-left: 4px;
+      flex-shrink: 0;
+      padding: 0 4px;
+      span {
+        vertical-align: baseline;
+      }
+    }
+    .time {
+      color: var(--textCommonTertiary);
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 4px;
+    }
+    .timeLabel {
+      margin-right: 4px;
+    }
+    input {
+      border: 1px solid var(--borderBrandDefault);
+      border-radius: 4px;
+      background-color: var(--bgControlsElevateDefault);
+    }
+    .middleBottom {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      .name {
+        color: var(--textCommonTertiary);
+        margin-left: 8px;
+      }
+    }
+  }
+  .right {
+    display: none;
+    position: absolute;
+    right: 8px;
+    button svg {
+      fill: var(--textCommonTertiary);
+    }
+  }
+}
+
+.recoverModal {
+  :global {
+    .ant-modal-body {
+      padding: 0 24px 24px;
+    }
+  }
+}
+.recoverModalContent {
+  .recoverModalTree {
+    margin-top: 16px;
+    :global {
+      .ant-select-selector {
+        border: 0 !important;
+        padding: 0 12px !important;
+      }
+      .ant-select-selector .ant-select-selection-item {
+        line-height: 38px !important;
+      }
+    }
+  }
+}

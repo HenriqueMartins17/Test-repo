@@ -1,0 +1,21 @@
+{{MEMBER_NAME}}修改了{{NODE_NAME}}表中的{{RECORD_TITLE}}
+
+--------------------------------------------------------------------------------
+
+来自 {{MEMBER_NAME}}
+
+记录：{{RECORD_TITLE}}
+
+字段名：{{FIELD_NAME}}
+
+修改前：{{OLD_DISPLAY_VALUE}}
+
+修改后：{{NEW_DISPLAY_VALUE}}
+
+查看记录
+{{URL}}
+
+
+copyright © 2019-{{YEARS}} 深圳维格云科技有限公司.All rights reserved.
+
+联系我们 (https://vika.cn?home=1)

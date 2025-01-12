@@ -1,0 +1,11 @@
+/src/
+/.git/
+/.husky/
+/scripts/
+/.commitlintrc
+/.eslintrc
+/.npmrc
+/.npmrc1
+/.prettierrc
+/tsconfig.json
+/jest.config.js

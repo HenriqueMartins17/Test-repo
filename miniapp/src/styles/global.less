@@ -1,0 +1,68 @@
+@import "./global_components/index.less";
+
+.flex {
+  flex: 1;
+}
+
+.f-g-1 {
+  flex-grow: 1;
+}
+
+.layout {
+  &-row {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+    > .flex {
+      min-width: 0;
+    }
+  }
+
+  &-column {
+    display: flex;
+    flex-direction: column;
+
+    > .flex {
+      min-height: 0;
+    }
+  }
+
+  &-main-center {
+    justify-content: center;
+  }
+
+  &-main-end {
+    justify-content: flex-end;
+  }
+
+  &-main-space-around {
+    justify-content: space-around;
+  }
+
+  &-main-space-between {
+    justify-content: space-between;
+  }
+
+  &-cross-center {
+    align-items: center;
+  }
+
+  &-cross-end {
+    align-items: flex-end;
+  }
+
+  &-main-cross-center {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition-delay: 99999s;
+  transition: color 99999s ease-out, background-color 99999s ease-out;
+}

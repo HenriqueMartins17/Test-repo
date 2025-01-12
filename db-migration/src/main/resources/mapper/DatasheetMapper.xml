@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vikadata.migration.mapper.DatasheetMapper">
+    <select id="selectBySpaceId" resultType="com.vikadata.migration.entity.DatasheetEntity">
+        SELECT *
+        FROM vika_datasheet
+        WHERE
+            space_id = #{spaceId}
+<!--        order by id-->
+    </select>
+
+    <select id="selectByIds" resultType="com.vikadata.migration.entity.DatasheetEntity">
+        SELECT *
+        FROM vika_datasheet
+        WHERE
+        id in
+        <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="selectBySpaceIdAndMigrationId" resultType="com.vikadata.migration.entity.DatasheetEntity">
+        SELECT *
+        FROM vika_datasheet
+        WHERE
+            space_id = #{spaceId}
+            AND id > #{migrationId}
+        order by id
+        limit #{limitCount}
+    </select>
+    <select id="selectByMigrationId" resultType="com.vikadata.migration.entity.DatasheetEntity">
+        SELECT *
+        FROM vika_datasheet
+        WHERE
+          id > #{migrationId}
+        order by id
+          limit #{limitCount}
+    </select>
+
+    <select id="selectByDatasheetIds" resultType="com.vikadata.migration.entity.DatasheetEntity">
+        SELECT *
+        FROM vika_datasheet
+        WHERE
+        dst_id in
+        <foreach item="item" index="index" collection="datasheetIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertBatch">
+        INSERT INTO vika_datasheet(id, space_id, dst_id, dst_name, node_id, creator, revision, is_deleted, created_at, updated_at, created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id},#{item.spaceId},#{item.dstId},#{item.dstName},#{item.nodeId},#{item.creator},#{item.revision},#{item.isDeleted},#{item.createdAt},#{item.updatedAt},#{item.createdBy},#{item.updatedBy}
+            </trim>
+        </foreach>
+    </insert>
+
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vikadata.migration.mapper.DatasheetRecordCommentMapper">
+
+    <select id="selectByDatasheetIdAndMigrationId" resultType="com.vikadata.migration.entity.DatasheetRecordCommentEntity">
+        SELECT *
+        FROM vika_datasheet_record_comment
+        WHERE
+            dst_id = #{datasheetId}
+            AND id > #{migrationId}
+        order by id
+<!--        order by created_at, id-->
+        limit #{limitCount}
+    </select>
+
+    <select id="selectByMigrationId" resultType="com.vikadata.migration.entity.DatasheetRecordCommentEntity">
+        SELECT *
+        FROM vika_datasheet_record_comment
+        WHERE
+        id > #{migrationId}
+        order by id
+        <!--        order by created_at, id-->
+        limit #{limitCount}
+    </select>
+
+    <select id="selectByIds" resultType="com.vikadata.migration.entity.DatasheetRecordCommentEntity">
+        SELECT *
+        FROM vika_datasheet_record_comment
+        WHERE
+        id in
+        <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertBatch">
+        INSERT INTO vika_datasheet_record_comment(id, record_id, dst_id, comment_id, comment_msg, revision, unit_id, is_deleted, created_at, updated_at, created_by, updated_by)
+        VALUES
+        <foreach collection="entities" item="element" index="index" separator=",">
+            <trim prefix="(" suffix=")">
+               #{element.id},#{element.recordId},#{element.dstId},#{element.commentId},#{element.commentMsg},#{element.revision},#{element.unitId},#{element.isDeleted},#{element.createdAt},#{element.updatedAt},#{element.createdBy},#{element.updatedBy}
+            </trim>
+        </foreach>
+    </insert>
+
+</mapper>

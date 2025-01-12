@@ -1,0 +1,25 @@
+.suggestionContainer {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.suggestionItem {
+  padding: 8px 16px;
+  background: var(--bgBrandLightDefault);
+  border-radius: 4px;
+  border: 1px solid var(--textBrandDefault);
+  color: var(--textBrandDefault);
+  margin: 12px 0;
+  cursor: pointer;
+  // 换行
+  word-break: break-all;
+  white-space: pre-wrap;
+  &:hover {
+    background: var(--bgBrandLightHover);
+  }
+  &:active {
+    background: var(--bgBrandLightActive);
+  }
+}

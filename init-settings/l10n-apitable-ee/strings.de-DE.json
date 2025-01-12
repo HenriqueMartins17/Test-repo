@@ -1,0 +1,17 @@
+{
+  "backup_action_delete": "Momentaufnahme löschen",
+  "backup_action_recover": "Erholen",
+  "backup_create": "Schnappschüsse erstellen",
+  "backup_create_success": "Erfolgreich angelegte Momentaufnahmen",
+  "backup_creating": "Erstellen",
+  "backup_delete_text": "Nach dem Löschen kann es nicht wiederhergestellt werden. Sind Sie sicher, dass Sie es löschen möchten?",
+  "backup_delete_title": "Momentaufnahme löschen",
+  "backup_deleted": "Gelöscht.",
+  "backup_name_success_update": "Erfolgreich aktualisiert",
+  "backup_recover_dst_name_suffix": "Erholen",
+  "backup_recover_modal_text": "Wählen Sie den Ort der Aufnahme",
+  "backup_recover_success": "Erfolgreich erholt",
+  "backup_recover_title": "Erholen",
+  "backup_success_delete": "Momentaufnahme erfolgreich gelöscht",
+  "backup_title": "Momentaufnahme"
+}

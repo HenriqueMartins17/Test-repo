@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebAssembly Example</title>
+</head>
+<body>
+<div id="c"></div>
+<div>
+    <label>
+        dstId
+        <input id="dstId" value="dstjL5eP37l5vY8ERJ"/>
+    </label>
+    <button onclick="req()">request</button>
+    <button onclick="deleteIndexDb()">delete cache</button>
+</div>
+<div id="e" style="white-space: break-spaces"></div>
+<div id="f" style="white-space: break-spaces"></div>
+
+<script>
+    function req() {
+        const dstId = document.getElementById('dstId').value;
+        if (!dstId) {
+            console.log('dstId is empty')
+            return
+        }
+        if (!window.databus){
+            console.log('window.databus is empty')
+            return
+        }
+        window.databus.get_datasheet_pack(dstId, "_ga=GA1.1.1262469597.1689070824; SESSION=MDg1Y2FkNTgtZGFhMC00NDZkLTljYjEtZDNkY2M3ZDQzMDVi; lang=zh-CN; XSRF-TOKEN=5a1026dd-7510-4d3c-bf96-ebeef770f225; _ga_D4MTD9J4VN=GS1.1.1689874640.17.0.1689874640.0.0.0; Idea-2e3b7d41=e76bab22-2c14-4fe0-b9be-8adf02bc7514; Clion-dae86cb1=b6a70b47-c858-4ac0-b751-361d6f2ef637").then((pack) => {
+            console.log('pack type e is ', typeof pack)
+            console.log('pack e is ', pack)
+            const str = JSON.stringify(pack, null, 2)
+            document.getElementById('e').innerHTML = str;
+            // window.databus.add_sheet_data(str).then((p) => {
+            //     console.log('persistence is' + JSON.stringify(p));
+            // });
+
+        })
+    }
+    function deleteIndexDb() {
+        const dstId = document.getElementById('dstId').value;
+        if (!dstId) {
+            console.log('dstId is empty')
+            return
+        }
+        if (!window.databus){
+            console.log('window.databus is empty')
+            return
+        }
+        window.databus.delete_cache(dstId).then((pack) => {
+            console.log('delete_cache r is ', pack)
+        })
+    }
+</script>
+<script type="module">
+
+    import init, {add_tn,DataBusBridge, json0_seri, json0_inverse} from "./pkg/web/databus_wasm.js";
+    init().then((instance, wasmModule) => {
+        console.log(instance);
+        console.log(wasmModule);
+        const opArray = [{
+            "n": "OI",
+            "p": [
+                "recordMap",
+                "recnMv9BvatQh",
+                "data",
+                "fldGzWrhZdznD"
+            ],
+            "oi": [
+                {
+                    "type": 1,
+                    "text": "asdasd"
+                }
+            ]
+        }];
+
+        const jsonObj = json0_seri();
+        const inverseResult = json0_inverse(opArray);
+        const str = JSON.stringify(inverseResult, null, 2)
+        document.getElementById('e').innerHTML = str;
+        console.log('jsonObj is ', jsonObj);
+        const n = add_tn(1, 2);
+        console.log('n is ', n)
+        document.getElementById('c').innerHTML = '' + n;
+        const databus = new DataBusBridge("http://0.0.0.0:8625", "http://localhost:3333/nest/v1");
+        databus.init().then(() => {
+            console.log('databus init ok')
+            window.databus = databus;
+        })
+    });
+</script>
+</body>
+</html>

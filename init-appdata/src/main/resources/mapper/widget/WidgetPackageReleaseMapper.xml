@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.widget.mapper.WidgetPackageReleaseMapper">
+    <select id="selectByIds"
+            resultType="com.apitable.appdata.shared.widget.pojo.WidgetPackageRelease">
+        SELECT *
+        FROM ${tablePrefix}widget_package_release
+        WHERE id IN
+        <foreach item="item" index="index" collection="ids" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND STATUS = 1 AND is_deleted = 0
+    </select>
+
+    <insert id="insertBatch">
+        REPLACE INTO ${tablePrefix}widget_package_release(id, release_sha, version,
+        package_id, release_user_id, release_code_bundle, source_code_bundle, secret_key,
+        status, release_note, install_env_code, runtime_env_code, created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.releaseSha}, #{item.version}, #{item.packageId},
+                #{item.releaseUserId}, #{item.releaseCodeBundle},
+                #{item.sourceCodeBundle}, #{item.secretKey}, #{item.status},
+                #{item.releaseNote}, #{item.installEnvCode}, #{item.runtimeEnvCode},
+                #{item.createdBy}, #{item.updatedBy}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

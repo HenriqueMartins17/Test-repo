@@ -1,0 +1,41 @@
+.workdocInfo {
+  padding: 16px;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 300px;
+  height: calc(100% - 48px);
+  background-color: var(--bgCommonDefault);
+  border-left: 1px solid var(--borderCommonDefault);
+
+  .infoTitle {
+    color: var(--textCommonPrimary);
+  }
+
+  .infoDetails {
+    padding-top: 16px;
+  }
+
+  .infoDetailsItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .itemTitle {
+    color: var(--textCommonTertiary);
+  }
+
+  .itemContent {
+    color: var(--textCommonPrimary);
+  }
+
+  .avatarItem {
+    display: flex;
+    align-items: center;
+    .itemContent {
+      margin-left: 4px;
+    }
+  }
+}

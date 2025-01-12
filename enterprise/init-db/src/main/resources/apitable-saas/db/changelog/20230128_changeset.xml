@@ -1,0 +1,175 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230128-001" author="Shawn" labels="billing">
+        <comment>Billing System - Billing Bundle Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}bundle`
+            (
+                `id`         bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id`   varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `bundle_id`  varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Bundle ID',
+                `state`      varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'State(active, expire)',
+                `start_date` datetime                                                     NOT NULL COMMENT 'Start Time',
+                `end_date`   datetime                                                     NOT NULL COMMENT 'End Time',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint                                                                DEFAULT NULL COMMENT 'Creator',
+                `updated_by` bigint                                                                DEFAULT NULL COMMENT 'Last Update By',
+                `created_at` timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY          `idx_space_id` (`space_id`),
+                KEY          `idx_bundle_id` (`bundle_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Bundle Table';
+        </sql>
+    </changeSet>
+    <changeSet id="20230128-002" author="Shawn" labels="billing">
+        <comment>Billing System - Billing Bundle History Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}bundle_history`
+            (
+                `id`            bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `target_row_id` bigint                                                       NOT NULL COMMENT 'Record Line ID',
+                `change_type`   varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Change type',
+                `space_id`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `bundle_id`     varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Bundle ID',
+                `state`         varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'State(active,expire)',
+                `start_date`    datetime                                                     NOT NULL COMMENT 'Start Time',
+                `end_date`      datetime                                                     NOT NULL COMMENT 'End Time',
+                `is_deleted`    tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by`    bigint                                                                DEFAULT NULL COMMENT 'Creator',
+                `updated_by`    bigint                                                                DEFAULT NULL COMMENT 'Last Update By',
+                `created_at`    datetime                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`    datetime                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY             `idx_space_id` (`space_id`),
+                KEY             `idx_bundle_id` (`bundle_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Bundle History Table';
+        </sql>
+    </changeSet>
+    <changeSet id="20230128-003" author="Shawn" labels="billing">
+        <comment>Billing System - Billing Subscription Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}subscription`
+            (
+                `id`                bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id`          varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Space ID',
+                `bundle_id`         varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Bundle ID',
+                `subscription_id`   varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Subscription ID',
+                `stripe_id`         varchar(255) COLLATE utf8mb4_unicode_ci                                DEFAULT NULL COMMENT 'The id of the Stripe Subscriptions object',
+                `stripe_sub_id`     varchar(255) COLLATE utf8mb4_unicode_ci                                DEFAULT NULL COMMENT 'The Stripe id of the subscription\n',
+                `product_name`      varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Product ID',
+                `product_category`  varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Product Type',
+                `price_id`          varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Price ID',
+                `period`            varchar(100) COLLATE utf8mb4_unicode_ci                                DEFAULT NULL COMMENT 'Billing Period',
+                `quantity`          int unsigned DEFAULT NULL COMMENT 'QTY',
+                `state`             varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'State(active,expire)',
+                `phase`             varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci           DEFAULT 'fixedterm' COMMENT 'Project Phase(trial,fixedterm)',
+                `metadata`          varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'Meta Data',
+                `bundle_start_date` datetime                                                      NOT NULL COMMENT 'Bundle Start Time',
+                `start_date`        datetime                                                      NOT NULL COMMENT 'Start Time',
+                `expire_date`       datetime                                                      NOT NULL COMMENT 'Expire Time',
+                `is_deleted`        tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by`        bigint                                                                 DEFAULT NULL COMMENT 'Creator',
+                `updated_by`        bigint                                                                 DEFAULT NULL COMMENT 'Last Update By',
+                `created_at`        timestamp                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`        timestamp                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_subscription_id` (`subscription_id`) USING BTREE,
+                KEY                 `idx_space_id` (`space_id`),
+                KEY                 `idx_bundle_id` (`bundle_id`) USING BTREE,
+                KEY                 `idx_stripe_id` (`stripe_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Subscription Table';
+        </sql>
+    </changeSet>
+    <changeSet id="20230128-004" author="Shawn" labels="billing">
+        <comment>Billing System - Billing Subscription History Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}subscription_history`
+            (
+                `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `target_row_id` bigint NOT NULL COMMENT 'Record Line ID',
+                `change_type` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Change Type',
+                `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `bundle_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Bundle ID',
+                `subscription_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Subscription ID',
+                `stripe_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'The id of the Stripe Subscriptions object',
+                `stripe_sub_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'The Stripe id of the subscription\n',
+                `product_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product ID',
+                `product_category` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Type',
+                `price_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Price ID',
+                `period` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Billing Period',
+                `quantity` int unsigned DEFAULT NULL COMMENT 'QTY',
+                `state` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'State(active,expire)',
+                `phase` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'fixedterm' COMMENT 'Project Phase(trial,fixedterm)',
+                `bundle_start_date` datetime NOT NULL COMMENT 'Bundle Start Time',
+                `start_date` datetime NOT NULL COMMENT 'Start Time',
+                `expire_date` datetime NOT NULL COMMENT 'Expire Time',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint DEFAULT NULL COMMENT 'Creator',
+                `updated_by` bigint DEFAULT NULL COMMENT 'Last Update By',
+                `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_space_id` (`space_id`),
+                KEY `idx_subscription_id` (`subscription_id`),
+                KEY `idx_bundle_id` (`bundle_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Subscription History Table';
+        </sql>
+    </changeSet>
+    <changeSet id="20230128-005" author="Shawn" labels="billing">
+        <comment>Create Stripe Checkout Session Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}stripe_checkout_session`
+            (
+                `id`              bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id`        varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `session_id`      varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci         DEFAULT NULL COMMENT 'Checkout Seasion Id',
+                `additional_data` json                                                                  DEFAULT NULL COMMENT 'Additional data map',
+                `created_by`      bigint                                                       NOT NULL COMMENT 'Creator',
+                `updated_by`      bigint                                                       NOT NULL COMMENT 'Last Update By',
+                `created_at`      timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`      timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_space_id` (`space_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Stripe Checkout Session Table';
+        </sql>
+    </changeSet>
+    <changeSet id="20230128-006" author="Shawn" labels="billing">
+        <comment>Create Stripe Event History Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}stripe_event`
+            (
+                `id`         bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `event_id`   varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Event Id',
+                `event_type` varchar(255) COLLATE utf8mb4_unicode_ci                       DEFAULT NULL COMMENT 'Event Type',
+                `event_data` json                                                          DEFAULT NULL COMMENT 'Event Data',
+                `created_at` timestamp NOT NULL                                            DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL                                            DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_event_id` (`event_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Stripe Event History';
+        </sql>
+    </changeSet>
+    <changeSet id="20230128-007" author="Shawn" labels="billing">
+        <comment>Create Stripe Customer Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}stripe_customer`
+            (
+                `id`         bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `stripe_id`  varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'the id of the Stripe Customer object\n',
+                `email`      varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Customer Email',
+                `space_id`   varchar(50) COLLATE utf8mb4_unicode_ci                        DEFAULT NULL COMMENT 'The Customer belongs to exactly one',
+                `created_at` timestamp NOT NULL                                            DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL                                            DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY          `idx_space_id` (`space_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Stripe Customer';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

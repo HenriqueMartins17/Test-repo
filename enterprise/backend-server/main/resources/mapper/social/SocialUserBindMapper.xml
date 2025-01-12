@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.social.mapper.SocialUserBindMapper">
+    <select id="selectUserIdByUnionId" resultType="java.lang.Long">
+        SELECT user_id
+        FROM ${tablePrefix}social_user_bind
+        WHERE union_id = #{unionId}
+        LIMIT 1
+    </select>
+
+    <select id="selectUnionIdByUserId" resultType="java.lang.String">
+        SELECT union_id
+        FROM ${tablePrefix}social_user_bind
+        WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectByUnionIds" resultType="com.apitable.enterprise.social.entity.SocialUserBindEntity">
+        SELECT *
+        FROM ${tablePrefix}social_user_bind
+        WHERE union_id IN
+        <foreach item="item" index="index" collection="unionIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <delete id="deleteByUnionIds">
+        DELETE
+        FROM ${tablePrefix}social_user_bind
+        WHERE union_id IN
+        <foreach item="item" index="index" collection="unionIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <delete id="deleteByUserId">
+        DELETE
+        FROM ${tablePrefix}social_user_bind
+        WHERE user_id = #{userId}
+    </delete>
+
+    <select id="selectOpenIdByTenantIdAndUserId" resultType="java.lang.String">
+        SELECT vstu.open_id
+        FROM ${tablePrefix}social_user_bind vsub
+        JOIN ${tablePrefix}social_tenant_user vstu ON vstu.union_id = vsub.union_id
+        AND vstu.tenant_id = #{tenantId} AND vstu.app_id = #{appId}
+        WHERE vsub.user_id = #{userId}
+        LIMIT 1
+    </select>
+</mapper>

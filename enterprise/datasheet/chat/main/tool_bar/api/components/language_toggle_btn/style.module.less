@@ -1,0 +1,19 @@
+@import "~pc/styles/lib_var.less";
+@import "~pc/styles/lib_mixins.less";
+
+.radioGroup {
+  position: absolute;
+  right: 24px;
+  top: 16px;
+  display: flex;
+
+  button {
+    color: rgba(var(--static-white-rgb), 60%);
+  }
+
+  button.radioActive {
+    background-color: rgba(255, 255, 255, 8%);
+    border-radius: 8px;
+
+  }
+}

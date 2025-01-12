@@ -1,0 +1,69 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.12-20220506-001" author="CodeMan" labels="WeCom Service Provider">
+        <comment>Create Social Order WeCom Table</comment>
+        <sql>
+            create table ${table.prefix}social_order_wecom
+            (
+                id bigint(20) not null comment 'Primary Key',
+                order_id varchar(32) not null comment 'Order ID of WeCom',
+                order_status tinyint(1) not null comment 'Order status. 0: To be paid; 1: Paid; 2: Cancelled; 3: Payment is overdue; 4: Applying for refund; 5: Refund succeeded; 6: Refund refused',
+                order_type tinyint(1) not null comment 'Order type. 0: newly purchased applications; 1: Number of users for capacity expansion; 2: Renewal application time; 3: Changed version',
+                paid_corp_id varchar(32) not null comment 'Enterprise ID of the order',
+                operator_id varchar(32) null comment 'The order placing operator userid. If the order is placed by the service provider, this field is unavailable',
+                suite_id varchar(32) not null comment 'Suite ID',
+                edition_id varchar(32) not null comment 'Purchased app version ID',
+                price int(10) not null comment 'Price payable. Unit: cent',
+                user_count bigint(20) not null comment 'Number of purchasers',
+                order_period int(10) not null comment 'Duration of purchase. Unit: day',
+                order_time datetime null comment 'Order time ',
+                paid_time datetime null comment 'Payment time',
+                begin_time datetime null comment 'Start time of purchase effective period',
+                end_time datetime null comment 'End time of purchase effective period',
+                order_from tinyint(1) not null comment 'Order Source 0: The enterprise places an order; 1: The service provider places orders on behalf; 2: Agent orders',
+                operator_corp_id varchar(32) null comment 'Enterprise ID of the order',
+                service_share_amount int(10) null comment 'The amount shared by the service provider. Unit: cent',
+                platform_share_amount int(10) null comment 'Platform share amount. Unit: cent',
+                dealer_share_amount int(10) null comment 'Agent share amount. Unit: cent',
+                dealer_corp_id varchar(32) null comment 'Agent enterprise ID',
+                order_info json not null comment 'Order original data',
+                is_deleted tinyint(1) default '0' not null comment 'Delete Tags. 0: No; 1: Yes',
+                created_at timestamp default CURRENT_TIMESTAMP not null comment 'Create Time',
+                updated_at timestamp default CURRENT_TIMESTAMP null on update CURRENT_TIMESTAMP comment 'Update Time',
+                constraint ${table.prefix}social_order_wecom_pk
+                    primary key (id)
+            )
+                comment 'Social Order WeCom Table';
+
+            create index idx_paid_corp_id
+                on ${table.prefix}social_order_wecom (paid_corp_id);
+
+            create unique index uk_order_id
+                on ${table.prefix}social_order_wecom (order_id);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

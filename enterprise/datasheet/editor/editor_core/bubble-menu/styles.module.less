@@ -1,0 +1,67 @@
+@import "~pc/styles/lib_var.less";
+
+
+.bubbleMenu {
+  background-color: var(--bgCommonHighest);
+  border: 1px solid var(--borderCommonDefault);
+  border-radius: 4px;
+  box-shadow: var(--shadowCommonHigh);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  height: 34px;
+
+  .triggerSelect {
+    height: 34px ;
+    padding: 4px ;
+    padding-right: 0 ;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 0;
+    &:hover {
+      border-color: transparent ;
+      background-color: var(--bgBglessHover) ;
+    }
+    svg {
+      fill: var(--textCommonPrimary);
+    }
+    span{
+      position: static;
+    }
+  }
+  .buttonGroup {
+    width: 152px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: unset;
+    & >  div {
+      align-items: center;
+    }
+  }
+  .menuItem {
+    height: 24px;
+    width: 24px;
+    svg {
+      fill: var(--textCommonPrimary);
+    }
+  }
+  .menuActive{
+    background-color: var(--bgBrandLightDefault);
+    svg {
+      fill: var(--primaryColor);
+    }
+  }
+  
+  .divider{
+    margin: 0 4px;
+  }
+}
+
+:global {
+  .rc-trigger-popup{
+    box-shadow: var(--shadowCommonHigh);
+    p{
+      border-radius: 4px;
+    }
+  }
+}

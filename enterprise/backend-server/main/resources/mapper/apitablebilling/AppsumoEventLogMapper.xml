@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.apitablebilling.mapper.AppsumoEventLogMapper">
+
+    <select id="selectSimpleById"
+            resultType="com.apitable.enterprise.apitablebilling.appsumo.model.AppsumoEventDTO">
+        SELECT id, `action`, plan_id, uuid, activation_email, invoice_item_uuid, handle_status
+        FROM ${tablePrefix}appsumo_event_log
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectByActivationEmailAndActionAndHandleStatus"
+            resultType="com.apitable.enterprise.apitablebilling.appsumo.model.AppsumoEventDTO">
+        SELECT id, `action`, plan_id, uuid, activation_email, invoice_item_uuid, handle_status
+        FROM ${tablePrefix}appsumo_event_log
+        WHERE activation_email = #{activationEmail}
+        AND `action` = #{action}
+        AND handle_status = #{handleStatus}
+        LIMIT 1
+    </select>
+
+    <update id="updateUserEmailByActivationEmail">
+        UPDATE ${tablePrefix}appsumo_event_log
+        SET user_email = #{userEmail}
+        WHERE activation_email = #{activationEmail}
+    </update>
+
+    <select id="selectUserEmailByActivationEmailAndUuid" resultType="java.lang.String">
+        SELECT user_email
+        FROM ${tablePrefix}appsumo_event_log
+        WHERE activation_email = #{activationEmail}
+        AND uuid = #{uuid}
+        AND user_email is not null
+        LIMIT 1
+    </select>
+</mapper>

@@ -1,0 +1,87 @@
+{
+	"common_img_logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/01/31/9fd549b42fd048ecbe79b8f718233462",
+		".说明": "common_img_logo.png",
+		"FILE": [
+			{
+				"id": "atcC8OefS5FZ9",
+				"name": "common_img_logo.png",
+				"size": 2816,
+				"mimeType": "image/png",
+				"token": "space/2022/12/20/cc62aaaea93c46f49d370f50e1490e9a",
+				"width": 240,
+				"height": 64,
+				"url": "https://s1.vika.cn/space/2022/12/20/cc62aaaea93c46f49d370f50e1490e9a"
+			}
+		]
+	},
+	"favicon": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e",
+		".说明": "favicon.ico",
+		"FILE": [
+			{
+				"id": "atcju1q8A2pOe",
+				"name": "favicon.ico",
+				"size": 16958,
+				"mimeType": "image/vnd.microsoft.icon",
+				"token": "space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e"
+			}
+		]
+	},
+	"logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2022/12/20/c50e1787ba4741bba3cdab78034636ce",
+		".说明": "logo.svg",
+		"FILE": [
+			{
+				"id": "atcJZQq9jsrqt",
+				"name": "logo.svg",
+				"size": 702,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/12/20/c50e1787ba4741bba3cdab78034636ce",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/c50e1787ba4741bba3cdab78034636ce"
+			}
+		]
+	},
+	"logo_text_light": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1",
+		".说明": "logo_text_light.svg",
+		"FILE": [
+			{
+				"id": "atcBZKKOtlU0w",
+				"name": "logo_text_light.svg",
+				"size": 1158,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1"
+			}
+		]
+	},
+	"logo_text_dark": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/01/31/55299ca6769c4f63ba80279cfbdd4721",
+		".说明": "logo_text_dark.svg",
+		"FILE": [
+			{
+				"id": "atctzYsdckDjD",
+				"name": "logo_text_dark.svg",
+				"size": 1158,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1"
+			}
+		]
+	}
+}

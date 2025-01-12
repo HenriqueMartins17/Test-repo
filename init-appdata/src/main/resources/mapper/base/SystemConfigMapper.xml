@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.base.mapper.SystemConfigMapper">
+    <select id="selectByType"
+            resultType="com.apitable.appdata.shared.base.pojo.SystemConfig">
+        SELECT *
+        FROM ${tablePrefix}system_config
+        WHERE type = #{type}
+    </select>
+
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}system_config(id, type, i18n_name, config_map,
+        created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.type}, #{item.i18nName}, #{item.configMap},
+                #{userId}, #{userId}
+            </trim>
+        </foreach>
+    </insert>
+
+    <update id="deleteByType">
+        DELETE
+        FROM ${tablePrefix}system_config
+        WHERE type = #{type}
+    </update>
+</mapper>

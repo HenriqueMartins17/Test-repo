@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.space.mapper.SpaceAssetMapper">
+    <select id="selectByNodeIds"
+            resultType="com.apitable.appdata.shared.space.pojo.SpaceAsset">
+        SELECT *
+        FROM ${tablePrefix}space_asset
+        WHERE node_id IN
+        <foreach item="item" index="index" collection="nodeIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND cite > 0
+        AND is_deleted = 0
+    </select>
+
+    <insert id="insertBatch">
+        REPLACE INTO ${tablePrefix}space_asset(id, space_id, node_id, asset_id,
+        asset_checksum, cite, `type`, source_name, file_size)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.spaceId}, #{item.nodeId}, #{item.assetId},
+                #{item.assetChecksum}, #{item.cite}, #{item.type}, #{item.sourceName},
+                #{item.fileSize}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

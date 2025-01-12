@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.ai.mapper.AiCreditTransactionMapper">
+    <select id="selectTotalCreditTransactionCount" resultType="java.math.BigDecimal">
+        SELECT SUM(amount)
+        FROM ${tablePrefix}ai_credit_transaction
+        WHERE space_id = #{spaceId}
+          AND DATE_FORMAT(created_at, '%Y-%m-%d') BETWEEN #{beginDate} AND #{endDate}
+    </select>
+
+    <select id="selectTotalCreditTransactionCountByConversationId" resultType="java.math.BigDecimal">
+        SELECT SUM(amount)
+        FROM ${tablePrefix}ai_credit_transaction
+        WHERE conversation_id = #{conversationId}
+    </select>
+
+    <select id="selectCreditSummaryByDate" resultType="com.apitable.enterprise.ai.model.CreditAmountSummary">
+        SELECT space_id,
+               SUM(amount) as total_amount,
+               AVG(amount) as average_amount
+        FROM ${tablePrefix}ai_credit_transaction
+        WHERE is_counted = 0
+          AND DATE_FORMAT(created_at, '%Y-%m-%d') = #{date}
+        GROUP BY space_id;
+    </select>
+
+    <select id="summaryToday" resultType="com.apitable.interfaces.ai.model.CreditTransactionChartData">
+        SELECT UNIX_TIMESTAMP(created_at) as dateline,
+               SUM(amount)                as total_count
+        FROM ${tablePrefix}ai_credit_transaction
+        WHERE space_id = #{spaceId}
+          AND DATE_FORMAT(created_at, '%Y-%m-%d') = #{today}
+        GROUP BY HOUR(created_at)
+    </select>
+
+    <select id="selectCreditSummaryByDateLimitOne" resultType="com.apitable.enterprise.ai.model.CreditAmountSummary">
+        SELECT space_id,
+               SUM(amount) as total_amount,
+               AVG(amount) as average_amount
+        FROM ${tablePrefix}ai_credit_transaction
+        WHERE is_counted = 0
+          AND DATE_FORMAT(created_at, '%Y-%m-%d') = #{date}
+        GROUP BY space_id
+        LIMIT 1
+    </select>
+
+    <select id="selectLastUnCountedSpaceId" resultType="java.lang.String">
+        SELECT space_id
+        FROM ${tablePrefix}ai_credit_transaction
+        WHERE is_counted = 0
+        GROUP BY space_id
+        LIMIT 1
+    </select>
+
+    <select id="selectBySpaceIdWhereUnCounted" resultType="com.apitable.enterprise.ai.model.CreditTransaction">
+        SELECT id,
+               space_id,
+               amount,
+               created_at
+        FROM ${tablePrefix}ai_credit_transaction
+        WHERE space_id = #{spaceId}
+          AND is_counted = 0
+    </select>
+</mapper>

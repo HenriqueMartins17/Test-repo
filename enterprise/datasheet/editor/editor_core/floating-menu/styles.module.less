@@ -1,0 +1,40 @@
+@import "~pc/styles/lib_var.less";
+
+.menuGroup {
+  margin: 0;
+  padding: 8px;
+  width: 184px;
+  list-style: none;
+  background-color: var(--bgCommonHighest);
+  box-shadow: var(--shadowCommonHigh);
+  border: 1px solid var(--borderCommonDefault);
+  border-radius: 4px;
+  .menuItem {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 7px 8px;
+    margin: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--textCommonPrimary);
+    &.selected,
+    &:not(.disabled):hover {
+      background-color: var(--bgBglessHover);
+    }
+    &.disabled {
+      cursor: not-allowed;
+      color: var(--textCommonDisabled);
+    }
+    svg {
+      margin-right: 8px;
+      fill: var(--textCommonSecondary);
+    }
+  }
+  .divider {
+    height: 1px;
+    background-color: var(--borderCommonDefault);
+    margin: 4px 0;
+  }
+}

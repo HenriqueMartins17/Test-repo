@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vikadata.migration.mapper.DatasheetChangesetSourceMapper">
+
+    <select id="selectByDatasheetIdAndMessageIds" resultType="com.vikadata.migration.entity.DatasheetChangesetSourceEntity">
+        SELECT *
+        FROM vika_datasheet_changeset_source
+        WHERE
+        dst_id = #{datasheetId}
+        AND message_id in
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+<!--        order by id-->
+    </select>
+
+    <select id="selectByDatasheetIdsAndMessageIds" resultType="com.vikadata.migration.entity.DatasheetChangesetSourceEntity">
+        SELECT *
+        FROM vika_datasheet_changeset_source
+        WHERE
+        dst_id in
+        <foreach item="item" index="index" collection="datasheetIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        AND message_id in
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        <!--        order by id-->
+    </select>
+
+</mapper>

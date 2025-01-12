@@ -1,0 +1,128 @@
+.insight {
+  // display: flex;
+  // flex-direction: column;
+  :global {
+    .ant-drawer-body {
+      padding-top: 0;
+    }
+  }
+  &-filter {
+    display: flex;
+    margin-bottom: 40px;
+    &-item {
+      display: flex;
+      margin-right: 20px;
+      align-items: center;
+      margin-right: 80px;
+      &-text {
+        margin-right: 16px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+}
+
+.modal {
+  height: 80%;
+
+  :global {
+    .ant-modal-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .ant-modal-header {
+      padding: 0;
+    }
+    .ant-modal-body {
+      overflow: auto;
+      padding: 0;
+      flex: 1;
+    }
+  }
+  &-header {
+    display: flex;
+    padding: 14px 16px;
+    background: var(--bgBglessHover);
+    justify-content: space-between;
+    &-title {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      p {
+        margin-left: 8px;
+        flex: 1;
+      }
+      &-button {
+        display: flex;
+      }
+    }
+  }
+  &-content {
+    height: 100%;
+    display: flex;
+    &-message {
+      padding: 10px;
+      overflow: auto;
+      height: 100%;
+      width: 520px;
+      border-right: 1px solid var(--borderCommonDefault);
+    }
+    &-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 20px;
+      &-avatar {
+        display: flex;
+        margin-bottom: 16px;
+        // justify-content: center;
+        align-items: center;
+        svg {
+          margin-right: 5px;
+          border-radius: 50%;
+          background: var(--bgCommonLower);
+          border: 1px solid var(--borderCommonDefault);
+        }
+      }
+      &-item {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;;
+      }
+      &-action {
+        margin-top: 20px;
+        &-item {
+          margin-top: 32px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          button {
+            width: 146px;
+            margin-bottom: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    margin-right: 5px;
+    border-radius: 50%;
+    background: var(--bgCommonLower);
+    border: 1px solid var(--borderCommonDefault);
+  }
+}

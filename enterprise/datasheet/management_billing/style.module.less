@@ -1,0 +1,160 @@
+
+@import "~pc/styles/lib_var.less";
+@import "~pc/styles/lib_mixins.less";
+
+.bilingContent {
+  padding: 24px 24px;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: var(--bgCommonDefault);
+  h3 {
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--textCommonPrimary);
+    margin: 0 0 16px 0;
+  }
+
+  td {
+    font-size: 14px;
+    color: var(--textCommonTertiary, rgba(255, 255, 255, 0.55));
+    min-width: 160px;
+    padding: 8px 0;
+  }
+}
+
+
+
+.planData {
+  color: var(--textCommonPrimary, rgba(255, 255, 255, 0.85))!important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 24px!important;
+  p {
+    margin: 0;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+  }
+}
+
+.settingContent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  p {
+    margin: 0;
+    margin-right: 24px;
+  }
+}
+
+.dividing {
+  width: 100%;
+  height: 1px;
+  background-color: var(--borderCommonDefault);
+  margin: 24px 0;
+}
+
+.upgradeButton {
+  padding: 9px 0!important;
+  &:hover {
+    background: none!important;
+    color: var(--textBrandHover)!important;
+  }
+  &:active {
+    background: none!important;
+    color: var(--textBrandActive)!important;
+  }
+}
+
+.tableWrapper {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  .default-scroll-bar();
+  .loadButton {
+    margin: 16px auto;
+    display: flex;
+    justify-content: center;
+  }
+  :global {
+    .ant-table-wrapper {
+      min-width: 800px;
+    }
+
+    .ant-table {
+      line-height: 1;
+      color: var(--secondLevelText);
+      .antdTable();
+      .ant-table-thead  {
+        tr {
+          th {
+            background-color: var(--bgControlsDefaultSolid);
+          }
+        }
+      }
+      .ant-table-body {
+        overflow-y: hidden !important;
+        .default-scroll-bar();
+
+        &:hover {
+          overflow-y: overlay !important;
+        }
+      }
+
+      .ant-table-hide-scrollbar {
+        overflow-y: overlay !important;
+
+        &:hover {
+          overflow-y: overlay !important;
+        }
+      }
+
+      .ant-table-hide-scrollbar::-webkit-scrollbar {
+        background-color: var(--lowestBg);
+      }
+    }
+
+    .ant-table-sticky-holder {
+      background-color: var(--bgControlsDefaultSolid);
+    }
+    
+  }
+}
+
+.invoices {
+  position: relative;
+}
+
+.lodingWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--defaultBg);
+  color: var(--textCommonTertiary);
+  svg {
+    margin: 0 0;
+  }
+  p {
+    margin: 0 0;
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.intervalText {
+  text-transform: capitalize;
+}
+

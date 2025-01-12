@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.social.mapper.SocialTenantDomainMapper">
+
+    <select id="selectBySpaceId" resultType="com.apitable.enterprise.social.entity.SocialTenantDomainEntity">
+        SELECT *
+        FROM ${tablePrefix}social_tenant_domain vstd
+        WHERE vstd.space_id = #{spaceId}
+          AND vstd.is_deleted = 0
+    </select>
+
+    <select id="selectBySpaceIds" resultType="com.apitable.enterprise.social.entity.SocialTenantDomainEntity">
+        SELECT *
+        FROM ${tablePrefix}social_tenant_domain vstd
+        WHERE vstd.space_id IN
+        <foreach item="item" index="index" collection="spaceIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        AND vstd.is_deleted = 0
+    </select>
+
+    <select id="countTenantDomainName" resultType="int">
+        SELECT COUNT(*)
+        FROM ${tablePrefix}social_tenant_domain vstd
+        WHERE vstd.domain_prefix = #{domainPrefix}
+          AND vstd.is_deleted = 0
+    </select>
+
+    <select id="selectSpaceIdByDomainName" resultType="java.lang.String">
+        SELECT vstd.space_id
+        FROM ${tablePrefix}social_tenant_domain vstd
+        WHERE vstd.domain_name = #{domainName}
+          AND vstd.status = 1
+          AND vstd.is_deleted = 0
+    </select>
+
+    <select id="selectSpaceDomainBySpaceIds" resultType="com.apitable.enterprise.social.model.SpaceBindDomainDTO">
+        SELECT vstd.space_id,
+               vstd.domain_name,
+               vstd.status
+        FROM ${tablePrefix}social_tenant_domain vstd
+        WHERE vstd.is_deleted = 0
+          AND vstd.space_id IN
+        <foreach item="item" index="index" collection="spaceIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <update id="updateStatusBySpaceId">
+        UPDATE ${tablePrefix}social_tenant_domain
+        SET status = #{domainStatus}
+        WHERE space_id = #{spaceId}
+    </update>
+
+    <select id="selectSpaceDomainByDomainName" resultType="com.apitable.enterprise.social.model.SpaceBindDomainDTO">
+        SELECT  vstd.space_id,
+                vstd.domain_name,
+                vstd.status
+        FROM ${tablePrefix}social_tenant_domain vstd
+        WHERE vstd.domain_name = #{domainName}
+          AND vstd.is_deleted = 0
+    </select>
+
+    <delete id="deleteSpaceDomainBySpaceIds">
+        UPDATE ${tablePrefix}social_tenant_domain
+        SET status = 0, is_deleted = 1
+        WHERE space_id IN
+        <foreach item="item" index="index" collection="spaceIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+</mapper>

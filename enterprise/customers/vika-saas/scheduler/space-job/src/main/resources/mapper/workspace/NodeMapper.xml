@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vikadata.scheduler.space.mapper.workspace.NodeMapper">
+
+    <select id="selectNodeIdBySpaceIds" resultType="java.lang.String">
+        SELECT node_id
+        FROM ${tablePrefix}node
+        WHERE is_rubbish = 0 AND space_id IN
+        <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        <if test="type != null">
+            AND `type` = #{type}
+        </if>
+    </select>
+
+    <select id="findChangedNodeIds" resultType="com.vikadata.scheduler.space.model.NodeDto">
+        SELECT DISTINCT vn.node_id, space_id
+        FROM ${tablePrefix}node vn
+        JOIN ${tablePrefix}datasheet_changeset vdc ON vdc.dst_id = vn.node_id
+        WHERE vn.is_rubbish = 0 AND vdc.id > #{changesetId}
+    </select>
+
+</mapper>

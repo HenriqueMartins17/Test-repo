@@ -1,0 +1,11 @@
+{{MEMBER_NAME}} deleted records from the datasheet "{{NODE_NAME}}"
+
+Deleted records: {{RECORD_TITLE}}
+{{SPACE_NAME}}
+
+{{CREATED_AT}}
+
+View{{URL}}
+©2019-{{YEARS}} vikadata. All rights reserved.
+
+Contact us(https://vika.cn?home=1)

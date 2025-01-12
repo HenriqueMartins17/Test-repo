@@ -1,0 +1,20 @@
+#![recursion_limit = "256"]
+
+[workspace]
+members = [
+  "databus-shared",
+  "databus-core",
+  "databus-dao-api",
+  "databus-dao-db",
+  "databus-wasm",
+  "databus-server",
+  "databus-server-lib",
+  "databus-tablebundle",
+  "json0",
+  "aitable-sdk-rust",
+]
+resolver = "2"
+
+[profile.release]
+lto = true
+opt-level = 3

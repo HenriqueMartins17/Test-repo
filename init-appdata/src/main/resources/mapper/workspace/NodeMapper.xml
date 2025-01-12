@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.workspace.mapper.NodeMapper">
+    <select id="selectAllSubNodeIds" resultType="java.lang.String">
+        WITH RECURSIVE sub_ids (node_id) AS
+        (
+        SELECT node_id
+        FROM ${tablePrefix}node
+        WHERE parent_id IN
+        <foreach item="item" index="index" collection="nodeIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND is_rubbish = 0
+        UNION ALL
+        SELECT c.node_id
+        FROM sub_ids AS cp
+        JOIN ${tablePrefix}node AS c
+        ON cp.node_id = c.parent_id AND c.is_rubbish = 0
+        )
+        SELECT distinct *
+        FROM sub_ids;
+    </select>
+
+    <select id="selectByNodeIds"
+            resultType="com.apitable.appdata.shared.workspace.pojo.Node">
+        SELECT *
+        FROM ${tablePrefix}node
+        WHERE node_id IN
+        <foreach item="item" index="index" collection="nodeIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND is_rubbish = 0
+    </select>
+
+    <insert id="insertBatch">
+        REPLACE INTO ${tablePrefix}node(id, space_id, parent_id, pre_node_id, node_id,
+        node_name, icon, `type`, cover, is_template, extra, created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.spaceId}, #{item.parentId}, #{item.preNodeId},
+                #{item.nodeId}, #{item.nodeName}, #{item.icon}, #{item.type},
+                #{item.cover}, #{item.isTemplate}, #{item.extra}, #{userId}, #{userId}
+            </trim>
+        </foreach>
+    </insert>
+
+    <update id="remove">
+        UPDATE ${tablePrefix}node
+        SET is_rubbish = 1, updated_by = #{userId}
+        WHERE node_id IN
+        <foreach item="item" index="index" collection="nodeIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND is_rubbish = 0
+    </update>
+
+    <update id="removeBySpaceIdAnd">
+        UPDATE ${tablePrefix}node
+        SET is_rubbish = 1
+        WHERE space_id = #{spaceId}
+        <if test="isTemplate != null">
+            AND is_template = #{isTemplate}
+        </if>
+        AND is_rubbish = 0
+    </update>
+</mapper>

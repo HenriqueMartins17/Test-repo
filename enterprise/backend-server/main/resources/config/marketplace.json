@@ -1,0 +1,299 @@
+{
+    "cli_9f3930dd7d7ad00c": {
+        "logo": {
+            "id": "atcEEp5gDuMWu",
+            "name": "feishu.svg",
+            "size": 1059,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95"
+        },
+        "env": [
+            "integration"
+        ],
+        "disable": true,
+        "app_info": "marketplace_integration_app_info_fesihu",
+        "note": "marketplace_integration_app_note_feishu",
+        "app_name": "marketplace_integration_app_name_feishu",
+        "type": "integration",
+        "app_description": "marketplace_integration_app_dec_feishu",
+        "id": "cli_9f3930dd7d7ad00c",
+        "display_order": 10,
+        "image": {
+            "id": "atcnIol43SAeV",
+            "name": "飞书集成.png",
+            "size": 362548,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/8742173785d34efc905ba1fd23227cc0",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/8742173785d34efc905ba1fd23227cc0"
+        },
+        "app_id": "cli_9f3930dd7d7ad00c",
+        "link_to_cms": "link_to_lark_cms",
+        "app_type": "LARK_STORE",
+        "btn_card": {
+            "btn_text": "marketplace_integration_btncard_btntext_open",
+            "btn_action": "https://app.feishu.cn/app/cli_9f3930dd7d7ad00c",
+            "btn_type": "primary",
+            "btn_close_action": "https://www.feishu.cn/admin/#/appCenter/manage/cli_9f3930dd7d7ad00c?lang=zh-CN",
+            "apps_btn_text": "marketplace_integration_btncard_appsbtntext_read_more"
+        },
+        "modal": {
+            "btn_text": "marketplace_integration_btncard_appsbtntext_read_more",
+            "btn_action": "https://app.feishu.cn/app/cli_9f3930dd7d7ad00c",
+            "app_description": "marketplace_integration_app_dec_feishu",
+            "btn_type": "primary",
+            "help_link": "link_to_lark_cms"
+        }
+    },
+    "cli_a08120b120fad00e": {
+        "logo": {
+            "id": "atc8qT4qak5kW",
+            "name": "feishu.svg",
+            "size": 1059,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95"
+        },
+        "env": [
+            "staging"
+        ],
+        "disable": true,
+        "app_info": "marketplace_integration_app_info_fesihu",
+        "note": "marketplace_integration_app_note_feishu",
+        "app_name": "marketplace_integration_app_name_feishu",
+        "type": "integration",
+        "app_description": "marketplace_integration_app_dec_feishu",
+        "id": "cli_a08120b120fad00e",
+        "display_order": 10,
+        "image": {
+            "id": "atcEedAZX3ufL",
+            "name": "飞书集成.png",
+            "size": 362548,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/8742173785d34efc905ba1fd23227cc0",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/8742173785d34efc905ba1fd23227cc0"
+        },
+        "app_id": "cli_a08120b120fad00e",
+        "link_to_cms": "link_to_lark_cms",
+        "app_type": "LARK_STORE",
+        "btn_card": {
+            "btn_text": "marketplace_integration_btncard_btntext_open",
+            "btn_action": "https://app.feishu.cn/app/cli_a08120b120fad00e",
+            "btn_type": "primary",
+            "btn_close_action": "https://www.feishu.cn/admin/#/appCenter/manage/cli_a08120b120fad00e?lang=zh-CN",
+            "apps_btn_text": "marketplace_integration_btncard_appsbtntext_read_more"
+        },
+        "modal": {
+            "btn_text": "marketplace_integration_btncard_appsbtntext_read_more",
+            "btn_action": "https://app.feishu.cn/app/cli_a08120b120fad00e",
+            "app_description": "marketplace_integration_app_dec_feishu",
+            "btn_type": "primary",
+            "help_link": "link_to_lark_cms"
+        }
+    },
+    "cli_9f614b454434500e": {
+        "logo": {
+            "id": "atckEWR2o3EgR",
+            "name": "feishu.svg",
+            "size": 1059,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95"
+        },
+        "env": [
+            "production"
+        ],
+        "disable": true,
+        "app_info": "marketplace_integration_app_info_fesihu",
+        "note": "marketplace_integration_app_note_feishu",
+        "app_name": "marketplace_integration_app_name_feishu",
+        "type": "integration",
+        "app_description": "marketplace_integration_app_dec_feishu",
+        "id": "cli_9f614b454434500e",
+        "display_order": 10,
+        "image": {
+            "id": "atcLNS2l4KYxV",
+            "name": "飞书集成.png",
+            "size": 362548,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/8742173785d34efc905ba1fd23227cc0",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/8742173785d34efc905ba1fd23227cc0"
+        },
+        "app_id": "cli_9f614b454434500e",
+        "link_to_cms": "link_to_lark_cms",
+        "app_type": "LARK_STORE",
+        "btn_card": {
+            "btn_text": "marketplace_integration_btncard_btntext_open",
+            "btn_action": "https://app.feishu.cn/app/cli_9f614b454434500e",
+            "btn_type": "primary",
+            "btn_close_action": "https://www.feishu.cn/admin/#/appCenter/manage/cli_9f614b454434500e?lang=zh-CN",
+            "apps_btn_text": "marketplace_integration_btncard_appsbtntext_read_more"
+        },
+        "modal": {
+            "btn_text": "marketplace_integration_btncard_appsbtntext_read_more",
+            "btn_action": "https://app.feishu.cn/app/cli_9f614b454434500e",
+            "app_description": "marketplace_integration_app_dec_feishu",
+            "btn_type": "primary",
+            "help_link": "link_to_lark_cms"
+        }
+    },
+    "ina5200279359980055": {
+        "logo": {
+            "id": "atcPfGUqrcZ5j",
+            "name": "企业微信.svg",
+            "size": 5878,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/e043014e0af54bf58c6bb78e92b00b60",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/e043014e0af54bf58c6bb78e92b00b60"
+        },
+        "env": [
+            "integration",
+            "staging",
+            "production"
+        ],
+        "app_info": "marketplace_integration_app_info_wecahtcp",
+        "note": "marketplace_integration_app_note_wechatcp",
+        "app_name": "marketplace_integration_app_name_wechatcp",
+        "type": "integration",
+        "app_description": "marketplace_integration_app_dec_wechatcp",
+        "id": "ina5200279359980055",
+        "display_order": 30,
+        "image": {
+            "id": "atcuiGRXDfIoT",
+            "name": "企业微信集成.png",
+            "size": 599396,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/772be217f729479985295ae30dc63291",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/772be217f729479985295ae30dc63291"
+        },
+        "app_id": "ina5200279359980055",
+        "link_to_cms": "link_to_wecom_cms",
+        "app_type": "WECOM_STORE",
+        "btn_card": {
+            "btn_text": "marketplace_integration_btncard_btntext_open",
+            "btn_action": "/user/wecom/integration/bind",
+            "btn_type": "primary",
+            "apps_btn_text": "marketplace_integration_btncard_appsbtntext_read_more"
+        },
+        "modal": {
+            "btn_text": "0",
+            "app_description": "marketplace_integration_app_dec_wechatcp",
+            "btn_type": "primary",
+            "help_link": "link_to_wecom_cms"
+        }
+    },
+    "ina9134969049653777": {
+        "logo": {
+            "id": "atcpH3rGddayo",
+            "name": "ding.svg",
+            "size": 1831,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/7af742cdbb3c4ae3a76e30e68bf471cb",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/7af742cdbb3c4ae3a76e30e68bf471cb"
+        },
+        "env": [
+            "integration",
+            "staging",
+            "production"
+        ],
+        "app_info": "marketplace_integration_app_info_dingtalk",
+        "note": "marketplace_integration_app_note_dingtalk",
+        "app_name": "marketplace_integration_app_name_dingtalk",
+        "type": "integration",
+        "app_description": "marketplace_integration_app_dec_dingtalk",
+        "id": "ina9134969049653777",
+        "display_order": 20,
+        "image": {
+            "id": "atcOhMLdK4DOv",
+            "name": "钉钉集成.png",
+            "size": 124923,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/46a769fdf74d4c0f8676f3ccca358643",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/46a769fdf74d4c0f8676f3ccca358643"
+        },
+        "app_id": "ina9134969049653777",
+        "link_to_cms": "link_to_dingtalk_cms",
+        "app_type": "DINGTALK_STORE",
+        "btn_card": {
+            "btn_text": "marketplace_integration_btncard_btntext_open",
+            "btn_action": "/help/integration-dingtalk/",
+            "btn_type": "primary",
+            "apps_btn_text": "marketplace_integration_btncard_appsbtntext_read_more"
+        },
+        "modal": {
+            "btn_text": "marketplace_integration_btncard_appsbtntext_read_more",
+            "btn_action": "/help/integration-dingtalk/",
+            "app_description": "marketplace_integration_app_dec_dingtalk",
+            "btn_type": "primary",
+            "help_link": "link_to_dingtalk_cms"
+        }
+    },
+    "ina5645957505507647": {
+        "logo": {
+            "id": "atclqW8EjJIFz",
+            "name": "Frame.svg",
+            "size": 575,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/0c070534ccda4b4dbae3f4c7c303d02e",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/0c070534ccda4b4dbae3f4c7c303d02e"
+        },
+        "env": [
+            "integration",
+            "staging",
+            "production"
+        ],
+        "app_info": "marketplace_integration_app_info_office_preview",
+        "note": "marketplace_integration_app_note_office_preview",
+        "app_name": "marketplace_integration_app_name_officepreview",
+        "type": "integration",
+        "app_description": "marketplace_integration_app_dec_office_preview",
+        "id": "ina5645957505507647",
+        "display_order": 20,
+        "image": {
+            "id": "atczaIPjTBq8F",
+            "name": "永中集成.png",
+            "size": 473712,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/18efb2fce9a64dc08262fc5cc8f0eac1",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/18efb2fce9a64dc08262fc5cc8f0eac1"
+        },
+        "app_id": "ina5645957505507647",
+        "link_to_cms": "link_preview_office_cms",
+        "app_type": "OFFICE_PREVIEW",
+        "btn_card": {
+            "btn_text": "marketplace_integration_btncard_btntext_authorize",
+            "btn_type": "primary",
+            "apps_btn_text": "marketplace_integration_btncard_appsbtntext_read_more"
+        },
+        "modal": {
+            "btn_text": "marketplace_integration_btncard_appsbtntext_read_more",
+            "app_description": "marketplace_integration_app_dec_office_preview",
+            "btn_type": "primary",
+            "help_link": "link_preview_office_cms"
+        }
+    }
+}

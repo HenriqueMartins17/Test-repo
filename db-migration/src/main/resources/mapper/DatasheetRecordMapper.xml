@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vikadata.migration.mapper.DatasheetRecordMapper">
+
+    <select id="selectByDatasheetIdAndMigrationId" resultType="com.vikadata.migration.entity.DatasheetRecordEntity">
+        SELECT *
+        FROM vika_datasheet_record
+        WHERE
+            dst_id = #{datasheetId}
+            AND id > #{migrationId}
+        order by id
+<!--        order by created_at, id-->
+        limit #{limitCount}
+    </select>
+
+    <select id="selectByMigrationId" resultType="com.vikadata.migration.entity.DatasheetRecordEntity">
+        SELECT *
+        FROM vika_datasheet_record
+        WHERE
+        id > #{migrationId}
+        order by id
+        <!--        order by created_at, id-->
+        limit #{limitCount}
+    </select>
+
+    <select id="selectByIds" resultType="com.vikadata.migration.entity.DatasheetRecordEntity">
+        SELECT *
+        FROM vika_datasheet_record
+        WHERE
+        id in
+        <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <!--批量新增多个记录-->
+    <insert id="insertBatch">
+        INSERT INTO vika_datasheet_record(id, record_id, dst_id, data, field_updated_info, revision, revision_history, is_deleted, created_at, updated_at, created_by, updated_by)
+        VALUES
+        <foreach collection="entities" item="element" index="index" separator=",">
+            <trim prefix="(" suffix=")">
+                #{element.id},#{element.recordId},#{element.dstId},#{element.data},#{element.fieldUpdatedInfo},#{element.revision},#{element.revisionHistory},#{element.isDeleted},#{element.createdAt},#{element.updatedAt},#{element.createdBy},#{element.updatedBy}
+            </trim>
+        </foreach>
+    </insert>
+
+</mapper>

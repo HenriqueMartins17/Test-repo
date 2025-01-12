@@ -1,0 +1,49 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.10-20211230-001" author="Shawn" labels="integration">
+        <comment>Create Social Feishu Auth Config Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_feishu_auth_config`
+            (
+                `id`                       bigint(20) unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id`                 varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'Space ID',
+                `client_id`                varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Application ID',
+                `client_secret`            varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'App Key',
+                `client_token`             varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL COMMENT 'The unique authorization ID of the application corresponding system',
+                `event_encrypt_key`        varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'Event encryption key',
+                `event_verification_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'Event validation token',
+                `is_enabled`               tinyint(1) unsigned DEFAULT '1' COMMENT 'Whether to open (0: No, 1: Yes)',
+                `is_deleted`               tinyint(1) unsigned DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by`               bigint(20) unsigned DEFAULT NULL COMMENT 'Create User',
+                `updated_by`               bigint(20) unsigned DEFAULT NULL COMMENT 'Last Update User',
+                `created_at`               timestamp                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`               timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY                        `idx_space_id` (`space_id`) USING BTREE,
+                KEY                        `idx_client_token` (`client_token`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Third Party Integration - Social Feishu Auth Config Table';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,14 @@
+{{MEMBER_NAME}} unarchived records in "{{NODE_NAME}}"
+
+Unarchived records: {{RECORD_TITLE}}
+
+{{SPACE_NAME}}
+
+{{CREATED_AT}}
+
+View {{URL}}
+
+
+© {{YEARS}} APITable Ltd.
+
+Contact us (https://apitable.com?home=1)

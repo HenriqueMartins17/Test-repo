@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.user.mapper.UserMapper">
+    <select id="selectById" resultType="com.apitable.appdata.shared.user.pojo.User">
+        SELECT *
+        FROM ${tablePrefix}user
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectByEmail"
+            resultType="com.apitable.appdata.shared.user.pojo.User">
+        SELECT *
+        FROM ${tablePrefix}user
+        WHERE email = #{email}
+          AND is_deleted = 0
+    </select>
+
+    <select id="selectByMobilePhone"
+            resultType="com.apitable.appdata.shared.user.pojo.User">
+        SELECT *
+        FROM ${tablePrefix}user
+        WHERE mobile_phone = #{mobilePhone}
+          AND is_deleted = 0
+    </select>
+
+    <select id="selectEmailByEmailIn" resultType="java.lang.String">
+        SELECT email
+        FROM ${tablePrefix}user
+        WHERE email IN
+        <foreach item="item" index="index" collection="emails" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}user(id, uuid, nick_name, email, password, color)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.uuid}, #{item.nickName}, #{item.email},
+                #{item.password}, #{item.color}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

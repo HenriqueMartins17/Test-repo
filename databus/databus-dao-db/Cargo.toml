@@ -1,0 +1,60 @@
+[package]
+name = "databus_dao_db"
+version = "1.10.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+databus_shared = { path = "../databus-shared" }
+databus_core = { path = "../databus-core" }
+getrandom = { version = "0.2", features = ["js"] }
+zip = "0.6.6"
+tempfile = "3"
+anyhow = { version = "1.0.71", features = ["backtrace"] }
+async-trait = "0.1.68"
+fred = { version = "6.3.0", features = ["enable-rustls","no-client-setname"] }
+chrono = { version = "0.4.26", default-features = false, features = ["clock", "serde"] }
+futures = "0.3.28"
+http = "0.2.9"
+http-serde = "1.1.2"
+mysql_async = { version = "0.32.2", default-features = false, features = [
+  "default-rustls",
+] }
+mysql_common = {version =  "0.30.4", features = ["chrono"]}
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+# napi = { version = "2.13.1", default-features = false, features = [
+#   "napi8",
+#   "tokio_rt",
+#   "anyhow",
+#   "serde-json",
+# ] }
+# napi-derive = "2.13.0"
+regex = "1.8.4"
+seahash = "4.1.0"
+serde = { version = "1.0.164", features = ["rc"] }
+serde_json = "1.0.96"
+serde_repr = "0.1.12"
+# cannot support wasm
+surf = { version = "2.3.2", features = [
+  "encoding",
+  "h1-client-rustls",
+], default-features = false }
+thiserror = "1.0.40"
+time = { version = "0.3.22"}
+tokio = { version = "1.29.1", features = [
+  "parking_lot",
+  "rt",
+  "macros",
+] }
+tracing = "0.1.37"
+tracing-subscriber = "0.3.17"
+url-escape = "0.1.1"
+once_cell = "1.18.0"
+rand = "0.8.5"
+utoipa = "4.0.0"
+
+[dev-dependencies]
+fred = { version = "6.3.0", features = ["enable-rustls", "mocks"] }
+pretty_assertions = "1.3.0"
+tokio-test = "0.4.2"

@@ -1,0 +1,5 @@
+sdk:
+  isDebug: true
+  roomServerHost: https://integration.vika.ltd
+  databusServerHost: https://integration.vika.ltd
+  cookie: lang=zh-CN; _ga=GA1.1.2037796552.1696786154; XSRF-TOKEN=baf3d977-b219-4138-80c2-4a414b96978e; Hm_lvt_39ab4bbbb01e48bee90b6b17a067b9f1=1696786155,1696844379; SESSION=MGVkMzM1MTMtNjdlZC00NzIzLWI0NWYtM2JkY2U3ZjlkYWNh; ph_phc_hJsHTJPfqdGvcmhGESHmnxBP1J5ZCRmpNZRAOto1K02_posthog=%7B%22distinct_id%22%3A%22018b1055-ffd5-7c7a-bd58-71a69849a1f3%22%2C%22%24device_id%22%3A%22018b1055-ffd5-7c7a-bd58-71a69849a1f3%22%2C%22%24user_state%22%3A%22anonymous%22%2C%22%24session_recording_enabled_server_side%22%3Afalse%2C%22%24autocapture_disabled_server_side%22%3Atrue%2C%22%24active_feature_flags%22%3A%5B%5D%2C%22%24enabled_feature_flags%22%3A%7B%7D%2C%22%24feature_flag_payloads%22%3A%7B%7D%7D; _ga_KRDKMPC2NN=GS1.1.1696844378.2.1.1696845575.0.0.0; Hm_lpvt_39ab4bbbb01e48bee90b6b17a067b9f1=1696845575

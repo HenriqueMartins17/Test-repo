@@ -1,0 +1,100 @@
+
+.modalWrapper {
+  :global {
+    .ant-modal-body {
+      padding: 0 !important;
+      height: 520px;
+    }
+
+    .ant-modal-close-x {
+      &:hover, &:focus-within {
+        box-shadow: none !important;
+        background: none !important;
+      }
+    }
+  }
+}
+
+.flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  background-color: transparent;
+  position: relative;
+  margin: 0 auto;
+  @extend .flexCenter;
+
+  .avatarIcon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 4px solid var(--fc8);
+    @extend .flexCenter;
+  }
+
+  .avatarStar {
+    width: 14px;
+    height: 14px;
+    background-color: var(--white);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    @extend .flexCenter;
+  }
+
+  img {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 50%;
+  }
+}
+
+.wrapper {
+  //display: flex;
+  height: 100%;
+
+  .main {
+    height: 100%;
+    padding: 68px 34px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .buttonGroup{
+      justify-content: flex-end;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.textCenter {
+  text-align: center !important;
+}
+
+.alertTitle {
+  margin-top: 20px !important;
+  margin-bottom: 8px !important;
+}
+
+.upgradeBtn {
+  margin-top: 40px;
+  cursor: pointer !important;
+}
+
+.checkMorePrivileges {
+  cursor: pointer !important;
+  margin-top: 16px;
+  color: var(--textCommonSecondary) !important;
+}

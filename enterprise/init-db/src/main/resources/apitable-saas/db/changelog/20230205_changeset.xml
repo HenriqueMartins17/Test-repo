@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230205-001" author="Shawn" labels="billing">
+        <comment>Update Stripe Checkout session index</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}stripe_checkout_session`
+            DROP INDEX `uk_space_id`,
+            ADD INDEX `idx_space_id`(`space_id` ASC) USING BTREE;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

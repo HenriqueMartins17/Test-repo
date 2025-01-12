@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.vikabilling.mapper.SocialFeishuOrderMapper">
+    <select id="selectStatusByOrderId" resultType="java.lang.Integer">
+        SELECT status
+        FROM ${tablePrefix}billing_social_feishu_order
+        WHERE order_id = #{orderId}
+        AND tenant_id = #{tenantId}
+        AND app_id = #{appId}
+    </select>
+
+    <select id="selectOrderDataByTenantIdAndAppId" resultType="java.lang.String">
+        SELECT order_data
+        FROM ${tablePrefix}billing_social_feishu_order
+        WHERE tenant_id = #{tenantId}
+        AND app_id = #{appId}
+        AND `status` = 0;
+    </select>
+
+    <update id="updateStatusByTenantIdAndAppIdAndOrderId">
+        UPDATE ${tablePrefix}billing_social_feishu_order
+        SET `status` = #{status}
+        WHERE tenant_id = #{tenantId}
+        AND app_id = #{appId}
+        AND `order_id` = #{orderId};
+    </update>
+</mapper>

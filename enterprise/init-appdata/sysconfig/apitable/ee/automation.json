@@ -1,0 +1,1738 @@
+{
+    "services": [
+        {
+            "slug": "apitable",
+            "service_id": "asvTsTRCNct0KiIrKQ",
+            "name": "$apitable",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$apitable": "Datasheet"
+                },
+                "zh": {
+                    "$apitable": "Datasheet"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/0de5ff10be41475f888d971cfa18f276",
+                "dark": "space/2023/04/18/b2a23c8da8ef4ed0b4f70ce01e36b931"
+            },
+            "base_url": "automation://webhook/"
+        },
+        {
+            "slug": "webhook",
+            "service_id": "asvX1OaY9lmi8fDPcQ",
+            "name": "$webhook",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$webhook": "Webhook"
+                },
+                "zh": {
+                    "$webhook": "Webhook"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/6a654385c76b4fd0b908df73277b1795",
+                "dark": "space/2023/04/18/1e42acbcd7ea4658a5f3b7af8ae76f38"
+            },
+            "base_url": "automation://webhook/"
+        },
+        {
+            "slug": "slack",
+            "service_id": "asvX1OaY9lmi8fDPcA",
+            "name": "$slack",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$slack": "Slack"
+                },
+                "zh": {
+                    "$slack": "Slack"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/e6288c3ef0bb448e809a1fbe48eb9c6a",
+                "dark": "space/2023/04/18/a89f6561f6c948ee832f225dd4f9c9df"
+            },
+            "base_url": "automation://slack/"
+        },
+        {
+            "slug": "sms",
+            "service_id": "asvX1OaY9lmi8fDPcG",
+            "name": "$sms",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$sms": "sms"
+                },
+                "zh": {
+                    "$sms": "sms"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/7065a39c3b5a474e92e6b51319925a40",
+                "dark": "space/2023/04/18/e27c4639d5ef4e17a6ccb4c2315d67f7"
+            },
+            "base_url": "automation://sms/"
+        }
+    ],
+    "trigger_types": [
+        {
+            "endpoint": "form_submitted",
+            "service_id": "asvTsTRCNct0KiIrKQ",
+            "trigger_type_id": "attyfxYdq9GqAPxcbZ",
+            "name": "$robot_trigger_form_submitted_title",
+            "description": "$robot_trigger_form_submitted_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "formId"
+                    ],
+                    "properties": {
+                        "formId": {
+                            "type": "string",
+                            "title": "$robot_trigger_form_submitted_config_1"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {}
+            },
+            "output_json_schema": {
+                "type": "object",
+                "title": "$robot_trigger_form_submitted_title",
+                "required": [
+                    "datasheetId",
+                    "datasheetName",
+                    "recordId",
+                    "recordUrl"
+                ],
+                "properties": {
+                    "recordId": {
+                        "type": "string",
+                        "title": "$robot_variables_record_ID"
+                    },
+                    "recordUrl": {
+                        "type": "string",
+                        "title": "$robot_variables_record_URL"
+                    },
+                    "datasheetId": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_ID"
+                    },
+                    "datasheetName": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_name"
+                    }
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_variables_record_ID": "Record ID",
+                    "$robot_variables_record_URL": "Record URL",
+                    "$robot_variables_datasheet_ID": "Datasheet ID",
+                    "$robot_variables_datasheet_name": "Datasheet name",
+                    "$robot_trigger_form_submitted_desc": "When a form receives a new response, the automation will start working",
+                    "$robot_trigger_form_submitted_title": "Form is submitted",
+                    "$robot_trigger_form_submitted_config_1": "Select a form"
+                },
+                "zh": {
+                    "$robot_variables_record_ID": "记录 ID",
+                    "$robot_variables_record_URL": "记录 URL",
+                    "$robot_variables_datasheet_ID": "表格 ID",
+                    "$robot_variables_datasheet_name": "表格名称",
+                    "$robot_trigger_form_submitted_desc": "当指定表单收到新的提交时，自动化会开始运行",
+                    "$robot_trigger_form_submitted_title": "有新的表单提交时",
+                    "$robot_trigger_form_submitted_config_1": "选择神奇表单"
+                },
+                "en-US": {
+                  "$robot_variables_record_ID": "Record ID",
+                  "$robot_variables_record_URL": "Record URL",
+                  "$robot_variables_datasheet_ID": "Datasheet ID",
+                  "$robot_variables_datasheet_name": "Datasheet name",
+                  "$robot_trigger_form_submitted_desc": "When a form receives a new response, the automation will start working",
+                  "$robot_trigger_form_submitted_title": "Form is submitted",
+                  "$robot_trigger_form_submitted_config_1": "Select a form"
+                },
+                "zh-CN": {
+                  "$robot_variables_record_ID": "记录 ID",
+                  "$robot_variables_record_URL": "记录 URL",
+                  "$robot_variables_datasheet_ID": "表格 ID",
+                  "$robot_variables_datasheet_name": "表格名称",
+                  "$robot_trigger_form_submitted_desc": "当指定表单收到新的提交时，自动化会开始运行",
+                  "$robot_trigger_form_submitted_title": "有新的表单提交时",
+                  "$robot_trigger_form_submitted_config_1": "选择神奇表单"
+                },
+                "de-DE": {
+                  "$robot_variables_record_ID": "Datensatz-ID",
+                  "$robot_variables_record_URL": "Datensatz-URL",
+                  "$robot_variables_datasheet_ID": "Tabellenblatt-ID",
+                  "$robot_variables_datasheet_name": "Tabellenblattname",
+                  "$robot_trigger_form_submitted_desc": "Wenn ein Formular eine neue Antwort erhält, beginnt der Roboter mit der Arbeit",
+                  "$robot_trigger_form_submitted_title": "Formular wurde eingereicht",
+                  "$robot_trigger_form_submitted_config_1": "Formular auswählen"
+                },
+                "es-ES": {
+                  "$robot_variables_record_ID": "ID de registro",
+                  "$robot_variables_record_URL": "URL de registro",
+                  "$robot_variables_datasheet_ID": "ID de hoja de datos",
+                  "$robot_variables_datasheet_name": "Nombre de hoja de datos",
+                  "$robot_trigger_form_submitted_desc": "Cuando un formulario recibe una nueva respuesta, el robot comenzará a trabajar",
+                  "$robot_trigger_form_submitted_title": "Formulario enviado",
+                  "$robot_trigger_form_submitted_config_1": "Seleccionar un formulario"
+                },
+                "fr-FR": {
+                  "$robot_variables_record_ID": "ID d'enregistrement",
+                  "$robot_variables_record_URL": "URL d'enregistrement",
+                  "$robot_variables_datasheet_ID": "ID de la feuille de données",
+                  "$robot_variables_datasheet_name": "Nom de la feuille de données",
+                  "$robot_trigger_form_submitted_desc": "Lorsqu'un formulaire reçoit une nouvelle réponse, le robot se met au travail",
+                  "$robot_trigger_form_submitted_title": "Formulaire soumis",
+                  "$robot_trigger_form_submitted_config_1": "Sélectionnez un formulaire"
+                },
+                "it-IT": {
+                  "$robot_variables_record_ID": "ID record",
+                  "$robot_variables_record_URL": "URL record",
+                  "$robot_variables_datasheet_ID": "ID scheda dati",
+                  "$robot_variables_datasheet_name": "Nome scheda dati",
+                  "$robot_trigger_form_submitted_desc": "Quando un modulo riceve una nuova risposta, il robot inizierà a lavorare",
+                  "$robot_trigger_form_submitted_title": "Modulo inviato",
+                  "$robot_trigger_form_submitted_config_1": "Seleziona un modulo"
+                },
+                "ja-JP": {
+                  "$robot_variables_record_ID": "レコードID",
+                  "$robot_variables_record_URL": "レコードURL",
+                  "$robot_variables_datasheet_ID": "データシートID",
+                  "$robot_variables_datasheet_name": "データシート名",
+                  "$robot_trigger_form_submitted_desc": "フォームが新しい回答を受け取ったとき、ロボットは作業を開始します",
+                  "$robot_trigger_form_submitted_title": "フォームが送信されました",
+                  "$robot_trigger_form_submitted_config_1": "フォームを選択してください"
+                },
+                "ko-KR": {
+                  "$robot_variables_record_ID": "레코드 ID",
+                  "$robot_variables_record_URL": "레코드 URL",
+                  "$robot_variables_datasheet_ID": "데이터 시트 ID",
+                  "$robot_variables_datasheet_name": "데이터 시트 이름",
+                  "$robot_trigger_form_submitted_desc": "새 응답이 폼으로 제출되면 로봇이 작동을 시작합니다",
+                  "$robot_trigger_form_submitted_title": "폼이 제출되었습니다",
+                  "$robot_trigger_form_submitted_config_1": "폼을 선택하세요"
+                },
+                "ru-RU": {
+                  "$robot_variables_record_ID": "Идентификатор записи",
+                  "$robot_variables_record_URL": "URL записи",
+                  "$robot_variables_datasheet_ID": "Идентификатор таблицы",
+                  "$robot_variables_datasheet_name": "Название таблицы",
+                  "$robot_trigger_form_submitted_desc": "Когда форма получает новый ответ, робот начинает работу",
+                  "$robot_trigger_form_submitted_title": "Форма отправлена",
+                  "$robot_trigger_form_submitted_config_1": "Выберите форму"
+                },
+                "zh-HK": {
+                  "$robot_variables_record_ID": "記錄 ID",
+                  "$robot_variables_record_URL": "記錄 URL",
+                  "$robot_variables_datasheet_ID": "表格 ID",
+                  "$robot_variables_datasheet_name": "表格名稱",
+                  "$robot_trigger_form_submitted_desc": "當表單收到新回應時，機器人將開始運作",
+                  "$robot_trigger_form_submitted_title": "表單已提交",
+                  "$robot_trigger_form_submitted_config_1": "選擇一個表單"
+                }
+            }
+        },
+        {
+            "endpoint": "record_matches_conditions",
+            "service_id": "asvTsTRCNct0KiIrKQ",
+            "trigger_type_id": "att3AB2qZ47Qldul5K",
+            "name": "$robot_trigger_record_matches_condition_title",
+            "description": "$robot_trigger_record_matches_condition_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "datasheetId",
+                        "filter"
+                    ],
+                    "properties": {
+                        "filter": {
+                            "type": "string",
+                            "title": "$robot_trigger_record_matches_condition_config_2",
+                            "description": "$robot_trigger_record_matches_condition_config_2_desc"
+                        },
+                        "datasheetId": {
+                            "type": "string",
+                            "title": "$robot_trigger_record_matches_condition_config_1"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {
+                    "ui:order": [
+                        "datasheetId",
+                        "filter"
+                    ]
+                }
+            },
+            "output_json_schema": {
+                "type": "object",
+                "title": "$robot_trigger_record_matches_condition_title",
+                "required": [
+                    "datasheetId",
+                    "datasheetName",
+                    "recordId",
+                    "recordUrl"
+                ],
+                "properties": {
+                    "recordId": {
+                        "type": "string",
+                        "title": "$robot_variables_record_ID"
+                    },
+                    "recordUrl": {
+                        "type": "string",
+                        "title": "$robot_variables_record_URL"
+                    },
+                    "datasheetId": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_ID"
+                    },
+                    "datasheetName": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_name"
+                    }
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_variables_record_ID": "Record ID",
+                    "$robot_variables_record_URL": "Record URL",
+                    "$robot_variables_datasheet_ID": "Datasheet ID",
+                    "$robot_variables_datasheet_name": "Datasheet name",
+                    "$robot_trigger_record_matches_condition_desc": "When a record matches predefined conditions, the automation will start working",
+                    "$robot_trigger_record_matches_condition_title": "Record matches conditions",
+                    "$robot_trigger_record_matches_condition_config_1": "Select a datasheet",
+                    "$robot_trigger_record_matches_condition_config_2": "Select match conditions",
+                    "$robot_trigger_record_matches_condition_config_2_desc": "Note: Adding Date/Formula field to trigger at scheduled/due time is not supported [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "zh": {
+                    "$robot_variables_record_ID": "记录 ID",
+                    "$robot_variables_record_URL": "记录 URL",
+                    "$robot_variables_datasheet_ID": "表格 ID",
+                    "$robot_variables_datasheet_name": "表格名称",
+                    "$robot_trigger_record_matches_condition_desc": "当表中有记录满足指定条件时，自动化会开始运行",
+                    "$robot_trigger_record_matches_condition_title": "有记录满足条件时",
+                    "$robot_trigger_record_matches_condition_config_1": "选择表格",
+                    "$robot_trigger_record_matches_condition_config_2": "选择匹配条件",
+                    "$robot_trigger_record_matches_condition_config_2_desc": "注意：不支持在匹配条件中添加日期列或者包含日期函数的公式列来实现定时触发或到期触发 [FAQ 参考](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "en-US": {
+                  "$robot_variables_record_ID": "Record ID",
+                  "$robot_variables_record_URL": "Record URL",
+                  "$robot_variables_datasheet_ID": "Datasheet ID",
+                  "$robot_variables_datasheet_name": "Datasheet name",
+                  "$robot_trigger_record_matches_condition_desc": "When a record matches predefined conditions, the automation will start working",
+                  "$robot_trigger_record_matches_condition_title": "Record matches conditions",
+                  "$robot_trigger_record_matches_condition_config_1": "Select a datasheet",
+                  "$robot_trigger_record_matches_condition_config_2": "Select match conditions",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "Note: Adding Date/Formula field to trigger at scheduled/due time is not supported [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "zh-CN": {
+                  "$robot_variables_record_ID": "记录 ID",
+                  "$robot_variables_record_URL": "记录 URL",
+                  "$robot_variables_datasheet_ID": "表格 ID",
+                  "$robot_variables_datasheet_name": "表格名称",
+                  "$robot_trigger_record_matches_condition_desc": "当表中有记录满足指定条件时，自动化会开始运行",
+                  "$robot_trigger_record_matches_condition_title": "有记录满足条件时",
+                  "$robot_trigger_record_matches_condition_config_1": "选择表格",
+                  "$robot_trigger_record_matches_condition_config_2": "选择匹配条件",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "注意：不支持在匹配条件中添加日期列或者包含日期函数的公式列来实现定时触发或到期触发 [FAQ 参考](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "de-DE": {
+                  "$robot_variables_record_ID": "Datensatz-ID",
+                  "$robot_variables_record_URL": "Datensatz-URL",
+                  "$robot_variables_datasheet_ID": "Tabellenblatt-ID",
+                  "$robot_variables_datasheet_name": "Tabellenblatt-Name",
+                  "$robot_trigger_record_matches_condition_desc": "Wenn ein Datensatz vordefinierte Bedingungen erfüllt, wird der Roboter seine Arbeit aufnehmen",
+                  "$robot_trigger_record_matches_condition_title": "Datensatz erfüllt Bedingungen",
+                  "$robot_trigger_record_matches_condition_config_1": "Wählen Sie ein Tabellenblatt",
+                  "$robot_trigger_record_matches_condition_config_2": "Wählen Sie Übereinstimmungsbedingungen",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "Hinweis: Das Hinzufügen von Datum-/Formelfeldern zur Auslösung zu einer geplanten/fälligen Zeit wird nicht unterstützt [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "es-ES": {
+                  "$robot_variables_record_ID": "ID de registro",
+                  "$robot_variables_record_URL": "URL de registro",
+                  "$robot_variables_datasheet_ID": "ID de hoja de datos",
+                  "$robot_variables_datasheet_name": "Nombre de hoja de datos",
+                  "$robot_trigger_record_matches_condition_desc": "Cuando un registro cumple con las condiciones predefinidas, el robot comenzará a trabajar",
+                  "$robot_trigger_record_matches_condition_title": "Registro cumple condiciones",
+                  "$robot_trigger_record_matches_condition_config_1": "Seleccione una hoja de datos",
+                  "$robot_trigger_record_matches_condition_config_2": "Seleccione las condiciones de coincidencia",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "Nota: No se admite agregar un campo de fecha/fórmula para activar en un tiempo programado/vencido [Preguntas frecuentes](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "fr-FR": {
+                  "$robot_variables_record_ID": "ID de l'enregistrement",
+                  "$robot_variables_record_URL": "URL de l'enregistrement",
+                  "$robot_variables_datasheet_ID": "ID de la feuille de données",
+                  "$robot_variables_datasheet_name": "Nom de la feuille de données",
+                  "$robot_trigger_record_matches_condition_desc": "Lorsqu'un enregistrement correspond aux conditions prédéfinies, le robot commencera à fonctionner",
+                  "$robot_trigger_record_matches_condition_title": "L'enregistrement correspond aux conditions",
+                  "$robot_trigger_record_matches_condition_config_1": "Sélectionnez une feuille de données",
+                  "$robot_trigger_record_matches_condition_config_2": "Sélectionnez les conditions de correspondance",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "Remarque : l'ajout d'un champ Date/Formula pour déclencher à une heure planifiée/échue n'est pas pris en charge [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "it-IT": {
+                  "$robot_variables_record_ID": "ID record",
+                  "$robot_variables_record_URL": "URL record",
+                  "$robot_variables_datasheet_ID": "ID scheda dati",
+                  "$robot_variables_datasheet_name": "Nome scheda dati",
+                  "$robot_trigger_record_matches_condition_desc": "Quando un record corrisponde alle condizioni predefinite, il robot inizierà a funzionare",
+                  "$robot_trigger_record_matches_condition_title": "Record corrisponde alle condizioni",
+                  "$robot_trigger_record_matches_condition_config_1": "Seleziona una scheda dati",
+                  "$robot_trigger_record_matches_condition_config_2": "Seleziona le condizioni di corrispondenza",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "Nota: l'aggiunta di un campo Data/Formula per l'attivazione in un momento programmato/scaduto non è supportata [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "ja-JP": {
+                  "$robot_variables_record_ID": "レコードID",
+                  "$robot_variables_record_URL": "レコードURL",
+                  "$robot_variables_datasheet_ID": "データシートID",
+                  "$robot_variables_datasheet_name": "データシート名",
+                  "$robot_trigger_record_matches_condition_desc": "事前に定義された条件にレコードが一致する場合、ロボットが作動します",
+                  "$robot_trigger_record_matches_condition_title": "レコードが条件に一致",
+                  "$robot_trigger_record_matches_condition_config_1": "データシートを選択",
+                  "$robot_trigger_record_matches_condition_config_2": "一致条件を選択",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "注意：スケジュール/期限に基づいたトリガーに日付/数式フィールドを追加することはサポートされていません [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "ko-KR": {
+                  "$robot_variables_record_ID": "레코드 ID",
+                  "$robot_variables_record_URL": "레코드 URL",
+                  "$robot_variables_datasheet_ID": "데이터시트 ID",
+                  "$robot_variables_datasheet_name": "데이터시트 이름",
+                  "$robot_trigger_record_matches_condition_desc": "레코드가 사전에 정의된 조건과 일치하는 경우, 로봇이 작동을 시작합니다",
+                  "$robot_trigger_record_matches_condition_title": "레코드가 조건과 일치함",
+                  "$robot_trigger_record_matches_condition_config_1": "데이터시트 선택",
+                  "$robot_trigger_record_matches_condition_config_2": "일치 조건 선택",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "참고: 예약/마감 시간에 대한 트리거로 일정/공식 필드 추가는 지원되지 않습니다 [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "ru-RU": {
+                  "$robot_variables_record_ID": "Идентификатор записи",
+                  "$robot_variables_record_URL": "URL записи",
+                  "$robot_variables_datasheet_ID": "Идентификатор листа данных",
+                  "$robot_variables_datasheet_name": "Название листа данных",
+                  "$robot_trigger_record_matches_condition_desc": "Когда запись соответствует заранее определенным условиям, робот начнет работать",
+                  "$robot_trigger_record_matches_condition_title": "Запись соответствует условиям",
+                  "$robot_trigger_record_matches_condition_config_1": "Выберите лист данных",
+                  "$robot_trigger_record_matches_condition_config_2": "Выберите условия соответствия",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "Примечание: добавление поля Дата/Формула для триггера по расписанию/просроченному времени не поддерживается [FAQ](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "zh-HK": {
+                  "$robot_variables_record_ID": "記錄 ID",
+                  "$robot_variables_record_URL": "記錄 URL",
+                  "$robot_variables_datasheet_ID": "表格 ID",
+                  "$robot_variables_datasheet_name": "表格名稱",
+                  "$robot_trigger_record_matches_condition_desc": "當記錄符合預定條件時，機器人將開始工作",
+                  "$robot_trigger_record_matches_condition_title": "記錄符合條件",
+                  "$robot_trigger_record_matches_condition_config_1": "選擇表格",
+                  "$robot_trigger_record_matches_condition_config_2": "選擇符合條件",
+                  "$robot_trigger_record_matches_condition_config_2_desc": "注意：不支援將日期/公式欄位添加為在預定/到期時間觸發的功能 [常見問題](https://help.apitable.com/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                }
+            }
+        },
+        {
+            "endpoint": "record_created",
+            "service_id": "asvTsTRCNct0KiIrKQ",
+            "trigger_type_id": "attpoKSLIWLT0UEO4e",
+            "name": "$robot_trigger_record_created_title",
+            "description": "$robot_trigger_record_created_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "datasheetId"
+                    ],
+                    "properties": {
+                        "datasheetId": {
+                            "type": "string",
+                            "title": "$robot_trigger_record_created_config_1"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {}
+            },
+            "output_json_schema": {
+                "type": "object",
+                "title": "$robot_trigger_record_created_title",
+                "required": [
+                    "datasheetId",
+                    "datasheetName",
+                    "recordId",
+                    "recordUrl"
+                ],
+                "properties": {
+                    "recordId": {
+                        "type": "string",
+                        "title": "$robot_variables_record_ID"
+                    },
+                    "recordUrl": {
+                        "type": "string",
+                        "title": "$robot_variables_record_URL"
+                    },
+                    "datasheetId": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_ID"
+                    },
+                    "datasheetName": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_name"
+                    }
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_variables_record_ID": "Record ID",
+                    "$robot_variables_record_URL": "Record URL",
+                    "$robot_variables_datasheet_ID": "Datasheet ID",
+                    "$robot_variables_datasheet_name": "Datasheet name",
+                    "$robot_trigger_record_created_desc": "Once a record is created, either by manual operation, API, or form collection, the automation will start working",
+                    "$robot_trigger_record_created_title": "Record is created",
+                    "$robot_trigger_record_created_config_1": "Select a datasheet"
+                },
+                "zh": {
+                    "$robot_variables_record_ID": "记录 ID",
+                    "$robot_variables_record_URL": "记录 URL",
+                    "$robot_variables_datasheet_ID": "表格 ID",
+                    "$robot_variables_datasheet_name": "表格名称",
+                    "$robot_trigger_record_created_desc": "只要表中有新的记录被创建（比如手动创建记录、API 创建记录、收到表单提交），自动化都会开始运行",
+                    "$robot_trigger_record_created_title": "有新的记录创建时",
+                    "$robot_trigger_record_created_config_1": "选择表格"
+                },
+                "en-US": {
+                  "$robot_variables_record_ID": "Record ID",
+                  "$robot_variables_record_URL": "Record URL",
+                  "$robot_variables_datasheet_ID": "Datasheet ID",
+                  "$robot_variables_datasheet_name": "Datasheet name",
+                  "$robot_trigger_record_created_desc": "Once a record is created, either by manual operation, API, or form collection, the automation will start working",
+                  "$robot_trigger_record_created_title": "Record is created",
+                  "$robot_trigger_record_created_config_1": "Select a datasheet"
+                },
+                "zh-CN": {
+                  "$robot_variables_record_ID": "记录 ID",
+                  "$robot_variables_record_URL": "记录 URL",
+                  "$robot_variables_datasheet_ID": "表格 ID",
+                  "$robot_variables_datasheet_name": "表格名称",
+                  "$robot_trigger_record_created_desc": "只要表中有新的记录被创建（比如手动创建记录、API 创建记录、收到表单提交），自动化都会开始运行",
+                  "$robot_trigger_record_created_title": "有新的记录创建时",
+                  "$robot_trigger_record_created_config_1": "选择表格"
+                },
+                "de-DE": {
+                  "$robot_variables_record_ID": "Datensatz-ID",
+                  "$robot_variables_record_URL": "Datensatz-URL",
+                  "$robot_variables_datasheet_ID": "Tabellenblatt-ID",
+                  "$robot_variables_datasheet_name": "Tabellenblattname",
+                  "$robot_trigger_record_created_desc": "Wenn ein Datensatz erstellt wird, entweder durch manuelle Operation, API oder Formularerfassung, beginnt der Roboter mit der Arbeit",
+                  "$robot_trigger_record_created_title": "Datensatz erstellt",
+                  "$robot_trigger_record_created_config_1": "Tabellenblatt auswählen"
+                },
+                "es-ES": {
+                  "$robot_variables_record_ID": "ID de registro",
+                  "$robot_variables_record_URL": "URL de registro",
+                  "$robot_variables_datasheet_ID": "ID de hoja de datos",
+                  "$robot_variables_datasheet_name": "Nombre de hoja de datos",
+                  "$robot_trigger_record_created_desc": "Cuando se crea un registro, ya sea mediante operación manual, API o recolección de formularios, el robot comenzará a trabajar",
+                  "$robot_trigger_record_created_title": "Se crea el registro",
+                  "$robot_trigger_record_created_config_1": "Seleccionar una hoja de datos"
+                },
+                "fr-FR": {
+                  "$robot_variables_record_ID": "ID d'enregistrement",
+                  "$robot_variables_record_URL": "URL d'enregistrement",
+                  "$robot_variables_datasheet_ID": "ID de feuille de données",
+                  "$robot_variables_datasheet_name": "Nom de feuille de données",
+                  "$robot_trigger_record_created_desc": "Lorsqu'un enregistrement est créé, que ce soit par une opération manuelle, une API ou une collecte de formulaires, le robot se mettra au travail",
+                  "$robot_trigger_record_created_title": "Enregistrement créé",
+                  "$robot_trigger_record_created_config_1": "Sélectionner une feuille de données"
+                },
+                "it-IT": {
+                  "$robot_variables_record_ID": "ID record",
+                  "$robot_variables_record_URL": "URL record",
+                  "$robot_variables_datasheet_ID": "ID foglio dati",
+                  "$robot_variables_datasheet_name": "Nome foglio dati",
+                  "$robot_trigger_record_created_desc": "Quando viene creato un record, sia tramite operazione manuale, API o raccolta di moduli, il robot inizia a lavorare",
+                  "$robot_trigger_record_created_title": "Record creato",
+                  "$robot_trigger_record_created_config_1": "Seleziona un foglio dati"
+                },
+                "ja-JP": {
+                  "$robot_variables_record_ID": "レコードID",
+                  "$robot_variables_record_URL": "レコードURL",
+                  "$robot_variables_datasheet_ID": "データシートID",
+                  "$robot_variables_datasheet_name": "データシート名",
+                  "$robot_trigger_record_created_desc": "レコードが手動操作、API、またはフォームの収集によって作成された場合、ロボットが作業を開始します",
+                  "$robot_trigger_record_created_title": "レコードが作成されました",
+                  "$robot_trigger_record_created_config_1": "データシートを選択"
+                },
+                "ko-KR": {
+                  "$robot_variables_record_ID": "레코드 ID",
+                  "$robot_variables_record_URL": "레코드 URL",
+                  "$robot_variables_datasheet_ID": "데이터시트 ID",
+                  "$robot_variables_datasheet_name": "데이터시트 이름",
+                  "$robot_trigger_record_created_desc": "레코드가 수동으로 작업되거나 API 또는 양식 수집을 통해 생성되면 로봇이 작동합니다",
+                  "$robot_trigger_record_created_title": "레코드가 생성됨",
+                  "$robot_trigger_record_created_config_1": "데이터시트 선택"
+                },
+                "ru-RU": {
+                  "$robot_variables_record_ID": "ID записи",
+                  "$robot_variables_record_URL": "URL записи",
+                  "$robot_variables_datasheet_ID": "ID таблицы",
+                  "$robot_variables_datasheet_name": "Название таблицы",
+                  "$robot_trigger_record_created_desc": "Когда запись создается вручную, через API или с помощью сбора форм, робот начинает работу",
+                  "$robot_trigger_record_created_title": "Запись создана",
+                  "$robot_trigger_record_created_config_1": "Выберите таблицу"
+                },
+                "zh-HK": {
+                  "$robot_variables_record_ID": "記錄ID",
+                  "$robot_variables_record_URL": "記錄URL",
+                  "$robot_variables_datasheet_ID": "表格ID",
+                  "$robot_variables_datasheet_name": "表格名稱",
+                  "$robot_trigger_record_created_desc": "當記錄由手動操作、API或表單收集創建時，機器人將開始工作",
+                  "$robot_trigger_record_created_title": "記錄已創建",
+                  "$robot_trigger_record_created_config_1": "選擇表格"
+                }
+            }
+        },
+        {
+          "endpoint": "button_clicked",
+          "service_id": "asvTsTRCNct0KiIrKQ",
+          "trigger_type_id": "attB8t2rmYlQAMLWeg",
+          "name": "$robot_trigger_button_clicked_title",
+          "description": "$robot_trigger_button_clicked_desc",
+          "input_json_schema": {
+            "schema": {
+              "type": "object",
+              "required": [
+                "datasheetId",
+                "fieldId"
+              ],
+              "properties": {
+                "datasheetId": {
+                  "type": "string",
+                  "title": "$robot_trigger_button_clicked_config_1"
+                },
+                "fieldId": {
+                  "type": "string",
+                  "title": "$robot_trigger_button_clicked_config_2"
+                }
+              },
+              "additionalProperties": false
+            },
+            "uiSchema": {
+              "ui:order": [
+                "datasheetId",
+                "fieldId"
+              ]
+            }
+          },
+          "output_json_schema": {
+            "type": "object",
+            "title": "$robot_trigger_button_clicked_title",
+            "required": [
+              "clickedBy",
+              "datasheetId",
+              "datasheetName",
+              "recordId",
+              "recordUrl"
+            ],
+            "properties": {
+              "clickedBy": {
+                "type": "string",
+                "title": "$robot_variables_clicked_by"
+              },
+              "recordId": {
+                "type": "string",
+                "title": "$robot_variables_record_ID"
+              },
+              "recordUrl": {
+                "type": "string",
+                "title": "$robot_variables_record_URL"
+              },
+              "datasheetId": {
+                "type": "string",
+                "title": "$robot_variables_datasheet_ID"
+              },
+              "datasheetName": {
+                "type": "string",
+                "title": "$robot_variables_datasheet_name"
+              }
+            }
+          },
+          "i18n": {
+            "en": {
+              "$robot_variables_clicked_by": "Clicked By",
+              "$robot_variables_record_ID": "Record ID",
+              "$robot_variables_record_URL": "Record URL",
+              "$robot_variables_datasheet_ID": "Datasheet ID",
+              "$robot_variables_datasheet_name": "Datasheet name",
+              "$robot_trigger_button_clicked_desc": "When a user clicks on the new button column you've created, the automation will start working",
+              "$robot_trigger_button_clicked_title": "Button is clicked",
+              "$robot_trigger_button_clicked_config_1": "Select a datasheet",
+              "$robot_trigger_button_clicked_config_2": "Select a button field"
+            },
+            "zh": {
+              "$robot_variables_clicked_by": "点击者",
+              "$robot_variables_record_ID": "记录 ID",
+              "$robot_variables_record_URL": "记录 URL",
+              "$robot_variables_datasheet_ID": "维格表 ID",
+              "$robot_variables_datasheet_name": "维格表名称",
+              "$robot_trigger_button_clicked_desc": "当用户点击你新建的按钮列时，自动化会开始运行",
+              "$robot_trigger_button_clicked_title": "按钮被点击时",
+              "$robot_trigger_button_clicked_config_1": "选择维格表",
+              "$robot_trigger_button_clicked_config_2": "选择按钮字段"
+            }
+          }
+        },
+        {
+            "endpoint": "scheduled_time_arrive",
+            "service_id": "asvTsTRCNct0KiIrKQ",
+            "trigger_type_id": "attL7XLxHtx8aWC9HN",
+            "name": "$robot_scheduled_time_arrive_title",
+            "description": "$robot_scheduled_time_arrive_desc",
+            "input_json_schema": {
+              "schema": {
+                "type": "object",
+                "required": ["timeZone", "scheduleType", "scheduleRule"],
+                "properties": {
+                  "timeZone": {
+                    "type": "string",
+                    "title": "$robot_scheduled_time_arrive_config_time_zone"
+                  },
+                  "scheduleRule": {
+                    "type": "string",
+                    "title": "$robot_scheduled_time_arrive_config_schedule_rule",
+                    "required": ["minute", "hour", "month", "dayOfWeek", "dayOfMonth"],
+                    "properties": {
+                      "second": {
+                        "type": "string",
+                        "comment": "second (0 - 59)",
+                        "default": "0"
+                      },
+                      "minute": {
+                        "type": "string",
+                        "comment": "minute (0 - 59)"
+                      },
+                      "hour": {
+                        "type": "string",
+                        "comment": "hour (0 - 23)"
+                      },
+                      "month": {
+                        "type": "string",
+                        "comment": "month (1 - 12)"
+                      },
+                      "dayOfWeek": {
+                        "type": "string",
+                        "comment": "day of week (0 - 7, 1L - 7L) (0 or 7 is Sun)"
+                      },
+                      "dayOfMonth": {
+                        "type": "string",
+                        "comment": "day of month (1 - 31, L)"
+                      }
+                    }
+                  },
+                  "scheduleType": {
+                    "enum": ["hour", "day", "week", "month"],
+                    "type": "string",
+                    "title": "$robot_scheduled_time_arrive_config_schedule_type",
+                    "enumNames": ["$robot_scheduled_time_arrive_config_schedule_type_hours", "$robot_scheduled_time_arrive_config_schedule_type_days", "$robot_scheduled_time_arrive_config_schedule_type_weeks", "$robot_scheduled_time_arrive_config_schedule_type_months"]
+                  }
+                },
+                "additionalProperties": false
+              },
+              "uiSchema": {
+                "ui:order": ["timeZone", "scheduleType", "scheduleRule"]
+              }
+            },
+            "output_json_schema": {},
+            "i18n": {
+              "en": {
+                "$robot_scheduled_time_arrive_config_time_zone": "Time Zone",
+                "$robot_scheduled_time_arrive_config_schedule_type": "Schedule Type",
+                "$robot_scheduled_time_arrive_config_schedule_rule": "Timing",
+                "$robot_scheduled_time_arrive_title": "Scheduled time arrives",
+                "$robot_scheduled_time_arrive_desc": "When at scheduled time, the automation will start working",
+                "$robot_scheduled_time_arrive_config_schedule_type_hours": "Hours",
+                "$robot_scheduled_time_arrive_config_schedule_type_days": "Days",
+                "$robot_scheduled_time_arrive_config_schedule_type_weeks": "Weeks",
+                "$robot_scheduled_time_arrive_config_schedule_type_months": "Months"
+              },
+              "zh": {
+                "$robot_scheduled_time_arrive_config_time_zone": "时区",
+                "$robot_scheduled_time_arrive_config_schedule_type": "定时类型",
+                "$robot_scheduled_time_arrive_config_schedule_rule": "定时规则",
+                "$robot_scheduled_time_arrive_title": "定时任务触发时",
+                "$robot_scheduled_time_arrive_desc": "当定时规则满足时，自动化会开始运行",
+                "$robot_scheduled_time_arrive_config_schedule_type_hours": "按小时",
+                "$robot_scheduled_time_arrive_config_schedule_type_days": "按天",
+                "$robot_scheduled_time_arrive_config_schedule_type_weeks": "按周",
+                "$robot_scheduled_time_arrive_config_schedule_type_months": "按月"
+              }
+            }
+          }
+    ],
+    "action_types": [
+        {
+            "endpoint": "sendRequest",
+            "service_id": "asvX1OaY9lmi8fDPcQ",
+            "action_type_id": "aatSSHdFkR7B7197Is",
+            "name": "$robot_action_send_web_request_title",
+            "description": "$robot_action_send_web_request_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "url",
+                        "method"
+                    ],
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "title": "$robot_action_send_web_request_config_2"
+                        },
+                        "method": {
+                            "enum": [
+                                "GET",
+                                "POST",
+                                "PATCH",
+                                "DELETE"
+                            ],
+                            "type": "string",
+                            "title": "$robot_action_send_web_request_config_1",
+                            "default": "GET",
+                            "description": "$robot_action_send_web_request_config_1_desc"
+                        },
+                        "headers": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "key",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "title": "$robot_action_send_web_request_config_3",
+                            "description": "$robot_action_send_web_request_config_3_desc"
+                        }
+                    },
+                    "dependencies": {
+                        "method": {
+                            "oneOf": [
+                                {
+                                    "properties": {
+                                        "body": {
+                                            "type": "object",
+                                            "title": "$robot_action_send_web_request_config_4",
+                                            "properties": {
+                                                "type": {
+                                                    "enum": [
+                                                        "json",
+                                                        "form-data",
+                                                        "raw"
+                                                    ],
+                                                    "type": "string",
+                                                    "default": "json"
+                                                }
+                                            },
+                                            "dependencies": {
+                                                "type": {
+                                                    "oneOf": [
+                                                        {
+                                                            "properties": {
+                                                                "type": {
+                                                                    "enum": [
+                                                                        "form-data"
+                                                                    ]
+                                                                },
+                                                                "formData": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "required": [
+                                                                            "key",
+                                                                            "value"
+                                                                        ],
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "value": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "description": "$robot_action_send_web_request_body_formdata_desc"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "type": "string",
+                                                                    "format": "json",
+                                                                    "description": "$robot_action_send_web_request_body_json_desc"
+                                                                },
+                                                                "type": {
+                                                                    "enum": [
+                                                                        "json"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "type": "string",
+                                                                    "description": "$robot_action_send_web_request_body_raw_desc"
+                                                                },
+                                                                "type": {
+                                                                    "enum": [
+                                                                        "raw"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "method": {
+                                            "enum": [
+                                                "POST",
+                                                "PATCH"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {
+                    "body": {
+                        "data": {
+                            "ui:options": {
+                                "showTitle": false
+                            }
+                        },
+                        "type": {
+                            "ui:widget": "RadioGroupWidget",
+                            "ui:options": {
+                                "showTitle": false
+                            }
+                        },
+                        "formData": {
+                            "items": {
+                                "key": {
+                                    "ui:options": {
+                                        "showTitle": false
+                                    }
+                                },
+                                "value": {
+                                    "ui:options": {
+                                        "showTitle": false
+                                    }
+                                },
+                                "ui:order": [
+                                    "key",
+                                    "value"
+                                ],
+                                "ui:options": {
+                                    "inline": true
+                                }
+                            },
+                            "ui:options": {
+                                "orderable": false,
+                                "showTitle": false
+                            }
+                        }
+                    },
+                    "headers": {
+                        "items": {
+                            "key": {
+                                "ui:options": {
+                                    "showTitle": false
+                                }
+                            },
+                            "value": {
+                                "ui:options": {
+                                    "showTitle": false
+                                }
+                            },
+                            "ui:order": [
+                                "key",
+                                "value"
+                            ],
+                            "ui:options": {
+                                "inline": true
+                            }
+                        },
+                        "ui:options": {
+                            "orderable": false
+                        }
+                    },
+                    "ui:order": [
+                        "method",
+                        "url",
+                        "headers",
+                        "body"
+                    ],
+                    "ui:options": {
+                        "layout": [
+                            [
+                                "method",
+                                "url"
+                            ],
+                            [
+                                "headers"
+                            ],
+                            [
+                                "body"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "output_json_schema": {
+                "type": "object",
+                "required": [
+                    "statusCode"
+                ],
+                "properties": {
+                    "body": {
+                        "type": "object"
+                    },
+                    "statusCode": {
+                        "type": "number"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "i18n": {
+                "en": {
+                    "$robot_action_send_web_request_desc": "When the automation starts working, it will automatically send a web request to a specific URL",
+                    "$robot_action_send_web_request_title": "Send web request",
+                    "$robot_action_send_web_request_config_1": "Request method",
+                    "$robot_action_send_web_request_config_2": "Request address",
+                    "$robot_action_send_web_request_config_3": "Header",
+                    "$robot_action_send_web_request_config_4": "Body",
+                    "$robot_action_send_web_request_body_raw_desc": "Enter raw texts in the body",
+                    "$robot_action_send_web_request_config_1_desc": "Send web request via the GET, POST or other method",
+                    "$robot_action_send_web_request_config_3_desc": "Enter one or more key-value pairs in the header",
+                    "$robot_action_send_web_request_body_json_desc": "Enter JSON texts in the body [How to use variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                    "$robot_action_send_web_request_body_formdata_desc": "Enter one or more key-value pairs in the body [How to use variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "zh": {
+                    "$robot_action_send_web_request_desc": "自动化开始运行后，会自动向指定地址发送网络请求",
+                    "$robot_action_send_web_request_title": "发送网络请求",
+                    "$robot_action_send_web_request_config_1": "请求方法",
+                    "$robot_action_send_web_request_config_2": "请求地址",
+                    "$robot_action_send_web_request_config_3": "请求头",
+                    "$robot_action_send_web_request_config_4": "请求体",
+                    "$robot_action_send_web_request_body_raw_desc": "通过请求体发送一段 raw 文本（输入英文斜杠「/」可插入变量）",
+                    "$robot_action_send_web_request_config_1_desc": "通过 GET 或 POST 等方式向指定地址发送网络请求",
+                    "$robot_action_send_web_request_config_3_desc": "在请求头中可以添加多个键值对",
+                    "$robot_action_send_web_request_body_json_desc": "通过请求体发送一段 JSON 文本（输入英文斜杠「/」可插入变量） [如何使用变量](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                    "$robot_action_send_web_request_body_formdata_desc": "通过请求体发送一段 form-data 键值对（输入英文斜杠「/」可插入变量） [如何使用变量](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "en-US": {
+                  "$robot_action_send_web_request_desc": "When the automation starts working, it will automatically send a web request to a specific URL",
+                  "$robot_action_send_web_request_title": "Send web request",
+                  "$robot_action_send_web_request_config_1": "Request method",
+                  "$robot_action_send_web_request_config_2": "Request address",
+                  "$robot_action_send_web_request_config_3": "Header",
+                  "$robot_action_send_web_request_config_4": "Body",
+                  "$robot_action_send_web_request_body_raw_desc": "Enter raw texts in the body",
+                  "$robot_action_send_web_request_config_1_desc": "Send web request via the GET, POST or other method",
+                  "$robot_action_send_web_request_config_3_desc": "Enter one or more key-value pairs in the header",
+                  "$robot_action_send_web_request_body_json_desc": "Enter JSON texts in the body [How to use variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "Enter one or more key-value pairs in the body [How to use variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "zh-CN": {
+                  "$robot_action_send_web_request_desc": "自动化开始运行后，会自动向指定地址发送网络请求",
+                  "$robot_action_send_web_request_title": "发送网络请求",
+                  "$robot_action_send_web_request_config_1": "请求方法",
+                  "$robot_action_send_web_request_config_2": "请求地址",
+                  "$robot_action_send_web_request_config_3": "请求头",
+                  "$robot_action_send_web_request_config_4": "请求体",
+                  "$robot_action_send_web_request_body_raw_desc": "通过请求体发送一段 raw 文本（输入英文斜杠「/」可插入变量）",
+                  "$robot_action_send_web_request_config_1_desc": "通过 GET 或 POST 等方式向指定地址发送网络请求",
+                  "$robot_action_send_web_request_config_3_desc": "在请求头中可以添加多个键值对",
+                  "$robot_action_send_web_request_body_json_desc": "通过请求体发送一段 JSON 文本（输入英文斜杠「/」可插入变量） [如何使用变量](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "通过请求体发送一段 form-data 键值对（输入英文斜杠「/」可插入变量） [如何使用变量](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "de-DE": {
+                  "$robot_action_send_web_request_desc": "Wenn der Roboter mit der Arbeit beginnt, sendet er automatisch eine Webanforderung an eine bestimmte URL",
+                  "$robot_action_send_web_request_title": "Webanforderung senden",
+                  "$robot_action_send_web_request_config_1": "Anfragemethode",
+                  "$robot_action_send_web_request_config_2": "Anfrageadresse",
+                  "$robot_action_send_web_request_config_3": "Header",
+                  "$robot_action_send_web_request_config_4": "Body",
+                  "$robot_action_send_web_request_body_raw_desc": "Geben Sie rohen Text im Body ein",
+                  "$robot_action_send_web_request_config_1_desc": "Senden Sie die Webanforderung über die GET-, POST- oder andere Methode",
+                  "$robot_action_send_web_request_config_3_desc": "Geben Sie einen oder mehrere Schlüssel-Wert-Paare im Header ein",
+                  "$robot_action_send_web_request_body_json_desc": "Geben Sie JSON-Texte im Body ein [Wie Variablen verwendet werden](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "Geben Sie einen oder mehrere Schlüssel-Wert-Paare im Body ein [Wie Variablen verwendet werden](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "es-ES": {
+                  "$robot_action_send_web_request_desc": "Cuando el robot comienza a trabajar, enviará automáticamente una solicitud web a una URL específica",
+                  "$robot_action_send_web_request_title": "Enviar solicitud web",
+                  "$robot_action_send_web_request_config_1": "Método de solicitud",
+                  "$robot_action_send_web_request_config_2": "Dirección de solicitud",
+                  "$robot_action_send_web_request_config_3": "Encabezado",
+                  "$robot_action_send_web_request_config_4": "Cuerpo",
+                  "$robot_action_send_web_request_body_raw_desc": "Ingrese texto sin formato en el cuerpo",
+                  "$robot_action_send_web_request_config_1_desc": "Enviar solicitud web a través del método GET, POST u otro",
+                  "$robot_action_send_web_request_config_3_desc": "Ingrese una o varias parejas de clave-valor en el encabezado",
+                  "$robot_action_send_web_request_body_json_desc": "Ingrese textos JSON en el cuerpo [Cómo usar variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "Ingrese una o varias parejas de clave-valor en el cuerpo [Cómo usar variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "fr-FR": {
+                  "$robot_action_send_web_request_desc": "Lorsque le robot commence à travailler, il envoie automatiquement une requête web vers une URL spécifique",
+                  "$robot_action_send_web_request_title": "Envoyer une requête web",
+                  "$robot_action_send_web_request_config_1": "Méthode de requête",
+                  "$robot_action_send_web_request_config_2": "Adresse de requête",
+                  "$robot_action_send_web_request_config_3": "En-tête",
+                  "$robot_action_send_web_request_config_4": "Corps",
+                  "$robot_action_send_web_request_body_raw_desc": "Saisissez du texte brut dans le corps",
+                  "$robot_action_send_web_request_config_1_desc": "Envoyer une requête web via la méthode GET, POST ou autre",
+                  "$robot_action_send_web_request_config_3_desc": "Saisissez un ou plusieurs paires clé-valeur dans l'en-tête",
+                  "$robot_action_send_web_request_body_json_desc": "Saisissez des textes JSON dans le corps [Comment utiliser des variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "Saisissez un ou plusieurs paires clé-valeur dans le corps [Comment utiliser des variables](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "it-IT": {
+                  "$robot_action_send_web_request_desc": "Quando il robot inizia a lavorare, invia automaticamente una richiesta web a un URL specifico",
+                  "$robot_action_send_web_request_title": "Invia una richiesta web",
+                  "$robot_action_send_web_request_config_1": "Metodo di richiesta",
+                  "$robot_action_send_web_request_config_2": "Indirizzo di richiesta",
+                  "$robot_action_send_web_request_config_3": "Intestazione",
+                  "$robot_action_send_web_request_config_4": "Corpo",
+                  "$robot_action_send_web_request_body_raw_desc": "Inserisci testo grezzo nel corpo",
+                  "$robot_action_send_web_request_config_1_desc": "Invia una richiesta web tramite il metodo GET, POST o altro",
+                  "$robot_action_send_web_request_config_3_desc": "Inserisci una o più coppie chiave-valore nell'intestazione",
+                  "$robot_action_send_web_request_body_json_desc": "Inserisci testi JSON nel corpo [Come usare le variabili](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "Inserisci una o più coppie chiave-valore nel corpo [Come usare le variabili](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "ja-JP": {
+                  "$robot_action_send_web_request_desc": "ロボットが作業を開始すると、特定のURLに自動的にWebリクエストを送信します",
+                  "$robot_action_send_web_request_title": "Webリクエストを送信する",
+                  "$robot_action_send_web_request_config_1": "リクエストメソッド",
+                  "$robot_action_send_web_request_config_2": "リクエストアドレス",
+                  "$robot_action_send_web_request_config_3": "ヘッダー",
+                  "$robot_action_send_web_request_config_4": "ボディ",
+                  "$robot_action_send_web_request_body_raw_desc": "ボディに生のテキストを入力します",
+                  "$robot_action_send_web_request_config_1_desc": "GET、POST、その他のメソッドを使用してWebリクエストを送信します",
+                  "$robot_action_send_web_request_config_3_desc": "ヘッダーに1つ以上のキーと値のペアを入力します",
+                  "$robot_action_send_web_request_body_json_desc": "ボディにJSONテキストを入力します [変数の使用方法](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "ボディに1つ以上のキーと値のペアを入力します [変数の使用方法](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "ko-KR": {
+                  "$robot_action_send_web_request_desc": "로봇이 작업을 시작하면 특정 URL로 자동으로 웹 요청을 보냅니다",
+                  "$robot_action_send_web_request_title": "웹 요청 보내기",
+                  "$robot_action_send_web_request_config_1": "요청 방법",
+                  "$robot_action_send_web_request_config_2": "요청 주소",
+                  "$robot_action_send_web_request_config_3": "헤더",
+                  "$robot_action_send_web_request_config_4": "본문",
+                  "$robot_action_send_web_request_body_raw_desc": "본문에 원시 텍스트를 입력합니다",
+                  "$robot_action_send_web_request_config_1_desc": "GET, POST 또는 기타 방법으로 웹 요청을 보냅니다",
+                  "$robot_action_send_web_request_config_3_desc": "헤더에 하나 이상의 키-값 쌍을 입력합니다",
+                  "$robot_action_send_web_request_body_json_desc": "본문에 JSON 텍스트를 입력합니다 [변수 사용 방법](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "본문에 하나 이상의 키-값 쌍을 입력합니다 [변수 사용 방법](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "ru-RU": {
+                  "$robot_action_send_web_request_desc": "Когда робот начинает работу, он автоматически отправляет веб-запрос на определенный URL",
+                  "$robot_action_send_web_request_title": "Отправить веб-запрос",
+                  "$robot_action_send_web_request_config_1": "Метод запроса",
+                  "$robot_action_send_web_request_config_2": "Адрес запроса",
+                  "$robot_action_send_web_request_config_3": "Заголовок",
+                  "$robot_action_send_web_request_config_4": "Тело",
+                  "$robot_action_send_web_request_body_raw_desc": "Введите необработанный текст в теле",
+                  "$robot_action_send_web_request_config_1_desc": "Отправить веб-запрос с помощью метода GET, POST или другого метода",
+                  "$robot_action_send_web_request_config_3_desc": "Введите одну или несколько пар ключ-значение в заголовке",
+                  "$robot_action_send_web_request_body_json_desc": "Введите JSON-тексты в теле [Как использовать переменные](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "Введите одну или несколько пар ключ-значение в теле [Как использовать переменные](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "zh-HK": {
+                  "$robot_action_send_web_request_desc": "當機器人開始工作時，它會自動向特定的 URL 發送網絡請求",
+                  "$robot_action_send_web_request_title": "發送網絡請求",
+                  "$robot_action_send_web_request_config_1": "請求方法",
+                  "$robot_action_send_web_request_config_2": "請求地址",
+                  "$robot_action_send_web_request_config_3": "請求頭",
+                  "$robot_action_send_web_request_config_4": "請求體",
+                  "$robot_action_send_web_request_body_raw_desc": "在請求體中輸入原始文本",
+                  "$robot_action_send_web_request_config_1_desc": "通過 GET、POST 或其他方法發送網絡請求",
+                  "$robot_action_send_web_request_config_3_desc": "在請求頭中輸入一個或多個鍵值對",
+                  "$robot_action_send_web_request_body_json_desc": "在請求體中輸入 JSON 文本 [如何使用變量](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                  "$robot_action_send_web_request_body_formdata_desc": "在請求體中輸入一個或多個鍵值對 [如何使用變量](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                }
+            }
+        },
+        {
+            "endpoint": "sendSlackMessage",
+            "service_id": "asvX1OaY9lmi8fDPcA",
+            "action_type_id": "aatSSHdFkR7B7197IL",
+            "name": "$robot_action_send_slack_title",
+            "description": "$robot_action_send_slack_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "type",
+                        "content",
+                        "webhookUrl"
+                    ],
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "text",
+                                "markdown"
+                            ],
+                            "type": "string",
+                            "title": "$robot_action_send_slack_config_2",
+                            "default": "text",
+                            "enumNames": [
+                                "$robot_action_send_slack_message_type_1",
+                                "$robot_action_send_slack_message_type_2"
+                            ],
+                            "description": "$robot_action_send_slack_config_2_desc"
+                        },
+                        "content": {
+                            "type": "string",
+                            "title": "$robot_action_send_slack_config_3",
+                            "description": "$robot_action_send_slack_config_3_desc"
+                        },
+                        "webhookUrl": {
+                            "type": "string",
+                            "title": "$robot_action_send_slack_config_1",
+                            "description": "$robot_action_send_slack_config_1_desc"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {
+                    "ui:order": [
+                        "webhookUrl",
+                        "type",
+                        "content"
+                    ]
+                }
+            },
+            "output_json_schema": {
+                "type": "object",
+                "required": [
+                    "statusCode"
+                ],
+                "properties": {
+                    "body": {
+                        "type": "object"
+                    },
+                    "statusCode": {
+                        "type": "number"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "i18n": {
+                "en": {
+                    "$robot_action_send_slack_desc": "When the automation starts working, it will automatically send a message to your Slack channel",
+                    "$robot_action_send_slack_title": "Send message to Slack",
+                    "$robot_action_send_slack_config_1": "Slack channel webhook URL",
+                    "$robot_action_send_slack_config_2": "Message type",
+                    "$robot_action_send_slack_config_3": "Message content",
+                    "$robot_action_send_slack_config_1_desc": "Specify a Slack channel to send a message, [how to get webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "Currently you can only send text and Markdown messages [What is message type](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Enter the message to be sent to the Slack channel (Input \"/\" to start inserting variables) [How to write message content](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "Plain text",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "zh": {
+                    "$robot_action_send_slack_desc": "自动化开始运行后，会自动向指定 Slack 频道发送消息",
+                    "$robot_action_send_slack_title": "发消息到 Slack 频道",
+                    "$robot_action_send_slack_config_1": "Slack 频道 webhook 地址",
+                    "$robot_action_send_slack_config_2": "消息类型",
+                    "$robot_action_send_slack_config_3": "消息内容",
+                    "$robot_action_send_slack_config_1_desc": "指定一个 Slack 频道发送消息，[如何获取 webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "目前支持发送 text 和 markdown 类型的消息 [如何选择消息类型](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "输入要发送到 Slack 频道的消息内容（输入英文斜杠「/」可插入变量） [如何填写消息内容](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "文本消息",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "en-US": {
+                    "$robot_action_send_slack_desc": "When the automation starts working, it will automatically send a message to your Slack channel",
+                    "$robot_action_send_slack_title": "Send message to Slack",
+                    "$robot_action_send_slack_config_1": "Slack channel webhook URL",
+                    "$robot_action_send_slack_config_2": "Message type",
+                    "$robot_action_send_slack_config_3": "Message content",
+                    "$robot_action_send_slack_config_1_desc": "Specify a Slack channel to send a message, [how to get webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "Currently you can only send text and Markdown messages [What is message type](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Enter the message to be sent to the Slack channel (Input \\\"/\\\" to start inserting variables) [How to write message content](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "Plain text",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "zh-CN": {
+                    "$robot_action_send_slack_desc": "自动化开始运行后，会自动向指定 Slack 频道发送消息",
+                    "$robot_action_send_slack_title": "发消息到 Slack 频道",
+                    "$robot_action_send_slack_config_1": "Slack 频道 webhook 地址",
+                    "$robot_action_send_slack_config_2": "消息类型",
+                    "$robot_action_send_slack_config_3": "消息内容",
+                    "$robot_action_send_slack_config_1_desc": "指定一个 Slack 频道发送消息，[如何获取 webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "目前支持发送 text 和 markdown 类型的消息 [如何选择消息类型](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "输入要发送到 Slack 频道的消息内容（输入英文斜杠「/」可插入变量） [如何填写消息内容](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "文本消息",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "de-DE": {
+                    "$robot_action_send_slack_desc": "Wenn der Roboter mit der Arbeit beginnt, sendet er automatisch eine Nachricht an Ihren Slack-Kanal",
+                    "$robot_action_send_slack_title": "Nachricht an Slack senden",
+                    "$robot_action_send_slack_config_1": "Slack-Kanal-Webhook-URL",
+                    "$robot_action_send_slack_config_2": "Nachrichtentyp",
+                    "$robot_action_send_slack_config_3": "Nachrichteninhalt",
+                    "$robot_action_send_slack_config_1_desc": "Geben Sie einen Slack-Kanal an, an den Sie eine Nachricht senden möchten, [wie man den Webhook erhält](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "Derzeit können Sie nur Text- und Markdown-Nachrichten senden [Was ist der Nachrichtentyp](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Geben Sie die Nachricht ein, die an den Slack-Kanal gesendet werden soll (Geben Sie \\\"/\\\" ein, um Variablen einzufügen) [Wie man den Nachrichteninhalt schreibt](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "Einfacher Text",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "fr-FR": {
+                    "$robot_action_send_slack_desc": "Lorsque le robot commence à travailler, il envoie automatiquement un message à votre canal Slack",
+                    "$robot_action_send_slack_title": "Envoyer un message sur Slack",
+                    "$robot_action_send_slack_config_1": "URL du webhook du canal Slack",
+                    "$robot_action_send_slack_config_2": "Type de message",
+                    "$robot_action_send_slack_config_3": "Contenu du message",
+                    "$robot_action_send_slack_config_1_desc": "Spécifiez un canal Slack pour envoyer un message, [comment obtenir un webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "Actuellement, vous ne pouvez envoyer que des messages texte et Markdown [Qu'est-ce que le type de message](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Entrez le message à envoyer sur le canal Slack (saisissez \\\"/\\\" pour commencer à insérer des variables) [Comment rédiger le contenu du message](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "Texte brut",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "es-ES": {
+                    "$robot_action_send_slack_desc": "Cuando el robot comience a funcionar, enviará automáticamente un mensaje a su canal de Slack",
+                    "$robot_action_send_slack_title": "Enviar mensaje a Slack",
+                    "$robot_action_send_slack_config_1": "URL del webhook del canal de Slack",
+                    "$robot_action_send_slack_config_2": "Tipo de mensaje",
+                    "$robot_action_send_slack_config_3": "Contenido del mensaje",
+                    "$robot_action_send_slack_config_1_desc": "Especifique un canal de Slack al que enviar un mensaje, [cómo obtener el webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "Actualmente solo puede enviar mensajes de texto y Markdown [Qué es el tipo de mensaje](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Ingrese el mensaje que se enviará al canal de Slack (ingrese \\\"/\\\" para comenzar a insertar variables) [Cómo escribir el contenido del mensaje](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "Texto sin formato",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "it-IT": {
+                    "$robot_action_send_slack_desc": "Quando il robot inizia a lavorare, invia automaticamente un messaggio al tuo canale Slack",
+                    "$robot_action_send_slack_title": "Invia messaggio a Slack",
+                    "$robot_action_send_slack_config_1": "URL del webhook del canale Slack",
+                    "$robot_action_send_slack_config_2": "Tipo di messaggio",
+                    "$robot_action_send_slack_config_3": "Contenuto del messaggio",
+                    "$robot_action_send_slack_config_1_desc": "Specifica un canale Slack a cui inviare un messaggio, [come ottenere il webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "Attualmente puoi inviare solo messaggi di testo e Markdown [Cos'è il tipo di messaggio](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Inserisci il messaggio da inviare al canale Slack (inserisci \\\"/\\\" per iniziare a inserire variabili) [Come scrivere il contenuto del messaggio](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "Testo normale",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "ja-JP": {
+                    "$robot_action_send_slack_desc": "ロボットが作業を開始すると、特定のSlackチャンネルに自動的にメッセージを送信します",
+                    "$robot_action_send_slack_title": "Slackにメッセージを送信",
+                    "$robot_action_send_slack_config_1": "SlackチャンネルのWebhook URL",
+                    "$robot_action_send_slack_config_2": "メッセージタイプ",
+                    "$robot_action_send_slack_config_3": "メッセージの内容",
+                    "$robot_action_send_slack_config_1_desc": "メッセージを送信するためのSlackチャンネルを指定します。[Webhookの取得方法](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "現在、テキストとMarkdownのメッセージのみ送信できます。[メッセージタイプの選択方法](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Slackチャンネルに送信するメッセージを入力します（変数を挿入するには「/」を入力します）。[メッセージの内容の書き方](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "プレーンテキスト",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "ko-KR": {
+                    "$robot_action_send_slack_desc": "로봇이 작업을 시작하면 지정한 Slack 채널로 자동으로 메시지를 전송합니다",
+                    "$robot_action_send_slack_title": "Slack으로 메시지 보내기",
+                    "$robot_action_send_slack_config_1": "Slack 채널 웹훅 URL",
+                    "$robot_action_send_slack_config_2": "메시지 유형",
+                    "$robot_action_send_slack_config_3": "메시지 내용",
+                    "$robot_action_send_slack_config_1_desc": "메시지를 보낼 Slack 채널을 지정하세요. [웹훅 가져오기 방법](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "현재 텍스트 및 Markdown 메시지만 전송할 수 있습니다. [메시지 유형 선택 방법](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Slack 채널로 전송할 메시지를 입력하세요 (변수를 삽입하려면 \\\"/\\\"를 입력하세요). [메시지 내용 작성 방법](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "일반 텍스트",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "ru-RU": {
+                    "$robot_action_send_slack_desc": "Когда робот начинает работу, он автоматически отправляет сообщение на ваш канал Slack",
+                    "$robot_action_send_slack_title": "Отправить сообщение в Slack",
+                    "$robot_action_send_slack_config_1": "URL вебхука канала Slack",
+                    "$robot_action_send_slack_config_2": "Тип сообщения",
+                    "$robot_action_send_slack_config_3": "Содержимое сообщения",
+                    "$robot_action_send_slack_config_1_desc": "Укажите канал Slack, на который отправить сообщение, [как получить вебхук](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "В настоящее время можно отправлять только текстовые и Markdown-сообщения [Что такое тип сообщения](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "Введите сообщение, которое будет отправлено на канал Slack (введите \\\"/\\\" для вставки переменных) [Как написать содержимое сообщения](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "Простой текст",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                },
+                "zh-HK": {
+                    "$robot_action_send_slack_desc": "當機器人開始工作時，它會自動將消息發送到您的 Slack 頻道",
+                    "$robot_action_send_slack_title": "發送 Slack 消息",
+                    "$robot_action_send_slack_config_1": "Slack 頻道 Webhook URL",
+                    "$robot_action_send_slack_config_2": "消息類型",
+                    "$robot_action_send_slack_config_3": "消息內容",
+                    "$robot_action_send_slack_config_1_desc": "指定要發送消息的 Slack 頻道，[如何獲取 Webhook](https://help.aitable.ai/docs/guide/manual-automation-robot/actions/send-message-to-slark)",
+                    "$robot_action_send_slack_config_2_desc": "目前只能發送文本和 Markdown 消息 [什麼是消息類型](https://help.apitable.com/docs/guide/manual-automation-robot/actions#how-to-choose-message-type)",
+                    "$robot_action_send_slack_config_3_desc": "輸入要發送到 Slack 頻道的消息（輸入 \\\"/\\\" 開始插入變量）[如何編寫消息內容](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_slack_message_type_1": "純文字",
+                    "$robot_action_send_slack_message_type_2": "Markdown"
+                }
+            }
+        },
+        {
+            "endpoint": "sendMail",
+            "service_id": "asvX1OaY9lmi8fDPcG",
+            "action_type_id": "aatSSHdFkR7B7197Ib",
+            "name": "$robot_action_send_mails_title",
+            "description": "$robot_action_send_mails_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "mailServer",
+                        "account",
+                        "password",
+                        "to",
+                        "subject",
+                        "message"
+                    ],
+                    "properties": {
+                        "to": {
+                            "type": "string",
+                            "title": "$robot_action_send_mails_config_4",
+                            "description": "$robot_action_send_mails_config_4_desc"
+                        },
+                        "account": {
+                            "type": "string",
+                            "title": "$robot_action_send_mails_config_2",
+                            "description": "$robot_action_send_mails_config_2_desc"
+                        },
+                        "message": {
+                            "type": "string",
+                            "title": "$robot_action_send_mails_config_6",
+                            "description": "$robot_action_send_mails_config_6_desc"
+                        },
+                        "subject": {
+                            "type": "string",
+                            "title": "$robot_action_send_mails_config_5",
+                            "description": "$robot_action_send_mails_config_5_desc"
+                        },
+                        "password": {
+                            "type": "string",
+                            "title": "$robot_action_send_mails_config_3",
+                            "description": "$robot_action_send_mails_config_3_desc"
+                        },
+                        "template": {
+                            "type": "string",
+                            "default": "$robot_action_send_mails_config_7"
+                        },
+                        "mailServer": {
+                            "type": "object",
+                            "title": "$robot_action_send_mails_config_1",
+                            "required": [
+                                "domain",
+                                "port"
+                            ],
+                            "properties": {
+                                "port": {
+                                    "type": "string"
+                                },
+                                "domain": {
+                                    "type": "string"
+                                }
+                            },
+                            "description": "$robot_action_send_mails_config_1_desc_1"
+                        }
+                    }
+                },
+                "uiSchema": {
+                    "port": {
+                        "ui:options": {
+                            "showTitle": false
+                        }
+                    },
+                    "template": {
+                        "ui:widget": "hidden",
+                        "ui:options": {
+                            "showTitle": false
+                        }
+                    },
+                    "ui:order": [
+                        "mailServer",
+                        "account",
+                        "password",
+                        "to",
+                        "subject",
+                        "message",
+                        "template"
+                    ],
+                    "mailServer": {
+                        "port": {
+                            "ui:options": {
+                                "showTitle": false
+                            }
+                        },
+                        "domain": {
+                            "ui:options": {
+                                "showTitle": false
+                            }
+                        },
+                        "ui:order": [
+                            "domain",
+                            "port"
+                        ],
+                        "ui:options": {
+                            "inline": true,
+                            "hideDesc": true,
+                            "inlineWidths": [
+                                "80%",
+                                "20%"
+                            ]
+                        }
+                    }
+                }
+            },
+            "output_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "message": {
+                            "type": "string",
+                            "title": "message"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_action_send_mails_desc": "When the automation starts working, it will automatically send a message to your specified mails",
+                    "$robot_action_send_mails_title": "Send mails",
+                    "$robot_action_send_mails_config_1": "SMTP Server",
+                    "$robot_action_send_mails_config_2": "Username",
+                    "$robot_action_send_mails_config_3": "Password",
+                    "$robot_action_send_mails_config_4": "Send to",
+                    "$robot_action_send_mails_config_5": "Subject",
+                    "$robot_action_send_mails_config_6": "Message",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "Enter your email address(The Beta version cannot guarantee the security of the account password)",
+                    "$robot_action_send_mails_config_3_desc": "Enter your email password(The Beta version cannot guarantee the security of the account password)",
+                    "$robot_action_send_mails_config_4_desc": "Separate multiple emails with commas(input '/' to start inserting variables)",
+                    "$robot_action_send_mails_config_5_desc": "As the title of the message",
+                    "$robot_action_send_mails_config_6_desc": "Enter the message to be sent to the mails (input '/' to start inserting variables)[How to write message content](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "Specify an outgoing mail server.",
+                    "$robot_action_send_mails_config_1_desc_2": "Specify an outgoing mail server port."
+                },
+                "zh": {
+                    "$robot_action_send_mails_desc": "自动化开始运行后，会自动向指定邮箱发送邮件",
+                    "$robot_action_send_mails_title": "发送邮件",
+                    "$robot_action_send_mails_config_1": "SMTP Server",
+                    "$robot_action_send_mails_config_2": "邮箱账户",
+                    "$robot_action_send_mails_config_3": "邮箱密码",
+                    "$robot_action_send_mails_config_4": "发送给",
+                    "$robot_action_send_mails_config_5": "邮件标题",
+                    "$robot_action_send_mails_config_6": "邮件内容",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "请输入你的邮箱账户（Beta版本无法保证账户密码安全）",
+                    "$robot_action_send_mails_config_3_desc": "请输入你的邮箱密码（Beta版本无法保证账户密码安全）",
+                    "$robot_action_send_mails_config_4_desc": "填写发送到哪些邮箱地址，可以用英文逗号分隔多个邮箱（输入英文斜杠「/」可插入变量）",
+                    "$robot_action_send_mails_config_5_desc": "填写邮件的标题",
+                    "$robot_action_send_mails_config_6_desc": "请填写邮件内容 （输入英文斜杠「/」可插入变量））[如何填写消息内容](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "填写你的邮箱服务器地址",
+                    "$robot_action_send_mails_config_1_desc_2": "填写你的邮箱服务器端口号"
+                },
+                "en-US": {
+                    "$robot_action_send_mails_desc": "When the automation starts working, it will automatically send a message to your specified mails",
+                    "$robot_action_send_mails_title": "Send mails",
+                    "$robot_action_send_mails_config_1": "SMTP Server",
+                    "$robot_action_send_mails_config_2": "Username",
+                    "$robot_action_send_mails_config_3": "Password",
+                    "$robot_action_send_mails_config_4": "Send to",
+                    "$robot_action_send_mails_config_5": "Subject",
+                    "$robot_action_send_mails_config_6": "Message",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "Enter your email address(The Beta version cannot guarantee the security of the account password)",
+                    "$robot_action_send_mails_config_3_desc": "Enter your email password(The Beta version cannot guarantee the security of the account password)",
+                    "$robot_action_send_mails_config_4_desc": "Separate multiple emails with commas(input '/' to start inserting variables)",
+                    "$robot_action_send_mails_config_5_desc": "As the title of the message",
+                    "$robot_action_send_mails_config_6_desc": "Enter the message to be sent to the mails (input '/' to start inserting variables)[How to write message content](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "Specify an outgoing mail server.",
+                    "$robot_action_send_mails_config_1_desc_2": "Specify an outgoing mail server port."
+                },
+                "zh-CN": {
+                    "$robot_action_send_mails_desc": "自动化开始运行后，会自动向指定邮箱发送邮件",
+                    "$robot_action_send_mails_title": "发送邮件",
+                    "$robot_action_send_mails_config_1": "SMTP Server",
+                    "$robot_action_send_mails_config_2": "邮箱账户",
+                    "$robot_action_send_mails_config_3": "邮箱密码",
+                    "$robot_action_send_mails_config_4": "发送给",
+                    "$robot_action_send_mails_config_5": "邮件标题",
+                    "$robot_action_send_mails_config_6": "邮件内容",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "请输入你的邮箱账户（Beta版本无法保证账户密码安全）",
+                    "$robot_action_send_mails_config_3_desc": "请输入你的邮箱密码（Beta版本无法保证账户密码安全）",
+                    "$robot_action_send_mails_config_4_desc": "填写发送到哪些邮箱地址，可以用英文逗号分隔多个邮箱（输入英文斜杠「/」可插入变量）",
+                    "$robot_action_send_mails_config_5_desc": "填写邮件的标题",
+                    "$robot_action_send_mails_config_6_desc": "请填写邮件内容 （输入英文斜杠「/」可插入变量））[如何填写消息内容](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "填写你的邮箱服务器地址",
+                    "$robot_action_send_mails_config_1_desc_2": "填写你的邮箱服务器端口号"
+                },
+                "de-DE": {
+                    "$robot_action_send_mails_desc": "Wenn der Roboter zu arbeiten beginnt, sendet er automatisch eine Nachricht an Ihre angegebenen E-Mails",
+                    "$robot_action_send_mails_title": "E-Mails senden",
+                    "$robot_action_send_mails_config_1": "SMTP-Server",
+                    "$robot_action_send_mails_config_2": "Benutzername",
+                    "$robot_action_send_mails_config_3": "Passwort",
+                    "$robot_action_send_mails_config_4": "Senden an",
+                    "$robot_action_send_mails_config_5": "Betreff",
+                    "$robot_action_send_mails_config_6": "Nachricht",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "Geben Sie Ihre E-Mail-Adresse ein (Die Betaversion kann die Sicherheit des Kontopassworts nicht garantieren)",
+                    "$robot_action_send_mails_config_3_desc": "Geben Sie Ihr E-Mail-Passwort ein (Die Betaversion kann die Sicherheit des Kontopassworts nicht garantieren)",
+                    "$robot_action_send_mails_config_4_desc": "Trennen Sie mehrere E-Mails durch Kommas (geben Sie '/' ein, um Variablen einzufügen)",
+                    "$robot_action_send_mails_config_5_desc": "Als Titel der Nachricht",
+                    "$robot_action_send_mails_config_6_desc": "Geben Sie die Nachricht ein, die an die E-Mails gesendet werden soll (geben Sie '/' ein, um Variablen einzufügen) [Anleitung zur Nachrichtenerstellung](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "Geben Sie einen ausgehenden E-Mail-Server an.",
+                    "$robot_action_send_mails_config_1_desc_2": "Geben Sie einen ausgehenden E-Mail-Server-Port an."
+                },
+                "fr-FR": {
+                    "$robot_action_send_mails_desc": "Lorsque le robot commence à travailler, il envoie automatiquement un message à vos e-mails spécifiés",
+                    "$robot_action_send_mails_title": "Envoyer des e-mails",
+                    "$robot_action_send_mails_config_1": "Serveur SMTP",
+                    "$robot_action_send_mails_config_2": "Nom d'utilisateur",
+                    "$robot_action_send_mails_config_3": "Mot de passe",
+                    "$robot_action_send_mails_config_4": "Envoyer à",
+                    "$robot_action_send_mails_config_5": "Objet",
+                    "$robot_action_send_mails_config_6": "Message",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "Entrez votre adresse e-mail (La version bêta ne peut garantir la sécurité du mot de passe du compte)",
+                    "$robot_action_send_mails_config_3_desc": "Entrez votre mot de passe e-mail (La version bêta ne peut garantir la sécurité du mot de passe du compte)",
+                    "$robot_action_send_mails_config_4_desc": "Séparez plusieurs e-mails par des virgules (saisissez '/' pour commencer à insérer des variables)",
+                    "$robot_action_send_mails_config_5_desc": "En tant que titre du message",
+                    "$robot_action_send_mails_config_6_desc": "Entrez le message à envoyer aux e-mails (saisissez '/' pour commencer à insérer des variables) [Comment rédiger le contenu du message](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "Spécifiez un serveur de messagerie sortant.",
+                    "$robot_action_send_mails_config_1_desc_2": "Spécifiez un port de serveur de messagerie sortant."
+                },
+                "es-ES": {
+                    "$robot_action_send_mails_desc": "Cuando el robot comienza a trabajar, envía automáticamente un mensaje a sus correos electrónicos especificados",
+                    "$robot_action_send_mails_title": "Enviar correos electrónicos",
+                    "$robot_action_send_mails_config_1": "Servidor SMTP",
+                    "$robot_action_send_mails_config_2": "Nombre de usuario",
+                    "$robot_action_send_mails_config_3": "Contraseña",
+                    "$robot_action_send_mails_config_4": "Enviar a",
+                    "$robot_action_send_mails_config_5": "Asunto",
+                    "$robot_action_send_mails_config_6": "Mensaje",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "Ingrese su dirección de correo electrónico (La versión beta no puede garantizar la seguridad de la contraseña de la cuenta)",
+                    "$robot_action_send_mails_config_3_desc": "Ingrese la contraseña de su correo electrónico (La versión beta no puede garantizar la seguridad de la contraseña de la cuenta)",
+                    "$robot_action_send_mails_config_4_desc": "Separe varios correos electrónicos con comas (ingrese '/' para comenzar a insertar variables)",
+                    "$robot_action_send_mails_config_5_desc": "Como título del mensaje",
+                    "$robot_action_send_mails_config_6_desc": "Ingrese el mensaje que se enviará a los correos electrónicos (ingrese '/' para comenzar a insertar variables) [Cómo redactar el contenido del mensaje](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "Especifique un servidor de correo saliente.",
+                    "$robot_action_send_mails_config_1_desc_2": "Especifique un puerto de servidor de correo saliente."
+                },
+                "it-IT": {
+                    "$robot_action_send_mails_desc": "Quando il robot inizia a lavorare, invia automaticamente un messaggio alle tue email specificate",
+                    "$robot_action_send_mails_title": "Invia email",
+                    "$robot_action_send_mails_config_1": "Server SMTP",
+                    "$robot_action_send_mails_config_2": "Nome utente",
+                    "$robot_action_send_mails_config_3": "Password",
+                    "$robot_action_send_mails_config_4": "Invia a",
+                    "$robot_action_send_mails_config_5": "Oggetto",
+                    "$robot_action_send_mails_config_6": "Messaggio",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "Inserisci il tuo indirizzo email (La versione beta non può garantire la sicurezza della password dell'account)",
+                    "$robot_action_send_mails_config_3_desc": "Inserisci la password dell'email (La versione beta non può garantire la sicurezza della password dell'account)",
+                    "$robot_action_send_mails_config_4_desc": "Separa più indirizzi email con virgole (inserisci '/' per iniziare a inserire variabili)",
+                    "$robot_action_send_mails_config_5_desc": "Come oggetto del messaggio",
+                    "$robot_action_send_mails_config_6_desc": "Inserisci il messaggio da inviare alle email (inserisci '/' per iniziare a inserire variabili) [Come scrivere il contenuto del messaggio](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "Specifica un server SMTP di invio.",
+                    "$robot_action_send_mails_config_1_desc_2": "Specifica una porta del server SMTP di invio."
+                },
+                "ja-JP": {
+                    "$robot_action_send_mails_desc": "ロボットが作業を開始すると、指定したメールに自動的にメッセージを送信します",
+                    "$robot_action_send_mails_title": "メールを送信する",
+                    "$robot_action_send_mails_config_1": "SMTPサーバー",
+                    "$robot_action_send_mails_config_2": "ユーザー名",
+                    "$robot_action_send_mails_config_3": "パスワード",
+                    "$robot_action_send_mails_config_4": "送信先",
+                    "$robot_action_send_mails_config_5": "件名",
+                    "$robot_action_send_mails_config_6": "メッセージ",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "メールアドレスを入力してください（ベータ版ではアカウントパスワードのセキュリティを保証できません）",
+                    "$robot_action_send_mails_config_3_desc": "メールのパスワードを入力してください（ベータ版ではアカウントパスワードのセキュリティを保証できません）",
+                    "$robot_action_send_mails_config_4_desc": "複数のメールアドレスをカンマで区切って入力してください（変数の挿入を開始するには '/' を入力してください）",
+                    "$robot_action_send_mails_config_5_desc": "メッセージの件名として",
+                    "$robot_action_send_mails_config_6_desc": "メールに送信するメッセージを入力してください（変数の挿入を開始するには '/' を入力してください）[メッセージの内容の書き方](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "送信用のSMTPサーバーを指定します。",
+                    "$robot_action_send_mails_config_1_desc_2": "送信用のSMTPサーバーポートを指定します。"
+                },
+                "ko-KR": {
+                    "$robot_action_send_mails_desc": "로봇이 작동을 시작하면 지정된 이메일로 자동으로 메시지를 전송합니다",
+                    "$robot_action_send_mails_title": "이메일 전송",
+                    "$robot_action_send_mails_config_1": "SMTP 서버",
+                    "$robot_action_send_mails_config_2": "사용자 이름",
+                    "$robot_action_send_mails_config_3": "비밀번호",
+                    "$robot_action_send_mails_config_4": "수신자",
+                    "$robot_action_send_mails_config_5": "제목",
+                    "$robot_action_send_mails_config_6": "메시지",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "이메일 주소를 입력하세요 (베타 버전에서는 계정 비밀번호의 보안을 보장할 수 없습니다)",
+                    "$robot_action_send_mails_config_3_desc": "이메일 비밀번호를 입력하세요 (베타 버전에서는 계정 비밀번호의 보안을 보장할 수 없습니다)",
+                    "$robot_action_send_mails_config_4_desc": "쉼표로 여러 이메일을 구분하여 입력하세요 (변수 삽입을 시작하려면 '/'를 입력하세요)",
+                    "$robot_action_send_mails_config_5_desc": "메시지의 제목으로",
+                    "$robot_action_send_mails_config_6_desc": "이메일로 전송할 메시지를 입력하세요 (변수 삽입을 시작하려면 '/'를 입력하세요) [메시지 내용 작성 방법](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "발신용 이메일 서버를 지정합니다.",
+                    "$robot_action_send_mails_config_1_desc_2": "발신용 이메일 서버 포트를 지정합니다."
+                },
+                "ru-RU": {
+                    "$robot_action_send_mails_desc": "Когда робот начинает работу, он автоматически отправляет сообщение на указанные электронные адреса",
+                    "$robot_action_send_mails_title": "Отправить электронную почту",
+                    "$robot_action_send_mails_config_1": "SMTP-сервер",
+                    "$robot_action_send_mails_config_2": "Имя пользователя",
+                    "$robot_action_send_mails_config_3": "Пароль",
+                    "$robot_action_send_mails_config_4": "Кому",
+                    "$robot_action_send_mails_config_5": "Тема",
+                    "$robot_action_send_mails_config_6": "Сообщение",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "Введите свой адрес электронной почты (бета-версия не гарантирует безопасность пароля учетной записи)",
+                    "$robot_action_send_mails_config_3_desc": "Введите пароль от электронной почты (бета-версия не гарантирует безопасность пароля учетной записи)",
+                    "$robot_action_send_mails_config_4_desc": "Укажите один или несколько адресов электронной почты через запятую (введите '/', чтобы начать вставку переменных)",
+                    "$robot_action_send_mails_config_5_desc": "В качестве заголовка сообщения",
+                    "$robot_action_send_mails_config_6_desc": "Введите сообщение, которое будет отправлено на электронные адреса (введите '/', чтобы начать вставку переменных) [Как написать содержимое сообщения](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "Укажите исходящий почтовый сервер SMTP.",
+                    "$robot_action_send_mails_config_1_desc_2": "Укажите порт исходящего почтового сервера SMTP."
+                },
+                "zh-HK": {
+                    "$robot_action_send_mails_desc": "當機器人開始工作時，它會自動將消息發送到指定的郵件地址",
+                    "$robot_action_send_mails_title": "發送郵件",
+                    "$robot_action_send_mails_config_1": "SMTP 服務器",
+                    "$robot_action_send_mails_config_2": "用戶名",
+                    "$robot_action_send_mails_config_3": "密碼",
+                    "$robot_action_send_mails_config_4": "發送至",
+                    "$robot_action_send_mails_config_5": "主題",
+                    "$robot_action_send_mails_config_6": "消息",
+                    "$robot_action_send_mails_config_7": " ",
+                    "$robot_action_send_mails_config_2_desc": "輸入您的電子郵件地址（測試版無法保證帳戶密碼的安全性）",
+                    "$robot_action_send_mails_config_3_desc": "輸入您的電子郵件密碼（測試版無法保證帳戶密碼的安全性）",
+                    "$robot_action_send_mails_config_4_desc": "使用逗號分隔多個郵件地址（輸入 '/' 開始插入變量）",
+                    "$robot_action_send_mails_config_5_desc": "作為消息的主題",
+                    "$robot_action_send_mails_config_6_desc": "輸入要發送到郵件的消息（輸入 '/' 開始插入變量）[如何撰寫消息內容](https://help.aitable.ai/docs/guide/manual-automation-robot/actions#how-to-write-message-content)",
+                    "$robot_action_send_mails_config_1_desc_1": "指定發件郵件服務器。",
+                    "$robot_action_send_mails_config_1_desc_2": "指定發件郵件服務器端口。"
+                }
+            }
+        }
+    ]
+}

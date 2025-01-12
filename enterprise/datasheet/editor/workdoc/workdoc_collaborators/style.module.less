@@ -1,0 +1,32 @@
+.workdocCollaborators {
+  display: flex;
+  align-items: center;
+  & > div > span {
+    border: 0;
+  }
+}
+
+.moreCollaborators {
+  overflow-y: auto;
+  width: 140px;
+  max-height: 280px;
+  border-radius: 30px;
+
+  .moreCollaboratorItem {
+    height: 35px;
+    display: flex;
+    margin-bottom: 6px;
+    align-items: center;
+  }
+
+  .moreCollaboratorName {
+    height: 18px;
+    font-size: 13px;
+    color: var(--firstLevelText);
+    line-height: 18px;
+    margin-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

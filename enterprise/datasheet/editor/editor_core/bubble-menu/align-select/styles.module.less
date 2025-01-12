@@ -1,0 +1,30 @@
+@import "~pc/styles/lib_var.less";
+
+.listCls {
+  border: 1px solid var(--borderCommonDefault);
+  box-shadow: none !important;
+  .label {
+    color: var(--textCommonPrimary);
+    font-size: 14px;
+    svg {
+      margin-right: 4px;
+      fill: var(--textCommonSecondary);
+    }
+  }
+  :global {
+    .isChecked > div {
+        color: var(--primaryColor);
+        svg {
+            fill: var(--primaryColor);
+        }
+    }
+  }
+}
+.con {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+

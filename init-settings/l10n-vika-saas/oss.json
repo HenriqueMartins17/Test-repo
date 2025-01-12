@@ -1,0 +1,155 @@
+{
+	"common_img_logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/05/11/366a98ec2f32486a9ef360b0b668e887",
+		".说明": "common_img_logo.png",
+		"FILE": [
+			{
+				"id": "atc7bFAPTNUQz",
+				"name": "logo.png",
+				"size": 4253,
+				"mimeType": "image/png",
+				"token": "space/2023/05/11/366a98ec2f32486a9ef360b0b668e887",
+				"width": 240,
+				"height": 64,
+				"url": "https://s1.vika.cn/space/2023/05/11/366a98ec2f32486a9ef360b0b668e887"
+			}
+		]
+	},
+	"favicon": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e",
+		".说明": "favicon.ico",
+		"FILE": [
+			{
+				"id": "atcju1q8A2pOe",
+				"name": "favicon.ico",
+				"size": 16958,
+				"mimeType": "image/vnd.microsoft.icon",
+				"token": "space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e"
+			}
+		]
+	},
+	"logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2022/12/20/c50e1787ba4741bba3cdab78034636ce",
+		".说明": "logo.svg",
+		"FILE": [
+			{
+				"id": "atcJZQq9jsrqt",
+				"name": "logo.svg",
+				"size": 702,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/12/20/c50e1787ba4741bba3cdab78034636ce",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/c50e1787ba4741bba3cdab78034636ce"
+			}
+		]
+	},
+	"logo_text_light": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1",
+		".说明": "logo_text_light.svg",
+		"FILE": [
+			{
+				"id": "atcBZKKOtlU0w",
+				"name": "logo_text_light.svg",
+				"size": 1158,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/ee9a513e72f6412bba7a1b24b085e1e1"
+			}
+		]
+	},
+	"logo_text_dark": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/01/31/55299ca6769c4f63ba80279cfbdd4721",
+		".说明": "logo_text_dark.svg",
+		"FILE": [
+			{
+				"id": "atcgd92sCWgDV",
+				"name": "logo_text_dark.svg",
+				"size": 1156,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/01/31/55299ca6769c4f63ba80279cfbdd4721",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/01/31/55299ca6769c4f63ba80279cfbdd4721"
+			}
+		]
+	},
+	"email_background_img_1": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/03/14/ba3801fb049941cc92287dbc9d42872c",
+		".说明": "邮件模板背景图片",
+		"FILE": [
+			{
+				"id": "atcwE8O0xj7Q5",
+				"name": "image.png",
+				"size": 26106,
+				"mimeType": "image/png",
+				"token": "space/2023/03/14/ba3801fb049941cc92287dbc9d42872c",
+				"width": 360,
+				"height": 270,
+				"url": "https://s1.vika.cn/space/2023/03/14/ba3801fb049941cc92287dbc9d42872c"
+			}
+		]
+	},
+	"email_background_img_2": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/03/14/0a665cc1d6fb4d6db3af0092e542b680",
+		".说明": "邮件模板背景图片",
+		"FILE": [
+			{
+				"id": "atcnxvrFqnLdA",
+				"name": "image.png",
+				"size": 7792,
+				"mimeType": "image/png",
+				"token": "space/2023/03/14/0a665cc1d6fb4d6db3af0092e542b680",
+				"width": 260,
+				"height": 260,
+				"url": "https://s1.vika.cn/space/2023/03/14/0a665cc1d6fb4d6db3af0092e542b680"
+			}
+		]
+	},
+	"email_background_img_3": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/03/14/18da35c8dd3a4c38917d8aa53131366e",
+		".说明": "邮件模板背景图片",
+		"FILE": [
+			{
+				"id": "atcBRYumKcuPd",
+				"name": "image.png",
+				"size": 9289,
+				"mimeType": "image/png",
+				"token": "space/2023/03/14/18da35c8dd3a4c38917d8aa53131366e",
+				"width": 280,
+				"height": 180,
+				"url": "https://s1.vika.cn/space/2023/03/14/18da35c8dd3a4c38917d8aa53131366e"
+			}
+		]
+	},
+	"email_background_img_4": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "space/2023/03/14/2a200092d48c435f9231d3dd5e57ef92",
+		".说明": "邮件模板背景图片",
+		"FILE": [
+			{
+				"id": "atc57DesxAT90",
+				"name": "image.png",
+				"size": 43521,
+				"mimeType": "image/png",
+				"token": "space/2023/03/14/2a200092d48c435f9231d3dd5e57ef92",
+				"width": 480,
+				"height": 520,
+				"url": "https://s1.vika.cn/space/2023/03/14/2a200092d48c435f9231d3dd5e57ef92"
+			}
+		]
+	}
+}

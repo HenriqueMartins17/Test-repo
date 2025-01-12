@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.workspace.mapper.DatasheetRecordMapper">
+    <select id="selectByDatasheetIds"
+            resultType="com.apitable.appdata.shared.workspace.pojo.DatasheetRecord">
+        SELECT dst_id, record_id, data
+        FROM ${tablePrefix}datasheet_record
+        WHERE dst_id IN
+        <foreach item="item" index="index" collection="datasheetIds" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 0
+    </select>
+
+    <insert id="insertBatch">
+        REPLACE INTO ${tablePrefix}datasheet_record(id, dst_id, record_id, `data`,
+        field_updated_info, created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.dstId}, #{item.recordId}, #{item.data},
+                #{item.fieldUpdatedInfo}, #{userId}, #{userId}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

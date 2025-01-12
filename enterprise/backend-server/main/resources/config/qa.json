@@ -1,0 +1,1175 @@
+{
+  "meta": {
+    "views": [
+      {
+        "id": "viwTWFRBAzSrD",
+        "name": "Grid view",
+        "rows": [
+          {
+            "recordId": "recGwAjDtC3Ck"
+          },
+          {
+            "recordId": "recZgJ9kI5Snx"
+          },
+          {
+            "recordId": "recMHX0eh8JZ4"
+          },
+          {
+            "recordId": "recWgRVZksM8H"
+          },
+          {
+            "recordId": "recSL8Cjkvei9"
+          },
+          {
+            "recordId": "reczkoELbYgzb"
+          },
+          {
+            "recordId": "recIiQCeCHGB4"
+          },
+          {
+            "recordId": "recfaX3VEDAvA"
+          },
+          {
+            "recordId": "recJ0qh072ap3"
+          },
+          {
+            "recordId": "recD6nFaYMkQN"
+          },
+          {
+            "recordId": "recfuRpc3Hp54"
+          },
+          {
+            "recordId": "recTy15LcnOcq"
+          },
+          {
+            "recordId": "rec53cnV11Mev"
+          },
+          {
+            "recordId": "receuyIDHehFW"
+          },
+          {
+            "recordId": "recU8efnEbfuj"
+          },
+          {
+            "recordId": "reciX66kTsFwZ"
+          },
+          {
+            "recordId": "rec23qPOcJvL6"
+          },
+          {
+            "recordId": "recDLG7zFgrkE"
+          },
+          {
+            "recordId": "recBGVaKnlbUg"
+          },
+          {
+            "recordId": "recqbj0O7bu6C"
+          },
+          {
+            "recordId": "recEp1RpEk8zQ"
+          },
+          {
+            "recordId": "recpjCTqAUiFq"
+          },
+          {
+            "recordId": "recdbHK70fWHd"
+          },
+          {
+            "recordId": "recs68bBJpYnI"
+          },
+          {
+            "recordId": "recLJ8twU74ws"
+          },
+          {
+            "recordId": "recSEfE9YL8j8"
+          },
+          {
+            "recordId": "rec4wX9iOMlOU"
+          },
+          {
+            "recordId": "rech3eYKCk77Y"
+          },
+          {
+            "recordId": "recxg4HnaLoKA"
+          },
+          {
+            "recordId": "recAZ4Jp49yCv"
+          },
+          {
+            "recordId": "reckcaBRn7KA8"
+          },
+          {
+            "recordId": "reczzeJlzZvVn"
+          },
+          {
+            "recordId": "rec8sQRH3Ia92"
+          },
+          {
+            "recordId": "recZCDlxrtmFN"
+          },
+          {
+            "recordId": "recwi4HZpUWxt"
+          },
+          {
+            "recordId": "recSkNfzVivtA"
+          },
+          {
+            "recordId": "recqYFgiMIN6S"
+          },
+          {
+            "recordId": "recMEwaTNgp1y"
+          },
+          {
+            "recordId": "recnZANCPxXZ9"
+          },
+          {
+            "recordId": "recPvulnxSMig"
+          },
+          {
+            "recordId": "reco68OBIjdhB"
+          },
+          {
+            "recordId": "recAnBkQf7mUX"
+          },
+          {
+            "recordId": "recvDZUoJ1Bke"
+          },
+          {
+            "recordId": "recLNT2WaoqMI"
+          },
+          {
+            "recordId": "reclvwbNr2jgq"
+          },
+          {
+            "recordId": "recS9ZpATG0tP"
+          },
+          {
+            "recordId": "recQLH41JZBUf"
+          },
+          {
+            "recordId": "recIr4Lk3UZnj"
+          },
+          {
+            "recordId": "recgbsdGwaEjT"
+          },
+          {
+            "recordId": "rec91mV7TsBvM"
+          },
+          {
+            "recordId": "recv8WYJ2Dfkg"
+          },
+          {
+            "recordId": "recx72knXnvwy"
+          },
+          {
+            "recordId": "recrySF1UCNko"
+          },
+          {
+            "recordId": "recptnKA0PlRB"
+          },
+          {
+            "recordId": "recLOfG0rIRMb"
+          },
+          {
+            "recordId": "recF7eVjFTOJo"
+          }
+        ],
+        "type": 1,
+        "columns": [
+          {
+            "width": 400,
+            "fieldId": "fldVtJxYZ82rk"
+          },
+          {
+            "width": 485,
+            "fieldId": "fldRVVPdlp0A0"
+          }
+        ],
+        "autoSave": false,
+        "rowHeightLevel": 4,
+        "frozenColumnCount": 1,
+        "displayHiddenColumnWithinMirror": false
+      }
+    ],
+    "fieldMap": {
+      "fldRVVPdlp0A0": {
+        "id": "fldRVVPdlp0A0",
+        "name": "Answer",
+        "type": 1
+      },
+      "fldVtJxYZ82rk": {
+        "id": "fldVtJxYZ82rk",
+        "name": "Question",
+        "type": 1,
+        "property": null
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "rec23qPOcJvL6",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "As of now, we do not support API-based dialogue. However, our team is actively working on developing this feature. ",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Does this chatbot support API conversation?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rec4wX9iOMlOU",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, you can switch the chatbot to the \"Chat\" type, and the language model will analyze based on your prompt.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot provide sentiment analysis?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rec53cnV11Mev",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "At the moment, AI chatbots solely support the use of text fields in Datasheet to build datasets. Fields such as magic links, attachments, and formulas are not supported in the current version. We are continuously working to enhance the capabilities of our chatbots and may consider adding these features in future updates.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Why can I only see certain fields of the text type in the \"Training\" interface, even though there are many different types of fields in my table?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rec8sQRH3Ia92",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Tables with images can be used as datasets, but the chatbot cannot currently retrieve information from images. We are researching how to handle polymorphic data in APITable's AI chatbot.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle tables with images?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rec91mV7TsBvM",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "If you make changes to the datasheet and want the Chatbot to use them right away for question answering, you must retrain the Chatbot.\n\nFurthermore, if there are any modifications to the data table, a small red dot will appear on the \"Settings\" button at the top right of the chat interface to remind you to perform the training.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "When should I perform \"training\"?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recAnBkQf7mUX",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, \"training\" has usage limits and consumes message credits. You can check the current training usage in the chatbot's settings.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can I see how many times I have trained the chatbot? Is there a fee for training? How is the fee calculated?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recAZ4Jp49yCv",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "The chatbot's data source is the user-provided associated Datasheet.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What is the data source of this chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recBGVaKnlbUg",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, our chatbot can handle Q&A from multiple users simultaneously and supports multi-conversation.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle multiple users asking questions simultaneously?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recD6nFaYMkQN",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Indeed, the accuracy of the Q&A chatbot's responses is directly linked to the quality of information stored in the datasheet. The more comprehensive and accurate the knowledge present in your dataset, the more precise and reliable the chatbot's answers will be. It is crucial to ensure that the datasheet contains high-quality and relevant information to enhance the chatbot's performance.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "How accurate is the chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recdbHK70fWHd",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, voice interaction is not supported. However, we are actively working on developing this feature.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot provide voice interaction?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recDLG7zFgrkE",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "That's correct! The Q&A chatbot is not limited to any specific industry; it can effectively handle questions from various sectors, such as finance, healthcare, education, retail, and more. The crucial factor determining its performance is the dataset you have prepared. As long as you have a well-organized dataset with relevant information, the chatbot will be equipped to answer questions from different industries with accuracy and efficiency.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What types of industry questions can this chatbot handle?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recEp1RpEk8zQ",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Of course, our chatbot is capable of conducting multi-turn conversations and providing context-based responses.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot engage in multi-turn conversations?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "receuyIDHehFW",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, our chatbot can be used on mobile devices.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot be used on mobile devices?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recF7eVjFTOJo",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, our chatbot can handle tables with links.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle tables with links?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recfaX3VEDAvA",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, our AI chatbot specializes in providing question-answering dialogue services. When it comes to financial knowledge, we are well-equipped to handle it. All you need to do is organize the financial knowledge content in the Datasheet in advance and then create a Chatbot associated with that particular Datasheet. This way, our chatbot can effectively respond to financial-related inquiries.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle finance-related questions?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recfuRpc3Hp54",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Absolutely, we have simplified the interface operation steps. Now, all you need to do is specify a single Datasheet to associate with the chatbot. The chatbot will then read the entire table's data, effectively using it as the dataset for data retrieval. This streamlined approach makes it easier for users to set up and utilize the chatbot efficiently.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Will AI Chatbot read the entire dataset during training?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recgbsdGwaEjT",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "\"Training\" refers to the process of converting table data into embeddings and storing them in a vector database.\n\nWhen using a chatbot for question answering, it's crucial to help the computer understand the natural language input and find appropriate answers. However, computers face challenges in processing such text. For example, they struggle to grasp the meaning of words and phrases or identify semantic relationships.\n\nTo overcome this, we can transform the table content into vector form through \"embedding.\" By doing so, the chatbot can answer questions more accurately. Embedding improves the computer's ability to comprehend and process natural language text, resulting in more precise question matching and answering.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What does \"training\" mean? Why do I need to \"train\"?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recGwAjDtC3Ck",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, AI chatbots can only handle textual data.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can I send images, videos, and audios to the chatbot? What types of data can it process?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "rech3eYKCk77Y",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, you can switch the chatbot to the \"Chat\" type, and the language model will analyze based on your prompt.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot provide machine translation?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recIiQCeCHGB4",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Certainly, we offer online demonstrations and training services. For more information, please feel free to reach out to us at ",
+            "type": 1
+          },
+          {
+            "link": "support@apitable.com",
+            "text": "support@apitable.com",
+            "type": 4
+          },
+          {
+            "text": ".",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Will you provide demos or training for the features of this chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recIr4Lk3UZnj",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Training failures do not affect user conversations with the Chatbot. The system manages multiple versions of datasets, so users can continue chatting normally, even if training fails.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Will training failure affect other users chatting with the chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "reciX66kTsFwZ",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, we are in the planning stage. Looking ahead, we have ambitious plans to expand the capabilities of our AI Chatbot and make it more versatile for integration with third-party platforms. ",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot be integrated with other applications?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recJ0qh072ap3",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Thanks to the user-friendly APITable's table format operation, you can easily set up the chatbot to provide accurate answers to related questions. By simply adding two text columns in the datasheet and filling in the questions and their corresponding answers, the chatbot will be fully equipped to respond effectively.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What details should I include in my datasheet so that the chatbot can provide accurate answers to questions?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "reckcaBRn7KA8",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, our chatbot can provide responses based on context.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle context in multi-turn conversations?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recLJ8twU74ws",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, statistical data from different dimensions is not supported. However, we are actively gathering market feedback, and based on that, we may consider providing statistical data in the future. ",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot provide user access statistics?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recLNT2WaoqMI",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Connecting with other platforms is not supported currently, but we are researching how to integrate AI Chatbot with more platforms.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "How do I connect to Character.AI?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recLOfG0rIRMb",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, each chatbot is linked to just one datasheet. However, in the future, we plan to enable the association of multiple datasheets with a single chatbot at the same time.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "How many datasheets can I link?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "reclvwbNr2jgq",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Connecting with other platforms is not supported currently, but we are researching how to integrate AI Chatbot with more platforms.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "How do I connect to ",
+            "type": 1
+          },
+          {
+            "text": "Poe.com?",
+            "type": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "recMEwaTNgp1y",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, follow-up messages come from the Datasheet's \"questions\" column. You can edit the question column in the Datasheet, then retrain the Chatbot to make the new \"subsequent messages\" effective.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can users customize or edit suggested follow-up messages?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recMHX0eh8JZ4",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Certainly, our chatbot fully supports the Chinese language.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle Chinese?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recnZANCPxXZ9",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "The ten questions in the \"Explore\" card are randomly selected from the Datasheet's \"questions\" column.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Is the \"Explore\" card's randomly generated questions based on users' specific needs and preferences, or are they completely random?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "reco68OBIjdhB",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Customizing \"prompts\" is possible. In the AI Chatbot feature, \"prompts\" refer to questions or statements that guide AI responses or initiate discussions. You can modify \"prompts\" by enabling \"Advanced Mode\" in the chatbot's settings.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What can I do to improve the chatbot's performance if I feel that the chatbot's reply is not very good after training?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recpjCTqAUiFq",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Absolutely, our chatbot offers extensive customization options for creators. In the settings page, you can tailor the prompts to suit your specific requirements. This includes setting up opening remarks, suggestions for follow-up messages, and leveraging various chatbot extension capabilities.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Does this chatbot support personalized settings?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recptnKA0PlRB",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, we are in the planning stage. Looking ahead, we have ambitious plans to expand the capabilities of our AI Chatbot and make it more versatile for integration with third-party platforms. ",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot be integrated with social media platforms such as Discord, Telegram, and WeChat?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recPvulnxSMig",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "The \"Explore\" card is designed to inspire users before starting a New chat by displaying reference questions.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Are users able to access the \"Explore\" card at any time, or is it only available before starting a chat?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recqbj0O7bu6C",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Absolutely! Our chatbot is designed to handle multiple types of answers, providing flexibility in responding to user inquiries. Whether it's text, images, links, or other formats, the chatbot can generate appropriate and diverse responses based on the dataset provided. This versatility enhances the user experience and ensures the chatbot can accommodate a wide range of information and content types.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle multiple types of answers?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recQLH41JZBUf",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "If there is a \"training failure,\" you can manually retrain the chatbot in the settings interface to resolve the issue.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What should I do if the message \"training failed\" appears in the chat interface?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recqYFgiMIN6S",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "When creating a QA Chatbot, you need to associate it with a Datasheet for the chatbot to learn \"questions\" and \"answers\". The system provides follow-up suggestions based on the \"questions\" field in the Datasheet. For richer suggestions, ensure that the \"questions\" field in the Datasheet is comprehensive.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "How does the system suggest follow-up messages to users, based on past conversations or other factors?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recrySF1UCNko",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Our chatbot's response time is usually within a few seconds.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What is the response time of this chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recs68bBJpYnI",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "As of now, conversation history is not supported.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot provide conversation history?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recS9ZpATG0tP",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "We are researching how to integrate AI Chatbot with the Automation feature.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can automation tasks be performed by chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recSEfE9YL8j8",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Yes, you can switch the chatbot to the \"Chat\" type, and the language model will analyze based on your prompt.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot provide semantic analysis?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recSkNfzVivtA",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Customizing the chatbot's style and theme is not supported currently.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can the chatbot widget be customized to match the branding and style of a website or application?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recSL8Cjkvei9",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Absolutely, you have the flexibility to modify the specific reply through the \"Setting\" page of the chatbot.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "When there is no relevant information in the dataset, can AI chatbot reply with specified content?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recTy15LcnOcq",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Sorry, it is not currently supported. Our product manager is already thinking about future iterations, please wait for a while.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can I specify a view to filter data during chatbot training?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recU8efnEbfuj",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Absolutely, you can easily use AI chatbots on your website. To integrate the chatbot, simply go to the chat interface of the Chatbot and click the \"Publish\" button located in the upper right corner. This will provide you with the embedding code for the chatbot widget. Copy and paste this code into your webpage's HTML, and the integration of the Chatbot into your website will be complete. Your website visitors can then interact with the chatbot seamlessly.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot be used on my website?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recv8WYJ2Dfkg",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "If you make changes to the data in the table and want them to be instantly applied to the Chatbot's question-answering service, you must retrain the Chatbot. This ensures that the newly added \"question-answer pairs\" will become active.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "After adding a \"question-answer pair\" to the datasheet, why is the AI Chatbot still unable to answer a question?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recvDZUoJ1Bke",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "When the Datasheet's data changes, a small red dot appears on the \"Settings\" button in the chat interface, indicating that you may need to retrain the Chatbot.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Will modifying data in my datasheet trigger automatic training?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recWgRVZksM8H",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Our chatbot supports multiple languages, including English and Chinese.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What languages does this chatbot support?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recwi4HZpUWxt",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Exporting conversation history is not supported currently.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Does AI Chatbot support exporting conversation records?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recx72knXnvwy",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Our chatbot supports: multi-conversation management; multiple datasets, where each datasheet represents a dataset and can be edited collaboratively in real-time by multiple users; various types of chatbots, including not only QA chatbots but also other AI chatbots for different purposes which are under development; quick embedding, where AITable's AI chatbot can be integrated into your website through JS code snippets.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "What are the features of this chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recxg4HnaLoKA",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Voice recognition is not supported currently, but it may be added in the future.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot provide speech recognition?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recZCDlxrtmFN",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Currently, formulas in tables are not supported, but we are working on developing this feature.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle tables with formulas?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "recZgJ9kI5Snx",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "In our product's design, we ensure compatibility with most LLM (Language Model) models. However, due to considerations regarding performance and maturity, we currently offer only OpenAI's gpt-3.5-turbo model. As we progress, we plan to allow users the flexibility to select from a range of different models.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Which LLM model is used in AI chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "reczkoELbYgzb",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Apologies, but it is not supported at the moment.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can I search the content of conversations in the chatbot?",
+            "type": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "reczzeJlzZvVn",
+      "data": {
+        "fldRVVPdlp0A0": [
+          {
+            "text": "Our chatbot can handle large datasets, with each dataset (Datasheet) supporting up to 50,000 rows of data.",
+            "type": 1
+          }
+        ],
+        "fldVtJxYZ82rk": [
+          {
+            "text": "Can this chatbot handle large datasheets?",
+            "type": 1
+          }
+        ]
+      }
+    }
+  ]
+}

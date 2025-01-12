@@ -1,0 +1,15 @@
+Developer Subject Qualification Certification Successful
+
+--------------------------------------------------------------------------------
+
+Dear Widget developer，you identity is successfully verified.
+
+And we have generated a globalPackageId：{{GLOBAL_PACKAGE_ID}} for you. You can use this globalPackageId to publish or update your custom widget.
+
+Note: You can use this ID to publish or update your widget, please refer to the documentation https://developers.vika.cn/widget/publish-widget
+
+Attention：please don't leak this globalPackageId，or others can modify your widget without your aggreement。
+
+copyright © 2019-{{YEARS}} vikadata.All rights reserved.
+
+Contact us (https://vika.cn?home=1)

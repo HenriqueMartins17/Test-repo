@@ -1,0 +1,50 @@
+@import "~pc/styles/lib_var.less";
+
+.item {
+  width: 100%;
+  min-height: 40px;
+  background: var(--lowestBg);
+  border-radius: 4px;
+  position: relative;
+  transition: all .3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 0 1px var(--fc5);
+  }
+  &:focus, &:active {
+    box-shadow: 0 0 0 1px var(--primaryColor);
+  }
+  & > div {
+    outline: none;
+    box-shadow: none;
+    background: var(--bgControlsDefault) !important;
+    border-radius: 4px;
+  }
+  :global {
+    .attachmentPreviewItem {
+      z-index: var(--formAttachment);
+    }
+    .textEditorInput,
+    .numberEditorInput {
+      min-height: 40px;
+    }
+    .ant-select-selector .ant-select-selection-item {
+      line-height: 38px !important;
+      padding-top: 0 !important;
+    }
+    .cascaderContainer {
+      background: transparent !important;
+    }
+  }
+}
+.active {
+  background: var(--defaultBg);
+  box-shadow: 0px 0px 0px 1px var(--primaryColor) !important;
+}
+.number {
+  height: 40px;
+  padding: 0 10px !important;
+  line-height: 40px !important;
+}
+
+
+// background: var(--bg-controls-default, rgba(255, 255, 255, 0.08));

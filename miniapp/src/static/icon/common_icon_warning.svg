@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+<title>common_icon_warning</title>
+<desc>Created with Sketch.</desc>
+<g id="页面-1">
+	<g id="common" transform="translate(-130.000000, -121.000000)">
+		<g id="Message_x2F__x5F_Icon_x2F_Warning" transform="translate(130.000000, 121.000000)">
+			<path id="形状结合" fill-rule="evenodd" clip-rule="evenodd" fill="#FBB940" d="M8,0c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8
+				S3.6,0,8,0z M8,10c-0.6,0-1,0.4-1,1s0.4,1,1,1s1-0.4,1-1S8.6,10,8,10z M8,2.8c-0.4,0-0.8,0.3-0.8,0.8l0,0v4.9l0,0.1
+				c0,0.4,0.4,0.6,0.7,0.6c0.4,0,0.8-0.3,0.8-0.8l0,0V3.5l0-0.1C8.7,3,8.4,2.8,8,2.8z"/>
+		</g>
+	</g>
+</g>
+</svg>

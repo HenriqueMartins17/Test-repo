@@ -1,0 +1,144 @@
+{
+    "zh_CN": {
+        "i18n": "zh_CN",
+        "recommend": {
+            "banners": [
+                {
+                    "template_name": "远程办公解决方案",
+                    "title": "远程办公解决方案",
+                    "desc": "",
+                    "image": "space/2022/10/21/665f6f37d38847d7b3e7d8453508919c",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "OKR管理-系统版",
+                    "title": "OKR管理-系统版",
+                    "desc": "系统化的目标与策略，涵盖制定、执行、复盘、考评的闭环协同",
+                    "image": "space/2021/08/11/01281409e51443a6bd8361321a0848aa"
+                },
+                {
+                    "template_name": "运营必备-甘特图",
+                    "title": "运营必备-甘特图",
+                    "desc": "以时间为横轴，展示活动各项任务的周期和状态，助力把控活动进度",
+                    "image": "space/2021/09/01/f4a70a919e13429d884b37f5050d4646"
+                }
+            ],
+            "album_groups": [
+            ],
+            "template_groups": [
+                {
+                    "name": "其他用户喜爱的模板",
+                    "template_names": [
+                        "Scrum 敏捷软件开发",
+                        "CRM管理系统"
+                    ]
+                }
+            ]
+        },
+        "categories": [
+            {
+                "name": "\uD83D\uDE37  远程办公",
+                "template_names": [
+                    "CRM管理系统",
+                    "远程办公解决方案",
+                    "Scrum 敏捷软件开发",
+                    "运营必备-甘特图"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCC8  工作规划",
+                "template_names": [
+                    "远程办公解决方案"
+                ]
+            },
+            {
+                "name": "\uD83D\uDDC2  项目管理",
+                "template_names": [
+                    "Scrum 敏捷软件开发"
+                ]
+            },
+            {
+                "name": "\uD83D\uDECD️  电商运营",
+                "template_names": [
+                    "运营必备-甘特图"
+                ]
+            },
+            {
+                "name": "⛳  OKR 管理",
+                "template_names": [
+                    "OKR管理-系统版"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC65  客户服务",
+                "template_names": [
+                    "CRM管理系统"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCAF  企业服务",
+                "template_names": [
+                    "远程办公解决方案"
+                ]
+            },
+            {
+                "name": "\uD83D\uDDA5️  产品研发",
+                "template_names": [
+                    "Scrum 敏捷软件开发"
+                ]
+            },
+            {
+                "name": "\uD83C\uDF79  活动策划",
+                "template_names": [
+                    "运营必备-甘特图"
+                ]
+            }
+        ],
+        "albums": [
+        ],
+        "templates_with_tag": [
+            {
+                "name": "Scrum 敏捷软件开发",
+                "tags": [
+                    "甘特图",
+                    "研发",
+                    "产品研发"
+                ]
+            },
+            {
+                "name": "CRM管理系统",
+                "tags": [
+                    "镜像",
+                    "合同管理",
+                    "客户服务",
+                    "销售客服"
+                ]
+            },
+            {
+                "name": "OKR管理-系统版",
+                "tags": [
+                    "管理者",
+                    "OKR",
+                    "工作规划"
+                ]
+            },
+            {
+                "name": "运营必备-甘特图",
+                "tags": [
+                    "甘特图",
+                    "电商运营",
+                    "活动管理",
+                    "运营"
+                ]
+            },
+            {
+                "name": "远程办公解决方案",
+                "tags": [
+                    "甘特图",
+                    "管理者",
+                    "工作规划"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.7-20210803-003" author="Shawn" labels="social">
+        <comment>Social Tenant Department add sort</comment>
+        <sql>
+            ALTER TABLE ${table.prefix}social_tenant_department add department_order int(11) default 0 comment 'Department sort' after department_name;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

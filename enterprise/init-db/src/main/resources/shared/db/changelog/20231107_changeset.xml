@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20231107-001" author="Zoe" labels="ai">
+        <comment>add agent share table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}agent_share_setting` (
+            `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+            `agent_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Air Agent Id',
+            `share_id` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Share unique ID',
+            `is_enabled` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Shareable status (0: off, 1: on)',
+            `props` json DEFAULT NULL COMMENT 'Share Option Properties',
+            `created_by` bigint DEFAULT NULL COMMENT 'Creator',
+            `updated_by` bigint DEFAULT NULL COMMENT 'Last Update By',
+            `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`),
+            UNIQUE KEY `uk_share_id` (`share_id`) USING BTREE,
+            KEY `idx_agent_id` (`agent_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Airagent Share Setting Table';
+        </sql>
+    </changeSet>
+    <changeSet id="20231107-002" author="Shawn" labels="ai">
+        <comment>add data source type column</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai_node`
+            MODIFY COLUMN `node_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT 'Node ID' AFTER `ai_id`,
+            MODIFY COLUMN `node_type` tinyint NULL COMMENT 'Node type' AFTER `node_id`,
+            ADD COLUMN `type` varchar(20) NULL COMMENT 'Type' AFTER `node_type`;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

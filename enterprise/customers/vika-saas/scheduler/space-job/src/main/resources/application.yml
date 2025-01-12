@@ -1,0 +1,67 @@
+# APITable <https://github.com/apitable/apitable>
+# Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+server:
+  port: 9111
+  shutdown: graceful
+
+# Spring
+spring:
+  application:
+    name: scheduler-space
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:vika_dev}?characterEncoding=utf8&autoReconnect=true
+    username: ${MYSQL_USERNAME:vika}
+    password: ${MYSQL_PASSWORD:password}
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  # Redis
+  redis:
+    host: ${REDIS_HOST:127.0.0.1}
+    username: ${REDIS_USERNAME:}
+    password: ${REDIS_PASSWORD:}
+    port: ${REDIS_PORT:6379}
+    database: ${REDIS_DB:3}
+    timeout: 30000
+
+config:
+  oss-bucket-name: ${ASSETS_BUCKET:vk-assets-ltd}
+  oss-type: ${ASSETS_TYPE:QNY1}
+
+job:
+  register-address: ${JOB_ADMIN_ADDRESS:http://job.vika.ltd}
+  port: ${JOB_EXECUTOR_PORT:9091}
+  appname: ${JOB_EXECUTOR_APP_NAME:space-job-executor}
+  logpath: ${JOB_EXECUTOR_LOG_PATH:logs/vikadata/job/space}
+  logretentiondays: ${JOB_EXECUTOR_LOG_RETENTION_DAYS:7}
+  access-token: ${JOB_ACCESS_TOKEN:onJvanLmSE3CqotjNp8hb7WRolpM1pdL}
+qiniu:
+  access-key: ${QINIU_ACCESS_KEY:B7OyF1ZORX4iHaqJ5uN62qXAgoDnc7Jv7_zf1SpJ}
+  secret-key: ${QINIU_SECRET_KEY:Hp26Vj4D2bv0JQ-qgExXYKlKc5EkFuVVgW1GA1Eh}
+# internal server
+internal:
+  domain: ${BACKEND_URL:http://backend-server:8081}
+  getPausedUserHistoryInfoURL: /api/v1/internal/getUserHistories
+  closePausedUserURL: /api/v1/internal/users/{userId}/close
+  batchProcessSocialWecomPermitDelayUrl: /api/v1/internal/social/wecom/permitDelay/batchProcess

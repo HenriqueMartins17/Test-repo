@@ -1,0 +1,252 @@
+{
+    "Chart": {
+        "package_id": "wpkCKtqGTjzM7",
+        "i18n_name": {
+            "en-US": "Chart",
+            "zh-CN": "图表（Chart）"
+        },
+        "i18n_description": {
+            "en-US": "Display data as bar, column, pie, line, or scatter charts to help you get a holistic view of your data for decision making and meeting reporting",
+            "zh-CN": "将数据展示为柱状图、条形图、饼状图、折线图或散点图，帮助你概览数据的全貌，方便决策和会议汇报"
+        },
+        "icon": "space/2023/04/19/ac8aea16679f4367a31713054f2e84ca",
+        "cover": "space/2023/04/20/d32c9a28bd564929a82241e0648d3c76",
+        "is_template": 0,
+        "widget_body": {
+            "website": "https://help.apitable.com/docs/guide/intro-widget-chart",
+            "widgetOpenSource": "https://github.com/apitable/widget-chart"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/04/19/4d1dccbda8d542f3a7b5cf2dea64745f",
+        "source_code_bundle": null,
+        "widgetSort": 1
+    },
+    "Summary": {
+        "package_id": "wpkY6DKgb3iVk",
+        "i18n_name": {
+            "en-US": "Summary",
+            "zh-CN": "统计与指标（Summary）"
+        },
+        "i18n_description": {
+            "en-US": "Highlight statistics and target values for the specified fields as key metrics, such as sales volumes, number of orders, number of registered users, etc.",
+            "zh-CN": "突出展示指定维格列的统计值和目标值，作为关键指标，比如销售额、订单数、注册用户数、Bug 数等"
+        },
+        "icon": "space/2023/04/19/dce9d83c26c24d8f8af95ba7f480dcf1",
+        "cover": "space/2023/04/20/9f4f928b27f64452b91810d9d625fe26",
+        "is_template": 0,
+        "widget_body": {
+            "website": "https://help.apitable.com/docs/guide/intro-widget-summary",
+            "widgetOpenSource": "https://github.com/apitable/widget-summary"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/04/19/8074067b55b4458eb9efbf88832ff450",
+        "source_code_bundle": null,
+        "widgetSort": 2
+    },
+    "Pivot Table": {
+        "package_id": "wpkgMavSIOOR9",
+        "i18n_name": {
+            "en-US": "Pivot table",
+            "zh-CN": "透视表（Pivot Table）"
+        },
+        "i18n_description": {
+            "en-US": "Summarize your records in a pivot table",
+            "zh-CN": "将数据进行分类汇总统计，常用于分析、汇报、年度报表等场景"
+        },
+        "icon": "space/2022/02/14/22dffea1c06d4c3eac88989bd5074ba6",
+        "cover": "space/2023/04/20/aa2b0dbdcd9f44ab92277018b2d61b1b",
+        "is_template": 0,
+        "widget_body": {
+            "website": "https://help.apitable.com/docs/guide/intro-widget-pivot",
+            "widgetOpenSource": "https://github.com/apitable/widget-pivot-table"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/04/19/9133552c2a9b4f9b909573d9f274fed9",
+        "source_code_bundle": null,
+        "widgetSort": 3
+    },
+    "Funnel": {
+        "package_id": "wpkZV0RkAD90t",
+        "i18n_name": {
+            "en-US": "Funnel Chart",
+            "zh-CN": "漏斗图"
+        },
+        "i18n_description": {
+            "en-US": "Analyze the data for different sections within the procedure, reveal the issue and help making the well-informed decision. Often used in SMS/email/online retailing campaigns as well as data visualization in summary reports.",
+            "zh-CN": "比较各环节业务数据，发现问题，进而做出决策。常用于短信/邮件/电商销售的活动监控，或者在复盘汇报中可视化展示。"
+        },
+        "icon": "space/2023/04/19/08e79856a0ed476a965de4ac2d6418cf",
+        "cover": "space/2023/04/20/4a0deba0d5974f10b90e5d9eca44c9d0",
+        "is_template": 0,
+        "widget_body": {
+            "website": "https://help.apitable.com/docs/guide/intro-widget-funnel-chart",
+            "widgetOpenSource": "https://github.com/apitable/widget-funnel-chart"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/04/19/aedfec8d265944e0977c5aaba88c3b84",
+        "source_code_bundle": null,
+        "widgetSort": 4
+    },
+    "Import data from Airtable": {
+        "package_id": "wpk098vuAfpQa",
+        "i18n_name": {
+            "en-US": "Import data from Airtable",
+            "zh-CN": "Airtable 导入"
+        },
+        "i18n_description": {
+            "en-US": "Support importing data from Airtable to APITable, and quickly start using the APITable to develop your business.",
+            "zh-CN": "支持从 Airtable 导入数据到 APITable 中，快速开始使用 APITable 发展你的业务。"
+        },
+        "icon": "space/2023/04/20/3ec8e109713d42baaa75418d03b084af",
+        "cover": "space/2023/09/11/cd2f5eb75f74417b9c11b303cb4d60b3",
+        "is_template": 0,
+        "widget_body": {
+            "website": "https://help.apitable.com/docs/guide/intro-widget-import-from-airtable",
+            "widgetOpenSource": "https://github.com/apitable/widget-airtable-import"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/03/28/ccaef99caa4340ecbfb241ea25f26a69",
+        "source_code_bundle": null,
+        "widgetSort": 5
+    },
+    "Script": {
+        "package_id": "wpkPUIDr5rxh9",
+        "i18n_name": {
+            "en-US": "Script",
+            "zh-CN": "Script"
+        },
+        "i18n_description": {
+            "en-US": "Reduce the time spent on repetitive tasks by writing short scripts for quick customization capabilities",
+            "zh-CN": "通过编写简短的脚本，来减少重复任务所花费的时间，实现快捷的自定义能力"
+        },
+        "icon": "space/2023/04/19/a99c295d22064a229ec5ce72f9d56d48",
+        "cover": "space/2023/09/11/838679941af14a0bab1d00a64aa9e419",
+        "is_template": 0,
+        "widget_body": {
+            "website": "https://help.apitable.com/docs/guide/intro-widget-script/",
+            "widgetOpenSource": "https://github.com/apitable/widget-script"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": null,
+        "source_code_bundle": null,
+        "widgetSort": 6
+    },
+    "Hello World (TypeScript)": {
+        "package_id": "wpk2jJ7qZS0VG",
+        "i18n_name": {
+            "en-US": "Hello World (TypeScript)",
+            "zh-CN": "Hello World (TypeScript)"
+        },
+        "i18n_description": {
+            "en-US": "Start building from a Hello World widget with TypeScript",
+            "zh-CN": "从一个最基础的 TypeScript 小程序开始开发"
+        },
+        "icon": null,
+        "cover": null,
+        "is_template": 1,
+        "widget_body": {
+            "templateCover": "space/2021/09/24/f5bd3f18f098486986518144b813445d",
+            "widgetOpenSource": "https://github.com/apitable/widget-hello-world-typescript"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/03/28/dbca319b047b46bc9b0f1f454f60f209",
+        "source_code_bundle": null,
+        "widgetSort": 1001
+    },
+    "Hello World (JavaScript)": {
+        "package_id": "wpkyVrnMm6ymP",
+        "i18n_name": {
+            "en-US": "Hello World (JavaScript)",
+            "zh-CN": "Hello World (JavaScript)"
+        },
+        "i18n_description": {
+            "en-US": "Start building from a Hello World widget with JavaScript",
+            "zh-CN": "从一个最基础的 JavaScript 小程序开始开发"
+        },
+        "icon": null,
+        "cover": null,
+        "is_template": 1,
+        "widget_body": {
+            "templateCover": "space/2021/09/23/5970ac0054834e8aab3348523c994696",
+            "widgetOpenSource": "https://github.com/apitable/widget-hello-world-javascript"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/03/28/e0987d13b273449ca9e34bf6d17eda33",
+        "source_code_bundle": null,
+        "widgetSort": 1002
+    },
+    "SDK function example": {
+        "package_id": "wpkSybhcxsmGM",
+        "i18n_name": {
+            "en-US": "SDK function example",
+            "zh-CN": "SDK 功能示例"
+        },
+        "i18n_description": {
+            "en-US": "Start building from a demo widget with common SDK functions",
+            "zh-CN": "从一个有较完整 SDK 功能的小程序开始开发"
+        },
+        "icon": null,
+        "cover": null,
+        "is_template": 1,
+        "widget_body": {
+            "templateCover": "space/2021/09/24/c31e157afb3744569ba8566d6c004a2d",
+            "widgetOpenSource": "https://github.com/apitable/widget-developer-template"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/03/28/b8f46277d88b4c3f81b66633872aa30d",
+        "source_code_bundle": null,
+        "widgetSort": 1003
+    },
+    "Todo MVC": {
+        "package_id": "wpkP54M0LMh9U",
+        "i18n_name": {
+            "en-US": "Todo MVC",
+            "zh-CN": "Todo MVC"
+        },
+        "i18n_description": {
+            "en-US": "Convert tasks from the datasheet into a to-do list that allows you to check and insert records quickly",
+            "zh-CN": "将表格中的任务变成待办事项列表，支持快速勾选和插入记录"
+        },
+        "icon": null,
+        "cover": null,
+        "is_template": 1,
+        "widget_body": {
+            "templateCover": "space/2022/02/14/0918df6720ee4cfdae8285f1d723def5",
+            "widgetOpenSource": "https://github.com/apitable/widget-todo-list-template"
+        },
+        "author_name": "APITable",
+        "author_email": "developer@apitable.com",
+        "author_icon": "space/2022/12/21/8109884155c247de8af5774e45267e99",
+        "author_link": "https://apitable.com",
+        "release_code_bundle": "space/2023/03/28/8fe5864312d84cd39f64c7034f8e9191",
+        "source_code_bundle": null,
+        "widgetSort": 1004
+    }
+}

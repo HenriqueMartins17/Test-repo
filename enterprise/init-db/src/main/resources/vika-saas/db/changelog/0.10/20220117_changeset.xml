@@ -1,0 +1,44 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="V0.10-20220117-001" author="CodeMan" labels="WeCom">
+        <comment>Create Social Cp Isv Event Log Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_cp_isv_event_log`
+            (
+                `id`           bigint(20) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                `type`         tinyint(4) UNSIGNED NOT NULL COMMENT 'Message notification type.1：create_auth 2：change_auth 3：cancel_auth 11：suite_ticket, third party services suite_ticket；21：change_contact,application change member',
+                `suite_id`     varchar(32) NOT NULL COMMENT 'Suit ID.The appId in the correspond platform',
+                `info_type`    varchar(32) NOT NULL COMMENT 'Info Type',
+                `auth_corp_id` varchar(32) NULL COMMENT 'The authorized enterprise ID. The tenantId in the corresponding platform',
+                `timestamp`    bigint(20) UNSIGNED NOT NULL COMMENT 'Time Stamp',
+                `message`      json        NOT NULL COMMENT 'Entire message body',
+                `process_status` tinyint(2) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Processing status. 1: To be handled; 2: Process failed, please try again; 3: Process failed, end; 4: Process succeeded',
+                `created_at`   timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`   timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                INDEX          `idx_suiteId`(`suite_id`) USING BTREE,
+                INDEX          `idx_authCorpId`(`auth_corp_id`) USING BTREE,
+                INDEX          `idx_timestamp`(`timestamp`) USING BTREE,
+                INDEX          `idx_processStatus`(`process_status`) USING BTREE
+            ) ENGINE = InnoDB COMMENT = 'Third Party Platform Integration - Social Cp Isv Event Log Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.10-20220117-002" author="CodeMan" labels="WeCom">
+        <comment>Social Tenant Table add auth_mode field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant`
+            ADD COLUMN `auth_mode` tinyint(2) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Authorization mode. 1: Enterprise authorization; 2: Member Authorization' AFTER `contact_auth_scope`;
+        </sql>
+    </changeSet>
+    <changeSet id="V0.10-20220117-003" author="CodeMan" labels="WeCom">
+        <comment>Social Tenant Table add permanent_code field-</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant`
+            ADD COLUMN `permanent_code` varchar(256) NULL COMMENT 'Permanent authorization code' AFTER `auth_mode`;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

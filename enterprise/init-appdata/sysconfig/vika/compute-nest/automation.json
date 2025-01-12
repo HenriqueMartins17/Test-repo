@@ -1,0 +1,695 @@
+{
+    "services": [
+        {
+            "slug": "vika",
+            "service_id": "asvct0KiIrKQTsTRCN",
+            "name": "$vikadata",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$vikadata": "Datasheet"
+                },
+                "zh": {
+                    "$vikadata": "维格表"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/3e28c30a956b4f95aebc08e5eb0dc0cf",
+                "dark": "space/2023/04/18/9e38324f3a1b441e886255850e8b36c8"
+            },
+            "base_url": null
+        },
+        {
+            "slug": "webhook",
+            "service_id": "asvX1OaY9lmi8fDPcQ",
+            "name": "$webhook",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$webhook": "Webhook"
+                },
+                "zh": {
+                    "$webhook": "Webhook"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/6a654385c76b4fd0b908df73277b1795",
+                "dark": "space/2023/04/18/1e42acbcd7ea4658a5f3b7af8ae76f38"
+            },
+            "base_url": "automation://webhook/"
+        },
+        {
+            "slug": "feishu",
+            "service_id": "asv4CEPavgUiEaGg3z",
+            "name": "$lark",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$lark": "Lark"
+                },
+                "zh": {
+                    "$lark": "飞书"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/4ec5464151f54ac1933938c70765157d",
+                "dark": "space/2023/04/18/56d642f3d20e4e1bae518714b3dc6916"
+            },
+            "base_url": "automation://lark/"
+        },
+        {
+            "slug": "dingtalk",
+            "service_id": "asvBKC0wQPqRG5CpEo",
+            "name": "$dingtalk",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$dingtalk": "DingTalk"
+                },
+                "zh": {
+                    "$dingtalk": "钉钉"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/3dbb2d57468c4f2b8e7c5e13a33f3e6d",
+                "dark": "space/2023/04/18/9e9da1ad76ca4b27bb085f402dd43db1"
+            },
+            "base_url": "automation://dingtalk/"
+        },
+        {
+            "slug": "wecom",
+            "service_id": "asvMR656NA8Wd7zbGV",
+            "name": "$wecom",
+            "description": null,
+            "i18n": {
+                "en": {
+                    "$wecom": "Wecom"
+                },
+                "zh": {
+                    "$wecom": "企业微信"
+                }
+            },
+            "logo": {
+                "light": "space/2023/04/18/ab3b8e639cc0452d89d520cd7d74eee4",
+                "dark": "space/2023/04/18/0a0441ee51a640ba9b5c4052ef5fc15a"
+            },
+            "base_url": "automation://wecom/"
+        }
+    ],
+    "trigger_types": [
+        {
+            "endpoint": "form_submitted",
+            "service_id": "asvct0KiIrKQTsTRCN",
+            "trigger_type_id": "attyfxYdq9GqAPxcbZ",
+            "name": "$robot_trigger_form_submitted_title",
+            "description": "$robot_trigger_form_submitted_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "formId"
+                    ],
+                    "properties": {
+                        "formId": {
+                            "type": "string",
+                            "title": "$robot_trigger_form_submitted_config_1"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {}
+            },
+            "output_json_schema": {
+                "type": "object",
+                "title": "$robot_trigger_form_submitted_title",
+                "required": [
+                    "datasheetId",
+                    "datasheetName",
+                    "recordId",
+                    "recordUrl"
+                ],
+                "properties": {
+                    "recordId": {
+                        "type": "string",
+                        "title": "$robot_variables_record_ID"
+                    },
+                    "recordUrl": {
+                        "type": "string",
+                        "title": "$robot_variables_record_URL"
+                    },
+                    "datasheetId": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_ID"
+                    },
+                    "datasheetName": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_name"
+                    }
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_variables_record_ID": "Record ID",
+                    "$robot_variables_record_URL": "Record URL",
+                    "$robot_variables_datasheet_ID": "Datasheet ID",
+                    "$robot_variables_datasheet_name": "Datasheet name",
+                    "$robot_trigger_form_submitted_desc": "When a form receives a new response, the automation will start working",
+                    "$robot_trigger_form_submitted_title": "Form is submitted",
+                    "$robot_trigger_form_submitted_config_1": "Select a form"
+                },
+                "zh": {
+                    "$robot_variables_record_ID": "记录 ID",
+                    "$robot_variables_record_URL": "记录 URL",
+                    "$robot_variables_datasheet_ID": "维格表 ID",
+                    "$robot_variables_datasheet_name": "维格表名称",
+                    "$robot_trigger_form_submitted_desc": "当指定表单收到新的提交时，自动化会开始运行",
+                    "$robot_trigger_form_submitted_title": "有新的表单提交时",
+                    "$robot_trigger_form_submitted_config_1": "选择神奇表单"
+                }
+            }
+        },
+        {
+            "endpoint": "record_matches_conditions",
+            "service_id": "asvct0KiIrKQTsTRCN",
+            "trigger_type_id": "att3AB2qZ47Qldul5K",
+            "name": "$robot_trigger_record_matches_condition_title",
+            "description": "$robot_trigger_record_matches_condition_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "datasheetId",
+                        "filter"
+                    ],
+                    "properties": {
+                        "filter": {
+                            "type": "string",
+                            "title": "$robot_trigger_record_matches_condition_config_2",
+                            "description": "$robot_trigger_record_matches_condition_config_2_desc"
+                        },
+                        "datasheetId": {
+                            "type": "string",
+                            "title": "$robot_trigger_record_matches_condition_config_1"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {
+                    "ui:order": [
+                        "datasheetId",
+                        "filter"
+                    ]
+                }
+            },
+            "output_json_schema": {
+                "type": "object",
+                "title": "$robot_trigger_record_matches_condition_title",
+                "required": [
+                    "datasheetId",
+                    "datasheetName",
+                    "recordId",
+                    "recordUrl"
+                ],
+                "properties": {
+                    "recordId": {
+                        "type": "string",
+                        "title": "$robot_variables_record_ID"
+                    },
+                    "recordUrl": {
+                        "type": "string",
+                        "title": "$robot_variables_record_URL"
+                    },
+                    "datasheetId": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_ID"
+                    },
+                    "datasheetName": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_name"
+                    }
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_variables_record_ID": "Record ID",
+                    "$robot_variables_record_URL": "Record URL",
+                    "$robot_variables_datasheet_ID": "Datasheet ID",
+                    "$robot_variables_datasheet_name": "Datasheet name",
+                    "$robot_trigger_record_matches_condition_desc": "When a record matches predefined conditions, the automation will start working",
+                    "$robot_trigger_record_matches_condition_title": "Record matches conditions",
+                    "$robot_trigger_record_matches_condition_config_1": "Select a datasheet",
+                    "$robot_trigger_record_matches_condition_config_2": "Select match conditions",
+                    "$robot_trigger_record_matches_condition_config_2_desc": "Note: Adding Date/Formula field to trigger at scheduled/due time is not supported [FAQ](https://help.vika.cn/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                },
+                "zh": {
+                    "$robot_variables_record_ID": "记录 ID",
+                    "$robot_variables_record_URL": "记录 URL",
+                    "$robot_variables_datasheet_ID": "维格表 ID",
+                    "$robot_variables_datasheet_name": "维格表名称",
+                    "$robot_trigger_record_matches_condition_desc": "当表中有记录满足指定条件时，自动化会开始运行",
+                    "$robot_trigger_record_matches_condition_title": "有记录满足条件时",
+                    "$robot_trigger_record_matches_condition_config_1": "选择维格表",
+                    "$robot_trigger_record_matches_condition_config_2": "选择匹配条件",
+                    "$robot_trigger_record_matches_condition_config_2_desc": "注意：不支持在匹配条件中添加日期列或者包含日期函数的公式列来实现定时触发或到期触发 [FAQ 参考](https://help.vika.cn/docs/guide/manual-automation-robot/#robot-scene-related-faq)"
+                }
+            }
+        },
+        {
+            "endpoint": "record_created",
+            "service_id": "asvct0KiIrKQTsTRCN",
+            "trigger_type_id": "attpoKSLIWLT0UEO4e",
+            "name": "$robot_trigger_record_created_title",
+            "description": "$robot_trigger_record_created_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "datasheetId"
+                    ],
+                    "properties": {
+                        "datasheetId": {
+                            "type": "string",
+                            "title": "$robot_trigger_record_created_config_1"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {}
+            },
+            "output_json_schema": {
+                "type": "object",
+                "title": "$robot_trigger_record_created_title",
+                "required": [
+                    "datasheetId",
+                    "datasheetName",
+                    "recordId",
+                    "recordUrl"
+                ],
+                "properties": {
+                    "recordId": {
+                        "type": "string",
+                        "title": "$robot_variables_record_ID"
+                    },
+                    "recordUrl": {
+                        "type": "string",
+                        "title": "$robot_variables_record_URL"
+                    },
+                    "datasheetId": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_ID"
+                    },
+                    "datasheetName": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_name"
+                    }
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_variables_record_ID": "Record ID",
+                    "$robot_variables_record_URL": "Record URL",
+                    "$robot_variables_datasheet_ID": "Datasheet ID",
+                    "$robot_variables_datasheet_name": "Datasheet name",
+                    "$robot_trigger_record_created_desc": "Once a record is created, either by manual operation, API, or form collection, the automation will start working",
+                    "$robot_trigger_record_created_title": "Record is created",
+                    "$robot_trigger_record_created_config_1": "Select a datasheet"
+                },
+                "zh": {
+                    "$robot_variables_record_ID": "记录 ID",
+                    "$robot_variables_record_URL": "记录 URL",
+                    "$robot_variables_datasheet_ID": "维格表 ID",
+                    "$robot_variables_datasheet_name": "维格表名称",
+                    "$robot_trigger_record_created_desc": "只要表中有新的记录被创建（比如手动创建记录、API 创建记录、收到表单提交），自动化都会开始运行",
+                    "$robot_trigger_record_created_title": "有新的记录创建时",
+                    "$robot_trigger_record_created_config_1": "选择维格表"
+                }
+            }
+        },
+        {
+            "endpoint": "button_clicked",
+            "service_id": "asvct0KiIrKQTsTRCN",
+            "trigger_type_id": "attB8t2rmYlQAMLWeg",
+            "name": "$robot_trigger_button_clicked_title",
+            "description": "$robot_trigger_button_clicked_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "datasheetId",
+                        "fieldId"
+                    ],
+                    "properties": {
+                        "datasheetId": {
+                            "type": "string",
+                            "title": "$robot_trigger_button_clicked_config_1"
+                        },
+                        "fieldId": {
+                            "type": "string",
+                            "title": "$robot_trigger_button_clicked_config_2"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {
+                    "ui:order": [
+                        "datasheetId",
+                        "fieldId"
+                    ]
+                }
+            },
+            "output_json_schema": {
+                "type": "object",
+                "title": "$robot_trigger_button_clicked_title",
+                "required": [
+                    "clickedBy",
+                    "datasheetId",
+                    "datasheetName",
+                    "recordId",
+                    "recordUrl"
+                ],
+                "properties": {
+                    "clickedBy": {
+                        "type": "string",
+                        "title": "$robot_variables_clicked_by"
+                    },
+                    "recordId": {
+                        "type": "string",
+                        "title": "$robot_variables_record_ID"
+                    },
+                    "recordUrl": {
+                        "type": "string",
+                        "title": "$robot_variables_record_URL"
+                    },
+                    "datasheetId": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_ID"
+                    },
+                    "datasheetName": {
+                        "type": "string",
+                        "title": "$robot_variables_datasheet_name"
+                    }
+                }
+            },
+            "i18n": {
+                "en": {
+                    "$robot_variables_clicked_by": "Clicked By",
+                    "$robot_variables_record_ID": "Record ID",
+                    "$robot_variables_record_URL": "Record URL",
+                    "$robot_variables_datasheet_ID": "Datasheet ID",
+                    "$robot_variables_datasheet_name": "Datasheet name",
+                    "$robot_trigger_button_clicked_desc": "When a user clicks on the new button column you've created, the automation will start working",
+                    "$robot_trigger_button_clicked_title": "Button is clicked",
+                    "$robot_trigger_button_clicked_config_1": "Select a datasheet",
+                    "$robot_trigger_button_clicked_config_2": "Select a button field"
+                },
+                "zh": {
+                    "$robot_variables_clicked_by": "点击者",
+                    "$robot_variables_record_ID": "记录 ID",
+                    "$robot_variables_record_URL": "记录 URL",
+                    "$robot_variables_datasheet_ID": "维格表 ID",
+                    "$robot_variables_datasheet_name": "维格表名称",
+                    "$robot_trigger_button_clicked_desc": "当用户点击你新建的按钮列时，自动化会开始运行",
+                    "$robot_trigger_button_clicked_title": "按钮被点击时",
+                    "$robot_trigger_button_clicked_config_1": "选择维格表",
+                    "$robot_trigger_button_clicked_config_2": "选择按钮字段"
+                }
+            }
+        }
+    ],
+    "action_types": [
+        {
+            "endpoint": "sendRequest",
+            "service_id": "asvX1OaY9lmi8fDPcQ",
+            "action_type_id": "aatSSHdFkR7B7197Is",
+            "name": "$robot_action_send_web_request_title",
+            "description": "$robot_action_send_web_request_desc",
+            "input_json_schema": {
+                "schema": {
+                    "type": "object",
+                    "required": [
+                        "url",
+                        "method"
+                    ],
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "title": "$robot_action_send_web_request_config_2"
+                        },
+                        "method": {
+                            "enum": [
+                                "GET",
+                                "POST",
+                                "PATCH",
+                                "DELETE"
+                            ],
+                            "type": "string",
+                            "title": "$robot_action_send_web_request_config_1",
+                            "default": "GET",
+                            "description": "$robot_action_send_web_request_config_1_desc"
+                        },
+                        "headers": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "key",
+                                    "value"
+                                ],
+                                "properties": {
+                                    "key": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "title": "$robot_action_send_web_request_config_3",
+                            "description": "$robot_action_send_web_request_config_3_desc"
+                        }
+                    },
+                    "dependencies": {
+                        "method": {
+                            "oneOf": [
+                                {
+                                    "properties": {
+                                        "body": {
+                                            "type": "object",
+                                            "title": "$robot_action_send_web_request_config_4",
+                                            "properties": {
+                                                "type": {
+                                                    "enum": [
+                                                        "json",
+                                                        "form-data",
+                                                        "raw"
+                                                    ],
+                                                    "type": "string",
+                                                    "default": "json"
+                                                }
+                                            },
+                                            "dependencies": {
+                                                "type": {
+                                                    "oneOf": [
+                                                        {
+                                                            "properties": {
+                                                                "type": {
+                                                                    "enum": [
+                                                                        "form-data"
+                                                                    ]
+                                                                },
+                                                                "formData": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "required": [
+                                                                            "key",
+                                                                            "value"
+                                                                        ],
+                                                                        "properties": {
+                                                                            "key": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "value": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "description": "$robot_action_send_web_request_body_formdata_desc"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "type": "string",
+                                                                    "format": "json",
+                                                                    "description": "$robot_action_send_web_request_body_json_desc"
+                                                                },
+                                                                "type": {
+                                                                    "enum": [
+                                                                        "json"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "properties": {
+                                                                "data": {
+                                                                    "type": "string",
+                                                                    "description": "$robot_action_send_web_request_body_raw_desc"
+                                                                },
+                                                                "type": {
+                                                                    "enum": [
+                                                                        "raw"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "method": {
+                                            "enum": [
+                                                "POST",
+                                                "PATCH"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "uiSchema": {
+                    "body": {
+                        "data": {
+                            "ui:options": {
+                                "showTitle": false
+                            }
+                        },
+                        "type": {
+                            "ui:widget": "RadioGroupWidget",
+                            "ui:options": {
+                                "showTitle": false
+                            }
+                        },
+                        "formData": {
+                            "items": {
+                                "key": {
+                                    "ui:options": {
+                                        "showTitle": false
+                                    }
+                                },
+                                "value": {
+                                    "ui:options": {
+                                        "showTitle": false
+                                    }
+                                },
+                                "ui:order": [
+                                    "key",
+                                    "value"
+                                ],
+                                "ui:options": {
+                                    "inline": true
+                                }
+                            },
+                            "ui:options": {
+                                "orderable": false,
+                                "showTitle": false
+                            }
+                        }
+                    },
+                    "headers": {
+                        "items": {
+                            "key": {
+                                "ui:options": {
+                                    "showTitle": false
+                                }
+                            },
+                            "value": {
+                                "ui:options": {
+                                    "showTitle": false
+                                }
+                            },
+                            "ui:order": [
+                                "key",
+                                "value"
+                            ],
+                            "ui:options": {
+                                "inline": true
+                            }
+                        },
+                        "ui:options": {
+                            "orderable": false
+                        }
+                    },
+                    "ui:order": [
+                        "method",
+                        "url",
+                        "headers",
+                        "body"
+                    ],
+                    "ui:options": {
+                        "layout": [
+                            [
+                                "method",
+                                "url"
+                            ],
+                            [
+                                "headers"
+                            ],
+                            [
+                                "body"
+                            ]
+                        ]
+                    }
+                }
+            },
+            "output_json_schema": {
+                "type": "object",
+                "required": [
+                    "statusCode"
+                ],
+                "properties": {
+                    "body": {
+                        "type": "object"
+                    },
+                    "statusCode": {
+                        "type": "number"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "i18n": {
+                "en": {
+                    "$robot_action_send_web_request_desc": "When the automation starts working, it will automatically send a web request to a specific URL",
+                    "$robot_action_send_web_request_title": "Send web request",
+                    "$robot_action_send_web_request_config_1": "Request method",
+                    "$robot_action_send_web_request_config_2": "Request address",
+                    "$robot_action_send_web_request_config_3": "Header",
+                    "$robot_action_send_web_request_config_4": "Body",
+                    "$robot_action_send_web_request_body_raw_desc": "Enter raw texts in the body",
+                    "$robot_action_send_web_request_config_1_desc": "Send web request via the GET, POST or other method",
+                    "$robot_action_send_web_request_config_3_desc": "Enter one or more key-value pairs in the header",
+                    "$robot_action_send_web_request_body_json_desc": "Enter JSON texts in the body [How to use variables](https://help.vika.cn/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                    "$robot_action_send_web_request_body_formdata_desc": "Enter one or more key-value pairs in the body [How to use variables](https://help.vika.cn/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                },
+                "zh": {
+                    "$robot_action_send_web_request_desc": "自动化开始运行后，会自动向指定地址发送网络请求",
+                    "$robot_action_send_web_request_title": "发送网络请求",
+                    "$robot_action_send_web_request_config_1": "请求方法",
+                    "$robot_action_send_web_request_config_2": "请求地址",
+                    "$robot_action_send_web_request_config_3": "请求头",
+                    "$robot_action_send_web_request_config_4": "请求体",
+                    "$robot_action_send_web_request_body_raw_desc": "通过请求体发送一段 raw 文本（输入英文斜杠「/」可插入变量）",
+                    "$robot_action_send_web_request_config_1_desc": "通过 GET 或 POST 等方式向指定地址发送网络请求",
+                    "$robot_action_send_web_request_config_3_desc": "在请求头中可以添加多个键值对",
+                    "$robot_action_send_web_request_body_json_desc": "通过请求体发送一段 JSON 文本（输入英文斜杠「/」可插入变量） [如何使用变量](https://help.vika.cn/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)",
+                    "$robot_action_send_web_request_body_formdata_desc": "通过请求体发送一段 form-data 键值对（输入英文斜杠「/」可插入变量） [如何使用变量](https://help.vika.cn/docs/guide/manual-automation-robot/actions/#how-to-use-variables-in-action)"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.widget.mapper.WidgetPackageMapper">
+    <select id="selectByPackageIds"
+            resultType="com.apitable.appdata.shared.widget.pojo.WidgetPackage">
+        SELECT *
+        FROM ${tablePrefix}widget_package
+        WHERE package_id IN
+        <foreach item="item" index="index" collection="packageIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND release_type = 1 AND STATUS = 3 AND is_deleted = 0
+    </select>
+
+    <insert id="insertBatch">
+        REPLACE INTO ${tablePrefix}widget_package(id, package_id, i18n_name,
+        i18n_description, icon, cover, status, installed_num, author_name, author_email,
+        author_icon, author_link, package_type, release_type, widget_body, sandbox,
+        release_id, is_template, is_enabled, install_env_code, runtime_env_code, owner,
+        created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.packageId}, #{item.i18nName}, #{item.i18nDescription},
+                #{item.icon}, #{item.cover}, #{item.status}, #{item.installedNum},
+                #{item.authorName}, #{item.authorEmail}, #{item.authorIcon},
+                #{item.authorLink}, #{item.packageType}, #{item.releaseType},
+                #{item.widgetBody}, #{item.sandbox}, #{item.releaseId},
+                #{item.isTemplate}, #{item.isEnabled}, #{item.installEnvCode},
+                #{item.runtimeEnvCode}, #{item.owner}, #{item.createdBy},
+                #{item.updatedBy}
+            </trim>
+        </foreach>
+    </insert>
+
+    <delete id="disableGlobalWidgetPackage">
+        UPDATE ${tablePrefix}widget_package
+        SET is_enabled = 0,
+            updated_by = #{userId}
+        WHERE release_type = 1
+          AND STATUS = 3
+          AND is_enabled = 1
+          AND is_deleted = 0
+    </delete>
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.vikabilling.mapper.OrderMapper">
+    <select id="selectByOrderId" resultType="com.apitable.enterprise.vikabilling.entity.OrderEntity">
+        SELECT *
+        FROM ${tablePrefix}billing_order
+        WHERE order_id = #{orderId}
+        AND is_deleted = 0
+    </select>
+
+    <select id="selectOrderBySpaceIdChannelOrderId" resultType="java.lang.String">
+        SELECT order_id FROM ${tablePrefix}billing_order
+        WHERE space_id = #{spaceId}
+        AND channel_order_id = #{channelOrderId}
+    </select>
+
+    <select id="selectByOrderIds" resultType="com.apitable.enterprise.vikabilling.entity.OrderEntity">
+        SELECT * FROM  ${tablePrefix}billing_order
+        WHERE order_id IN
+        <foreach item="item" index="index" collection="orderIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 0
+    </select>
+
+    <select id="selectBySpaceIdAndOrderType"
+            resultType="com.apitable.enterprise.vikabilling.entity.OrderEntity">
+        SELECT * FROM  ${tablePrefix}billing_order
+        WHERE space_id = #{spaceId} AND order_type = #{orderType} AND is_deleted = 0
+    </select>
+</mapper>

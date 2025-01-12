@@ -1,0 +1,135 @@
+@import '~@styles/lib_var.less';
+
+page {
+  background: @fc7;
+}
+
+.myInfo {}
+
+.info {
+  background: @fc0;
+  height: 160px;
+  width: 100%;
+  border-bottom-right-radius: 80px;
+  display: flex;
+  padding: 0 20px;
+  justify-content: flex-start;
+  align-items: center;
+
+  Button,
+  .name {
+    font-size: 22px;
+    color: @fc8;
+  }
+
+  .name {
+    line-height: 160px;
+  }
+
+  Button:after {
+    border: none;
+
+  }
+
+  Button {
+    margin: 0;
+
+  }
+
+  .avator {
+    width: 64px;
+    height: 64px;
+    // margin-top: 48px;
+    margin-right: 16px;
+
+    image {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.listContainer {
+  background: @fc7;
+  padding: 20px;
+
+  .selfInfo,
+  .spaceInfo {
+    background: @fc8;
+    padding: 16px;
+  }
+
+  .selfInfo {
+    margin-bottom: 16px;
+  }
+
+  .spaceInfo {}
+
+  .spaceInfoBase {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+
+  .spaceAdmin {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .spaceItem {
+    flex: 1;
+
+    .grayTitle {
+      margin-bottom: 8px;
+    }
+
+    view {
+      text-align: center;
+      width: 100px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .spaceImg {
+    width: 40px;
+    height: 40px;
+
+    image {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid @fc5;
+    }
+  }
+}
+
+.grayTitle {
+  color: @fc3;
+  font-size: 12px;
+}
+
+.listItem {
+  font-size: 15px;
+  color: @fc1;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  line-height: 50px;
+}
+
+.remark {
+  font-size: 14px;
+  color: @fc3;
+  text-align: center;
+  padding-bottom: 13px;
+  background: @fc7;
+
+  text {
+    display: block;
+    width: 100%;
+  }
+}

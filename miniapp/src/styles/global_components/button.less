@@ -1,0 +1,160 @@
+@import "../lib_var.less";
+
+.ant-btn {
+  color: @fc1;
+  border-radius: 2px;
+  // 要达到图标在视觉上的上下居中，需要进行一定的偏移
+  // 方案取自于 antd button
+  svg {
+    vertical-align: -0.125em;
+    transition: fill 0.5s;
+  }
+  &.ant-btn-primary {
+    color: white;
+  }
+}
+
+.grayButton {
+  &.ant-btn {
+    height: 30px;
+    font-size: 11px;
+    padding: 0 16px;
+    border-radius: 2px;
+    background-color: @fc7;
+    border-color: @fc7;
+    color: @fc1;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  &.ant-btn[disabled] {
+    opacity: 0.5;
+    background-color: @fc7;
+    border-color: @fc7;
+    color: @fc1;
+
+    &:hover {
+      background-color: @fc7;
+      border-color: @fc7;
+      opacity: 0.5;
+    }
+  }
+
+  &.ant-btn:hover {
+    opacity: 0.8;
+    color: @fc1;
+    background-color: @fc7;
+    border-color: @fc7;
+  }
+
+  &.ant-btn:active {
+    opacity: 0.5;
+    border-color: @fc7;
+    background-color: @fc7;
+  }
+}
+
+.textButton {
+  &.ant-btn {
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  &.ant-btn:hover {
+    opacity: 0.8;
+  }
+
+  &.ant-btn:active {
+    opacity: 0.5;
+  }
+}
+
+// 填充按钮
+.fillButton {
+  &.ant-btn {
+    background-color: @fc0;
+    font-size: @fs3;
+    border-color: @fc0;
+    color: @fc8;
+    letter-spacing: normal;
+  }
+
+  &.ant-btn[disabled] {
+    opacity: 0.5;
+    background-color: @fc0;
+    color: @fc8;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &.ant-btn:hover {
+    opacity: 0.8;
+    background-color: @fc0;
+    border-color: @fc0;
+  }
+
+  &.ant-btn:active {
+    opacity: 0.5;
+    background-color: @fc0;
+  }
+}
+
+// 警示填充组件
+.cautionFillButton {
+  .fillButton();
+  &.ant-btn,
+  &.ant-btn[disabled],
+  &.ant-btn:hover,
+  &.ant-btn:active {
+    border-color: @err-color;
+    background-color: @err-color;
+  }
+}
+
+// 描边按钮
+.strokeButton {
+  &.ant-btn {
+    background-color: @fc8;
+    font-size: @fs3;
+    border-color: @fc5;
+    color: @fc2;
+
+    &:hover {
+      opacity: 0.8;
+      background-color: @fc8;
+      border-color: @fc5;
+    }
+  }
+
+  &.ant-btn[disabled] {
+    opacity: 0.5;
+    background-color: @fc8;
+    border-color: @fc5;
+    color: @fc2;
+
+    &:hover {
+      background-color: @fc8;
+      opacity: 0.5;
+    }
+  }
+
+  &.ant-btn:active {
+    opacity: 0.5;
+    border-color: @fc5;
+    background-color: @fc8;
+  }
+}
+
+// 警示描边组件
+.cautionStrokeButton {
+  .strokeButton();
+  &.ant-btn,
+  &.ant-btn[disabled],
+  &.ant-btn:active {
+    border-color: @err-color;
+    color: @err-color;
+  }
+}

@@ -1,0 +1,18 @@
+{{MEMBER_NAME}} mentioned you in the "{{RECORD_TITLE}}" of the "{{NODE_NAME}}" datasheet.
+
+--------------------------------------------------------------------------------
+
+From {{MEMBER_NAME}}
+{{CREATED_AT}}
+
+Record: {{RECORD_TITLE}}
+
+{{CONTENT}}
+
+View record
+{{URL}}
+
+
+© {{YEARS}} AITable Ltd.
+
+Contact us (https://aitable.ai?home=1)

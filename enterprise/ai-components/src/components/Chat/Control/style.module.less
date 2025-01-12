@@ -1,0 +1,32 @@
+.chatControl {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  // background: var(--bgCommonDefault);
+}
+.stopConversation {
+  background: var(--bgBrandLightDefault);
+  border-radius: 4px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  color: var(--textBrandDefault);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background: var(--bgBrandLightHover);
+  }
+  &:active {
+    background: var(--bgBrandLightActive);
+  }
+  svg {
+    margin-right: 4px;
+  }
+}

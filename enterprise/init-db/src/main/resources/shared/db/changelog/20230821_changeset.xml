@@ -1,0 +1,64 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230821-001" author="Shawn" labels="ai">
+        <comment>create ai credit transaction table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS `${table.prefix}ai_credit_transaction`
+            (
+                `id`               bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id`         varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `ai_id`            varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Unique ID',
+                `training_id`      varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Training_id',
+                `conversation_id`  varchar(100) COLLATE utf8mb4_unicode_ci                       DEFAULT NULL COMMENT 'Conversation ID',
+                `message_index`    bigint                                                        DEFAULT NULL COMMENT 'Conversation Message Index',
+                `user_id`          bigint                                                        DEFAULT NULL COMMENT 'User ID',
+                `transaction_type` varchar(10) COLLATE utf8mb4_unicode_ci                        DEFAULT NULL COMMENT 'Transaction Type',
+                `amount`           decimal(10, 4)                                                DEFAULT NULL COMMENT 'Transaction Amount',
+                `created_at`       datetime                                                      DEFAULT NULL COMMENT 'Transaction DateTime',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY                `k_ai_id` (`ai_id`) USING BTREE,
+                KEY                `k_space_id` (`space_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='AI - Credit Transaction Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230821-002" author="Shawn" labels="ai">
+        <comment>create ai credit transaction overall table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS `${table.prefix}ai_credit_transaction_overall`
+            (
+                `id`             bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id`       varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `period`         varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Interval Period',
+                `start_date`     datetime                                                     DEFAULT NULL COMMENT 'Start DateTime',
+                `end_date`       datetime                                                     DEFAULT NULL COMMENT 'End DateTime',
+                `total_amount`   decimal(10, 4)                                               DEFAULT NULL COMMENT 'Total Amount',
+                `average_amount` decimal(10, 4)                                               DEFAULT NULL COMMENT 'Average Amount',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY              `k_space_period` (`space_id`,`period`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='AI - Credit Transaction Overall Table';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

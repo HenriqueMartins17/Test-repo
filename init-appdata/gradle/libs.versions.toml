@@ -1,0 +1,43 @@
+[versions]
+spring-boot = "3.2.0"
+picocli = "4.7.0"
+mybatis-plus = "3.5.4.1"
+mybatis-spring = "3.0.3"
+aws = "1.12.595"
+qiniu = "7.9.5"
+vi = "1.0.4"
+hutool = "5.8.23"
+# plugin version
+spring-dependency-management-plugin = "1.1.4"
+
+[libraries]
+spring-boot-batch = { module = "org.springframework.boot:spring-boot-starter-batch" }
+picocli = { module = "info.picocli:picocli-spring-boot-starter", version.ref = "picocli" }
+# ORM dependencies
+mybatis-plus = { module = "com.baomidou:mybatis-plus-boot-starter", version.ref = "mybatis-plus" }
+mybatis-spring = { module = "org.mybatis:mybatis-spring", version.ref = "mybatis-spring" }
+# OSS dependencies
+aws = { module = "com.amazonaws:aws-java-sdk-s3", version.ref = "aws" }
+qiniu = { module = "com.qiniu:qiniu-java-sdk", version.ref = "qiniu" }
+
+mysql = { module = "com.mysql:mysql-connector-j" }
+jackson = { module = "com.fasterxml.jackson.core:jackson-databind" }
+lombok = { module = "org.projectlombok:lombok" }
+v-client = { module = "cn.vika:vika-client", version.ref = "vi" }
+hutool-core = { module = "cn.hutool:hutool-core", version.ref = "hutool" }
+hutool-json = { module = "cn.hutool:hutool-json", version.ref = "hutool" }
+hutool-crypto = { module = "cn.hutool:hutool-crypto", version.ref = "hutool" }
+hutool-cache = { module = "cn.hutool:hutool-cache", version.ref = "hutool" }
+hutool-http = { module = "cn.hutool:hutool-http", version.ref = "hutool" }
+
+# test framework dependencies
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-batch-test = { module = "org.springframework.batch:spring-batch-test" }
+
+[bundles]
+# group libraries
+hutool = ["hutool-core", "hutool-json", "hutool-crypto", "hutool-cache", "hutool-http"]
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management-plugin" }

@@ -1,0 +1,12 @@
+{{MEMBER_NAME}} deleted records from the datasheet "{{NODE_NAME}}"
+
+Deleted records: {{RECORD_TITLE}}
+{{SPACE_NAME}}
+
+{{CREATED_AT}}
+
+View{{URL}}
+
+© {{YEARS}} APITable Ltd.
+
+Contact us (https://apitable.com?home=1)

@@ -1,0 +1,95 @@
+.toc {
+  padding: 16px;
+  position: absolute;
+  top: 48px;
+  right: calc(50% + 436px);
+  width: calc(50% - 436px);
+  max-width: 400px;
+  max-height: calc(100% - 48px);
+  overflow-y: auto;
+
+  .tocList {
+    margin-top: 8px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .tocItem {
+    border-left: 2px solid var(--bgControlsDefault);
+    transition: border-color 0.2s;
+
+    &.active {
+      border-color: var(--textBrandDefault);
+
+      a {
+        color: var(--textBrandDefault);
+      }
+    }
+
+    a {
+      color: var(--textCommonTertiary);
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    a:hover {
+      color: var(--textBrandDefault);
+    }
+
+    &.tocItem1 {
+      padding-left: 12px;
+    }
+
+    &.tocItem2 {
+      padding-left: 24px;
+    }
+
+    &.tocItem3 {
+      padding-left: 36px;
+    }
+
+    &.tocItem4 {
+      padding-left: 48px;
+    }
+
+    &.tocItem5 {
+      padding-left: 60px;
+    }
+
+    &.tocItem6 {
+      padding-left: 72px;
+    }
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .toc {
+    width: calc(100% - 820px);
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .toc {
+    left: 0;
+
+    &.open {
+      background-color: var(--bgCommonDefault);
+    }
+  }
+}
+
+@media screen and (max-width: 1048px) {
+  .toc {
+    width: calc(20% - 16px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .toc {
+    display: none;
+  }
+}

@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="V0.5-20200818-004" author="Chambers" labels="vcode">
+        <comment>Create Activity Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_004.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-006" author="Chambers" labels="vcode">
+        <comment>Create Code Record Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_006.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-007" author="Chambers" labels="vcode">
+        <comment>Create Code Coupon Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_007.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-008" author="Chambers" labels="third_party">
+        <comment>Create Member Information Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_008.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-009" author="Chambers" labels="third_party">
+        <comment>Create WeChat Mp Log Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_009.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-010" author="Chambers" labels="third_party">
+        <comment>Create Mp Qrcode Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_010.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-011" author="Chambers" labels="third_party">
+        <comment>Adjustment of WeChat related table notes</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_011.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-012" author="Benson" labels="third_party">
+        <comment>Create WeChat Keyword Reply Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_012.sql"/>
+    </changeSet>
+
+    <changeSet id="V0.5-20200818-016" author="Shawn" labels="integral">
+        <comment>Create Integral History Table</comment>
+        <sqlFile path="db/changelog/0.5/20200818_changeset_016.sql"/>
+    </changeSet>
+</databaseChangeLog>

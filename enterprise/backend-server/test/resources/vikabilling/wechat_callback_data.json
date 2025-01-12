@@ -1,0 +1,21 @@
+{
+  "amount": {
+    "currency": "CNY",
+    "payer_currency": "CNY",
+    "payer_total": 1,
+    "total": 1
+  },
+  "appid": "wx1c297da2ee480957",
+  "attach": "",
+  "bank_type": "PAB_CREDIT",
+  "mchid": "1600341633",
+  "out_trade_no": "2024013015462953654",
+  "payer": {
+    "openid": "oMagA1m7FlDjwqg-T1WevI2Bh2RY"
+  },
+  "success_time": "2024-01-30T23:46:54+00:00",
+  "trade_state": "SUCCESS",
+  "trade_state_desc": "SUCCESS",
+  "trade_type": "NATIVE",
+  "transaction_id": "4200002134202401309911722916"
+}

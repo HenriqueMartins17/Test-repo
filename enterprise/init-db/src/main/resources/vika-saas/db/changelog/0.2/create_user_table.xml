@@ -1,0 +1,84 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.2-20200312-035" author="ShawnDeng" labels="user">
+        <comment>Create User WeChat Authorization Management Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}wechat_auth_permission` (
+            `id` bigint(20) unsigned NOT NULL COMMENT 'Primary Key',
+            `auth_id` bigint(20) NOT NULL COMMENT 'Authorizer ID(link#xxxx_wechat_authorization#id)',
+            `permission_id` bigint(20) NOT NULL COMMENT 'Permission Set ID',
+            `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='User WeChat Authorization Management Form';
+        </sql>
+        <rollback>
+            <dropTable tableName="${table.prefix}wechat_auth_permission"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="V0.2-20200312-036" author="ShawnDeng" labels="user">
+        <comment>User WeChat Authorization Information Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}wechat_authorization` (
+            `id` bigint(20) unsigned NOT NULL COMMENT 'Primary Key',
+            `authorizer_appid` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Authorizer appid',
+            `authorizer_access_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Interface call token',
+            `access_token_expire` bigint(20) unsigned DEFAULT '0' COMMENT 'Token validity period, unit: seconds',
+            `authorizer_refresh_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Refresh Token ',
+            `nick_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nick Name',
+            `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Avatar',
+            `service_type` tinyint(2) unsigned DEFAULT NULL COMMENT 'Type of official account (0:Subscription No,1:The subscription number upgraded from the old historical account,2:Service No)',
+            `verify_type` tinyint(2) unsigned DEFAULT NULL COMMENT 'Official Account/Widget（Only-1/0）Type of certification (-1:Not certified,0:WeChat,1:Sina Weibo,2:Tencent Weibo,3:Qualified but not yet qualified,4:It has passed the qualification certification and has not yet passed the name certification, but has passed the Sina Weibo certification,5:It has passed the qualification certification and has not yet passed the name certification, but has passed the Tencent Weibo certification)',
+            `user_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Original ID',
+            `alias` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Wechat set by official account',
+            `principal_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Principal Name',
+            `business_info` json DEFAULT NULL COMMENT 'Opening status of functions（0 means not opened, 1 means opened）',
+            `qrcode_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'URL of QR code image',
+            `signature` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Introduction to widget account',
+            `miniprograminfo` json DEFAULT NULL COMMENT 'Widget Configuration',
+            `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='User WeChat Authorization Information Table';
+        </sql>
+        <rollback>
+            <dropTable tableName="${table.prefix}wechat_authorization"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="V0.2-20200312-037" author="ShawnDeng" labels="user">
+        <comment>Create User WeChat Information Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}wechat_member` (
+            `id` bigint(20) unsigned NOT NULL COMMENT 'Primary Key',
+            `open_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Unique ID of WeChat user',
+            `union_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Unique identifier of the user on WeChat open platform',
+            `session_key` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Session Key ',
+            `mobile` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Mobile Phone',
+            `full_mobile` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Mobile Phone（Foreign mobile phone numbers will have area codes）',
+            `code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Area code',
+            `nick_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nick Name',
+            `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Avatar',
+            `gender` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Gender',
+            `language` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Language',
+            `city` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'City',
+            `province` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Province',
+            `country` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Country',
+            `is_deleted` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0:No,1:Yes)',
+            `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='User WeChat Information Table';
+        </sql>
+        <rollback>
+            <dropTable tableName="${table.prefix}wechat_member"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.template.mapper.TemplatePropertyMapper">
+    <select id="selectAllTemplateProperty"
+            resultType="com.apitable.appdata.shared.template.pojo.TemplateProperty">
+        SELECT *
+        FROM ${tablePrefix}template_property
+        WHERE is_deleted = 0
+    </select>
+
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}template_property(id, property_type, property_code,
+        property_name, i18n_name, created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.propertyType}, #{item.propertyCode},
+                #{item.propertyName}, #{item.i18nName}, #{userId}, #{userId}
+            </trim>
+        </foreach>
+    </insert>
+
+    <delete id="delete">
+        DELETE
+        FROM ${tablePrefix}template_property
+    </delete>
+</mapper>

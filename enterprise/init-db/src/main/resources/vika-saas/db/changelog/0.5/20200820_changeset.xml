@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="V0.5-20200820-001" author="Benson" labels="wechat">
+        <comment>Keyword Reply Table add content field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}wechat_keyword_reply`
+            ADD COLUMN `content` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Reply content: for text type, content is text content; for image, image, voice and video type, content is media ID' AFTER `keyword`;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

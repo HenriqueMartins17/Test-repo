@@ -1,0 +1,98 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.13-20220706-001" author="CodeMan" labels="WeCom Interface License">
+        <comment>Create Social WeCom Permit Order Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_wecom_permit_order`
+            (
+                `id`                     bigint(20) unsigned NOT NULL COMMENT 'Primary Key',
+                `suite_id`               varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Suite ID',
+                `auth_corp_id`           varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Authorized enterprise ID',
+                `order_id`               varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Order ID of interface license',
+                `order_type`             tinyint(1) unsigned NOT NULL COMMENT 'Order Type.1: Purchase account number; 2: Renewal account number; 5: Historical enterprise migration order',
+                `order_status`           tinyint(1) unsigned NOT NULL COMMENT 'Order Status.0: To be paid; 1: Paid; 2: Unpaid, the order has been closed; 3: Unpaid, the order has expired; 4: Applying for refund; 5: Refund succeeded; 6: Refund is refused; 7: The order has expired (when the enterprise is removed from the list of service provider test enterprises, all test orders of the corresponding test enterprise will be set as expired)',
+                `price`                  int(10) NOT NULL COMMENT 'Order amount, Units: cents',
+                `base_account_count`     int(10) NOT NULL COMMENT 'Number of basic accounts',
+                `external_account_count` int(10) NOT NULL COMMENT 'External Account Count',
+                `duration_months`        int(10) NOT NULL COMMENT 'The number of months of purchase is 31 days per month',
+                `create_time`            datetime                                        DEFAULT NULL COMMENT 'Create Time of the order',
+                `pay_time`               datetime                                        DEFAULT NULL COMMENT 'Payment time of order',
+                `buyer_user_id`          varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'WeCom user ID of the subscriber',
+                `is_deleted`             tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag. 0: No, 1: Yes',
+                `created_at`             timestamp                              NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`             timestamp                              NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                UNIQUE KEY `uk_order_id` (`order_id`) USING BTREE,
+                KEY                      `idx_auth_corp_id` (`auth_corp_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Social WeCom Permit Order Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.13-20220706-002" author="CodeMan" labels="WeCom Interface License">
+        <comment>Create Social WeCom Permit Order Account Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_wecom_permit_order_account`
+            (
+                `id`              bigint(20) unsigned NOT NULL COMMENT 'Primary Key',
+                `suite_id`        varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Suite ID',
+                `auth_corp_id`    varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Authorized enterprise ID',
+                `type`            tinyint(1) unsigned NOT NULL COMMENT 'Account type. 1: Basic account number; 2: Interworking account',
+                `activate_status` tinyint(1) unsigned NOT NULL COMMENT 'Account status. 1: Unbound; 2: Bound and valid; 3: Has expired; 4: To be transferred',
+                `active_code`     varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Account activation code',
+                `cp_user_id`      varchar(32) COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'WeCom user ID activated by account binding',
+                `create_time`     datetime                                        DEFAULT NULL COMMENT 'Create Time,Create the order immediately after successful payment',
+                `active_time`     datetime                                        DEFAULT NULL COMMENT 'Time of first activation of bound user',
+                `expire_time`     datetime                                        DEFAULT NULL COMMENT 'Expire Time.Add the purchase duration to the first activation binding time',
+                `is_deleted`      tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Delete Tag. 0: No, 1: Yes',
+                `created_at`      timestamp                              NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`      timestamp                              NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                UNIQUE KEY `uk_auth_corp_id_active_code` (`auth_corp_id`,`active_code`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Social WeCom Permit Order Account Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.13-20220706-003" author="CodeMan" labels="WeCom Interface License">
+        <comment>Create Social WeCom Permit Order Account Bind Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_wecom_permit_order_account_bind`
+            (
+                `id`           bigint(20) unsigned NOT NULL COMMENT 'Primary Key ID',
+                `suite_id`     varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Suite ID',
+                `auth_corp_id` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Authorized enterprise ID',
+                `order_id`     varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Order ID of interface license',
+                `active_code`  varchar(32) COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'Activation code of new purchase order',
+                `cp_user_id`   varchar(32) COLLATE utf8mb4_unicode_ci          DEFAULT NULL COMMENT 'WeCom user ID of renewal order',
+                `is_deleted`   tinyint(1) NOT NULL DEFAULT '0' COMMENT 'Delete Tag. 0: No, 1: Yes',
+                `created_at`   timestamp                              NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`   timestamp                              NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                KEY            `idx_auth_corp_id` (`auth_corp_id`) USING BTREE,
+                KEY            `idx_order_id` (`order_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Social WeCom Permit Order Account Bind Table';
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

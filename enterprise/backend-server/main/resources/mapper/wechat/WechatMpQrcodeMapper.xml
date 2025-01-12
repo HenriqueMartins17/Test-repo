@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.enterprise.wechat.mapper.WechatMpQrcodeMapper">
+
+    <resultMap id="BaseInfo" type="com.apitable.enterprise.wechat.vo.QrCodeBaseInfo">
+        <result column="id" property="qrCodeId"/>
+        <result column="type" property="type"/>
+        <result column="ticket" property="image"/>
+        <result column="url" property="url"/>
+    </resultMap>
+
+    <select id="selectBaseInfo" resultMap="BaseInfo">
+        <if test="appId != null and appId != ''">
+            SELECT id, type, ticket, url
+            FROM ${tablePrefix}wechat_mp_qrcode
+            WHERE app_id = #{appId}
+              AND scene = #{scene}
+              AND is_deleted = 0
+        </if>
+    </select>
+
+    <resultMap id="DetailInfo" type="com.apitable.enterprise.wechat.vo.QrCodePageVo" extends="BaseInfo">
+        <result column="scene" property="scene"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="nick_name" property="creator"/>
+        <association property="statistics" javaType="com.apitable.enterprise.wechat.vo.QrCodeStatisticsVo"
+                     column="{scene=scene,appId=appId}"
+                     select="com.apitable.enterprise.wechat.mapper.WechatMpLogMapper.getStatisticsData">
+        </association>
+    </resultMap>
+
+    <select id="selectDetailInfo" resultMap="DetailInfo">
+        SELECT vwmq.id, vwmq.type, vwmq.scene, vwmq.ticket, vwmq.url, vwmq.created_at, vu.nick_name, #{appId} AS appId
+        FROM ${tablePrefix}wechat_mp_qrcode vwmq
+        LEFT JOIN ${tablePrefix}user vu ON vwmq.created_by = vu.id
+        WHERE vwmq.app_id = #{appId} AND vwmq.is_deleted = 0
+        ORDER BY vwmq.id DESC
+    </select>
+
+    <update id="removeByIdAndAppId">
+        UPDATE ${tablePrefix}wechat_mp_qrcode
+        SET is_deleted = 1, updated_by = #{userId}
+        WHERE id = #{id} AND app_id = #{appId} AND is_deleted = 0
+    </update>
+</mapper>

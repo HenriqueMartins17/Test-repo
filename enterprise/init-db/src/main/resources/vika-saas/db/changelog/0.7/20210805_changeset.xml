@@ -1,0 +1,82 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.7-20210805-001" author="Pengap" labels="social">
+        <comment>Create Third Party Platform Integration - Social Cp Tenant User Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_cp_tenant_user` (
+            `id` bigint UNSIGNED NOT NULL COMMENT 'Primary Key',
+            `tenant_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Enterprise ID',
+            `app_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Application ID',
+            `cp_user_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'User ID of a third-party platform member. The account corresponding to the management end, which is unique in the enterprise',
+            `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`) USING BTREE,
+            UNIQUE KEY `uk_tenant_user` (`tenant_id`,`app_id`,`cp_user_id`) USING BTREE
+            ) ENGINE = InnoDB
+            DEFAULT CHARSET = utf8mb4
+            COLLATE = utf8mb4_unicode_ci COMMENT = 'Third Party Platform Integration - Social Cp Tenant User Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.7-20210805-002" author="Pengap" labels="social">
+        <comment>Create Third Party Platform Integration - Social Cp User Bind Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_cp_user_bind` (
+            `id` bigint UNSIGNED NOT NULL COMMENT 'Primary Key',
+            `user_id` bigint unsigned NOT NULL COMMENT 'User ID(link#xxxx_user#id)',
+            `cp_tenant_user_id` bigint unsigned NOT NULL COMMENT 'Enterprise WeChat tenant user ID(link#xxxx_social_cp_tenant_user#id)',
+            `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`) USING BTREE,
+            UNIQUE KEY `uk_user_cp_tenant` (`user_id`,`cp_tenant_user_id`) USING BTREE
+            ) ENGINE = InnoDB
+            DEFAULT CHARSET = utf8mb4
+            COLLATE = utf8mb4_unicode_ci COMMENT = 'Third Party Platform Integration - Social Cp User Bind Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.7-20210805-003" author="Pengap" labels="social">
+        <comment>Create Third Party Platform Integration - Social Tenant Domain Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_tenant_domain` (
+            `id` bigint UNSIGNED NOT NULL COMMENT 'Primary Key',
+            `tenant_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Enterprise ID(link#xxxx_social_tenant#id)',
+            `space_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Enterprise bound space station ID',
+            `domain_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Enterprise exclusive domain name',
+            `status` tinyint unsigned NOT NULL DEFAULT '1' COMMENT 'Status (0: Deactivate, 1: Enable)',
+            `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+            `created_by` bigint(20) DEFAULT NULL COMMENT 'Creator',
+            `updated_by` bigint(20) DEFAULT NULL COMMENT 'Last Update By',
+            `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`)
+            ) ENGINE = InnoDB
+            DEFAULT CHARSET = utf8mb4
+            COLLATE = utf8mb4_unicode_ci COMMENT = 'Third Party Platform Integration - Social Tenant Domain Table';
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

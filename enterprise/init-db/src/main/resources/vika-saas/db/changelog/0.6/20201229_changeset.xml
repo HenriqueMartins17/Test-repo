@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="V0.6-20201229-001" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - Feishu Event Log Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_001.sql"/>
+    </changeSet>
+    <changeSet id="V0.6-20201229-002" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - Social Tenant Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_002.sql"/>
+    </changeSet>
+    <changeSet id="V0.6-20201229-003" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - Social Tenant Bind Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_003.sql"/>
+    </changeSet>
+    <changeSet id="V0.6-20201229-004" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - Social Tenant Department Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_004.sql"/>
+    </changeSet>
+    <changeSet id="V0.6-20201229-005" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - Social Tenant Department Bind Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_005.sql"/>
+    </changeSet>
+    <changeSet id="V0.6-20201229-006" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - Social Tenant  User Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_006.sql"/>
+    </changeSet>
+    <changeSet id="V0.6-20201229-007" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - User Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_007.sql"/>
+    </changeSet>
+    <changeSet id="V0.6-20201229-008" author="Shawn" labels="social">
+        <comment>Third Party Platform Integration - User Bind Table</comment>
+        <sqlFile path="db/changelog/0.6/20201229_changeset_008.sql"/>
+    </changeSet>
+</databaseChangeLog>

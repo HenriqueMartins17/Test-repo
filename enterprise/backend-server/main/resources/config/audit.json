@@ -1,0 +1,348 @@
+{
+    "actual_delete_space": {
+        "content": "audit_space_complete_delete_detail",
+        "online": true,
+        "type": "space",
+        "category": "space_change_event",
+        "name": "audit_space_complete_delete"
+    },
+    "add_field_role": {
+        "content": "audit_add_field_role_detail",
+        "type": "space",
+        "category": "datasheet_field_permission_change_event",
+        "name": "audit_add_field_role"
+    },
+    "add_node_role": {
+        "content": "audit_add_node_role_detail",
+        "online": true,
+        "type": "space",
+        "sort": "11",
+        "category": "work_catalog_permission_change_event",
+        "name": "audit_add_node_role",
+        "show_in_audit_log": true
+    },
+    "add_sub_admin": {
+        "type": "space",
+        "category": "admin_permission_change_event"
+    },
+    "add_team_to_member": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "agree_user_apply": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "cancel_delete_space": {
+        "content": "audit_space_cancel_delete_detail",
+        "online": true,
+        "type": "space",
+        "category": "space_change_event",
+        "name": "audit_space_cancel_delete"
+    },
+    "change_main_admin": {
+        "type": "space",
+        "category": "admin_permission_change_event"
+    },
+    "copy_node": {
+        "content": "audit_space_node_copy_detail",
+        "online": true,
+        "type": "space",
+        "sort": "4",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_node_copy",
+        "show_in_audit_log": true
+    },
+    "create_node": {
+        "content": "audit_space_node_create_detail",
+        "online": true,
+        "type": "space",
+        "sort": "1",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_node_create",
+        "show_in_audit_log": true
+    },
+    "create_space": {
+        "content": "audit_space_create_detail",
+        "online": true,
+        "type": "space",
+        "category": "space_change_event",
+        "name": "audit_space_create"
+    },
+    "create_team": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "create_template": {
+        "online": true,
+        "type": "space",
+        "category": "space_template_event",
+        "name": "audit_add_template"
+    },
+    "delete_field_role": {
+        "content": "audit_delete_field_role_detail",
+        "type": "space",
+        "category": "datasheet_field_permission_change_event",
+        "name": "audit_delete_field_role"
+    },
+    "delete_node": {
+        "content": "audit_space_node_delete_detail",
+        "online": true,
+        "type": "space",
+        "sort": "6",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_node_delete",
+        "show_in_audit_log": true
+    },
+    "delete_node_role": {
+        "content": "audit_delete_node_role_detail",
+        "online": true,
+        "type": "space",
+        "sort": "13",
+        "category": "work_catalog_permission_change_event",
+        "name": "audit_delete_node_role",
+        "show_in_audit_log": true
+    },
+    "delete_rubbish_node": {
+        "content": "audit_space_rubbish_node_delete_detail",
+        "online": true,
+        "type": "space",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_rubbish_node_delete"
+    },
+    "delete_space": {
+        "content": "audit_space_delete_detail",
+        "online": true,
+        "type": "space",
+        "category": "space_change_event",
+        "name": "audit_space_delete"
+    },
+    "delete_sub_admin": {
+        "type": "space",
+        "category": "admin_permission_change_event"
+    },
+    "delete_team": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "delete_template": {
+        "online": true,
+        "type": "space",
+        "category": "space_template_event",
+        "name": "audit_delete_template"
+    },
+    "disable_field_role": {
+        "content": "audit_disable_field_role_detail",
+        "type": "space",
+        "category": "datasheet_field_permission_change_event",
+        "name": "audit_disable_field_role"
+    },
+    "disable_node_role": {
+        "content": "audit_disable_node_role_detail",
+        "online": true,
+        "type": "space",
+        "sort": "10",
+        "category": "work_catalog_permission_change_event",
+        "name": "audit_disable_node_role",
+        "show_in_audit_log": true
+    },
+    "disable_node_share": {
+        "content": "audit_disable_node_share_detail",
+        "online": true,
+        "type": "space",
+        "sort": "16",
+        "category": "work_catalog_share_event",
+        "name": "audit_disable_node_share",
+        "show_in_audit_log": true
+    },
+    "enable_field_role": {
+        "content": "audit_enable_field_role_detail",
+        "type": "space",
+        "category": "datasheet_field_permission_change_event",
+        "name": "audit_enable_field_role"
+    },
+    "enable_node_role": {
+        "content": "audit_enable_node_role_detail",
+        "online": true,
+        "type": "space",
+        "sort": "9",
+        "category": "work_catalog_permission_change_event",
+        "name": "audit_enable_node_role",
+        "show_in_audit_log": true
+    },
+    "enable_node_share": {
+        "content": "audit_enable_node_share_detail",
+        "online": true,
+        "type": "space",
+        "sort": "14",
+        "category": "work_catalog_share_event",
+        "name": "audit_enable_node_share",
+        "show_in_audit_log": true
+    },
+    "export_node": {
+        "content": "audit_space_node_export_detail",
+        "type": "space",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_node_export"
+    },
+    "import_node": {
+        "content": "audit_space_node_import_detail",
+        "online": true,
+        "type": "space",
+        "sort": "3",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_node_import",
+        "show_in_audit_log": true
+    },
+    "invite_user_join_by_email": {
+        "content": "audit_space_invite_user_detail",
+        "type": "space",
+        "category": "organization_change_event",
+        "name": "audit_space_invite_user"
+    },
+    "move_node": {
+        "content": "audit_space_node_move_detail",
+        "online": true,
+        "type": "space",
+        "sort": "5",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_node_move",
+        "show_in_audit_log": true
+    },
+    "quote_template": {
+        "online": true,
+        "type": "space",
+        "category": "work_catalog_change_event",
+        "name": "audit_quote_template"
+    },
+    "recover_rubbish_node": {
+        "content": "audit_space_rubbish_node_recover_detail",
+        "online": true,
+        "type": "space",
+        "sort": "7",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_rubbish_node_recover",
+        "show_in_audit_log": true
+    },
+    "remove_member_from_team": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "remove_user": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "rename_node": {
+        "content": "audit_space_node_change_detail",
+        "online": true,
+        "type": "space",
+        "sort": "2",
+        "category": "work_catalog_change_event",
+        "name": "audit_space_node_change",
+        "show_in_audit_log": true
+    },
+    "rename_space": {
+        "content": "audit_space_change_detail",
+        "online": true,
+        "type": "space",
+        "category": "space_change_event",
+        "name": "audit_space_rename"
+    },
+    "sort_node": {
+        "online": true,
+        "type": "space",
+        "category": "work_catalog_change_event"
+    },
+    "store_share_node": {
+        "online": true,
+        "type": "space",
+        "sort": "8",
+        "category": "work_catalog_change_event",
+        "name": "audit_store_share_node",
+        "show_in_audit_log": true
+    },
+    "update_field_role": {
+        "content": "audit_update_field_role_detail",
+        "type": "space",
+        "category": "datasheet_field_permission_change_event",
+        "name": "audit_update_field_role"
+    },
+    "update_field_role_setting": {
+        "type": "space",
+        "category": "datasheet_field_permission_change_event"
+    },
+    "update_member_property": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "update_member_team": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "update_node_cover": {
+        "online": true,
+        "type": "space",
+        "category": "work_catalog_change_event"
+    },
+    "update_node_desc": {
+        "online": true,
+        "type": "space",
+        "category": "work_catalog_change_event"
+    },
+    "update_node_icon": {
+        "online": true,
+        "type": "space",
+        "category": "work_catalog_change_event"
+    },
+    "update_node_role": {
+        "content": "audit_update_node_role_detail",
+        "online": true,
+        "type": "space",
+        "sort": "12",
+        "category": "work_catalog_permission_change_event",
+        "name": "audit_update_node_role",
+        "show_in_audit_log": true
+    },
+    "update_node_share_setting": {
+        "content": "audit_update_node_share_setting_detail",
+        "online": true,
+        "type": "space",
+        "sort": "15",
+        "category": "work_catalog_share_event",
+        "name": "audit_update_node_share_setting",
+        "show_in_audit_log": true
+    },
+    "update_space_logo": {
+        "online": true,
+        "type": "space",
+        "category": "space_change_event"
+    },
+    "update_sub_admin_role": {
+        "type": "space",
+        "category": "admin_permission_change_event"
+    },
+    "update_team_property": {
+        "type": "space",
+        "category": "organization_change_event"
+    },
+    "user_leave_space": {
+        "content": "audit_user_quit_space_detail",
+        "type": "space",
+        "category": "organization_change_event",
+        "name": "audit_user_quit_space"
+    },
+    "user_login": {
+        "content": "audit_user_login_detail",
+        "online": true,
+        "type": "system",
+        "category": "account_event",
+        "name": "audit_user_login"
+    },
+    "user_logout": {
+        "content": "audit_user_logout_detail",
+        "online": true,
+        "type": "system",
+        "category": "account_event",
+        "name": "audit_user_logout"
+    }
+}

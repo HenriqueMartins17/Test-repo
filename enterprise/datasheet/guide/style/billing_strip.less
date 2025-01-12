@@ -1,0 +1,79 @@
+@import "~pc/styles/lib_mixins.less";
+
+.guide-modal-no-box-shadow {
+  box-shadow: none;
+}
+
+.guide-billing-strip {
+  &-imgWrap {
+    display: flex;
+    justify-content: center;
+    padding: 8px 8px 0;
+  
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  }
+
+  &-infoWrap {
+    padding: 16px 24px 24px;
+    font-size: 16px;
+    color: var(--textCommonPrimary)
+  }
+
+  &-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &-description {
+    margin: 24px 0;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &-header {
+      margin-bottom: 16px;
+    }
+
+    &-content {
+      padding-left: 64px;
+    }
+  
+    &-footer {
+      margin: 8px 0 0 64px;
+      color: var(--textBrandDefault);
+    }
+  }
+
+  &-footer {
+    padding: 0 64px;
+  }
+
+  &-nextBtn, &-nextBtn:hover, &-nextBtn:active {
+    background-color: var(--rc09) !important;
+  }
+
+  &-skipBtn {
+    margin-top: 16px;
+  }
+
+  .ant-modal-body {
+    padding: 0 !important;
+  }
+
+  .ant-modal-close-x {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+
+    svg {
+      fill: var(--staticWhite0) !important;
+    }
+  }
+}

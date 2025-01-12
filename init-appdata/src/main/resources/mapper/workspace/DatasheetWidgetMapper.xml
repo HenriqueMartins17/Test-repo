@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.workspace.mapper.DatasheetWidgetMapper">
+    <select id="selectByDatasheetIds"
+            resultType="com.apitable.appdata.shared.workspace.pojo.DatasheetWidget">
+        SELECT *
+        FROM ${tablePrefix}datasheet_widget
+        WHERE dst_id IN
+        <foreach item="item" index="index" collection="datasheetIds" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertBatch">
+        REPLACE INTO ${tablePrefix}datasheet_widget(id, space_id, dst_id, widget_id,
+        source_id)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.spaceId}, #{item.dstId}, #{item.widgetId},
+                #{item.sourceId}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

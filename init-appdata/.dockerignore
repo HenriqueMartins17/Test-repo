@@ -1,0 +1,4 @@
+Dockerfile
+.gradle
+src
+build/libs/init-appdata-plain.jar

@@ -1,0 +1,24 @@
+.workdocDownload {
+  padding: 16px;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 300px;
+  height: calc(100% - 48px);
+  background-color: var(--bgCommonDefault);
+  border-left: 1px solid var(--borderCommonDefault);
+}
+
+.downloadIconButton,
+.iconButton {
+  margin-left: 8px;
+  svg {
+    fill: var(--textCommonPrimary);
+  }
+}
+.downloadIconButton.active {
+  background-color: var(--bgBrandLightDefault);
+  svg {
+    fill: var(--textBrandDefault);
+  }
+}

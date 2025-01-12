@@ -1,0 +1,162 @@
+{
+  "after_expiration": null,
+  "allow_promotion_codes": true,
+  "amount_subtotal": 5900,
+  "amount_total": 5900,
+  "automatic_tax": {
+    "status": "complete"
+  },
+  "billing_address_collection": null,
+  "cancel_url": "http://localhost:8081/management/upgrade",
+  "client_reference_id": null,
+  "consent": null,
+  "consent_collection": null,
+  "created": 1704961224,
+  "currency": "usd",
+  "currency_conversion": null,
+  "custom_fields": [],
+  "custom_text": {
+    "shipping_address": null,
+    "submit": null
+  },
+  "customer": {
+    "address": {
+      "city": null,
+      "country": "HK",
+      "line1": null,
+      "line2": null,
+      "postal_code": null,
+      "state": null
+    },
+    "balance": 0,
+    "cash_balance": null,
+    "created": 1704887947,
+    "currency": null,
+    "default_source": null,
+    "deleted": null,
+    "delinquent": false,
+    "description": null,
+    "discount": null,
+    "email": "test_user@apitable.com",
+    "id": "cus_PLhqqwvbOgx1l7",
+    "invoice_credit_balance": null,
+    "invoice_prefix": "DAFA1D59",
+    "invoice_settings": {
+      "custom_fields": null,
+      "default_payment_method": null,
+      "footer": null,
+      "rendering_options": null
+    },
+    "livemode": false,
+    "metadata": {},
+    "name": "test_user",
+    "next_invoice_sequence": 1,
+    "object": "customer",
+    "phone": null,
+    "preferred_locales": [],
+    "shipping": null,
+    "sources": null,
+    "subscriptions": null,
+    "tax": null,
+    "tax_exempt": "none",
+    "tax_ids": null,
+    "test_clock": null
+  },
+  "customer_creation": null,
+  "customer_details": {
+    "address": {
+      "city": null,
+      "country": "HK",
+      "line1": null,
+      "line2": null,
+      "postal_code": null,
+      "state": null
+    },
+    "email": "test_user@apitable.com",
+    "name": "test_user",
+    "phone": null,
+    "tax_exempt": "none",
+    "tax_ids": []
+  },
+  "customer_email": null,
+  "expires_at": 1705047624,
+  "id": "cs_test_b12hE",
+  "invoice": null,
+  "invoice_creation": {
+    "enabled": false,
+    "invoice_data": {
+      "account_tax_ids": null,
+      "custom_fields": null,
+      "description": null,
+      "footer": null,
+      "metadata": {},
+      "rendering_options": null
+    }
+  },
+  "line_items": null,
+  "livemode": false,
+  "locale": null,
+  "metadata": {
+    "priceId": "price_1OYjXKH4MhQOilwxiwdXxXJm",
+    "spaceId": "spcSkh3gESJ8d"
+  },
+  "mode": "payment",
+  "object": "checkout.session",
+  "payment_intent": "pi_3OXJVJH4MhQOilwx1Jbzlc76",
+  "payment_link": null,
+  "payment_method_collection": "always",
+  "payment_method_options": {
+    "acss_debit": null,
+    "affirm": null,
+    "afterpay_clearpay": null,
+    "alipay": null,
+    "au_becs_debit": null,
+    "bacs_debit": null,
+    "bancontact": null,
+    "boleto": null,
+    "card": null,
+    "cashapp": null,
+    "customer_balance": null,
+    "eps": null,
+    "fpx": null,
+    "giropay": null,
+    "grabpay": null,
+    "ideal": null,
+    "klarna": null,
+    "konbini": null,
+    "link": null,
+    "oxxo": null,
+    "p24": null,
+    "paynow": null,
+    "pix": null,
+    "sepa_debit": null,
+    "sofort": null,
+    "us_bank_account": null
+  },
+  "payment_method_types": [
+    "card",
+    "alipay"
+  ],
+  "payment_status": "paid",
+  "phone_number_collection": {
+    "enabled": false
+  },
+  "recovered_from": null,
+  "setup_intent": null,
+  "shipping_address_collection": null,
+  "shipping_cost": null,
+  "shipping_details": null,
+  "shipping_options": [],
+  "status": "complete",
+  "submit_type": null,
+  "subscription": null,
+  "success_url": "http://localhost:8081/workbench?stripePaySuccess\u003dtrue",
+  "tax_id_collection": null,
+  "total_details": {
+    "amount_discount": 0,
+    "amount_shipping": 0,
+    "amount_tax": 0,
+    "breakdown": null
+  },
+  "url": null
+}

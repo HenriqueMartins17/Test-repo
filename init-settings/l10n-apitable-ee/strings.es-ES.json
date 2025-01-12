@@ -1,0 +1,17 @@
+{
+  "backup_action_delete": "Eliminar instantánea",
+  "backup_action_recover": "Recuperar",
+  "backup_create": "Crear instantánea",
+  "backup_create_success": "Snapshot creada con éxito",
+  "backup_creating": "Creando",
+  "backup_delete_text": "Después de la eliminación, no se puede restaurar. ¿Seguro que quieres borrarlo?",
+  "backup_delete_title": "Eliminar instantánea",
+  "backup_deleted": "Suprimido",
+  "backup_name_success_update": "Actualizado con éxito",
+  "backup_recover_dst_name_suffix": "Recuperar",
+  "backup_recover_modal_text": "Elija dónde poner la instantánea",
+  "backup_recover_success": "Recuperado con éxito",
+  "backup_recover_title": "Recuperar",
+  "backup_success_delete": "Snapshot borrado con éxito",
+  "backup_title": "SnapshotName"
+}

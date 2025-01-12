@@ -1,0 +1,50 @@
+.tableWrapper {
+  :global {
+    table {
+      border-spacing: 0 4px !important;
+    }
+
+    thead {
+
+      margin-bottom: 8px;
+      height: 48px;
+
+      tr {
+
+        border-radius: 8px;
+        th {
+          background-color: var(--bgControlsDefault) !important;
+          border-bottom: none;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: 56px;
+        margin-bottom: 4px;
+
+        border-radius: 8px;
+
+        &:first-child {
+
+        }
+        td:first-child {
+          border-top-left-radius: 8px !important;
+          border-bottom-left-radius: 8px !important;
+        }
+
+        td:last-child {
+          border-top-right-radius: 8px !important;
+          border-bottom-right-radius: 8px !important;
+        }
+
+        td {
+          background-color: var(--bgCommonLower);
+          padding: 8px 16px;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

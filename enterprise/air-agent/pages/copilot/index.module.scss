@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100vh;
+  margin: 0 auto;
+  width: 75%;
+
+  .leftPanel {
+    width: 25%;
+  }
+}

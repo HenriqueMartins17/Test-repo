@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.integral.mapper.IntegralHistoryMapper">
+    <select id="selectTotalIntegralValueByUserId" resultType="java.lang.Integer">
+        SELECT total_integral
+        FROM ${tablePrefix}integral_history
+        WHERE user_id = #{userId}
+        ORDER BY id DESC
+        LIMIT 0,1
+    </select>
+
+    <resultMap id="integralRecord" type="com.apitable.user.vo.IntegralRecordVO">
+        <result column="action_code" property="action"/>
+        <result column="alter_type" property="alterType"/>
+        <result column="alter_integral" property="alterValue"/>
+        <result column="parameter" property="params" typeHandler="com.apitable.shared.util.ibatis.JsonHandler"/>
+        <result column="created_at" property="createdAt"/>
+    </resultMap>
+
+    <select id="selectPageByUserId" resultMap="integralRecord">
+        SELECT action_code, alter_type, alter_integral, parameter, created_at
+        FROM ${tablePrefix}integral_history
+        WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectCountByUserIdAndKeyValue" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM ${tablePrefix}integral_history
+        WHERE user_id = #{userId}
+          AND JSON_EXTRACT(parameter, CONCAT('$.', #{key})) = #{val}
+    </select>
+
+    <update id="updateParameterById">
+        UPDATE ${tablePrefix}integral_history
+        SET parameter = #{parameter}
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectCountByUserIdAndActionCode" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM ${tablePrefix}integral_history
+        WHERE user_id = #{userId}
+          AND action_code = #{actionCode}
+    </select>
+
+    <select id="selectCountByUserIdAndActionCodes" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM ${tablePrefix}integral_history
+        WHERE user_id = #{userId} AND action_code IN
+        <foreach item="item" index="index" collection="actionCodes" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

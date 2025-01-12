@@ -1,0 +1,12 @@
+*.interp
+*.tokens
+DatasheetQL.ts
+DatasheetQLLexer.ts
+DatasheetQLParserListener.ts
+DatasheetQLVisitor.ts
+node_modules/
+.antlr/
+*.lang.json
+dist/
+keys.ts
+package-lock.json

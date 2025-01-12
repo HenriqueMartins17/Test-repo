@@ -1,0 +1,71 @@
+[package]
+name = "databus_wasm"
+version = "1.10.0"
+authors = ["Kelly Peilin Chan <kelly@vikadata.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+gloo-utils = { version = "0.1", features = ["serde"] }
+rexie = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde-wasm-bindgen = "0.4"
+log = "0.4.6"
+wasm-logger = "0.2.0"
+databus_core = { path = "../databus-core" }
+json0 = { path = "../json0" }
+databus_dao_api = { path = "../databus-dao-api" }
+
+# The `console_error_panic_hook` crate provides better debugging of panics by
+# logging them with `console.error`. This is great for development, but requires
+# all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
+# code size when deploying.
+console_error_panic_hook = { version = "0.1.6", optional = true }
+
+# `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
+# compared to the default allocator's ~10K. It is slower than the default
+# allocator, however.
+wee_alloc = { version = "0.4.5", optional = true }
+
+wasm-bindgen = "0.2.87"
+wasm-bindgen-futures = "0.4.37"
+reqwest-wasm = "0.11.16"
+#databus_dao_api = { path = "../databus-dao-api" }
+js-sys = "0.3.64"
+async-trait = "0.1.72"
+rand = "0.8.5"
+anyhow = "1.0.72"
+serde_json = "1.0.103"
+
+[dependencies.web-sys]
+version = "0.3.64"
+features = [
+  'Headers',
+  'Request',
+  'RequestInit',
+  'RequestMode',
+  'Response',
+  'Window',
+]
+
+
+[target.'cfg(target_family= "wasm")'.dependencies]
+
+# [target.'cfg(target = "wasm32-wasi")'.dependencies]
+# databus_dao_db = { path = "../databus-dao-db" }
+
+
+[dev-dependencies]
+tokio-test = "0.4.2"
+wasm-bindgen-test = "0.3.13"
+mockito = "1.1.0"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"

@@ -1,0 +1,62 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# Ignore Gradle build output directory
+**/.gradle
+**/build
+**/bin
+
+# Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+.apt_generated/
+
+# IntelliJ project files
+.idea
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+*.cache
+classes/
+out/
+
+.env
+.data
+
+# jrebel
+**/rebel.xml
+
+# nodejs dependencies
+**/**/node_modules
+*.log
+
+# MacOS
+.DS_Store
+
+# all folder in `apitable` that called enterprise must be link by `make edition`
+/apitable/packages/core/src/modules/enterprise/*
+!/apitable/packages/core/src/modules/enterprise/index.ts
+/apitable/packages/i18n-lang/src/enterprise
+/apitable/packages/room-server/src/enterprise
+/apitable/packages/datasheet/src/modules/enterprise
+/apitable/packages/datasheet/.env.development
+/apitable/packages/datasheet/.env.production
+/apitable/packages/air-agent/*
+/apitable/packages/ai-components/src/*
+/apitable/backend-server/application/src/main/java/com/apitable/enterprise
+/apitable/backend-server/application/src/main/resources/enterprise
+/apitable/backend-server/application/src/main/resources/templates/notification/enterprise
+/apitable/backend-server/application/src/test/java/com/apitable/enterprise
+/apitable/backend-server/application/src/test/resources/enterprise
+apitable/scripts/protos/enterprise
+apitable/backend-server/application/src/main/proto/enterprise
+.devenv-edition
+.edition
+.distro
+
+/enterprise/core/config/billing.auto.origin.json

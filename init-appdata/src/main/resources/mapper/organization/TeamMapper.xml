@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.organization.mapper.TeamMapper">
+    <insert id="insert">
+        INSERT INTO ${tablePrefix}unit_team(id, space_id, parent_id, team_name)
+        VALUES (#{entity.id}, #{entity.spaceId}, #{entity.parentId}, #{entity.teamName})
+    </insert>
+
+    <delete id="deleteBySpaceId">
+        DELETE
+        FROM ${tablePrefix}unit_team
+        WHERE space_id = #{spaceId}
+    </delete>
+</mapper>

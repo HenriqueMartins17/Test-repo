@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.vika.keycloak</groupId>
+    <artifactId>vika-keycloak</artifactId>
+    <packaging>pom</packaging>
+    <version>${revision}</version>
+    <modules>
+        <module>embedded/embedded-keycloak-server-starter</module>
+        <module>apps/plain</module>
+        <module>apps/mixed</module>
+        <module>extensions/themes</module>
+        <module>extensions/providers/example-provider</module>
+        <module>extensions/providers/vika-sheet-provider</module>
+        <module>extensions/providers/vika-jdbc-provider</module>
+        <module>extensions/authenticators/basic-authenticator</module>
+        <module>extensions/authenticators/social-authenticator</module>
+    </modules>
+    <name>Vika Keycloak Project</name>
+    <description>Keycloak Vika Project</description>
+    <properties>
+        <revision>0.0.2</revision>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.skip.test>true</maven.skip.test>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <!--SpringBoot 版本-->
+        <spring-boot.version>2.5.4</spring-boot.version>
+        <!--对应开发环境的Keycloak Server版本-->
+        <keycloak.version>15.0.0</keycloak.version>
+        <!--Resteasy 版本不能随便乱指定，暂定这个版本能跑起来-->
+        <resteasy.version>3.15.1.Final</resteasy.version>
+        <infinispan.version>11.0.9.Final</infinispan.version>
+        <liquibase.version>3.5.5</liquibase.version>
+        <auto-service.version>1.0</auto-service.version>
+        <hutool-all.version>5.7.10</hutool-all.version>
+        <aliyun-java-sdk-afs.version>1.0.1</aliyun-java-sdk-afs.version>
+        <aliyun-java-sdk-core.version>4.5.10</aliyun-java-sdk-core.version>
+        <weixin-java.version>4.1.0</weixin-java.version>
+        <testng.version>7.4.0</testng.version>
+        <mockito-core.version>3.12.4</mockito-core.version>
+        <assertj-core.version>3.20.2</assertj-core.version>
+        <vika-client.version>1.0.2</vika-client.version>
+        <JustAuth.version>1.16.4</JustAuth.version>
+        <jedis.version>3.7.0</jedis.version>
+        <alibaba-dingtalk-service-sdk.version>1.0.1</alibaba-dingtalk-service-sdk.version>
+        <okhttp3.version>4.5.0</okhttp3.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--覆盖spring里的liquibase版本-->
+            <dependency>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-core</artifactId>
+                <version>${liquibase.version}</version>
+            </dependency>
+            <!--覆盖spring里的infinispan版本-->
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-bom</artifactId>
+                <version>${infinispan.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.keycloak</groupId>
+                <artifactId>keycloak-dependencies-server-all</artifactId>
+                <version>${keycloak.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun-java-sdk-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-afs</artifactId>
+                <version>${aliyun-java-sdk-afs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-open</artifactId>
+                <version>${weixin-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-bom</artifactId>
+                <version>${resteasy.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auto.service</groupId>
+                <artifactId>auto-service</artifactId>
+                <version>${auto-service.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>me.zhyd.oauth</groupId>
+                <artifactId>JustAuth</artifactId>
+                <version>${JustAuth.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>alibaba-dingtalk-service-sdk</artifactId>
+                <version>${alibaba-dingtalk-service-sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+            <!-- Test NG -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Mockito -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito-core.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Vika Client -->
+            <dependency>
+                <groupId>cn.vika</groupId>
+                <artifactId>vika-client</artifactId>
+                <version>${vika-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj-core.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

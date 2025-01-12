@@ -1,0 +1,79 @@
+{
+  "Plus": {
+    "id": "prod_NH7ss7RDhB9fHx",
+    "name": "Plus",
+    "default_price": "price_1NeqEnH4MhQOilwxmbh0GLAY",
+    "most_popular": true,
+    "prices": [
+      {
+        "id": "price_1NeqEBH4MhQOilwxSNkpNPxh",
+        "type": "recurring",
+        "product_id": "prod_NH7ss7RDhB9fHx",
+        "recurring_interval": "month",
+        "include_unit": 1,
+        "amount": 700,
+        "per_unit_amount": 700
+      },
+      {
+        "id": "price_1NeqEnH4MhQOilwxmbh0GLAY",
+        "type": "recurring",
+        "product_id": "prod_NH7ss7RDhB9fHx",
+        "recurring_interval": "year",
+        "include_unit": 1,
+        "amount": 6000,
+        "per_unit_amount": 6000
+      }
+    ]
+  },
+  "Pro": {
+    "id": "prod_NH8mBOjosj3Qgz",
+    "name": "Pro",
+    "default_price": "price_1NfCP3H4MhQOilwx58Jkd0yi",
+    "prices": [
+      {
+        "id": "price_1NerXyH4MhQOilwxFxdwN6q8",
+        "type": "recurring",
+        "product_id": "prod_NH8mBOjosj3Qgz",
+        "recurring_interval": "month",
+        "include_unit": 1,
+        "amount": 1400,
+        "per_unit_amount": 1400
+      },
+      {
+        "id": "price_1NfCP3H4MhQOilwx58Jkd0yi",
+        "type": "recurring",
+        "product_id": "prod_NH8mBOjosj3Qgz",
+        "recurring_interval": "year",
+        "include_unit": 1,
+        "amount": 14400,
+        "per_unit_amount": 14400
+      }
+    ]
+  },
+  "Enterprise": {
+    "id": "prod_NTRUP0177buntO",
+    "name": "Enterprise",
+    "default_price": "price_1NerbdH4MhQOilwxLbcStbF5",
+    "prices": [
+      {
+        "id": "price_1Nerb4H4MhQOilwx9kicYKl2",
+        "type": "recurring",
+        "product_id": "prod_NTRUP0177buntO",
+        "recurring_interval": "month",
+        "include_unit": 1,
+        "amount": 3200,
+        "trial": true,
+        "per_unit_amount": 3200
+      },
+      {
+        "id": "price_1NerbdH4MhQOilwxLbcStbF5",
+        "type": "recurring",
+        "product_id": "prod_NTRUP0177buntO",
+        "recurring_interval": "year",
+        "include_unit": 1,
+        "amount": 36000,
+        "per_unit_amount": 36000
+      }
+    ]
+  }
+}

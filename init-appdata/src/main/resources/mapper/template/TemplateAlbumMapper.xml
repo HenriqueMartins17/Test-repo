@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.template.mapper.TemplateAlbumMapper">
+    <select id="selectAllTemplateAlbum"
+            resultType="com.apitable.appdata.shared.template.pojo.TemplateAlbum">
+        SELECT *
+        FROM ${tablePrefix}template_album
+        WHERE is_deleted = 0
+    </select>
+
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}template_album(id, album_id, i18n_name, name, cover,
+        description, content, author_name, author_logo, author_desc, created_by,
+        updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.albumId}, #{item.i18nName}, #{item.name},
+                #{item.cover}, #{item.description}, #{item.content}, #{item.authorName},
+                #{item.authorLogo}, #{item.authorDesc}, #{userId}, #{userId}
+            </trim>
+        </foreach>
+    </insert>
+
+    <delete id="delete">
+        DELETE
+        FROM ${tablePrefix}template_album
+    </delete>
+</mapper>

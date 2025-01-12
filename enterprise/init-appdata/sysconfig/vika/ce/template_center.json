@@ -1,0 +1,432 @@
+{
+    "zh_CN": {
+        "i18n": "zh_CN",
+        "recommend": {
+            "banners": [
+                {
+                    "template_name": "项目/任务/协作管理",
+                    "title": "项目/任务/协作管理",
+                    "desc": "小组织、中小企业、500强企业的通用型项目任务协作管理",
+                    "image": "space/2020/09/28/d79656ffd6804282b7a28687e5c0671d",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "设计项目管理",
+                    "title": "设计项目管理",
+                    "desc": "高效统筹各行各业的设计需求排期，把控设计进度",
+                    "image": "space/2022/10/21/0b8546fc629249a2a0309eaac88679ad",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "OKR管理-系统版",
+                    "title": "OKR管理-系统版",
+                    "desc": "系统化的目标与策略，涵盖制定、执行、复盘、考评的闭环协同",
+                    "image": "space/2021/08/11/01281409e51443a6bd8361321a0848aa"
+                },
+                {
+                    "template_name": "运营必备-甘特图",
+                    "title": "运营必备-甘特图",
+                    "desc": "以时间为横轴，展示活动各项任务的周期和状态，助力把控活动进度",
+                    "image": "space/2021/09/01/f4a70a919e13429d884b37f5050d4646"
+                }
+            ],
+            "album_groups": [
+            ],
+            "template_groups": [
+                {
+                    "name": "其他用户喜爱的模板",
+                    "template_names": [
+                        "Scrum 敏捷软件开发",
+                        "CRM管理系统",
+                        "工作计划管理",
+                        "员工日报管理"
+                    ]
+                }
+            ]
+        },
+        "categories": [
+            {
+                "name": "\uD83D\uDDC2  项目管理",
+                "template_names": [
+                    "PMO项目群管理",
+                    "项目计划与控制",
+                    "软件开发实施",
+                    "项目/任务/协作管理",
+                    "Scrum 敏捷软件开发",
+                    "用户调研与访谈"
+                ]
+            },
+            {
+                "name": "\uD83D\uDE9A  采购供应",
+                "template_names": [
+                    "行政采购",
+                    "门店销售与采购",
+                    "行政采购全流程",
+                    "采购协同"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC69\u200D\uD83D\uDCBC  人力资源",
+                "template_names": [
+                    "员工职级评定",
+                    "年度员工培训计划",
+                    "智能员工名册",
+                    "新人入职协同",
+                    "招聘管理",
+                    "员工薪酬管理",
+                    "招聘过程管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDD87  行政管理",
+                "template_names": [
+                    "行政采购",
+                    "经费发放与扣除",
+                    "差旅管理",
+                    "固定资产管理",
+                    "行政采购全流程"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCB0  财务管理",
+                "template_names": [
+                    "财务管理",
+                    "企业预算与资产管理",
+                    "采购协同",
+                    "财务报销自动化｜发票识别",
+                    "账务处理节点",
+                    "EFS企业财务预算"
+                ]
+            }
+        ],
+        "albums": [
+        ],
+        "templates_with_tag": [
+            {
+                "tags": [
+                    "HR",
+                    "行政"
+                ],
+                "name": "智能员工名册"
+            },
+            {
+                "tags": [
+                    "设计师",
+                    "项目管理"
+                ],
+                "name": "设计项目管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应",
+                    "生产制造"
+                ],
+                "name": "采购协同"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "财务会计"
+                ],
+                "name": "企业预算与资产管理"
+            },
+            {
+                "tags": [
+                    "管理者",
+                    "OKR",
+                    "工作规划"
+                ],
+                "name": "OKR管理-系统版"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "项目管理"
+                ],
+                "name": "项目/任务/协作管理"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "产品经理"
+                ],
+                "name": "用户调研与访谈"
+            },
+            {
+                "tags": [
+                    "项目管理",
+                    "任务排期"
+                ],
+                "name": "PMO项目群管理"
+            },
+            {
+                "tags": [
+                    "镜像",
+                    "合同管理",
+                    "客户服务",
+                    "销售客服"
+                ],
+                "name": "CRM管理系统"
+            },
+            {
+                "tags": [
+                    "团队建设",
+                    "学习提升",
+                    "HR"
+                ],
+                "name": "年度员工培训计划"
+            },
+            {
+                "tags": [
+                    "绩效考核",
+                    "薪酬结算",
+                    "HR"
+                ],
+                "name": "员工薪酬管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "电商运营",
+                    "活动管理",
+                    "运营"
+                ],
+                "name": "运营必备-甘特图"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "研发",
+                    "产品研发"
+                ],
+                "name": "软件开发实施"
+            },
+            {
+                "tags": [
+                    "招聘",
+                    "甘特图",
+                    "HR"
+                ],
+                "name": "招聘过程管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "研发",
+                    "产品研发"
+                ],
+                "name": "Scrum 敏捷软件开发"
+            },
+            {
+                "tags": [
+                    "绩效考核",
+                    "HR"
+                ],
+                "name": "员工职级评定"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "行政"
+                ],
+                "name": "差旅管理"
+            },
+            {
+                "tags": [
+                    "行政",
+                    "财务会计"
+                ],
+                "name": "经费发放与扣除"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应",
+                    "个体商户"
+                ],
+                "name": "门店销售与采购"
+            },
+            {
+                "tags": [
+                    "HR",
+                    "招聘"
+                ],
+                "name": "新人入职协同"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "行政"
+                ],
+                "name": "固定资产管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "行政"
+                ],
+                "name": "行政采购全流程"
+            },
+            {
+                "tags": [
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "员工日报管理"
+            },
+            {
+                "tags": [
+                    "连接器",
+                    "财务会计"
+                ],
+                "name": "财务报销自动化｜发票识别"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "工作计划管理"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "收支记账"
+                ],
+                "name": "账务处理节点"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "镜像"
+                ],
+                "name": "EFS企业财务预算"
+            },
+            {
+                "tags": [
+                    "招聘",
+                    "透视表",
+                    "HR"
+                ],
+                "name": "招聘管理"
+            },
+            {
+                "tags": [
+                    "财务会计"
+                ],
+                "name": "财务管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "项目管理"
+                ],
+                "name": "项目计划与控制"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "行政",
+                    "采购供应"
+                ],
+                "name": "行政采购"
+            }
+        ]
+    },
+    "en_US": {
+        "i18n": "en_US",
+        "recommend": {
+            "banners": [
+                {
+                    "template_name": "Project Management",
+                    "title": "Project Management",
+                    "desc": "Plan, track, and manage complex projects across multiple teams.",
+                    "image": "space/2023/01/29/108c66a0fae5409d9cec7b1c30d60368",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Course Scheduling",
+                    "title": "Course Scheduling",
+                    "desc": "Centralize all of the information including courses, rooms, classes into one intuitive system.",
+                    "image": "space/2023/01/29/1267a01f32c54aa1a4af9df13ddd687f",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Marketing Campaign Management",
+                    "title": "Marketing Campaign Management",
+                    "desc": "Track, manage and evaluate each marketing campaign.",
+                    "image": "space/2023/01/29/5448db34ed484a6e975a161364cd333a",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Product Release Plan",
+                    "title": "Product Release Plan",
+                    "desc": "Ensure your engineering team members aligned and visualized with projects.",
+                    "image": "space/2023/01/17/898f529cf9714c7dad7066f0cf252cc5"
+                },
+                {
+                    "template_name": "OKR Tracking",
+                    "title": "OKR Tracking",
+                    "desc": "It is an useful tool to keep tracking everyone's OKRs in your team.",
+                    "image": "space/2023/01/17/26fc00810e01491cbd2d0c2a8e796aff",
+                    "color": "#262626"
+                }
+            ],
+            "album_groups": [
+            ],
+            "template_groups": [
+                {
+                    "name": "Other users also like",
+                    "template_names": [
+                        "Content calendar",
+                        "Sprints Management"
+                    ]
+                }
+            ]
+        },
+        "categories": [
+            {
+                "name": "\uD83C\uDF1F Featured",
+                "template_names": [
+                    "Project Management",
+                    "OKR Tracking",
+                    "Content calendar",
+                    "Product Release Plan",
+                    "Sprints Management",
+                    "Video Production Management",
+                    "Customer projects",
+                    "Single Project",
+                    "Internal request management",
+                    "Real estate CRM",
+                    "Content Marketing for SEO"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFC8 Product & design & UX",
+                "template_names": [
+                    "User Research Management",
+                    "Internal request management",
+                    "OKR Tracking"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFAF Project Management",
+                "template_names": [
+                    "OKR Tracking",
+                    "Product Release Plan",
+                    "Project Management",
+                    "Sprints Management",
+                    "Customer projects",
+                    "Single Project",
+                    "Internal request management"
+                ]
+            }
+        ],
+        "albums": [
+        ],
+        "templates_with_tag": [
+        ]
+    }
+}

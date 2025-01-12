@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vikadata.migration.mapper.NodeMapper">
+    <select id="selectBySpaceId" resultType="java.lang.String">
+        SELECT node_id
+        FROM vika_node
+        WHERE
+            space_id = #{spaceId}
+            AND is_template = #{isTemplate}
+    </select>
+
+    <select id="selectByNodeIds" resultType="com.vikadata.migration.entity.NodeEntity">
+        SELECT *
+        FROM vika_node
+        WHERE node_id IN
+        <foreach item="item" index="index" collection="nodeIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.automation.mapper.AutomationServiceMapper">
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}automation_service(id, service_id, slug, name,
+        description, logo, base_url, i18n, created_by, updated_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.serviceId}, #{item.slug}, #{item.name},
+                #{item.description}, #{item.logo}, #{item.baseUrl}, #{item.i18n},
+                #{item.createdBy}, #{item.updatedBy}
+            </trim>
+        </foreach>
+    </insert>
+
+    <update id="remove">
+        UPDATE ${tablePrefix}automation_service
+        SET is_deleted = 1,
+            updated_by = #{userId}
+        WHERE is_deleted = 0
+    </update>
+
+    <delete id="deleteBySlugIn">
+        DELETE
+        FROM ${tablePrefix}automation_service
+        WHERE slug IN
+        <foreach item="item" index="index" collection="slugs" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>

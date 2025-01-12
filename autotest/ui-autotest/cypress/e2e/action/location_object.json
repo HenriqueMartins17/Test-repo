@@ -1,0 +1,37 @@
+{
+  "loginpage": {
+    "password_login":"#VIKA_CHANGE_MODE_BTN",
+    "username":"#VIKA_LOGIN_PHONE_INPUT",
+    "password": "#VIKA_LOGIN_PASSWORD_INPUT",
+    "submit": "#VIKA_LOGIN_BTN"
+
+  },
+  "preferencesmodel":{
+    "Personal_Center": "div[class=\"style_userIcon__jtXVS\"]>div[data-sensors-click=\"true\"]>span[class=\"style_avatar__JpR7M\"]",
+    "Personal_setpage": "div[class=\"style_userMenuBottom__UNHrn\"]>div[class=\"style_userMenuItem__QfAYZ\"]>div[class=\"style_name__4KMW2\"]",
+    "Preferences": "div[class=\"style_navItem__m_nQL\"][data-index=\"5\"]",
+    "Language": "div[class=\"style_languageSetting__a1p5b\"]>div>span[class=\"sc-jIRcFI sc-hhOBVt gSCpqa iIsGzI\"]",
+    "Select_Language": "div[class=\"sc-cwSeag jPLyUt\"]>p[data-tab-index=\"1\"]>span[rows=\"1\"]"
+  },
+
+  "formpage": {
+    "form_button": "#DATASHEET_FORM_BTN",
+    "title": ".textEditorInput",
+    "longtext": ".rc-textarea",
+    "select": ".ant-radio-group.ant-radio-group-outline [type=\"radio\"]",
+    "multi_select": ".ant-checkbox-group [type=\"checkbox\"]",
+    "number": ".style_numberInput__oPKKD.numberEditorInput",
+    "date": "input[type=\"text\"][placeholder=\"yyyy/mm/dd\"]",
+    "date001": ".styles_uploadZone__zdgxA",
+    "attachment": "input[type=file]",
+    "member": "button[type=\"button\"][class=\"btn btn-icon-only btn-x-small btn-circle btn-plus-icon style_iconAdd__UKokN\"]",
+    "rating":".style_rate__DwYGy>span:nth-child(5)",
+    "URL": "#fldsagG7DhKvp div div div div[class=\"styles_textEditor__e4lk8\"] div input",
+    "phone": "#fldsrL7NcoESJ>div>div>div>div>div>input",
+    "email": "#fldpyKW3fCKXw>div>div>div>div>div>input",
+    "form_submit": ""
+  }
+
+
+
+}

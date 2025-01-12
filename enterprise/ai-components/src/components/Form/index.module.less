@@ -1,0 +1,60 @@
+.form {
+  padding-bottom: 80px;
+  :global {
+    .ant-form-item-label > label {
+      color: var(--textCommonPrimary);
+      font-weight: bold;
+      height: 32px;
+    }
+    .ant-form-vertical .ant-form-item-label, .ant-col-24.ant-form-item-label {
+      padding: 0;
+    }
+    .ant-form-item-explain, .ant-form-item-extra {
+      color: var(--textCommonTertiary);
+      font-size: 12px;
+    }
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      border: none;
+      background: var(--bgControlsDefault);
+    }
+    .ant-input-affix-wrapper {
+      background: var(--bgControlsDefault);
+    }
+    .ant-input {
+      background: transparent;
+    }
+    .ant-alert-error {
+      background: var(--bgControlsDefault);
+      color: var(--textCommonSecondary);
+      border: 1px solid var(--borderDangerDefault);
+      .ant-list-item {
+        color: var(--textCommonTertiary);
+      }
+    }
+
+    textarea {
+      background: var(--bgControlsDefault) !important;
+    }
+
+    .ant-form-item {
+      margin-bottom: 10px;
+    }
+    .ant-form-item-extra {
+      margin-top: 5px;
+    }
+    .ant-form-item-control-input {
+      line-height: 20px;
+    }
+    fieldset {
+      position: sticky !important;
+      height: auto !important;
+      width: auto !important;
+    }
+    textarea {
+      resize: none;
+    }
+    [for="form__title"] {
+      display: none;
+    }
+  }
+}

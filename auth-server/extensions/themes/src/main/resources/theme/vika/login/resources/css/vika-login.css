@@ -1,0 +1,466 @@
+.login-pf-page .card-pf {
+  padding: 0;
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .login-pf-page .card-pf {
+    padding: 0;
+  }
+}
+
+
+
+.tabContainer {
+  padding: 0;
+  display: flex;
+  margin-bottom: 16px;
+  height: 24px;
+}
+
+.tabContainer .tabItem {
+  /* display: flex; */
+  font-weight: normal;
+  color: #636363;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tabContainer .tabItem:nth-of-type(1) {
+  margin-right: 32px;
+}
+.tabContainer .tabItem.active {
+  color: #7b67ee;
+  font-weight: bold;
+}
+.tabContainer .tabItem.active:before {
+  display: inline-block;
+  content: " ";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #7b67ee;
+}
+@media (min-width: 768px) {
+  .tabContainer a {
+    padding: 0 !important;
+  }
+}
+
+.pf-c-form__label-text {
+  font-size: 14px;
+  color: #636363;
+  margin-bottom: 8px;
+}
+
+.submitButton {
+  margin: 16px 0;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #7b67ee !important;
+  color: #ffffff !important;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+.submitButton:hover {
+  background: #6653d1 !important;
+}
+.submitButton:active {
+  background: #5342b4 !important;
+}
+
+#kc-registration-container {
+  padding: 0;
+  font-size: 14px;
+  color: #636363;
+  margin-top: 90px;
+  text-align: center;
+  background: none;
+  cursor: default;
+}
+@media (max-width: 768px){
+  #kc-registration-container{
+    margin-top: 56px;
+  }
+}
+
+#kc-registration-container a {
+  font-weight: normal;
+  text-decoration: none;
+  margin-left: 4px;
+  color: #636363;
+  border-bottom: 1px solid currentColor;
+
+}
+
+/* input */
+.form-group {
+  margin-bottom: 24px;
+}
+input::-webkit-input-placeholder{
+  font-size: 14px;
+  color: #C9C9C9 !important;
+  font-weight: 300;
+}
+.inputWrapper {
+  height: 40px;
+  background-color: #f5f7fa;
+  font-size: 14px;
+  padding: 4px 0;
+  border-radius: 4px;
+  /*transition: border 0.3s; 这里有渐变动画的话会造成闪黑*/
+  width: 100%;
+  border: 1px solid transparent;
+  display: flex;
+  position: relative;
+}
+.inputWrapper.focused,
+.inputWrapper:hover {
+  background-color: #fff;
+  border-color: #7b67ee;
+}
+.inputWrapper[ariaInvalid="true"] {
+  border: 1px solid rgb(227, 62, 56);
+}
+.inputWrapper[ariaInvalid="true"] .phoneInput,
+.inputWrapper[ariaInvalid="true"].focused .phoneInput{
+  background-image: url(../img/phonenumber_filled_error.svg);
+}
+.input {
+  flex: 1;
+}
+.phoneInput {
+  position: relative;
+  padding-right: 8px;
+  padding-left: 28px;
+  background: transparent url(../img/phonenumber_filled.svg) no-repeat;
+  background-size: 16px 16px;
+  background-position: 7px 7px;
+}
+.inputWrapper.focused .phoneInput {
+  background-image: url(../img/phonenumber_filled_focus.svg);
+}
+.phoneInput:before {
+  display: inline-block;
+  content: " ";
+  height: 16px;
+  width: 1px;
+  background-color: #c9c9c9;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.passwordInput {
+  padding-left: 28px;
+  background: transparent url(../img/lock_filled.svg) no-repeat;
+  background-size: 16px 16px;
+  background-position: 8px 7px;
+}
+.inputWrapper[ariaInvalid="true"] .passwordInput,
+.inputWrapper[ariaInvalid="true"].focused .passwordInput{
+  background-image: url(../img/lock_filled_error.svg);
+}
+.inputWrapper.focused .passwordInput {
+  background-image: url(../img/lock_filled_focus.svg);
+}
+.passwordVisibleIcon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background: transparent url(../img/signin_icon_closeeye.svg) no-repeat;
+  background-size: 16px 16px;
+  align-self: center;
+  margin-right: 8px;
+}
+.passwordVisibleIcon.visible {
+  background-image: url(../img/signin_icon_display.svg);
+}
+
+.emailInput {
+  padding-left: 28px;
+  background: transparent url(../img/signin_icon_email.svg) no-repeat;
+  background-size: 16px 16px;
+  background-position: 8px 7px;
+}
+.inputWrapper[ariaInvalid="true"] .emailInput,
+.inputWrapper[ariaInvalid="true"].focused .emailInput{
+  background-image: url(../img/signin_icon_email_error.svg);
+}
+.inputWrapper.focused .emailInput {
+  background-image: url(../img/signin_icon_email_focus.svg);
+}
+.codeInput {
+  padding-left: 28px;
+  background: transparent url(../img/verification_code_filled.svg) no-repeat;
+  background-size: 16px 16px;
+  background-position: 8px 7px;
+}
+.inputWrapper[ariaInvalid="true"] .codeInput,
+.inputWrapper[ariaInvalid="true"].focused .codeInput{
+  background-image: url(../img/verification_code_filled_error.svg);
+}
+.inputWrapper.focused .codeInput {
+  background-image: url(../img/verification_code_filled_focus.svg);
+}
+.arrow-down {
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+}
+input.pf-c-form-control{
+  color:rgb(38,38,38) !important;
+  font-size:14px !important;
+}
+.pf-c-form-control {
+  padding: 0;
+  border: none;
+  outline: none;
+  height: 100% !important;
+  background: transparent;
+}
+.inputWrapper:hover .pf-c-form-control,
+.pf-c-form-control:hover {
+  background-color: #fff !important;
+}
+.pf-c-form-control:-webkit-autofill {
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.inputWrapper:hover .pf-c-form-control:-webkit-autofill,
+.pf-c-form-control:hover:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #fff inset !important;
+}
+
+.inputWrapper .pf-c-form-control:-webkit-autofill,
+.pf-c-form-control:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #f5f7fa inset !important;
+}
+
+#selectItem ul {
+  list-style: none;
+}
+#selectItem ul li {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+#selectItem ul li:hover {
+  background-color: #f5f7fa;
+}
+#phone-input-error,
+#code-input-error,
+#email-input-error,
+#input-error {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: 13px;
+  color: rgb(227, 62, 56);
+}
+.pf-c-form-control[type="text"] {
+  background-color: transparent !important;
+}
+
+.pf-c-form-control:focus {
+  padding: 0;
+}
+
+#kc-form-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0px;
+  font-size: 14px;
+}
+
+#kc-form-options * {
+  color: #7b67ee;
+  text-decoration: none;
+  font-weight: normal;
+  cursor: pointer;
+}
+#kc-form-options *:focus {
+  outline: none;
+}
+.verificationCodeItem {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.verificationCodeItem > div:first-child {
+  flex: 1;
+}
+.verificationCodeButton {
+  margin-left: 16px;
+  height: 40px;
+  color: #7b67ee;
+  background: rgb(237, 234, 255);
+  border-radius: 6px;
+  padding: 9px 16px;
+  border: none;
+  font-size: 14px;
+  width: 105px;
+}
+
+.submitButton[disabled],
+.submitButton:disabled,
+.submitButton.disabled,
+.verificationCodeButton[disabled],
+.verificationCodeButton:disabled,
+.verificationCodeButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.resetBtn {
+}
+
+.title-label{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-label::before,
+.title-label::after{
+  flex: 1;
+  content: "";
+  display: flex;
+  height: 1px;
+  background: #e9e9f5;
+}
+@media (max-width: 768px) {
+  .title-label {
+    display: none;
+  }
+}
+
+.title-label-content{
+  padding: 0 32px;
+  color: #8c8c8c;
+  font-size: 14px;
+  font-weight: normal !important;
+}
+
+.quick-login-wapper{
+  display: flex;
+  justify-content: space-around;
+  padding: 32px 12px 40px;
+}
+
+@media (min-width: 768px) {
+  .quick-login-mobile-wrapper{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-login-pc-wrapper{
+    display: none;
+  }
+  .quick-login-mobile-wrapper{
+    padding: 10px 0 0;
+  }
+}
+
+.quick-login-img{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.quick-login-img:nth-of-type(1),
+.quick-login-img:nth-of-type(2),
+.quick-login-img:nth-of-type(3),
+.quick-login-img:nth-of-type(4) {
+
+}
+
+.codeWrapper{
+  width: 208px;
+  height: 208px;
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid #e9e9f5;
+}
+img#wechatMpQrCode{
+  width: 100%;
+  height: 100%;
+}
+.freshMask{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 3px;
+  background: rgba(0,0,0,.7);
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.wechat-login-msg{
+  text-align: center;
+  font-size: 14px;
+  color: #636363;
+  padding: 16px 0;
+}
+
+.dingTalkLogin {
+  width: 272px;
+  height: 296px;
+}
+iframe{
+  height: 100%;
+  width: 100%;
+}
+
+.quick-login-plus{
+
+}
+
+.quick-login-plus button{
+  height: 48px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.quick-login-plus button:nth-of-type(1){
+  color: #fff;
+  border: none;
+}
+
+.quick-login-plus .wechat-login-button {
+  background: #30C28B;
+}
+
+.quick-login-plus .qq-login-button {
+  background: #55cdff;
+}
+
+.quick-login-plus .dingTalk-login-button {
+  background: #5586ff;
+}
+
+.quick-login-plus .feishu-login-button {
+  background: #5586ff;
+}
+
+.quick-login-plus button:nth-of-type(2){
+  background: transparent;
+  color: #262626;
+  border: 1px solid #E9E9F5;
+}

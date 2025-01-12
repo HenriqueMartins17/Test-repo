@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vikadata.github.io/pricing.schema.json",
+  "type": "object",
+  "properties": {
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The Stripe ID of the product"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the product"
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the product"
+          },
+          "type": {
+            "enum": [
+              "base",
+              "addon"
+            ],
+            "description": "The type of the product"
+          },
+          "catalog": {
+            "enum": [
+              "individual",
+              "organization",
+              "self-hosted",
+              "third-party"
+            ],
+            "description": "The catalog of the product"
+          },
+          "free": {
+            "type": "boolean",
+            "description": "Whether the product is free cost no money"
+          },
+          "customize": {
+            "type": "boolean",
+            "description": "Whether the product is customize"
+          },
+          "suggestion": {
+            "type": "boolean",
+            "description": "Whether the product is suggested to the user"
+          },
+          "trial_period_days": {
+            "type": "number",
+            "description": "The number of days to trial the product for"
+          },
+          "hidden": {
+            "type": "boolean",
+            "description": "Whether the product is hidden, but is still available for customer subscriptions"
+          },
+          "prices": {
+            "type": "array",
+            "description": "The collection of prices for the product",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "The Stripe ID of the price"
+                },
+                "product_id": {
+                  "type": "string",
+                  "description": "The Stripe ID of the product"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "The name of the price"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "The description of the price"
+                },
+                "type": {
+                  "enum": [
+                    "recurring",
+                    "one-off"
+                  ],
+                  "description": "The type of the price"
+                },
+                "interval": {
+                  "enum": [
+                    "month",
+                    "year"
+                  ],
+                  "description": "The interval of the price"
+                },
+                "interval_count": {
+                  "type": "number"
+                },
+                "currency": {
+                  "enum": "usd",
+                  "description": "The currency of the price"
+                },
+                "unit_amount": {
+                  "type": "number",
+                  "description": "The unit amount of the price, in cents"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "product_id",
+                "name",
+                "description",
+                "type",
+                "interval",
+                "interval_count",
+                "currency",
+                "unit_amount"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "catalog",
+          "free",
+          "customize",
+          "suggestion",
+          "hidden"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "products"
+  ]
+}

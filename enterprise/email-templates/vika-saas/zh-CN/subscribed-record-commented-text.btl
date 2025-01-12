@@ -1,0 +1,18 @@
+{{MEMBER_NAME}}评论了{{NODE_NAME}}表的{{RECORD_TITLE}}
+
+--------------------------------------------------------------------------------
+
+来自 {{MEMBER_NAME}}
+{{CREATED_AT}}
+
+记录: {{RECORD_TITLE}}
+
+{{CONTENT}}
+
+查看记录
+{{URL}}
+
+
+copyright © 2019-{{YEARS}} 深圳维格云科技有限公司.All rights reserved.
+
+联系我们 (https://vika.cn?home=1)

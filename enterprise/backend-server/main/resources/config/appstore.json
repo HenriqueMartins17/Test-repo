@@ -1,0 +1,231 @@
+{
+    "app-ea1d17fd8a1449b3ac1a073077d385a5": {
+        "logo": {
+            "id": "atcEEp5gDuMWu",
+            "name": "feishu.svg",
+            "size": 1059,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95"
+        },
+        "type": "LARK",
+        "need_authorize": true,
+        "status": "ACTIVE",
+        "display_order": 1,
+        "app_type": "SOCIAL",
+        "id": "app-ea1d17fd8a1449b3ac1a073077d385a5",
+        "app_name": "lark",
+        "inline_image": {
+            "id": "atcLNS2l4KYxV",
+            "name": "飞书集成.png",
+            "size": 362548,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/8742173785d34efc905ba1fd23227cc0",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/8742173785d34efc905ba1fd23227cc0"
+        },
+        "configure_url": "/user/lark/integration/bind",
+        "intro": "lark_app_intro",
+        "description": "lark_app_desc",
+        "notice": "lark_app_notice",
+        "need_configured": true,
+        "help_url": "/help/integration-lark"
+    },
+    "app-6f8553ef46df404c8b119d9aba2b0f8a": {
+        "logo": {
+            "id": "atcEEp5gDuMWu",
+            "name": "feishu.svg",
+            "size": 1059,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/4c4be697b9e94672a7c65d979b60ab95"
+        },
+        "type": "LARK_STORE",
+        "status": "ACTIVE",
+        "display_order": 1,
+        "stop_action_url": "https://feishu.cn/admin/appCenter/manage/{}",
+        "app_type": "SOCIAL",
+        "id": "app-6f8553ef46df404c8b119d9aba2b0f8a",
+        "app_name": "lark",
+        "inline_image": {
+            "id": "atcLNS2l4KYxV",
+            "name": "飞书集成.png",
+            "size": 362548,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/8742173785d34efc905ba1fd23227cc0",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/8742173785d34efc905ba1fd23227cc0"
+        },
+        "intro": "lark_app_intro",
+        "description": "lark_app_desc",
+        "notice": "lark_app_notice",
+        "help_url": "/help/integration-lark"
+    },
+    "app-76ec5b03df3346ffb1a643ba888ea9c3": {
+        "logo": {
+            "id": "atcpH3rGddayo",
+            "name": "ding.svg",
+            "size": 1831,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/7af742cdbb3c4ae3a76e30e68bf471cb",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/7af742cdbb3c4ae3a76e30e68bf471cb"
+        },
+        "type": "DINGTALK",
+        "status": "ACTIVE",
+        "display_order": 2,
+        "app_type": "SOCIAL",
+        "id": "app-76ec5b03df3346ffb1a643ba888ea9c3",
+        "app_name": "dingtalk",
+        "inline_image": {
+            "id": "atcOhMLdK4DOv",
+            "name": "钉钉集成.png",
+            "size": 124923,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/46a769fdf74d4c0f8676f3ccca358643",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/46a769fdf74d4c0f8676f3ccca358643"
+        },
+        "intro": "dingtalk_app_intro",
+        "description": "dingtalk_app_desc",
+        "notice": "dingtalk_app_notice",
+        "help_url": "/help/integration-dingtalk"
+    },
+    "app-4b6245db2667421b91d6d6c33cfb48fa": {
+        "logo": {
+            "id": "atcpH3rGddayo",
+            "name": "ding.svg",
+            "size": 1831,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/7af742cdbb3c4ae3a76e30e68bf471cb",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/7af742cdbb3c4ae3a76e30e68bf471cb"
+        },
+        "type": "DINGTALK_STORE",
+        "status": "ACTIVE",
+        "display_order": 2,
+        "app_type": "SOCIAL",
+        "id": "app-4b6245db2667421b91d6d6c33cfb48fa",
+        "app_name": "dingtalk",
+        "inline_image": {
+            "id": "atcOhMLdK4DOv",
+            "name": "钉钉集成.png",
+            "size": 124923,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/46a769fdf74d4c0f8676f3ccca358643",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/46a769fdf74d4c0f8676f3ccca358643"
+        },
+        "intro": "dingtalk_app_intro",
+        "description": "dingtalk_app_desc",
+        "notice": "dingtalk_app_notice",
+        "help_url": "/help/integration-dingtalk"
+    },
+    "app-184dac9a68624f6c82f8a038a7d960ba": {
+        "logo": {
+            "id": "atcPfGUqrcZ5j",
+            "name": "企业微信.svg",
+            "size": 5878,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/e043014e0af54bf58c6bb78e92b00b60",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/e043014e0af54bf58c6bb78e92b00b60"
+        },
+        "type": "WECOM",
+        "status": "ACTIVE",
+        "display_order": 3,
+        "app_type": "SOCIAL",
+        "id": "app-184dac9a68624f6c82f8a038a7d960ba",
+        "app_name": "wecom",
+        "inline_image": {
+            "id": "atcuiGRXDfIoT",
+            "name": "企业微信集成.png",
+            "size": 599396,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/772be217f729479985295ae30dc63291",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/772be217f729479985295ae30dc63291"
+        },
+        "intro": "wecom_app_intro",
+        "description": "wecom_app_desc",
+        "notice": "wecom_app_notice",
+        "help_url": "/help/integration-wecom"
+    },
+    "app-3677481d600648b59356146e9d0831fc": {
+        "logo": {
+            "id": "atcPfGUqrcZ5j",
+            "name": "企业微信.svg",
+            "size": 5878,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/e043014e0af54bf58c6bb78e92b00b60",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/e043014e0af54bf58c6bb78e92b00b60"
+        },
+        "type": "WECOM_STORE",
+        "status": "ACTIVE",
+        "display_order": 3,
+        "app_type": "SOCIAL",
+        "id": "app-3677481d600648b59356146e9d0831fc",
+        "app_name": "wecom",
+        "inline_image": {
+            "id": "atcuiGRXDfIoT",
+            "name": "企业微信集成.png",
+            "size": 599396,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/772be217f729479985295ae30dc63291",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/772be217f729479985295ae30dc63291"
+        },
+        "intro": "wecom_app_intro",
+        "description": "wecom_app_desc",
+        "notice": "wecom_app_notice",
+        "help_url": "/help/integration-wecom"
+    },
+    "app-80c8b19b1d8c4e40a1f4a9854b71ceb0": {
+        "logo": {
+            "id": "atclqW8EjJIFz",
+            "name": "Frame.svg",
+            "size": 575,
+            "mimeType": "image/svg+xml",
+            "token": "space/2021/04/28/0c070534ccda4b4dbae3f4c7c303d02e",
+            "width": 0,
+            "height": 0,
+            "url": "https://s1.vika.cn/space/2021/04/28/0c070534ccda4b4dbae3f4c7c303d02e"
+        },
+        "type": "OFFICE_PREVIEW",
+        "need_authorize": true,
+        "status": "ACTIVE",
+        "display_order": 4,
+        "app_type": "UTIL",
+        "id": "app-80c8b19b1d8c4e40a1f4a9854b71ceb0",
+        "app_name": "office_preview",
+        "inline_image": {
+            "id": "atczaIPjTBq8F",
+            "name": "永中集成.png",
+            "size": 473712,
+            "mimeType": "image/png",
+            "token": "space/2021/12/08/18efb2fce9a64dc08262fc5cc8f0eac1",
+            "width": 1600,
+            "height": 1072,
+            "url": "https://s1.vika.cn/space/2021/12/08/18efb2fce9a64dc08262fc5cc8f0eac1"
+        },
+        "intro": "office_preview_app_intro",
+        "description": "office_preview_app_desc",
+        "notice": "office_preview_app_notice",
+        "help_url": "/help/integration-yozosoft"
+    }
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.airagent.mapper.AgentMapper">
+
+    <select id="selectByUserId" resultType="com.apitable.enterprise.airagent.model.AgentDTO">
+        SELECT agent_id, pre_agent_id, agent_name, icon
+        FROM ${tablePrefix}agent
+        WHERE created_by = #{userId}
+        AND is_deleted = 0
+    </select>
+
+    <select id="selectByAgentId" resultType="com.apitable.enterprise.airagent.model.AgentDTO">
+        SELECT agent_id, pre_agent_id, agent_name, icon
+        FROM ${tablePrefix}agent
+        WHERE agent_id = #{agentId} AND is_deleted = 0
+    </select>
+
+    <select id="selectTopAgentByUserId" resultType="com.apitable.enterprise.airagent.entity.AgentEntity">
+        SELECT *
+        FROM ${tablePrefix}agent
+        WHERE created_by = #{userId}
+        AND pre_agent_id IS NULL
+        AND is_deleted = 0
+    </select>
+
+    <select id="selectAgentNameByUserIdAndName" resultType="java.lang.String">
+        SELECT agent_name
+        FROM ${tablePrefix}agent
+        WHERE created_by = #{userId}
+        AND agent_name LIKE CONCAT(#{name}, '%')
+        AND is_deleted = 0 ORDER BY created_at DESC LIMIT 1
+    </select>
+
+    <update id="updateIsDeletedByAgentId">
+        UPDATE ${tablePrefix}agent
+        SET is_deleted = 1, updated_by = #{userId}
+        WHERE agent_id = #{agentId}
+        AND is_deleted = 0
+    </update>
+
+    <select id="selectPreAgentIdByAgentId" resultType="java.lang.String">
+        SELECT pre_agent_id
+        FROM ${tablePrefix}agent
+        WHERE agent_id = #{agentId}
+        AND is_deleted = 0
+    </select>
+
+    <update id="updatePreAgentIdById">
+        UPDATE ${tablePrefix}agent
+        SET pre_agent_id = #{preAgentId}, updated_by = #{userId}
+        WHERE id = #{id}
+        AND is_deleted = 0
+    </update>
+</mapper>

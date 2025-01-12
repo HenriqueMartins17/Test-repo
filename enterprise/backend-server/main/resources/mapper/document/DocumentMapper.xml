@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.enterprise.document.mapper.DocumentMapper">
+    <select id="selectSpaceIdByName" resultType="java.lang.String">
+        SELECT space_id
+        FROM ${tablePrefix}document
+        WHERE name = #{name}
+        <if test="!includeDeleted">
+            AND is_deleted = 0
+        </if>
+    </select>
+
+    <select id="selectExistNamesIncludeDelete" resultType="java.lang.String">
+        SELECT name
+        FROM ${tablePrefix}document
+        WHERE name IN
+        <foreach item="item" index="index" collection="names" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="selectNameByResourceIdIn" resultType="java.lang.String">
+        SELECT name
+        FROM ${tablePrefix}document
+        WHERE resource_id IN
+        <foreach item="item" index="index" collection="resourceIds" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 0
+    </select>
+
+    <sql id="Document_DTO_Column_List">
+        id,
+        space_id,
+        name,
+        created_by,
+        updated_by,
+        created_at,
+        updated_at
+    </sql>
+    <resultMap id="DocumentDTOResultMap"
+               type="com.apitable.enterprise.document.model.DocumentDTO">
+        <result column="id" property="id"/>
+        <result column="space_id" property="spaceId"/>
+        <result column="name" property="name"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="updated_by" property="updatedBy"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+
+    <select id="selectByName" resultMap="DocumentDTOResultMap">
+        SELECT <include refid="Document_DTO_Column_List"/>
+        FROM ${tablePrefix}document
+        WHERE name = #{name}
+          AND is_deleted = 0
+        LIMIT 1
+    </select>
+
+    <select id="selectDeletedNamesByResourceIds" resultType="java.lang.String">
+        SELECT name
+        FROM ${tablePrefix}document
+        WHERE resource_id IN
+        <foreach item="item" index="index" collection="resourceIds" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+        AND JSON_EXTRACT(props, '$.deleteWay') = #{deleteWay}
+        AND is_deleted = 1
+    </select>
+
+    <select id="selectDeletedNamesByNames" resultType="java.lang.String">
+        SELECT name
+        FROM ${tablePrefix}document
+        WHERE name IN
+        <foreach item="item" index="index" collection="names" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+        AND JSON_EXTRACT(props, '$.deleteWay') = #{deleteWay}
+        AND is_deleted = 1
+    </select>
+
+    <update id="remove">
+        UPDATE ${tablePrefix}document
+        SET is_deleted = 1,
+            updated_by = #{userId},
+            props      = JSON_SET(props, '$.deleteWay', #{deleteWay})
+        WHERE name IN
+        <foreach item="item" index="index" collection="names" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 0
+    </update>
+
+    <update id="recover">
+        UPDATE ${tablePrefix}document
+        SET is_deleted = 0,
+            updated_by = #{userId},
+            props      = JSON_REMOVE(props, '$.deleteWay')
+        WHERE name IN
+        <foreach item="item" index="index" collection="names" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 1
+    </update>
+
+    <select id="selectByIdGreaterThan" resultMap="DocumentDTOResultMap">
+        SELECT <include refid="Document_DTO_Column_List"/>
+        FROM ${tablePrefix}document
+        WHERE id <![CDATA[>]]> #{minId}
+          AND is_deleted = 0
+        ORDER BY id ASC
+        LIMIT #{limit}
+    </select>
+
+    <select id="selectDocumentOperationMaxId" resultType="java.lang.Long">
+        SELECT id
+        FROM ${tablePrefix}document_operation
+        ORDER BY id DESC
+        LIMIT 1
+    </select>
+
+    <select id="selectDocumentOperationDTOByIdGreaterThan"
+            resultType="com.apitable.enterprise.document.model.DocumentOperationDTO">
+        SELECT id, doc_name AS documentName
+        FROM ${tablePrefix}document_operation
+        WHERE id <![CDATA[>]]> #{minId}
+        ORDER BY id ASC
+        LIMIT #{limit}
+    </select>
+</mapper>

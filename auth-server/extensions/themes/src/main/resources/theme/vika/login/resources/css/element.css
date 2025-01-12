@@ -1,0 +1,152 @@
+.el-dropdown {
+  display: inline-flex !important;
+  align-items: center;
+  position: relative;
+  font-size: 14px;
+  color: #262626;
+  cursor: default;
+}
+.el-popper .popper__arrow {
+  display: none !important;
+}
+.el-popper[x-placement^="bottom"] {
+  margin-top: 10px !important;
+}
+.el-dropdown-menu {
+  width: 320px;
+  padding: 4px 8px !important;
+  border: none !important;
+  box-shadow: rgb(38 38 38 / 10%) 0px 3px 10px !important;
+  max-height: 208px;
+  overflow: auto;
+}
+
+.el-dropdown-menu__item {
+  height: 40px;
+  padding: 0px 8px !important;
+  font-size: 14px;
+  color: rgb(38, 38, 38);
+}
+.el-dropdown-menu__item:hover {
+  background: rgb(245, 247, 250) !important;
+  border-radius: 8px;
+  color: rgb(38, 38, 38) !important;
+}
+
+.el-dropdown-menu__item.active,
+.el-dropdown-menu__item.active:hover {
+  color: #7b67ee !important;
+}
+.el-dropdown-link {
+  display: flex;
+  align-items: center;
+  padding-left: 11px;
+  cursor: pointer;
+}
+.areaCodeArrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  background: transparent url(../img/common_icon_pulldown_line.svg) no-repeat;
+  transition: all 0.3s;
+}
+.areaCodeArrow.visible {
+  transform: rotate(180deg);
+}
+
+.el-dialog {
+  border-radius: 8px !important;
+}
+.verifyRejectModal .el-dialog__header,
+.verifyModal .el-dialog__header {
+  padding: 24px 24px 16px !important;
+}
+
+.verifyRejectModal .el-dialog__header {
+  background: transparent url(../img/warn_filled.svg) no-repeat;
+  background-size: 24px 24px;
+  background-position: 24px 24px;
+}
+
+.el-dialog__title {
+  font-size: 18px;
+  color: #262626;
+  font-weight: bold;
+}
+.verifyRejectModal .el-dialog__header {
+  padding-left: 32px;
+}
+.el-dialog__body {
+  font-size: 14px;
+  color: #636363;
+  margin-top: 0;
+}
+.verifyRejectModal .el-dialog__body {
+  padding: 0 0 0 32px !important;
+}
+.verifyModal .el-dialog__body {
+  padding: 0 0 0 24px !important;
+}
+.el-dialog__footer {
+  padding: 24px !important;
+}
+
+.dialog-footer .el-button {
+  height: 32px !important;
+  background-color: #ffab00;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 7px 16px;
+  border: none;
+}
+.dialog-footer .el-button:focus,
+.dialog-footer .el-button:hover {
+  background-color: #ffa114;
+}
+.dialog-footer .el-button:active {
+  background-color: #da7600;
+}
+
+.socialLoginModal .el-dialog__header{
+  padding: 24px 0 !important;
+}
+
+.dingTalkLoginModal .el-dialog__header{
+  padding: 24px 0px 0px 0px;
+}
+
+.dingTalkLoginModal .el-dialog__body,
+.socialLoginModal .el-dialog__body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px 24px !important;
+}
+
+.dingTalkLoginModal .el-dialog,
+.socialLoginModal .el-dialog{
+  margin-top: 50vh !important;
+  transform: translateY(-50%);
+}
+
+.el-dialog__headerbtn{
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+
+  background: transparent url(../img/close.svg) no-repeat;
+  background-size: 24px;
+  background-position: center;
+}
+.el-dialog__headerbtn i{
+  display: none;
+}
+
+.el-dialog__headerbtn:hover{
+  background-color: rgb(245, 247, 250);
+}
+.el-dialog__headerbtn:active{
+  background-color: rgb(212, 214, 216);
+}

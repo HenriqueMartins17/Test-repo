@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  adminer:
+    container_name: db-adminer
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - apitable_default
+    environment:
+      - ADMINER_DEFAULT_DB_DRIVER=mysql
+      - ADMINER_DEFAULT_SERVER=${MYSQL_HOST}
+      - ADMINER_DESIGN=nette
+      - ADMINER_PLUGINS=tables-filter tinymce
+  init-db-vika-saas:
+    container_name: init-db-vika-saas
+    image: gradle:jdk8
+    working_dir: /data
+    networks:
+      - apitable_default
+    volumes:
+      - ../init-db:/data
+    environment:
+      - DB_HOST=${MYSQL_HOST}
+      - DB_PORT=${MYSQL_PORT}
+      - DB_NAME=${MYSQL_DATABASE}
+      - DB_USERNAME=${MYSQL_USERNAME}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - DATABASE_TABLE_PREFIX=${DATABASE_TABLE_PREFIX}
+      - EDITION=vika-saas
+    entrypoint: ./gradlew update -PrunList='shared,vika'
+  init-db-apitable-saas:
+    container_name: init-db-apitable-saas
+    image: gradle:jdk8
+    working_dir: /data
+    networks:
+      - apitable_default
+    volumes:
+      - ../init-db:/data
+    environment:
+      - DB_HOST=${MYSQL_HOST}
+      - DB_PORT=${MYSQL_PORT}
+      - DB_NAME=${MYSQL_DATABASE}
+      - DB_USERNAME=${MYSQL_USERNAME}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - DATABASE_TABLE_PREFIX=${DATABASE_TABLE_PREFIX}
+      - EDITION=apitable-saas
+    entrypoint: ./gradlew update -PrunList='shared,apitable'
+networks:
+  apitable_default:
+    external: true

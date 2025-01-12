@@ -1,0 +1,178 @@
+.textArea {
+  background: var(--bgControlsDefault);
+  border-radius: 4px;
+  outline: none;
+  border-color: transparent;
+  resize: unset;
+  padding: 8px;
+  transition: all 0.3s;
+  color: var(--textCommonPrimary);
+
+  &.error {
+    border-color: var(--errorColor);
+  }
+
+  &:focus {
+    border-color: var(--primaryColor);
+  }
+
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--textCommonQuaternary);
+  }
+}
+
+.initialChat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nodeNameEdit {
+  background: var(--bgControlsDefault);
+  border-radius: 4px;
+  border-color: transparent;
+  display: block;
+  margin: 0 auto;
+  padding: 4px;
+  text-align: center;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+
+.chatPreviewContainer {
+  background: var(--bgCommonLower);
+  border-radius: 12px;
+  padding: 16px;
+  color: var(--textCommonPrimary);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  //margin-left: 24px;
+
+  .chatPreviewInner {
+    border-radius: 8px;
+    background: var(--bgCommonHigh);
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+.robotType {
+  background: var(--bgControlsDefault);
+  border-radius: 4px;
+  padding: 8px !important;
+}
+
+.tabWrapper {
+  flex: 1;
+  overflow: auto;
+
+  :global {
+    .ant-tabs-nav {
+      margin-bottom: 24px;
+    }
+    textarea {
+      resize: none;
+    }
+  }
+}
+
+.selectDst {
+  display: flex;
+  height: 40px;
+  padding: 10px 8px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  background: var(--bgControlsDefault);
+  &:hover {
+    background: var(--bgControlsHover);
+  }
+  &:active {
+    background: var(--bgControlsActive);
+  }
+}
+
+.selectDstContainer {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: var(--bgCommonLower);
+}
+
+.selectDstItem {
+  width: 564px;
+  padding: 8px;
+  background: var(--bgCommonHigh);
+  border: 1px solid var(--borderCommonDefault);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.nodeWrapper {
+  background: var(--bgCommonDefault);
+  border: 1px solid var(--borderCommonDefault);
+  border-radius: 4px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+
+  svg {
+    fill: var(--textCommonPrimary);
+  }
+
+
+}
+
+.reSelectBtn {
+  cursor: pointer;
+  width: max-content;
+}
+
+.botModal {
+  background: var(--bgControlsDefault);
+  padding: 8px !important;
+  border-radius: 4px !important;
+}
+
+.updateAvailable {
+  border-radius: 4px;
+  border: 1px solid var(--rainbowPurple5);
+  background: var(--rainbowPurple1);
+  font-size: 12px;
+  color: var(--textBrandDefault);
+  padding: 0px 4px;
+  margin-left: 4px;
+}
+
+.openRemarksNormal {
+  textarea {
+    height: 320px !important;
+  }
+}
+
+.footer {
+  background: var(--defaultBg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  width: 640px;
+  right: 0;
+  top: auto;
+}
+
+.doubleSelect {
+  border: none !important;
+}
+

@@ -1,0 +1,32 @@
+{
+    "async_compute": {
+        "feature_key": "async_compute",
+        "feature_scope": "user",
+        "type": "normal",
+        "url": null
+    },
+    "render_normal": {
+        "feature_key": "render_normal",
+        "feature_scope": "user",
+        "type": "normal",
+        "url": null
+    },
+    "view_manual_save": {
+        "feature_key": "view_manual_save",
+        "feature_scope": "space",
+        "type": "normal_persist",
+        "url": null
+    },
+    "widget_center": {
+        "feature_key": "widget_center",
+        "feature_scope": "space",
+        "type": "global",
+        "url": null
+    },
+    "robot": {
+        "feature_key": "robot",
+        "feature_scope": "space",
+        "type": "global",
+        "url": null
+    }
+}

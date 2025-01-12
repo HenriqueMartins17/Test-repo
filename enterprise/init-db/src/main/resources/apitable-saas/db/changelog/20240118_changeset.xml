@@ -1,0 +1,24 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20240118-001" author="Zoe" labels="billing">
+        <comment>change subscription product name length</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}subscription` MODIFY COLUMN `product_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+            NOT NULL COMMENT 'Product ID';
+            ALTER TABLE `${table.prefix}subscription_history` MODIFY COLUMN `product_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+            NOT NULL COMMENT 'Product ID';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20240118-002" author="Zoe" labels="billing">
+        <comment>change subscription history product name length</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}subscription_history` MODIFY COLUMN `product_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+            NOT NULL COMMENT 'Product ID';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

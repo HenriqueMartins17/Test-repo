@@ -1,0 +1,378 @@
+{
+  "products": [
+    {
+      "id": "",
+      "name": "Free",
+      "description": "For individuals",
+      "type": "base",
+      "catalog": "individual",
+      "free": true,
+      "customize": false,
+      "suggestion": false,
+      "hidden": false
+    },
+    {
+      "id": "prod_PBZHs9yikZpsp1",
+      "name": "Starter",
+      "description": "For individuals",
+      "type": "base",
+      "catalog": "individual",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "trial_period_days": 5,
+      "hidden": false,
+      "prices": [
+        {
+          "id": "price_1ONC8aH4MhQOilwxhqdgLtUh",
+          "product_id": "prod_PBZHs9yikZpsp1",
+          "name": "starter-monthly",
+          "description": "Starter Monthly",
+          "type": "recurring",
+          "interval": "month",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 2200
+        },
+        {
+          "id": "price_1ONC90H4MhQOilwxDsr45Xum",
+          "product_id": "prod_PBZHs9yikZpsp1",
+          "name": "starter-yearly",
+          "description": "Starter Yearly",
+          "type": "recurring",
+          "interval": "year",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 21600
+        }
+      ]
+    },
+    {
+      "id": "prod_NJKhW8Of8GikUQ",
+      "name": "Plus",
+      "description": "For small teams",
+      "type": "base",
+      "catalog": "individual",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "trial_period_days": 5,
+      "hidden": false,
+      "prices": [
+        {
+          "id": "price_1ONCC2H4MhQOilwx3dA1KBdg",
+          "product_id": "prod_NJKhW8Of8GikUQ",
+          "name": "plus-monthly",
+          "description": "Plus Monthly",
+          "type": "recurring",
+          "interval": "month",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 4600
+        },
+        {
+          "id": "price_1ONCCKH4MhQOilwx5i1yUzZ6",
+          "product_id": "prod_NJKhW8Of8GikUQ",
+          "name": "plus-yearly",
+          "description": "Plus Yearly",
+          "type": "recurring",
+          "interval": "year",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 46800
+        }
+      ]
+    },
+    {
+      "id": "prod_NJKje03MfAA6Hj",
+      "name": "Pro",
+      "description": "For small and medium-sized businesses",
+      "type": "base",
+      "catalog": "individual",
+      "free": false,
+      "customize": false,
+      "suggestion": true,
+      "trial_period_days": 5,
+      "hidden": false,
+      "prices": [
+        {
+          "id": "price_1ONCE7H4MhQOilwxCIyEEMu5",
+          "product_id": "prod_NJKje03MfAA6Hj",
+          "name": "pro-monthly",
+          "description": "Pro Monthly",
+          "type": "recurring",
+          "interval": "month",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 9200
+        },
+        {
+          "id": "price_1ONCELH4MhQOilwxTSffcdqm",
+          "product_id": "prod_NJKje03MfAA6Hj",
+          "name": "pro-yearly",
+          "description": "Pro Yearly",
+          "type": "recurring",
+          "interval": "year",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 94800
+        }
+      ]
+    },
+    {
+      "id": "prod_PBZOWHMR5bA34r",
+      "name": "Business",
+      "description": "For large teams & companies",
+      "type": "base",
+      "catalog": "organization",
+      "free": false,
+      "customize": false,
+      "suggestion": true,
+      "trial_period_days": 5,
+      "hidden": false,
+      "prices": [
+        {
+          "id": "price_1ONCG9H4MhQOilwxztmUhBnp",
+          "product_id": "prod_PBZOWHMR5bA34r",
+          "name": "business-monthly",
+          "description": "Business Monthly",
+          "type": "recurring",
+          "interval": "month",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 29000
+        },
+        {
+          "id": "price_1ONCG9H4MhQOilwxHwW1n08k",
+          "product_id": "prod_PBZOWHMR5bA34r",
+          "name": "business-yearly",
+          "description": "Business Yearly",
+          "type": "recurring",
+          "interval": "year",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 298800
+        }
+      ]
+    },
+    {
+      "id": "",
+      "name": "Enterprise",
+      "description": "For large teams & companies",
+      "type": "base",
+      "catalog": "organization",
+      "free": false,
+      "customize": true,
+      "suggestion": false,
+      "hidden": false
+    },
+    {
+      "id": "",
+      "name": "Community",
+      "description": "For developer & contributors",
+      "type": "base",
+      "catalog": "self-hosted",
+      "free": true,
+      "customize": false,
+      "suggestion": false,
+      "hidden": false
+    },
+    {
+      "id": "",
+      "name": "APITable Enterprise",
+      "description": "For self-hosted enterprise users",
+      "type": "base",
+      "catalog": "self-hosted",
+      "free": false,
+      "customize": true,
+      "suggestion": true,
+      "hidden": false
+    },
+    {
+      "id": "",
+      "name": "AITable Premium",
+      "description": "For self-hosted advanced users",
+      "type": "base",
+      "catalog": "self-hosted",
+      "free": false,
+      "customize": true,
+      "suggestion": false,
+      "hidden": false
+    },
+    {
+      "id": "",
+      "name": "appsumo_tier1",
+      "description": "Appsumo tier 1 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true
+    },
+    {
+      "id": "",
+      "name": "appsumo_tier2",
+      "description": "Appsumo tier 2 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true
+    },
+    {
+      "id": "",
+      "name": "appsumo_tier3",
+      "description": "Appsumo tier 3 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true
+    },
+    {
+      "id": "",
+      "name": "appsumo_tier4",
+      "description": "Appsumo tier 4 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true
+    },
+    {
+      "id": "",
+      "name": "appsumo_tier5",
+      "description": "Appsumo tier 5 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true
+    },
+    {
+      "id": "prod_PNUXVCQgzvCAtb",
+      "name": "Exclusive Limited Tier 1",
+      "description": "Exclusive limited tier 1 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true,
+      "prices": [
+        {
+          "id": "price_1OYjYNH4MhQOilwxjnsUQBAG",
+          "product_id": "prod_PNUXVCQgzvCAtb",
+          "name": "unlimited-one-off",
+          "description": "Exclusive limited tier 1 one off",
+          "type": "one-off",
+          "interval": "unlimited",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 6900
+        }
+      ]
+    },
+    {
+      "id": "prod_POINVxW1nwEJVl",
+      "name": "Exclusive Limited Tier 2",
+      "description": "Exclusive limited tier 2 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true,
+      "prices": [
+        {
+          "id": "price_1OZVmrH4MhQOilwx2plJbmSw",
+          "product_id": "prod_POINVxW1nwEJVl",
+          "name": "unlimited-one-off",
+          "description": "Exclusive limited tier 2 one off",
+          "type": "one-off",
+          "interval": "unlimited",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 12900
+        }
+      ]
+    },
+    {
+      "id": "prod_POIQ0bXYss9Uub",
+      "name": "Exclusive Limited Tier 3",
+      "description": "Exclusive limited tier 3 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true,
+      "prices": [
+        {
+          "id": "price_1OZVpaH4MhQOilwx7nVdBOEn",
+          "product_id": "prod_POIQ0bXYss9Uub",
+          "name": "unlimited-one-off",
+          "description": "Exclusive limited tier 3 one off",
+          "type": "one-off",
+          "interval": "unlimited",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 19900
+        }
+      ]
+    },
+    {
+      "id": "prod_POIRnNRrOeooNh",
+      "name": "Exclusive Limited Tier 4",
+      "description": "Exclusive limited tier 4 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true,
+      "prices": [
+        {
+          "id": "price_1OZVqFH4MhQOilwxHrOJc7r9",
+          "product_id": "prod_POIRnNRrOeooNh",
+          "name": "unlimited-one-off",
+          "description": "Exclusive limited tier 4 one off",
+          "type": "one-off",
+          "interval": "unlimited",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 31900
+        }
+      ]
+    },
+    {
+      "id": "prod_POIR8jjPfTVlfg",
+      "name": "Exclusive Limited Tier 5",
+      "description": "Exclusive limited tier 5 for third party users",
+      "type": "base",
+      "catalog": "third-party",
+      "free": false,
+      "customize": false,
+      "suggestion": false,
+      "hidden": true,
+      "prices": [
+        {
+          "id": "price_1OZVqxH4MhQOilwxFTwzZtXX",
+          "product_id": "prod_POIR8jjPfTVlfg",
+          "name": "unlimited-one-off",
+          "description": "Exclusive limited tier 5 one off",
+          "type": "one-off",
+          "interval": "unlimited",
+          "interval_count": 1,
+          "currency": "usd",
+          "unit_amount": 51900
+        }
+      ]
+    }
+  ]
+}

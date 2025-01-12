@@ -1,0 +1,48 @@
+{
+  "name": "datasheetql",
+  "version": "0.1.0",
+  "description": "SQL-like datasheet manipulation language",
+  "bin": {
+    "dql": "./main.js"
+  },
+  "scripts": {
+    "start": "node dist/main.js",
+    "grammar": "antlr4ts src/DatasheetQLLexer.g4 && antlr4ts -visitor -no-listener src/DatasheetQL.g4",
+    "build": "npm-run-all grammar langs compile",
+    "compile": "tsc",
+    "langs": "node scripts/generate-langs.js src",
+    "toc": "markdown-toc -i grammar-manual.md && markdown-toc -i grammar-manual-zh.md",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "prepare": "husky install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@oclif/core": "^1.14.1",
+    "@vikadata/vika": "^1.0.7",
+    "antlr4ts": "^0.5.0-alpha.4",
+    "chalk": "^4.1.2",
+    "commander": "^9.4.0",
+    "eastasianwidth": "^0.2.0",
+    "emoji-regex": "^10.1.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/chalk": "^2.2.0",
+    "@types/jest": "^29.2.1",
+    "@types/node": "^18.6.3",
+    "@typescript-eslint/parser": "^5.33.0",
+    "antlr4ts-cli": "^0.5.0-alpha.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "markdown-toc": "^1.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.7.1",
+    "ts-jest": "^28.0.8"
+  }
+}

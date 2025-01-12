@@ -1,0 +1,76 @@
+{
+	"common_img_logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "",
+		".说明": "common_img_logo.png",
+		"FILE": [
+			{
+				"id": "atcbOQN4gJCTm",
+				"name": "logo.svg",
+				"size": 6238,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/02/20/cd60a79e5a3d4e04949087e013720c6b",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/02/20/cd60a79e5a3d4e04949087e013720c6b"
+			}
+		]
+	},
+	"favicon": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "",
+		".说明": "favicon.ico",
+		"FILE": ""
+	},
+	"logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "https://bj.bcebos.com/ops-wps/rlkb-wiki/as/static/logo3.svg",
+		".说明": "logo.svg",
+		"FILE": [
+			{
+				"id": "atcbOQN4gJCTm",
+				"name": "logo.svg",
+				"size": 6238,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/02/20/cd60a79e5a3d4e04949087e013720c6b",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/02/20/cd60a79e5a3d4e04949087e013720c6b"
+			}
+		]
+	},
+	"logo_text_light": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "https://bj.bcebos.com/ops-wps/rlkb-wiki/as/static/logo_text_dark2.svg",
+		".说明": "logo_text_light.svg",
+		"FILE": [
+			{
+				"id": "atcpQBABL1efM",
+				"name": "logo_text_dark.svg",
+				"size": 5847,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/02/20/375f017da0aa43b0b5fbcd6bee5d9f92",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/02/20/375f017da0aa43b0b5fbcd6bee5d9f92"
+			}
+		]
+	},
+	"logo_text_dark": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "https://bj.bcebos.com/ops-wps/rlkb-wiki/as/static/logo_text_light2.svg",
+		".说明": "logo_text_dark.svg",
+		"FILE": [
+			{
+				"id": "atcIvmYd6OdHB",
+				"name": "logo_text_light.svg",
+				"size": 5513,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/02/20/285b8aa8a3dc4d1c8d6cc3fa1f2d208d",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/02/20/285b8aa8a3dc4d1c8d6cc3fa1f2d208d"
+			}
+		]
+	}
+}

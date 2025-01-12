@@ -1,0 +1,4 @@
+
+This is a directory to store .env template file.
+
+Which are used for `make env` command to generate real .env file.

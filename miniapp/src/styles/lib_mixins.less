@@ -1,0 +1,398 @@
+@import "./lib_var.less";
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:global {
+  .ellipsis {
+    .ellipsis();
+  }
+}
+
+.multiLineEllipsis(@lineCount) {
+  display: -webkit-box;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  -webkit-line-clamp: @lineCount;
+  -webkit-box-orient: vertical;
+}
+
+.antiEllipsis {
+  overflow: initial;
+  text-overflow: initial;
+  white-space: initial;
+  -webkit-line-clamp: initial;
+}
+
+// 全局input的样式(antd Input)
+.input(@color: @fc0, @error-color: @err-color, @height: 50px) {
+  .ant-input {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid @border-color;
+    padding: 0;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    font-size: @fs3;
+
+    &::placeholder {
+      color: @fc5 !important;
+    }
+  }
+
+  .err.ant-input,
+  .err .ant-input {
+    border-bottom: 1px solid red;
+  }
+
+  .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
+    border-bottom: 1px solid @border-color;
+  }
+
+  .ant-input:focus {
+    border: none;
+    border-bottom: 1px solid @color !important;
+  }
+}
+
+// 全局button的样式(antd Button type=primary)
+.fillButton(@color: @fc0) {
+  .ant-btn {
+    background-color: @color;
+    font-size: @fs3;
+    border-color: @color;
+    // padding: 0;
+  }
+
+  .ant-btn[disabled] {
+    opacity: 0.5;
+    background-color: @color;
+    color: @fc8;
+
+    &:hover {
+      background-color: @color;
+      color: @fc8;
+      opacity: 0.5;
+    }
+  }
+
+  .ant-btn:hover {
+    opacity: 0.8;
+    background-color: @color;
+    border-color: @color;
+  }
+
+  .ant-btn:active {
+    opacity: 0.5;
+    background-color: @color;
+  }
+}
+
+// 全局button的样式(antd Button type=default)
+.storkeButton(@border: @fc5, @color: @fc2) {
+  .ant-btn {
+    background-color: @fc8;
+    font-size: @fs3;
+    border-color: @border !important;
+    color: @color !important;
+    // padding: 0;
+  }
+
+  .ant-btn[disabled] {
+    opacity: 0.5;
+    background-color: @fc8 !important;
+    border-color: @fc5 !important;
+    color: @fc2 !important;
+
+    &:hover {
+      background-color: @fc8 !important;
+      border-color: @fc5;
+      opacity: 0.5;
+      color: @fc2 !important;
+    }
+  }
+
+  .ant-btn-primary {
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  .ant-btn:hover {
+    opacity: 0.8;
+    color: @color !important;
+    background-color: @fc8;
+    border-color: @border;
+  }
+
+  .ant-btn:active {
+    opacity: 0.5;
+    border-color: @border;
+    background-color: @fc8;
+  }
+}
+
+// 全局button的样式(antd Button type=primary)
+.textButton(@color: @fc8) {
+  .ant-btn{
+    .textButtonBase();
+  }
+  .ant-btn[disabled] {
+    opacity: 0.5;
+    background-color: transparent;
+    border-color: transparent;
+    color: @fc2;
+
+    &:hover {
+      background-color: transparent;
+      border-color: transparent;
+      opacity: 0.5;
+    }
+  }
+}
+// 全局文字button的基础样式
+.textButtonBase(){
+  background-color: transparent;
+  font-size: @fs3;
+  border-color: transparent;
+  color: @fc2;
+  box-shadow: none;
+  text-shadow: none;
+  display: flex;
+  align-items: center;
+  &:hover{
+    opacity: 0.8;
+    color: @fc2;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  &:active{
+    opacity: 0.5;
+    border-color: transparent;
+    background-color: transparent;
+  }
+}
+.custom-scroll-bar(@width: auto, @height: auto, @color: rgba(191, 193, 203, 0.5)) {
+  &::-webkit-scrollbar {
+    width: @width;
+    height: @height;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: @color;
+    border-radius: 4px;
+  }
+}
+
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ant-select-option-common {
+  ul {
+    .custom-scroll-bar(2px, auto);
+  }
+
+  li {
+    .ellipsis();
+  }
+
+  :global {
+    .ant-select-dropdown-menu-item-selected {
+      color: @fc0;
+      font-weight: normal;
+
+      svg {
+        fill: @fc0;
+      }
+    }
+
+    .ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled) {
+      background: @fc7;
+    }
+
+    .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
+      background: none;
+    }
+  }
+}
+
+.flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// antd的复选框勾勾样式
+.antTickInCheckbox (@sWidth: 8px; @sHeight: 6px){
+  .ant-checkbox-inner {
+    background-color: transparent;
+    width: @sWidth;
+    height: @sHeight;
+    border-radius: 0.75px;
+    position: relative;
+    overflow: hidden;
+    transform: rotate(-45deg) scale(1) translateX(1px) translateY(2px);
+    &::before {
+      position: absolute;
+      content: " ";
+      display: table;
+      width: 100%;
+      height: 1.5px;
+      background: @fc8;
+      bottom: 0;
+      border-top-right-radius: 0.75px;
+    }
+    &::after {
+      right: 0;
+      border: none;
+      height: 100%;
+      width: 1.5px;
+      background: @fc8;
+      border-top-right-radius: 0.75px;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+// antd的复选框样式
+// @size是复选框宽高, @sizeSub2是复选框宽高-边框宽度
+// @sWidth与@sHeight是勾勾宽高
+.antdCheckbox(@size: 14px; @sizeSub2: 12px; @sWidth: 8px; @sHeight: 6px) {
+  .ant-checkbox {
+    width: @size;
+    height: @size;
+    border-radius: 2px;
+    border: 1px solid @fc3;
+    overflow: hidden;
+  }
+
+  .ant-checkbox-inner {
+    border: none;
+    width: @sizeSub2;
+    height: @sizeSub2;
+  }
+
+  .ant-checkbox-checked {
+    background: @fc0;
+    border-color: @fc0;
+
+    &::after {
+      border: none;
+    }
+    .antTickInCheckbox(@sWidth, @sHeight);
+  }
+  .ant-checkbox-disabled {
+    background-color: @fc5;
+    border-color: @fc5;
+    .antTickInCheckbox();
+  }
+}
+
+// antd的table样式，对其规范样式
+.antdTable() {
+  // 多选框
+  .antdCheckbox();
+  
+  // 表头
+  .ant-table-thead {
+    height: 45px;
+    .ant-checkbox-disabled{
+      border: 1px solid @fc3;
+      background: @fc8;
+    }
+    .ant-checkbox-disabled .ant-checkbox-inner{
+      background-color: transparent;
+      &::before,
+      &::after{
+        visibility: hidden;
+      }
+    }
+    .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+      background: @fc8;
+    }
+    .ant-table-column-title {
+      font-size: 14px;
+      color: @fc1;
+    }
+    tr > th {
+      background: @fc6;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 45px;
+      text-align: center;
+      border: none;
+    }
+    tr:first-child > th:first-child,
+    tr:first-child > th:last-child {
+      border-radius: 0;
+    }
+  }
+  // 表格内容
+  .ant-table-tbody {
+    .ant-table-row {
+      td {
+        height: 60px;
+        box-sizing: border-box;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: 12px;
+        color: @fc3;
+        text-align: center;
+        border: none;
+      }
+    }
+    tr.ant-table-row:hover td,
+    tr.ant-table-row-selected td {
+      background: @list-selected-color;
+    }
+  }
+
+  .ant-table-placeholder {
+    border: none;
+  }
+}
+
+// antd的分页器样式，对其规范样式
+.antPagination() {
+  .ant-pagination-item-link,
+  .ant-pagination-item {
+    a {
+      color: @fc2;
+    }
+    &:hover {
+      border-color: @fc5;
+    }
+    border-color: @fc5;
+  }
+  .ant-pagination-item-active {
+    a {
+      color: @fc0;
+    }
+    &:hover {
+      border-color: @fc0;
+    }
+    border-color: @fc0;
+  }
+
+  .ant-pagination-item-link .anticon {
+    color: @fc2;
+  }
+}

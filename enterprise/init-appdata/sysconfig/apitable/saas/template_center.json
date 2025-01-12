@@ -1,0 +1,124 @@
+{
+    "en_US": {
+        "i18n": "en_US",
+        "recommend": {
+            "banners": [
+                {
+                    "template_name": "Project Management",
+                    "title": "Project Management",
+                    "desc": "Plan, track, and manage complex projects across multiple teams.",
+                    "image": "space/2023/01/29/108c66a0fae5409d9cec7b1c30d60368",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Marketing Campaign Management",
+                    "title": "Marketing Campaign Management",
+                    "desc": "Track, manage and evaluate each marketing campaign.",
+                    "image": "space/2023/01/29/5448db34ed484a6e975a161364cd333a",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "A Simple & Powerful CRM",
+                    "title": "A Simple & Powerful CRM",
+                    "desc": "Automate lead collection, sales distribution, opportunity tracking, and deal closure.",
+                    "image": "space/2023/11/24/799498e5327f4c57ba808cf08b1b9909"
+                },
+                {
+                    "template_name": "Request Management",
+                    "title": "Request Management",
+                    "desc": "Efficiently manage feedback, improve products, and enhance team collaboration easily.",
+                    "image": "space/2023/01/17/898f529cf9714c7dad7066f0cf252cc5"
+                }
+            ],
+            "album_groups": [],
+            "template_groups": [
+                {
+                    "name": "Other users also like",
+                    "template_names": [
+                        "Product Release Plan",
+                        "Content Marketing for SEO",
+                        "Lightweight CRM",
+                        "Sprints Management",
+                        "Dealflow CRM",
+                        "Content calendar",
+                        "OKR Tracking",
+                        "Video Production Management",
+                        "Customer projects",
+                        "Single Project",
+                        "User Research Management",
+                        "User Story Mapping",
+                        "Inventory Management"
+                    ]
+                }
+            ]
+        },
+        "categories": [
+            {
+                "name": "\uD83C\uDFAF Project Management",
+                "template_names": [
+                    "Product Release Plan",
+                    "OKR Tracking",
+                    "Project Management",
+                    "Video Production Management",
+                    "Sprints Management",
+                    "Customer projects",
+                    "Single Project"
+                ]
+            },
+            {
+                "name": "\uD83E\uDD1D Sales & Customers",
+                "template_names": [
+                    "A Simple & Powerful CRM",
+                    "Fundraising CRM",
+                    "Dealflow CRM",
+                    "Lightweight CRM",
+                    "Customer projects",
+                    "Real estate CRM",
+                    "Inventory Management"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCC6 Marketing",
+                "template_names": [
+                    "Project Management",
+                    "Marketing Campaign Management",
+                    "Content Marketing for SEO",
+                    "Content calendar",
+                    "Video Production Management"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFC8 Product & design & UX",
+                "template_names": [
+                    "User Research Management",
+                    "OKR Tracking",
+                    "User Story Mapping"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCDA Education",
+                "template_names": [
+                    "Course Scheduling"
+                ]
+            },
+            {
+                "name": "\uD83E\uDD16 AI Dataset",
+                "template_names": [
+                    "Chatbot Q&A"
+                ]
+            }
+        ],
+        "albums": [
+        ],
+        "templates_with_tag": [
+            {
+                "name": "Chatbot Q&A",
+                "tags": [
+                    "AI",
+                    "Chatbot",
+                    "Q&A"
+                ]
+            }
+        ]
+    }
+}

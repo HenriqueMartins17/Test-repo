@@ -1,0 +1,305 @@
+edition: ${EDITION:}
+
+billing:
+  vika:
+    enabled: ${BILLING_VIKA_ENABLED:false}
+  apitable:
+    enabled: ${BILLING_APITABLE_ENABLED:false}
+  air-agent:
+    enabled: ${BILLING_AIR_AGENT_ENABLED:false}
+  selfhost:
+    enabled: ${BILLING_SELFHOST_ENABLED:false}
+  aliyun:
+    enabled: ${BILLING_ALIYUN_ENABLED:false}
+
+feishu:
+  app:
+    v2-enable: ${FEISHU_APP_ENABLE:false}
+    admin-uri: /user/feishu/admin?tenant_key={}
+    error-uri: /user/feishu/error?key={}
+    help-uri: https://vikadata.feishu.cn/docs/doccnE9bGAtFXqGlMwkRgutgtsd
+    help-desk-uri: ${FEISHU_APP_HELPDESK:https://applink.feishu.cn/client/helpdesk/open?id=6909791310909652995&extra=%7B%22channel%22%3A1%2C%22created_at%22%3A1609215935%7D}
+lbs:
+  amap:
+    jscode: ${AMAP_JSCODE:e21828e25e02c281835f7b65c42fc418}
+    styles:
+      proxy-pass: ${AMAP_STYLES_PROXY:https://webapi.amap.com/v4/map/styles}
+    vectormap:
+      proxy-pass: ${AMAP_VECTORMAP_PROXY:https://fmap01.amap.com/v3/vectormap}
+    restapi:
+      proxy-pass: ${AMAP_RESTAPI_PROXY:https://restapi.amap.com/}
+
+oneaccess:
+  enabled: ${ONEACCESS_ENABLED:false}
+  iam-host: ${ONEACCESS_IAM_HOST:https://wecom.com}
+  encrypt-alg: AES
+  encrypt-key: ${ONEACCESS_ENCRYPT_KEY:123456}
+  client-id: ${ONEACCESS_CLIENT_ID:123}
+  client-secret: ${ONEACCESS_CLIENT_SECRET:vk-xxxxxx}
+  collaboration-space-id: ${COLLABORATION_SPACE_ID:""}
+  we-com:
+    corpid: ${ONEACCESS_WECOM_CORPID:wwf4021212121}
+    secret: ${ONEACCESS_WECOM_SECRET:wcxxxxx}
+    agent-id: ${ONEACCESS_WECOM_AGENT_ID:1000065}
+    base-api-url: ${ONEACCESS_BASE_API_URL:https://exampe.wecom.com}
+
+permission-control:
+  infoflow:
+    enabled: ${INFOFLOW_PERMISSIONS_ENABLED:false}
+    spaceId: ${INFOFLOW_PERMISSIONS_SPACE_ID:}
+
+tencent:
+  webapp:
+    enabled: ${TENCENT_WEBAPP_ENABLED:false}
+    app-id: ${TENCENT_WEBAPP_APP_ID:101907145}
+    app-key: ${TENCENT_WEBAPP_APP_KEY:03484c5d9ebabc6ceb02eb7b626011c6}
+    redirect-uri: ${TENCENT_WEBAPP_REDIRECT_URI:http://shawn.vaiwan.com/user/qq_connect/callback}
+    apply-union: ${TENCENT_WEBAPP_APPLY_UNION:true}
+afs:
+  enabled: ${AFS_ENABLED:false}
+  type: ${AFS_TYPE:aliyun}
+  aliyun:
+    access-key-id: ${AFS_ALIYUN_ACCESS_KEY:LTAI4FbrkR6v4RfpAgL7GRN7}
+    secret: ${AFS_ALIYUN_SECRET:XxYFF7e8RkSuOdszPqugrmaY83hNfR}
+    region-id: ${AFS_ALIYUN_REGION_ID:cn-shenzhen}
+data:
+  analyze:
+    enabled: ${DATA_ANALYZE_ENABLED:false}
+    type: ${DATA_ANALYZE_TYPE:posthog}
+    posthog:
+      api-key: ${POSTHOG_API_KEY:}
+      host: ${POSTHOG_HOST:false}
+
+social:
+  feishu:
+    enabled: ${FEISHU_ENABLED:false}
+    app-name: ${FEISHU_APP_NAME:assistant}
+    app-id: ${FEISHU_APP_ID:cli_a2d96e91ac3b100d}
+    app-secret: ${FEISHU_APP_SECRET:vNr7CIxa4q2jYQjNmQb4zbgJsjn2Ao1P}
+    encrypt-key: ${FEISHU_ENCRYPT_KEY:fMhQmSpUsXuZx4z6B9Eb}
+    verification-token: ${FEISHU_VERIFICATION_TOKEN:vVuJKuBGAAUqVaD2BeTQLbH3hLMoskzG}
+    isv: ${FEISHU_ISV:false}
+  dingtalk:
+    enabled: ${DINGTALK_ENABLED:false}
+    isv-corp-id: ${DINGTALK_ISV_CORP_ID:dingc7ad99cf1e0ad49a35c2f4657eb6378f}
+    corp-secret: ${DINGTALK_ISV_SECRET:mj3j3b15Gc3w6JPp46lvmM7lEXzavfZUEgUKsy72s3YZWRC7RkBTRTgKQ2mSfVWP}
+    suite-id: ${DINGTALK_SUITE_ID:7242002}
+    suite-key: ${DINGTALK_SUITE_KEY:suite88qw1yq0q48b4tez}
+    suite-secret: ${DINGTALK_SUITE_SECRET:6ITdgMwVcDYgnHT-IfG8_Szvc8-vMWBwwkCUjdlNaxWgGDFXQaYAsO_jhpyXdpg1}
+    sync-contact-with-tree: ${DINGTALK_CONTACT_WITH_TREE:false}
+    corp-h5-app:
+      app-key: ${DINGTALK_CORP_APP_KEY:dingpp0pil1snqypkjym}
+      app-secret: ${DINGTALK_CORP_APP_SECRET:ZrVyKPrGkOeLMTmlDmFmcPK3eUIEDmABwT2DxuQONBOoTqZ0p1JEOedqxV_rNBo3}
+    mobile-app:
+      app-id: ${DINGTALK_APP_ID:dingoaumy4mh7oesecamid}
+      app-secret: ${DINGTALK_APP_SECRET:A1-kYsquLtLr9e_XXnOAoMaqxEjC5xvMUeAztFxPy8YGgsYmeXsSu7QvwrmCcw1P}
+    isv-app-list:
+      - suite-id: ${DINGTALK_ISV_SUITE_ID:20303001}
+        app-id: ${DINGTALK_ISV_APP_ID:87343}
+        suite-key: ${DINGTALK_ISV_SUITE_KEY:suitek31nyhjbb65itdvp}
+        suite-secret: ${DINGTALK_ISV_SUITE_SECRET:TJqspsouY3vxJ3GNHrlr0xRUVIl3wuste8ERERtLetBuOJCfgY6ggj_vb0J4euwb}
+        aes-key: ${DINGTALK_ISV_AES_KEY:cha7KYiRod1bQINsHIJlQSqJlHC01LyuKa6S1iQBkIB}
+        token: ${DINGTALK_ISV_TOKEN:Ivs5LO39ucfXPZfTd8cal1D66oHslG2C}
+        goods-code: ${DINGTALK_ISV_GOODS_CODE:DT_GOODS_881635221357061}
+        msg-tpl-id:
+          welcome: ${DINGTALK_ISV_MSG_WELCOME:3f7cec2386f74f5c8aec1a48395abeb0}
+          comment: ${DINGTALK_ISV_MSG_COMMENT:b4ac28623fd5493dbc5f995bb1cc17c7}
+          member: ${DINGTALK_ISV_MSG_MEMBER:5994e97c8766482bb971e6253ad7f6f1}
+        ding-talk-da:
+          key: ${DINGTALK_DA_KEY:ddd0001}
+          secret: ${DINGTALK_DA_SECRET:imwqxfuujnlarnnx}
+    agent-app:
+      - agent-id: ${DINGTALK_AGENT_ID:1409847725}
+        custom-key: ${DINGTALK_AGENT_CUSTOM_KEY:suitetpxzdtp3oo8wowup}
+        custom-secret: ${DINGTALK_AGENT_CUSTOM_SECRET:8eQlKS619ygImlWRAStPZbtbjuVlR_lrXYH8kL_dBEjknrgYCgf3LgZHeTr2gkK9}
+        corp-id: ${DINGTALK_AGENT_CORP_ID:ding4878c658801eaec8a39a90f97fcb1e09}
+        suite-ticket: ${DINGTALK_AGENT_SUITE_TICKET:integration_1}
+        aes-key: ${DINGTALK_AGENT_AES_KEY:UeLONuTAGG3fBejeJRZwmPmNRGhCdHpEh5TuSgiSmGg}
+        token: ${DINGTALK_AGENT_TOKEN:1lTi8eF3z7pxuKkWetmpDTA1vzhvjNt7}
+  wecom:
+    enabled: ${WECOM_ENABLED:false}
+    auto-create-domain: ${WECOM_AUTO_CREATE_DOMAIN:false}
+    check-domain: ${WECOM_CHECK_DOMAIN:false}
+    vika-we-com-app-id: ${WECOM_APP_ID:ina5200279359980055}
+    init-menus:
+      - name: 进空间站
+        type: view
+        url: /
+      - name: 联系客服
+        sub-buttons:
+          - name: 使用咨询
+            type: view
+            url: https://s1.vika.cn/space/2021/06/17/3565d5fcc43542d0b245ffb41685523c
+          - name: 加入社群
+            type: view
+            url: https://t.1yb.co/AAAT
+      - name: 产品手册
+        type: view
+        url: /help
+    config-storage:
+      storage-type: ${WECOM_STORAGE_TYPE:redis}
+    operate-enp-ddns:
+      api-host: ${WECOM_API_HOST:https://inner.apitable.com}
+      action-ddns-url: ${WECOM_DDNS:/ddns}
+      apply-enp-domain-template: ${WECOM_ENP:'%s.enp'}
+    isv-app-list:
+      - name: ${WECOM_ISV_NAME:apitable}
+        corp-id: ${WECOM_CORP_ID:ww11761d11177ae10b}
+        provider-secret: ${WECOM_PROVIDER_SECRET:xxU3s7QBBBO6D8NTJ4BweUDFLLM2FgxQ2VQTZpnVOCP1YbtnwIUAppZEWYRKJsHL}
+        suite-id: ${WECOM_SUITE_ID:wwc98ec5fc01dfdaeb}
+        suite-secret: ${WECOM_SUITE_SECRET:YxSXxEAGHSV0kD-JCe6wtq1EWhZANscbx5PtLFjhBs4}
+        token: ${WECOM_TOKEN:pN3lrzosJ5rF6ZpAXPC}
+        aes-key: ${WECOM_AES_KEY:fNSi7zaeG3wwnpW4LN1f4FTChMqcGK8MTwGCCEuMm7m}
+        template-id: ${WECOM_TEMPLATE_ID:ttOhr1DQAAGJnvV6ypPO9nI_f7T_ad7w}
+        invite-template-id: ${WECOM_INVITE_TEMPLATE_ID:ttOhr1DQAA4K2IrL60vlkKvu8aYPs5mQ}
+        manual-auth-datetime: ${WECOM_AUTH_DATETIME:'2022-03-15T17:46:03+0800'}
+        subscription-trial-edition-id: ${WECOM_SUBSCRIPTION_TRIAL_EDITION_ID}
+        permit-trial-days: ${WECOM_PERMIT_TRIAL_DAYS:90}
+        permit-trial-expired-template-id: ${WECOM_PERMIT_TRIAL_EXPIRED_TEMPLATE_ID:space_wecom_api_trial_end}
+        permit-buy-notify-before-days: ${WECOM_PERMIT_BUY_NOTIFY_BEFORE_DAYS:'1,3,7,15,30'}
+        permit-buyer-user-id: ${WECOM_PERMIT_BUYER_USER_ID:kelvinpoon}
+        permit-compatible-days: ${WECOM_PERMIT_COMPATIBLE_DAYS:80}
+        permit-notify-webhook-url: ${WECOM_PERMIT_NOTIFY_WEBHOOK_URL}
+        permit-notify-webhook-secret: ${WECOM_PERMIT_NOTIFY_WEBHOOK_SECRET}
+        permit-notify-time-start: ${WECOM_PERMIT_NOTIFY_TIME_START:'09:00+0800'}
+        permit-notify-time-end: ${WECOM_PERMIT_NOTIFY_TIME_END:'10:00+0800'}
+  woa:
+    enabled: ${WOA_ENABLED:false}
+    base-url: ${WOA_BASE_URL:https://yuntiyan52.wpseco.cn/open}
+    tenant-id: ${WOA_TENANT_ID:woa_virtual_tenant}
+    queryable-user-status: ${WOA_QUERYABLE_USER_STATUS:active}
+vika:
+  enabled: ${VIKA_ENABLED:false}
+  host: ${VIKA_HOST:https://integration.apitable.com}
+  token: ${VIKA_TOKEN:usk8qo1Dk9PbecBlxxXXvbb}
+wx:
+  miniapp:
+    enabled: ${WX_MINIAPP_ENABLED:false}
+    app-id: ${WX_MINIAPP_APP_ID:wxa53e1166321xx958}
+    secret: ${WX_MINIAPP_SECRET:653xxx352c97a52499b33aedf56f2645}
+    config-storage:
+      storage-type: ${WX_MINIAPP_STORAGE_TYPE:redistemplate}
+  open:
+    enabled: ${WX_OPEN_ENABLED:false}
+    app-id: ${WX_OPEN_APP_ID:wx73eb0xxx3x141189}
+    secret: ${WX_OPEN_SECRET:a4b35bd59863c30c29xcx1468043x968}
+    token: ${WX_OPEN_TOKEN:apitableWeChatOpenToken}
+    aes-key: ${WX_OPEN_AES_KEY:6UymNoC90oXXjO109ro1XoDJ45cd1G3xyLa08VZUYu8}
+    config-storage:
+      storage-type: ${WX_OPEN_STORAGE_TYPE:redistemplate}
+  mp:
+    enabled: ${WX_MP_ENABLED:false}
+    app-id: ${WX_MP_APP_ID:wx3ccd2f6264309a7c}
+    secret: ${WX_MP_SECRET:62cbaf84054c062f21899c4209b318a3}
+    token: ${WX_MP_TOKEN:apitableWeChatOpenToken}
+    aes-key: ${WX_MP_AES_KEY:6UymNoC90oXXxO109ro1XxXX45xx1G3xxLa08VZUYu8}
+    config-storage:
+      storage-type: ${WX_MP_STORAGE_TYPE:redistemplate}
+  pay:
+    enabled: ${WX_PAY_ENABLED:false}
+    app-id: ${WX_PAY_APP_ID:wx1c297da2xx48065b}
+    mch-id: ${WX_PAY_MCH_ID:1606798457}
+    mch-key: ${WX_PAY_MCH_KEY:c6ad2c1d7fxx08c060014d959cf23556}
+    key-path: ${WX_PAY_KEY_PATH:/apitable.com/pay/apiclient_cert.p12}
+    private-key-path: ${WX_PAY_PRIVATE_KEY_PATH:/apitable.com/pay/apiclient_key.pem}
+    private-cert-path: ${WX_PAY_PRIVATE_CERT_PATH:/apitable.com/pay/apiclient_cert.pem}
+yozo:
+  enabled: ${YOZO_ENABLED:false}
+  app-id: ${YOZO_APP_ID:xxx5645957505507647}
+  key: ${YOZO_KEY:5514399800319016967xxx8}
+  uri:
+    preview: ${YOZO_URI:http://api.yozocloud.cn/getPreview}
+pingpp:
+  enabled: ${PINGPP_ENABLED:false}
+  app-id: ${PINGPP_APP_ID:app_z5qXx9XXxXX4j14O}
+  api-key: ${PINGPP_APP_KEY:sk_test_yH8erPj1W1eXXXa9KCij9qPK}
+idaas:
+  enabled: ${IDAAS_ENABLED:true}
+  self-hosted: ${IDAAS_SELF_HOSTED:false}
+  manage-host: ${IDAAS_MANAGE_HOST:https://demo-admin.cig.tencentcs.com}
+  contact-host: ${IDAAS_CONTACT_HOST:https://{tenantName}-admin.cig.tencentcs.com}
+  server-host: ${IDAAS_SERVER_HOST:https://test.apitable.com}
+teg:
+  enabled: ${TEG_ENBALED:false}
+  token-key: ${TEG_TOKEN:teg000001}
+  ignore-urls: ${TEG_IGNORE_URLS:'/internal/**,/client/**,/actuator/**'}
+  check-urls: ${TEG_CHECK_URLS:'/client/info'}
+
+connector:
+  elink:
+    enabled: ${ELINK_ENBALED:false}
+    corp-id: ${ELINK_CORP_ID:elink10001}
+    base-url: ${ELINK_BASE_URL:http://127.0.0.1}
+    agent-app:
+      - agent-id: ${ELINK_AGENT_ID1:xxx}
+        agent-secret: ${ELINK_AGENT_SECRET1:xxx}
+        qr-domain: ${ELINK_AGENT_QR_DOMAIN1:xxx}
+        callback-domain: ${ELINK_AGENT_CALLBACK_DOMAIN1:xxx}
+      - agent-id: ${ELINK_AGENT_ID2:xxx}
+        agent-secret: ${ELINK_AGENT_SECRET2:xxx}
+        qr-domain: ${ELINK_AGENT_QR_DOMAIN2:xxx}
+        callback-domain: ${ELINK_AGENT_CALLBACK_DOMAIN2:xxx}
+      - agent-id: ${ELINK_AGENT_ID3:xxx}
+        agent-secret: ${ELINK_AGENT_SECRET3:xxx}
+        qr-domain: ${ELINK_AGENT_QR_DOMAIN3:xxx}
+        callback-domain: ${ELINK_AGENT_CALLBACK_DOMAIN3:xxx}
+  k11:
+    enabled: ${K11_ENABLED:false}
+    domain: ${K11_DOMAIN:https://api.k11.xxx}
+    appId: ${K11_APP_ID:10001}
+    appSecret: ${K11_APP_SECRET:Saxxxxxxxxxxx}
+    smsTempCode: ${K11_SMS_TEMP_CODE:10002}
+
+# for apitable saas properties
+auth0:
+  enabled: ${AUTH0_ENABLED:false}
+  client-id: ${AUTH0_CLIENT_ID:A0cdTZ00DNNbI1uJFVFTMn1rGfLKkVr2}
+  client-secret: ${AUTH0_CLIENT_SECRET:e3D6B-ZHn5VHqhVAO0QPV6P34qERfeBksIXaxqeBkWDa1fcsVHAi_QRmiOyECTB5}
+  domain: ${AUTH0_CLIENT_DOMAIN:https://auth.apitable.com}
+  issuer-uri: ${AUTH0_CLIENT_ISSUER_URI:https://apitable.us.auth0.com/api/v2/}
+  redirect-uri: ${AUTH0_REDIRECT_URI:http://127.0.0.1:8081/api/v1/auth0/callback}
+  db-connection-name: ${AUTH0_DB_CONNECTION_NAME:Username-Password-Authentication}
+stripe:
+  enabled: ${STRIPE_ENABLED:false}
+  api-key: ${STRIPE_APP_KEY:}
+  signature-secret: ${STRIPE_SIGNATURE_SECRET:}
+
+self-hosted:
+  expired-at: ${SELFHOST_EXPIRED_AT:}
+  license: ${SELFHOST_LICENSE:}
+
+
+ai:
+  enabled: ${AI_ENABLED:false}
+  server-url: ${AI_SERVER_URL:https://address:port}
+  openai:
+    base-url: ${OPENAI_API_BASE:https://api.openai.com/v1}
+    api-key: ${OPENAI_API_KEY:}
+
+air-agent:
+  enabled: ${AIR_AGENT_ENABLED:false}
+  home-page-path: ${AIR_AGENT_HOME_PAGE_PATH:/}
+
+appsumo:
+  enabled: ${APPSUMO_ENABLED:false}
+  app-id: ${APPSUMO_APP_ID:}
+  app-secret: ${APPSUMO_APP_SECRET:}
+
+payment:
+  alipay:
+    enabled: ${ALIPAY_ENABLED:false}
+    test-mode: ${PAYMENT_TEST_MODE:false}
+    app-id: ${ALIPAY_APP_ID:}
+    notify-url: ${SERVER_DOMAIN:}${ALIPAY_NOTIFY_PATH:}
+    alipay-public-key: ${ALIPAY_PUBLIC_KEY:}
+    merchant-private-key: ${ALIPAY_MERCHANT_PRIVATE_KEY:}
+  wechatpay:
+    enabled: ${WECHATPAY_ENABLED:false}
+    test-mode: ${PAYMENT_TEST_MODE:false}
+    app-id: ${WECHATPAY_APP_ID:}
+    merchant-id: ${WECHATPAY_MERCHANT_ID:}
+    private-key: ${WECHATPAY_PRIVATE_KEY:}
+    merchant-serial-number: ${WECHATPAY_MERCHANT_SERIAL_NUMBER}
+    api-v3-key: ${WECHATPAY_API_V3_KEY:}
+    notify-url: ${SERVER_DOMAIN:}${WECHATPAY_NOTIFY_PATH:}
+

@@ -1,0 +1,74 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230925-001" author="Zoe" labels="ai">
+        <comment>create airagent table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS ${table.prefix}airagent
+            (
+                `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `airagent_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Air Agent Id',
+                `pre_airagent_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'The previous airagent_id',
+                `airagent_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'name',
+                `icon` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'icon',
+                `setting` json DEFAULT NULL COMMENT 'Metadata setting',
+                `version` int unsigned DEFAULT '1' COMMENT 'Current update version',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete tag(0:No,1:Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `k_airagent_id` (`airagent_id`) USING BTREE,
+                KEY `k_pre_airagent_id` (`pre_airagent_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='AI - Airagent Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230925-002" author="Zoe" labels="user">
+        <comment>create airagent user table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS ${table.prefix}airagent_user
+            (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `user_id` bigint NOT NULL COMMENT 'User ID',
+                `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Email',
+                `mobile_phone` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Tel number',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                KEY `k_email` (`email`),
+                KEY `k_user_id` (`user_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC COMMENT='User - airagent user';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230925-003" author="Zoe" labels="ai">
+        <comment>update ai table</comment>
+        <sql>
+            ALTER TABLE ${table.prefix}ai add COLUMN `airagent_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
+            COMMENT 'The airagent_id' AFTER `node_id`;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

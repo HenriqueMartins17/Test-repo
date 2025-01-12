@@ -1,0 +1,128 @@
+// @import "~antd/dist/antd.less";
+// @import "custom_antd_style.less";
+@import "./lib_screen.less";
+@import "./lib_mixins.less";
+
+svg {
+  display: inline;
+  vertical-align: unset;
+}
+
+img, video {
+  max-width: unset;
+  height: unset;
+}
+
+body {
+  margin: 0;
+  // font-family: -apple-system, "Helvetica Neue", PingFangSC-Regular, PingFang SC,
+  //   BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+  //   "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  overflow: hidden;
+  color: var(--fc1) !important;
+  background-color: var(--defaultBg) !important;
+
+  #root {
+    @media (any-hover: hover) {
+      height: 100vh;
+    }
+
+    @media (min-width: @w-md) {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+
+    overflow: auto;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  min-height: 36px;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(191, 193, 203, 0.5);
+}
+
+@keyframes __scale {
+  0% {
+    transform: translateX(0)
+  }
+  50% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.treeViewRoot {
+  /* Clean up default styles */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@node-over-bg: var(--treeSelectedBg);
+@node-focused-bg: transparent;
+@node-selected-bg: var(--primaryLight);
+@node-disabled-bg: transparent;
+@node-drag-bg: var(--defaultBg);
+@node-selected-children-bg: var(--fill0);
+@node-drag-line-color: var(--primaryColor);
+@node-drag-line-size: 2px;
+@node-drag-dot-size: 6px;
+
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primaryColor);
+}
+
+a {
+  color: var(--primaryColor);
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+
+.ant-tabs-tab-btn:focus,
+.ant-tabs-tab-remove:focus,
+.ant-tabs-tab-btn:active,
+.ant-tabs-tab-remove:active {
+  color: var(--black_900);
+}

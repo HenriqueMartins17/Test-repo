@@ -1,0 +1,14 @@
+{{MEMBER_NAME}} archived records in "{{NODE_NAME}}"
+
+Archived records: {{RECORD_TITLE}}
+
+{{SPACE_NAME}}
+
+{{CREATED_AT}}
+
+View {{URL}}
+
+
+copyright © 2019-{{YEARS}} vikadata.All rights reserved.
+
+Contact us (https://vika.cn?home=1)

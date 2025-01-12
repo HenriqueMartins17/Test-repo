@@ -1,0 +1,11 @@
+{{MEMBER_NAME}}对空间站「{{SPACE_NAME}}」的维格表「{{NODE_NAME}}」的记录进行了删除
+--------------------------------------------------------------------------------
+
+被删除的记录: {{RECORD_TITLE}}
+
+查看
+{{URL}}
+
+copyright © 2019-{{YEARS}} 深圳维格云科技有限公司.All rights reserved.
+
+联系我们 (https://vika.cn?home=1)

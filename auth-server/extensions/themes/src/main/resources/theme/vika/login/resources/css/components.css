@@ -1,0 +1,38 @@
+/*primary-button*/
+.vika-primary-btn,
+.vika-primary-btn:focus{
+    color: #7B67EE !important;
+}
+.vika-primary-btn:hover{
+    color: #6653D1 !important;
+}
+.vika-primary-btn:active{
+    color: #413297 !important;
+}
+
+
+/*link-button*/
+.vika-link-btn,
+.vika-link-btn:focus{
+    color: #636363 !important;
+}
+.vika-link-btn:hover{
+    color: #4F4F4F !important;
+}
+.vika-link-btn:active{
+    color: #3C3C3C !important;
+}
+
+
+.vika-icon-btn{
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.vika-icon-btn:hover{
+    background: rgb(245, 247, 250);
+}
+.vika-icon-btn:active{
+    background: rgb(212, 214, 216);
+}

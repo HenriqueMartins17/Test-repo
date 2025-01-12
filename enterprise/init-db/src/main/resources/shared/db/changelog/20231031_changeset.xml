@@ -1,0 +1,108 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20231031-001" author="Shawn" labels="ai">
+        <comment>modify ai type column</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+                MODIFY COLUMN `type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT 'AI Type' AFTER `ai_id`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-002" author="Shawn" labels="ai">
+        <comment>modify space_id column of ai table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+                MODIFY COLUMN `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT 'Space ID' AFTER `id`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-003" author="Shawn" labels="ai">
+        <comment>modify node_id column of ai table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+                MODIFY COLUMN `node_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT 'Node ID in Workspace' AFTER `space_id`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-004" author="Shawn" labels="ai">
+        <comment>drop airagent_id column of ai table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai` DROP COLUMN `airagent_id`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-005" author="Shawn" labels="ai">
+        <comment>rename airagent table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}airagent` RENAME AS `${table.prefix}agent`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-006" author="Shawn" labels="ai">
+        <comment>rename airagent user table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}airagent_user` RENAME AS `${table.prefix}agent_user`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-007" author="Shawn" labels="ai">
+        <comment>rename airagent user bind table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}airagent_user_bind` RENAME AS `${table.prefix}agent_user_bind`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-008" author="Shawn" labels="ai">
+        <comment>rename agent id column</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}agent`
+                CHANGE COLUMN `airagent_id` `agent_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Air Agent Id' AFTER `id`,
+                DROP INDEX `uk_airagent_id`,
+                ADD UNIQUE INDEX `uk_agent_id`(`agent_id` ASC) USING BTREE;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-009" author="Shawn" labels="ai">
+        <comment>rename pre agent id column</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}agent`
+                CHANGE COLUMN `pre_airagent_id` `pre_agent_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT 'The previous Agent id' AFTER `agent_id`,
+                DROP INDEX `k_pre_airagent_id`,
+                ADD INDEX `k_pre_agent_id`(`pre_agent_id` ASC) USING BTREE;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-010" author="Shawn" labels="ai">
+        <comment>rename agent name column</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}agent`
+                CHANGE COLUMN `airagent_name` `agent_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'name' AFTER `pre_agent_id`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-011" author="Shawn" labels="ai">
+        <comment>add ai_id column for agent table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}agent`
+                ADD COLUMN `ai_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Unique ID' AFTER `id`;
+        </sql>
+    </changeSet>
+    <changeSet id="20231031-012" author="Shawn" labels="ai">
+        <comment>add index for agent table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}agent` ADD INDEX `k_user`(`created_by`) USING BTREE;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

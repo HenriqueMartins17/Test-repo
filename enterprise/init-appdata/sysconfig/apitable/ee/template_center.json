@@ -1,0 +1,2574 @@
+{
+    "en_US": {
+        "i18n": "en_US",
+        "recommend": {
+            "banners": [
+                {
+                    "template_name": "Project Management",
+                    "title": "Project Management",
+                    "desc": "Plan, track, and manage complex projects across multiple teams.",
+                    "image": "space/2023/01/29/108c66a0fae5409d9cec7b1c30d60368",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Course Scheduling",
+                    "title": "Course Scheduling",
+                    "desc": "Centralize all of the information including courses, rooms, classes into one intuitive system.",
+                    "image": "space/2023/01/29/1267a01f32c54aa1a4af9df13ddd687f",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Marketing Campaign Management",
+                    "title": "Marketing Campaign Management",
+                    "desc": "Track, manage and evaluate each marketing campaign.",
+                    "image": "space/2023/01/29/5448db34ed484a6e975a161364cd333a",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Product Release Plan",
+                    "title": "Product Release Plan",
+                    "desc": "Ensure your engineering team members aligned and visualized with projects.",
+                    "image": "space/2023/01/17/898f529cf9714c7dad7066f0cf252cc5"
+                },
+                {
+                    "template_name": "OKR Tracking",
+                    "title": "OKR Tracking",
+                    "desc": "It is an useful tool to keep tracking everyone's OKRs in your team.",
+                    "image": "space/2023/01/17/26fc00810e01491cbd2d0c2a8e796aff",
+                    "color": "#262626"
+                }
+            ],
+            "album_groups": [
+            ],
+            "template_groups": [
+                {
+                    "name": "Other users also like",
+                    "template_names": [
+                        "Content calendar",
+                        "Sprints Management",
+                        "Real estate CRM",
+                        "Video Production Management",
+                        "Customer projects",
+                        "Single Project",
+                        "Internal request management",
+                        "User Research Management",
+                        "Inventory Management",
+                        "Content Marketing for SEO"
+                    ]
+                }
+            ]
+        },
+        "categories": [
+            {
+                "name": "\uD83C\uDF1F Featured",
+                "template_names": [
+                    "Project Management",
+                    "OKR Tracking",
+                    "Content calendar",
+                    "Product Release Plan",
+                    "Sprints Management",
+                    "Video Production Management",
+                    "Customer projects",
+                    "Single Project",
+                    "Internal request management",
+                    "Real estate CRM"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCC6 Marketing",
+                "template_names": [
+                    "Content calendar",
+                    "Project Management",
+                    "Video Production Management",
+                    "Marketing Campaign Management"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFAF Project Management",
+                "template_names": [
+                    "OKR Tracking",
+                    "Product Release Plan",
+                    "Project Management",
+                    "Sprints Management",
+                    "Customer projects",
+                    "Single Project",
+                    "Internal request management"
+                ]
+            },
+            {
+                "name": "\uD83E\uDD1D Sales & Customers",
+                "template_names": [
+                    "Customer projects",
+                    "Real estate CRM",
+                    "Inventory Management"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFC8 Product & design & UX",
+                "template_names": [
+                    "User Research Management",
+                    "Internal request management",
+                    "OKR Tracking"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCDA Education",
+                "template_names": [
+                    "Course Scheduling"
+                ]
+            }
+        ],
+        "albums": [
+        ],
+        "templates_with_tag": [
+        ]
+    },
+    "zh_CN": {
+        "i18n": "zh_CN",
+        "recommend": {
+            "banners": [
+                {
+                    "template_name": "项目/任务/协作管理",
+                    "title": "项目/任务/协作管理",
+                    "desc": "小组织、中小企业、500强企业的通用型项目任务协作管理",
+                    "image": "space/2020/09/28/d79656ffd6804282b7a28687e5c0671d",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "设计项目管理",
+                    "title": "设计项目管理",
+                    "desc": "高效统筹各行各业的设计需求排期，把控设计进度",
+                    "image": "space/2022/10/21/0b8546fc629249a2a0309eaac88679ad",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "零售商品进销存",
+                    "title": "零售商品进销存",
+                    "desc": "助力采购、库存、销售全流程管理，落地进销存场景数字化",
+                    "image": "space/2022/10/21/665f6f37d38847d7b3e7d8453508919c",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "OKR管理-系统版",
+                    "title": "OKR管理-系统版",
+                    "desc": "系统化的目标与策略，涵盖制定、执行、复盘、考评的闭环协同",
+                    "image": "space/2021/08/11/01281409e51443a6bd8361321a0848aa"
+                },
+                {
+                    "template_name": "运营必备-甘特图",
+                    "title": "运营必备-甘特图",
+                    "desc": "以时间为横轴，展示活动各项任务的周期和状态，助力把控活动进度",
+                    "image": "space/2021/09/01/f4a70a919e13429d884b37f5050d4646"
+                }
+            ],
+            "album_groups": [
+                {
+                    "name": "最新专题",
+                    "album_names": [
+                        "【专题】HiFlow场景连接",
+                        "【专题】vika技巧"
+                    ]
+                }
+            ],
+            "template_groups": [
+                {
+                    "name": "其他用户喜爱的模板",
+                    "template_names": [
+                        "远程办公解决方案",
+                        "Scrum 敏捷软件开发",
+                        "CRM管理系统",
+                        "轻量型产品研发管理",
+                        "风险投资管理系统",
+                        "MBTI人格测试",
+                        "工作计划管理",
+                        "员工日报管理",
+                        "健康申报管理",
+                        "客户成功管理",
+                        "GTD 时间管理",
+                        "互联网项目管理",
+                        "软件开发实施",
+                        "服装批发进销存"
+                    ]
+                }
+            ]
+        },
+        "categories": [
+            {
+                "name": "\uD83D\uDCC8  工作规划",
+                "template_names": [
+                    "工作目标与任务管理",
+                    "GTD 时间管理",
+                    "员工日报管理",
+                    "OGSM 计划与执行",
+                    "景观设计",
+                    "远程办公解决方案",
+                    "业务工作汇报",
+                    "会议纪要",
+                    "工作计划管理",
+                    "团队简报生成器"
+                ]
+            },
+            {
+                "name": "\uD83D\uDDC2  项目管理",
+                "template_names": [
+                    "专利项目管理",
+                    "风险投资管理系统",
+                    "PMO项目群管理",
+                    "甲方内部设计团队管理",
+                    "行业交流活动项目",
+                    "外包项目管理",
+                    "项目计划与控制",
+                    "TO-B 项目运维",
+                    "政府补贴申报（项目协作）",
+                    "软件开发实施",
+                    "融资项目管理",
+                    "招标全流程",
+                    "项目/任务/协作管理",
+                    "轻量型产品研发管理",
+                    "互联网项目管理",
+                    "项目招标管理",
+                    "Scrum 敏捷软件开发",
+                    "设计项目管理",
+                    "用户调研与访谈",
+                    "建设工程项目管理",
+                    "装饰装修工程管理",
+                    "翻译项目管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDECD️  电商运营",
+                "template_names": [
+                    "客户服务管理",
+                    "MCN电商管理",
+                    "客诉管理系统",
+                    "电商销售库存管理",
+                    "电商活动运营",
+                    "互联网运营管理",
+                    "电商会员积分系统",
+                    "电商平台利润管理",
+                    "电商供应与选品",
+                    "品牌代运营",
+                    "运营必备-甘特图",
+                    "电商直播管理",
+                    "样品寄送管理",
+                    "线上促销管理",
+                    "代购管理",
+                    "2023营销日历"
+                ]
+            },
+            {
+                "name": "⛳  OKR 管理",
+                "template_names": [
+                    "OKR管理-客户成功",
+                    "OKR管理-技术研发",
+                    "OKR管理-简易版",
+                    "OKR管理-系统版",
+                    "OKR管理-市场销售",
+                    "OKR管理-产品设计",
+                    "OKR管理-人事行政"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC65  客户服务",
+                "template_names": [
+                    "合同管理",
+                    "品牌认知调研",
+                    "客户成功管理",
+                    "销售公司 OA 系统",
+                    "客户服务管理",
+                    "CRM管理系统",
+                    "客诉管理系统",
+                    "家政服务管理",
+                    "美容中心连锁管理",
+                    "电商会员积分系统",
+                    "NPS 客户推荐值",
+                    "门店服务与交易",
+                    "客户管理",
+                    "餐饮门店管理",
+                    "客户赠礼管理",
+                    "客户销售管理",
+                    "电销行业销售管理",
+                    "设计项目管理",
+                    "留学中介业务管理",
+                    "国际物流运输管理",
+                    "企业口碑增长飞轮",
+                    "家居定制设计管理",
+                    "样品寄送管理",
+                    "HIS 智慧口腔医疗平台"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCAF  企业服务",
+                "template_names": [
+                    "360环评考核",
+                    "专利项目管理",
+                    "风险投资管理系统",
+                    "员工提升之python学习",
+                    "股权投资-募资管理",
+                    "员工职级评定",
+                    "销售公司 OA 系统",
+                    "年度员工培训计划",
+                    "固定资产管理",
+                    "企业预算与资产管理",
+                    "NPS 客户推荐值",
+                    "远程办公解决方案",
+                    "公司法务合同管理",
+                    "企业 IT 运维流程",
+                    "财务报销自动化｜发票识别",
+                    "市场营销策划基本流程",
+                    "外包项目管理",
+                    "项目招标管理",
+                    "招标全流程",
+                    "融资项目管理",
+                    "行政小贴士",
+                    "会议室预订管理",
+                    "VC 投后管理",
+                    "团购平台商户管理",
+                    "中秋礼盒发放管理",
+                    "EFS企业财务预算"
+                ]
+            },
+            {
+                "name": "\uD83D\uDDA5️  产品研发",
+                "album_names": [
+                    "【专题】Q4 冲刺",
+                    "【专题】设计师"
+                ],
+                "template_names": [
+                    "任务活动系统",
+                    "英雄角色与技能子弹系统",
+                    "程序员调研",
+                    "外包项目管理",
+                    "TO-B 项目运维",
+                    "数据埋点管理",
+                    "软件开发实施",
+                    "用户需求管理",
+                    "新手引导系统",
+                    "应用内测活动",
+                    "轻量型产品研发管理",
+                    "互联网项目管理",
+                    "项目招标管理",
+                    "SEM搜索引擎优化",
+                    "Scrum 敏捷软件开发",
+                    "地图关卡系统",
+                    "游戏策划与设计",
+                    "企业 IT 运维流程",
+                    "制造流程管理",
+                    "业务系统开发管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDE9A  采购供应",
+                "template_names": [
+                    "手机厂商 BOM",
+                    "行政采购",
+                    "葡萄酒库存表",
+                    "门店销售与采购",
+                    "餐饮采购仓储",
+                    "社区团购",
+                    "图书馆管理系统",
+                    "电商销售库存管理",
+                    "食品采购管理",
+                    "零售商品进销存",
+                    "物流运输订单",
+                    "行政采购全流程",
+                    "制造业产销协同",
+                    "服装批发进销存",
+                    "采购协同",
+                    "制造业订单管理流程",
+                    "模具验收与放行",
+                    "品牌连锁门店智能管理",
+                    "电动车配件销售管理",
+                    "食材生产配送一体化",
+                    "代购管理",
+                    "汽车零部件供应管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC69\u200D\uD83D\uDCBC  人力资源",
+                "template_names": [
+                    "360环评考核",
+                    "MBTI人格测试",
+                    "员工提升之python学习",
+                    "员工职级评定",
+                    "年度员工培训计划",
+                    "智能员工名册",
+                    "新零售人力资源管理",
+                    "新人入职协同",
+                    "招聘管理",
+                    "ESOP 股权激励方案",
+                    "员工薪酬管理",
+                    "招聘过程管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDD87  行政管理",
+                "template_names": [
+                    "办公工具包",
+                    "行政采购",
+                    "经费发放与扣除",
+                    "差旅管理",
+                    "固定资产管理",
+                    "公用设备借还管理",
+                    "假期排班系统",
+                    "智能员工名册",
+                    "兼职人员管理",
+                    "行政采购全流程",
+                    "新人入职协同",
+                    "公司年度旅行计划",
+                    "客户赠礼管理",
+                    "员工饮食偏好",
+                    "公章使用管理",
+                    "创业服务管理",
+                    "排班管理系统",
+                    "写字楼租赁管理",
+                    "企业安全作业管理",
+                    "一起猜灯谜",
+                    "中秋礼盒发放管理",
+                    "节日团建安排"
+                ]
+            },
+            {
+                "name": "\uD83C\uDF79  活动策划",
+                "template_names": [
+                    "线下活动策划",
+                    "赛事筹备｜志愿者管理",
+                    "互联网运营管理",
+                    "应用内测活动",
+                    "店促安排事项",
+                    "运营必备-甘特图",
+                    "传媒活动策划",
+                    "展会活动全流程",
+                    "行业奖项颁布管理",
+                    "艺术策划展览管理",
+                    "电商活动运营",
+                    "线上促销管理",
+                    "一起猜灯谜",
+                    "羽毛球会员管理",
+                    "2023营销日历"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFEC  门店经营",
+                "template_names": [
+                    "门店运营管理",
+                    "开店流程管理",
+                    "葡萄酒库存表",
+                    "门店销售与采购",
+                    "餐饮采购仓储",
+                    "社区团购",
+                    "私房烘焙",
+                    "门店报修系统",
+                    "美容会所会员管理",
+                    "美容中心连锁管理",
+                    "兼职人员管理",
+                    "零售商品进销存",
+                    "门店服务与交易",
+                    "餐饮门店管理",
+                    "店促安排事项",
+                    "服装批发进销存",
+                    "连锁餐饮巡店流程",
+                    "品牌公寓管理",
+                    "品牌连锁门店智能管理",
+                    "商业联盟订单流转管理",
+                    "新零售智慧经营",
+                    "连锁经营规划管理",
+                    "食材生产配送一体化",
+                    "代购管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCB0  财务管理",
+                "template_names": [
+                    "经费发放与扣除",
+                    "财务管理",
+                    "差旅管理",
+                    "家庭账本记录",
+                    "食品采购管理",
+                    "企业预算与资产管理",
+                    "ESOP 股权激励方案",
+                    "采购协同",
+                    "财务报销自动化｜发票识别",
+                    "家庭保单管理系统",
+                    "账务处理节点",
+                    "VC 投后管理",
+                    "EFS企业财务预算"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC54  市场服务",
+                "template_names": [
+                    "手机厂商 BOM",
+                    "品牌认知调研",
+                    "专利项目管理",
+                    "行业交流活动项目",
+                    "家政服务管理",
+                    "企业包车安排",
+                    "招标全流程",
+                    "物流运输订单",
+                    "案件追踪与结算",
+                    "义工管理",
+                    "制造业产销协同",
+                    "法律案件管理",
+                    "旅游定制管理",
+                    "创业服务管理",
+                    "电销行业销售管理",
+                    "写字楼租赁管理",
+                    "行业奖项颁布管理",
+                    "客户合同审查",
+                    "留学中介业务管理",
+                    "品牌公寓管理",
+                    "企业安全作业管理",
+                    "国际物流运输管理",
+                    "艺术策划展览管理",
+                    "家居定制设计管理",
+                    "工程机械设备租赁",
+                    "制造业订单管理流程",
+                    "传媒活动策划",
+                    "展会活动全流程",
+                    "KOL管理",
+                    "网络主播管理",
+                    "社群开发运营",
+                    "咨询公司资料管理",
+                    "建设工程项目管理",
+                    "装饰装修工程管理",
+                    "微信小商店订单管理",
+                    "翻译委托与结算",
+                    "家电安装维修派单",
+                    "汽车维修工单",
+                    "连锁经营规划管理",
+                    "大学生兼职管理",
+                    "HIS 智慧口腔医疗平台",
+                    "酒店式公寓经营管理",
+                    "翻译项目管理",
+                    "商业停车场管理",
+                    "羽毛球会员管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC68\u200D⚖️  法律法务",
+                "template_names": [
+                    "案件追踪与结算",
+                    "法律案件管理",
+                    "公司法务合同管理",
+                    "客户合同审查",
+                    "律所新人培训管理"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFE6  金融理财",
+                "template_names": [
+                    "风险投资管理系统",
+                    "股权投资-募资管理",
+                    "VC投资组合管理",
+                    "融资项目管理",
+                    "基金交易"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCD6  教育培训",
+                "template_names": [
+                    "成熟型K12课外辅导",
+                    "毕业课程管理",
+                    "打卡：帕梅拉训练",
+                    "公务员备考秘籍",
+                    "雅思备考指南",
+                    "初创型K12课外辅导",
+                    "在线教育CRM管理",
+                    "培训机构管理系统",
+                    "排课系统",
+                    "早教机构内部管理",
+                    "早教机构管理",
+                    "社会证书考试管理",
+                    "考试防疫管理"
+                ]
+            },
+            {
+                "name": "\uD83C\uDF93  高校管理",
+                "template_names": [
+                    "图书馆管理系统",
+                    "学生宿舍分配",
+                    "疫情防控打卡系统",
+                    "学生会工作管理",
+                    "校园新媒体中心",
+                    "学生成绩管理",
+                    "毕业生档案管理",
+                    "毕业生离校手续办理",
+                    "青年协会期末考评",
+                    "大学生考证计划",
+                    "大学新生入学流程",
+                    "家校互通管理系统",
+                    "高校共青团活动安排",
+                    "大学助教管理",
+                    "高校实验室项目管理",
+                    "大学社团招新流程",
+                    "资格考试学习计划"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC68\u200D⚖️  政府单位",
+                "template_names": [
+                    "赛事筹备｜志愿者管理",
+                    "健康申报管理",
+                    "灾害救援",
+                    "政府补贴申报（项目协作）",
+                    "疫情防控打卡系统",
+                    "流动人员健康追踪",
+                    "义工管理",
+                    "儿童疫苗接种管理",
+                    "防疫健康管理",
+                    "考试防疫管理"
+                ]
+            },
+            {
+                "name": "\uD83D\uDC66  家庭生活",
+                "album_names": [
+                    "【专题】学习进修",
+                    "【专题】旅游出行"
+                ],
+                "template_names": [
+                    "韩国旅游攻略",
+                    "毕业课程管理",
+                    "个人账单管理",
+                    "打卡：帕梅拉训练",
+                    "MBTI人格测试",
+                    "我的阅读生涯",
+                    "装修进度",
+                    "个人财务管理",
+                    "投资理财管理",
+                    "家庭账本记录",
+                    "家族花名册",
+                    "成都-色达行",
+                    "GTD 时间管理",
+                    "我的读书清单",
+                    "组队旅游记账",
+                    "订阅管理",
+                    "人生挑战清单",
+                    "个人银行卡管理",
+                    "在线题库",
+                    "健身训练计划",
+                    "我的电影清单",
+                    "球队管理",
+                    "成绩激励",
+                    "儿童疫苗接种管理",
+                    "电商节拼单攻略",
+                    "家庭保单管理系统",
+                    "PMP 备考计划",
+                    "激情世界杯",
+                    "过年大作战"
+                ]
+            }
+        ],
+        "albums": [
+            {
+                "name": "【专题】Q4 冲刺",
+                "cover": "space/2022/10/17/4be395fdb45a4e508cc2b6fd70b41ce6",
+                "description": "从工作计划制定、落地执行、到复盘汇报，助力完成年度目标",
+                "content": "# Q4 冲刺\n\nQ4正式开启，你为Q4业绩冲刺做好准备了吗？想要做出好成绩，良好的团队计划、时间&任务执行管理都是必不可少的。用好协作管理工具，将有助于做好计划信息同步和项目复盘，避免偏离目标、重蹈覆辙，冲刺好业绩。\n\n<br>\n\n### 工作计划管理\n\n利用甘特图对企业内部项目进行跟踪和排期，协助企业内部工作计划的管理。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpckXdZ9tRmrD/tplZ0YXGtUR4N\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/18/433df064a7a44847a31d87caeeaa20f4)\n\n<br>\n\n### 业务工作汇报\n\n满足远程办公场景下对业务进度的跟踪需求，适用于业务工作汇报，以及企业管理层对业务工作进度和成果的把握。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpckXdZ9tRmrD/tplBxSLd7k9sM\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2021/12/28/605aaf7d831c4703afa61590214085e1)\n\n<br>\n\n### OGSM 计划与执行\n\n适用于OGSM的计划和执行场景，利用甘特图对支线任务进行跟踪和排期，方便统筹者进行有效规划。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpckXdZ9tRmrD/tpl4yf8qXPoGy\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2021/12/28/8c55226f54e84e49bed7fad6bc0ca16c)\n\n<br>\n\n### OKR管理-系统版\n\n适用于管理层、人力资源、战略管理等，统筹企业和各级OKR，从而达成一致目标。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpckXdZ9tRmrD/tplRu4MjlE9aF\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/18/35863460b7094992bbfeacaf916c2478)\n\n<br>\n\n### GTD 时间管理\n\n明确任务复杂度与优先级，借助甘特图进行有效跟踪，作为 GTD 时间管理方法的落地工具。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpckXdZ9tRmrD/tplz1y33dqzUT\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/11/22b55e163d644d6e9cdb7d6b41117dab)",
+                "publisher_name": "维格云",
+                "publisher_logo": "space/2021/12/09/d46accd3142947d9b023d81a7b0fcbd3",
+                "publisher_desc": "新一代团队数据协作和项目管理工具，可以应用于项目管理、数据协同、客户管理、内容管理等工作场景，打破传统SaaS软件的流程固化，帮助中小企业提高数字化生产力",
+                "template_names": [
+                ]
+            },
+            {
+                "name": "【专题】旅游出行",
+                "cover": "space/2022/10/17/c1291a97cd3a4429a8f00684330abc6e",
+                "description": "旅游出行神器，让路线规划更轻松，行程安排更合理，旅游记录更便捷",
+                "content": "# 旅行出行\n\n从个人到团体的旅行规划工具这里全都有。能帮助你高效规划行程、统筹出行安排、记录费用明细，确保行程顺利、安全。旅行社管理者、驴友团负责人、公司行政等都适用。\n\n<br>\n\n### 组队旅游记账\n\n为组队旅行制定的账单管理系统，可以管理多次旅游记录，让你更方便追踪历史账单。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcHNVVXEzASV/tplpw3DikM16Q\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/4090718ce56543c19ad3f19ea608e912)\n\n<br>\n\n### 说走就走的旅行\n\n适用于个人外出旅游场景。能帮助用户合理安排行程地点和时间等信息。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcHNVVXEzASV/tplQB5gaMprio\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/e8779978d6ac4ac0b6b161c0f7391d54)\n\n<br>\n\n### 公司年度旅行计划\n\n为公司组织年度旅游准备，覆盖人员信息记录、地点调研、行程安排和费用明细等场景，快速推进活动落地。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcKFf2yjNQCd/tplwypX8N2UPm\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2021/12/28/70986ac922914a06a4387f814fd526c0)\n\n<br>\n\n### 旅行社出团管理\n\n旅行社规划行程路线、设定出团标准人数，同时支持智能判断是否成团，减少人员协调和数据统计等流程。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcydAxX9wleJ/tplggZyVlCcGP\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/18/a19c82ada7714c20914c5df04e94e414)\n\n<br>\n\n### 旅游定制管理\n\n适用于旅行规划师、旅行社管理者、驴友团负责人等，高效管理行程及出行人员，确保行程顺利、安全。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcydAxX9wleJ/tpl7U5FtSqAl2\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2021/12/28/3455539cde6146b68e31ec8839ab8bcc)",
+                "publisher_name": "维格云",
+                "publisher_logo": "space/2021/12/09/d46accd3142947d9b023d81a7b0fcbd3",
+                "publisher_desc": "新一代团队数据协作和项目管理工具，可以应用于项目管理、数据协同、客户管理、内容管理等工作场景，打破传统SaaS软件的流程固化，帮助中小企业提高数字化生产力",
+                "template_names": [
+                ]
+            },
+            {
+                "name": "【专题】学习进修",
+                "cover": "space/2022/10/17/353d6ee67dba4f0a983e0b5b131547f1",
+                "description": "利用维格表做好学习规划、管理学习进度，实现高效学习",
+                "content": "# 学习进修\n\n学习各种知识是成长路上必不可少的一环。学习最忌半途而废和毫无章法。使用维格表，你可以做清晰的学习计划，有条理地管理学习进度，记录学习要点，复盘学习情况……让你的学习更加高效！\n\n<br>\n\n### 员工提升之python学习\n\n组织企业员工学习新技能，提供学习资料、记录学习进度，帮助员工提升个人能力。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpccJClAAoTVJ/tplYTCj6Lzuae\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2021/12/28/183f7d503dfd4fa79074bbd6ad3f2ac0)\n\n<br>\n\n### 公务员备考秘籍\n\n适用于备考公务员的学习场景，帮助你合理规划学习内容和学习进度。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpc9TvbVERQYB/tpln8jTWmoqRo\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/22721330098248eaafd9bb634cdf234e)\n\n<br>\n\n### 雅思备考指南\n\n适用于个人雅思备考场景，能监控学习内容，安排学习进度规划。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpc9TvbVERQYB/tplBgYq7Ty2sR\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/95b84bc91bab41469a0e855446ce4b1b)\n\n<br>\n\n### 健身训练计划\n\n主要应用于健身训练月计划的制定，根据训练目标，灵活更换计划，并逐步增加训练强度。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcHNVVXEzASV/tplheHKXi1CVx\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/94bf830070bd40ea9c0af90486c0d4ca)\n\n<br>\n\n### PMP 备考计划\n\n适用于备考PMP的学习场景，帮助用户合理规划学习内容和学习进度。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcHNVVXEzASV/tplRc4xfAR1bn\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/18/436e41960eae49cb9c771e3ac6dcfce9)",
+                "publisher_name": "维格云",
+                "publisher_logo": "space/2021/12/09/d46accd3142947d9b023d81a7b0fcbd3",
+                "publisher_desc": "新一代团队数据协作和项目管理工具，可以应用于项目管理、数据协同、客户管理、内容管理等工作场景，打破传统SaaS软件的流程固化，帮助中小企业提高数字化生产力",
+                "template_names": [
+                ]
+            },
+            {
+                "name": "【专题】设计师",
+                "cover": "space/2022/10/17/485b367d9cc64b8397d9d395f959bae5",
+                "description": "面向各行各业的设计场景，为设计师规划、追踪、管理任务提供便利",
+                "content": "# 设计师\n\n在实际的设计工作中，设计任务不仅多而繁杂、而且多线程并行。为了便于规划、追踪和管理设计任务，需要用合理的方式分配，并记录每个任务的执行情况和执行信息，通过维格表的多维数据字段和甘特视图等多种功能，可以帮你实现任务实时追踪，高效管理设计进程。\n\n<br>\n\n### 家居定制设计管理\n\n适用于家居定制的销售与设计师、工程师协作管理，如客户、订单、设计、安装管理等，实现内部流程完整闭环。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcydAxX9wleJ/tplRk1V5MNeJw\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/19/0b83b80a7dc646c3ad0329150e288fcd)\n\n<br>\n\n### 景观设计\n\n适用于20人以下设计团队，把控景观设计项目流程、图纸资料以及客户信息管理。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcvUvzEH74UL/tplQt2tDviNhz\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/19/fbde432f223743b092f8cf8625d2a23b)\n\n<br>\n\n### 视频设计需求\n\n视频设计师承接需求后，与业务部门协作开展脚本、文案和画面设计，提高协作效率。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpc7nSgGP7egZ/tplTNYrDR8aPH\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/19/20be82cf2b914a7c9d97a348a16f104f)\n\n<br>\n\n### 设计需求管理\n\n归档所有的设计需求，利用甘特图根据工作量合理进行排期，适用于设计需求管理场景。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpc7nSgGP7egZ/tplSycHorh3fU\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/19/230a55fe3c6b40cfbc64d9452fe47e32)\n\n<br>\n\n### 电商美工任务管理\n\n适用于美工任务排期以及任务管理关系，使得任务分配、进度监控、交付管理形成闭环。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpc7nSgGP7egZ/tpl43R8NPQr3k\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/07/18/574251e3fa7646869493138048baf0fd)",
+                "publisher_name": "维格云",
+                "publisher_logo": "space/2021/12/09/d46accd3142947d9b023d81a7b0fcbd3",
+                "publisher_desc": "新一代团队数据协作和项目管理工具，可以应用于项目管理、数据协同、客户管理、内容管理等工作场景，打破传统SaaS软件的流程固化，帮助中小企业提高数字化生产力",
+                "template_names": [
+                ]
+            },
+            {
+                "name": "【专题】HiFlow场景连接",
+                "cover": "space/2022/10/20/7f88ecf8a8cc4db2be00609daff72d26",
+                "description": "AI 智能识别、数据自动汇总、消息定时送达…减少重复劳动",
+                "content": "# HiFlow场景连接\n\n腾讯云HiFlow场景连接器，零代码连接多个应用，只需要简单配置即可轻松实现自动化的工作流程和数据流程。\n\n<br>\n\n### 企业口碑增长飞轮\n\n本模板通过腾讯云HiFlow场景连接器实现 NPSmeter 和维格表的数据对接，自动收集到的 NPS 数据汇总至维格表，实现高效分析。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcyx46vYwLpm/tpleHsmqQCNyp\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/20/0ba0a980499442968da1b77a6fe9ca7c)\n\n<br>\n\n### 财务报销自动化｜发票识别\n\n将发票上传至「附件」列后，AI 智能识别发票中的报销金额、抬头、日期等信息，规范企业报销单据的填写，化繁为简。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcyx46vYwLpm/tplS0fToUnQw6\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/20/41c6d90f9119440784f62484e82638a5)\n\n<br>\n\n### 团队简报生成器\n\n团队成员可定时收到企业微信群的日报提醒，当管理者收到日报后，可通过双向关联来汇总日报数据，并将当天的汇总信息推送至企业微信群。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcyx46vYwLpm/tplkCMUCp1nw5\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/20/4757987f043e441f8464092e8a8456e2)\n\n<br>\n\n### 防疫健康管理\n\n结合了HiFlow场景连接器对提交信息中的健康码和行程码进行智能识别，并自动填充至对应维格列中，适用于高校、企业的人员管理。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcyx46vYwLpm/tpldKXE4fnr8u\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/19/db8dd9479c434d26a40899079b00f10f)\n\n<br>\n\n### 微信小商店订单管理\n\n客户在微信小商店里购买下单后，可以利用腾讯云HiFlow场景连接器小程序，自动把订单数据归集成维格表中进行归档分析。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcydAxX9wleJ/tpl9lW8Fv5iYM\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/20/0f3e9e8deb75445dae1c5e97dad4d243)\n\n<br>\n\n### 行政小贴士\n\n行政工作的繁琐在于各种消息的上传下达，通过本模板，可以快速地与其他的工作进行挂钩，实现信息的及时同步\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcoeeuuCcES5/tpl47KCGeqrN0\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/20/138aa6a4b1dd4ba2954512b11b90c47f)\n\n<br>\n\n### 百度营销投放跟踪\n\n投放数据实时更新到维格表中，再通过仪表盘进行各类关键词、投放数据等进行展示和分析。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpc7nSgGP7egZ/tplbdGKEcTm7z\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/20/4cd5b4daad8440e2907e574ee9a4592c)",
+                "publisher_name": "维格云",
+                "publisher_logo": "space/2021/12/09/d46accd3142947d9b023d81a7b0fcbd3",
+                "publisher_desc": "新一代团队数据协作和项目管理工具，可以应用于项目管理、数据协同、客户管理、内容管理等工作场景，打破传统SaaS软件的流程固化，帮助中小企业提高数字化生产力",
+                "template_names": [
+                ]
+            },
+            {
+                "name": "【专题】vika技巧",
+                "cover": "space/2022/10/20/87618d63940441dfbf8e7d3a0ea9c769",
+                "description": "集合了维格表教学资源、名词解释、进度条、日期计算等技巧",
+                "content": "# vika 技巧\n\n维格表基础入门、教学资源、公式应用、省市区快速调用，帮助你轻松搭建系统。\n\n### 维格产品手册\n\n汇总了维格表的教学资源、常见名词和使用指南，能够帮助你更快地上手使用。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcF7gkCMKr0w/tpll8mltwrZMT\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/1a0db26cdc4a4d76abdff8ce72a2108a)\n\n<br>\n\n### 自动化公式合集\n\n25 个公式应用，覆盖了年龄、倒计时、会员判断、到期日计算等，让你掌握更多维格表玩法。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcF7gkCMKr0w/tplChfLWy1Bl7\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/07728d84ffee4cdb8d1d5f7a87a058ea)\n\n<br>\n\n### 进度条制作\n\n在维格表智能公式列中加入 emoji 表情，轻松实现进度条效果，清晰又好看。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcF7gkCMKr0w/tpl3plMiV4N1l\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/03/14/d219af98625d46e39da5447cc67ad351)\n\n<br>\n\n### 全国省市区字段\n\n提供了全国省市区数据库，通过双向关联，便可在选择指定市级、区级名称时，自动获取对应的市级、省级名称。\n\n<a class=\"\"btn\"\" href=\"\"https://vika.cn/template/tpcF7gkCMKr0w/tplMh0SML6PpA\"\" target=\"\"_blank\"\">预览模板</a>\n\n![](https://s1.vika.cn/space/2022/10/20/5560fcc7f0dc4c769795bcf01a9548bf?attname=Kapture%202022-10-20%20at%2017.32.50.gif)",
+                "publisher_name": "维格云",
+                "publisher_logo": "space/2021/12/09/d46accd3142947d9b023d81a7b0fcbd3",
+                "publisher_desc": "新一代团队数据协作和项目管理工具，可以应用于项目管理、数据协同、客户管理、内容管理等工作场景，打破传统SaaS软件的流程固化，帮助中小企业提高数字化生产力",
+                "template_names": [
+                ]
+            }
+        ],
+        "templates_with_tag": [
+            {
+                "tags": [
+                    "活动管理",
+                    "旅游出行"
+                ],
+                "name": "激情世界杯"
+            },
+            {
+                "tags": [
+                    "旅游出行",
+                    "收支记账"
+                ],
+                "name": "过年大作战"
+            },
+            {
+                "tags": [
+                    "HR",
+                    "行政"
+                ],
+                "name": "智能员工名册"
+            },
+            {
+                "tags": [
+                    "设计师",
+                    "项目管理"
+                ],
+                "name": "设计项目管理"
+            },
+            {
+                "tags": [
+                    "HR",
+                    "政企服务",
+                    "项目管理"
+                ],
+                "name": "政府补贴申报（项目协作）"
+            },
+            {
+                "tags": [
+                    "合同管理",
+                    "客户服务",
+                    "销售客服"
+                ],
+                "name": "客户管理"
+            },
+            {
+                "tags": [
+                    "维修保洁",
+                    "商业服务"
+                ],
+                "name": "家政服务管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "活动管理",
+                    "运营"
+                ],
+                "name": "互联网运营管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应",
+                    "生产制造"
+                ],
+                "name": "采购协同"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "高校管理",
+                    "教师"
+                ],
+                "name": "图书馆管理系统"
+            },
+            {
+                "tags": [
+                    "绩效考核",
+                    "HR"
+                ],
+                "name": "360环评考核"
+            },
+            {
+                "tags": [
+                    "运营",
+                    "活动管理",
+                    "进度管理"
+                ],
+                "name": "线下活动策划"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "个体商户"
+                ],
+                "name": "门店服务与交易"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "个体商户",
+                    "商业服务"
+                ],
+                "name": "餐饮门店管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "个体商户"
+                ],
+                "name": "葡萄酒库存表"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "财务会计"
+                ],
+                "name": "企业预算与资产管理"
+            },
+            {
+                "tags": [
+                    "资料汇总",
+                    "法律法务",
+                    "合同管理"
+                ],
+                "name": "公司法务合同管理"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "资料汇总",
+                    "法律法务"
+                ],
+                "name": "法律案件管理"
+            },
+            {
+                "tags": [
+                    "资料汇总",
+                    "法律法务"
+                ],
+                "name": "案件追踪与结算"
+            },
+            {
+                "tags": [
+                    "法律法务",
+                    "合同管理",
+                    "客户服务"
+                ],
+                "name": "客户合同审查"
+            },
+            {
+                "tags": [
+                    "投资"
+                ],
+                "name": "VC投资组合管理"
+            },
+            {
+                "tags": [
+                    "校外培训",
+                    "教师"
+                ],
+                "name": "培训机构管理系统"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "人生挑战清单"
+            },
+            {
+                "tags": [
+                    "收支记账"
+                ],
+                "name": "订阅管理"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "我的电影清单"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "我的读书清单"
+            },
+            {
+                "tags": [
+                    "收支记账"
+                ],
+                "name": "球队管理"
+            },
+            {
+                "tags": [
+                    "收支记账"
+                ],
+                "name": "个人账单管理"
+            },
+            {
+                "tags": [
+                    "大学生",
+                    "高校管理"
+                ],
+                "name": "毕业课程管理"
+            },
+            {
+                "tags": [
+                    "架构图"
+                ],
+                "name": "家族花名册"
+            },
+            {
+                "tags": [
+                    "旅游出行",
+                    "收支记账",
+                    "坐标地图"
+                ],
+                "name": "韩国旅游攻略"
+            },
+            {
+                "tags": [
+                    "管理者",
+                    "OKR",
+                    "工作规划"
+                ],
+                "name": "OKR管理-系统版"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "项目管理"
+                ],
+                "name": "项目/任务/协作管理"
+            },
+            {
+                "tags": [
+                    "Word文档",
+                    "客户服务",
+                    "销售客服"
+                ],
+                "name": "客户销售管理"
+            },
+            {
+                "tags": [
+                    "游戏配置",
+                    "研发"
+                ],
+                "name": "英雄角色与技能子弹系统"
+            },
+            {
+                "tags": [
+                    "游戏配置",
+                    "研发"
+                ],
+                "name": "新手引导系统"
+            },
+            {
+                "tags": [
+                    "游戏配置",
+                    "研发"
+                ],
+                "name": "地图关卡系统"
+            },
+            {
+                "tags": [
+                    "游戏配置",
+                    "研发"
+                ],
+                "name": "任务活动系统"
+            },
+            {
+                "tags": [
+                    "商务合作",
+                    "电商运营",
+                    "网络直播"
+                ],
+                "name": "MCN电商管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应",
+                    "个体商户"
+                ],
+                "name": "服装批发进销存"
+            },
+            {
+                "tags": [
+                    "旅游出行",
+                    "团队建设",
+                    "行政"
+                ],
+                "name": "公司年度旅行计划"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "产品经理"
+                ],
+                "name": "用户调研与访谈"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "市场"
+                ],
+                "name": "留学中介业务管理"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "租赁",
+                    "市场"
+                ],
+                "name": "品牌公寓管理"
+            },
+            {
+                "tags": [
+                    "收支记账"
+                ],
+                "name": "个人银行卡管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "旅游出行"
+                ],
+                "name": "旅游定制管理"
+            },
+            {
+                "tags": [
+                    "旅游出行",
+                    "收支记账"
+                ],
+                "name": "说走就走的旅行"
+            },
+            {
+                "tags": [
+                    "旅游出行",
+                    "收支记账",
+                    "坐标地图"
+                ],
+                "name": "成都-色达行"
+            },
+            {
+                "tags": [
+                    "产品经理",
+                    "任务排期",
+                    "产品研发"
+                ],
+                "name": "用户需求管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "电商运营",
+                    "运营"
+                ],
+                "name": "电商销售库存管理"
+            },
+            {
+                "tags": [
+                    "采购供应",
+                    "生产制造",
+                    "生产员"
+                ],
+                "name": "制造业产销协同"
+            },
+            {
+                "tags": [
+                    "商务合作",
+                    "运营"
+                ],
+                "name": "品牌代运营"
+            },
+            {
+                "tags": [
+                    "电商运营",
+                    "运营"
+                ],
+                "name": "电商平台利润管理"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "销售客服"
+                ],
+                "name": "电销行业销售管理"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "项目管理",
+                    "产品研发"
+                ],
+                "name": "互联网项目管理"
+            },
+            {
+                "tags": [
+                    "商业服务",
+                    "活动管理",
+                    "进度管理"
+                ],
+                "name": "店促安排事项"
+            },
+            {
+                "tags": [
+                    "使用技巧"
+                ],
+                "name": "全国省市区字段"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "雅思备考指南"
+            },
+            {
+                "tags": [
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "业务工作汇报"
+            },
+            {
+                "tags": [
+                    "管理者",
+                    "OKR",
+                    "工作规划"
+                ],
+                "name": "OKR管理-简易版"
+            },
+            {
+                "tags": [
+                    "项目管理",
+                    "任务排期"
+                ],
+                "name": "PMO项目群管理"
+            },
+            {
+                "tags": [
+                    "客户服务",
+                    "订单管理",
+                    "销售客服"
+                ],
+                "name": "客户服务管理"
+            },
+            {
+                "tags": [
+                    "电商运营",
+                    "活动管理"
+                ],
+                "name": "电商活动运营"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应",
+                    "透视表"
+                ],
+                "name": "食品采购管理"
+            },
+            {
+                "tags": [
+                    "维修保洁",
+                    "个体商户",
+                    "进度管理"
+                ],
+                "name": "门店报修系统"
+            },
+            {
+                "tags": [
+                    "行政",
+                    "租赁",
+                    "市场"
+                ],
+                "name": "写字楼租赁管理"
+            },
+            {
+                "tags": [
+                    "租赁",
+                    "市场"
+                ],
+                "name": "创业服务管理"
+            },
+            {
+                "tags": [
+                    "高校管理",
+                    "教师"
+                ],
+                "name": "学生成绩管理"
+            },
+            {
+                "tags": [
+                    "大学生"
+                ],
+                "name": "学生会工作管理"
+            },
+            {
+                "tags": [
+                    "资料汇总",
+                    "Word文档"
+                ],
+                "name": "会议纪要"
+            },
+            {
+                "tags": [
+                    "OKR",
+                    "产品经理",
+                    "设计师"
+                ],
+                "name": "OKR管理-产品设计"
+            },
+            {
+                "tags": [
+                    "HR",
+                    "行政",
+                    "OKR"
+                ],
+                "name": "OKR管理-人事行政"
+            },
+            {
+                "tags": [
+                    "OKR",
+                    "产品研发"
+                ],
+                "name": "OKR管理-技术研发"
+            },
+            {
+                "tags": [
+                    "OKR",
+                    "销售客服"
+                ],
+                "name": "OKR管理-市场销售"
+            },
+            {
+                "tags": [
+                    "OKR",
+                    "客户服务"
+                ],
+                "name": "OKR管理-客户成功"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "项目管理"
+                ],
+                "name": "外包项目管理"
+            },
+            {
+                "tags": [
+                    "招投标",
+                    "项目管理",
+                    "市场"
+                ],
+                "name": "项目招标管理"
+            },
+            {
+                "tags": [
+                    "镜像",
+                    "合同管理",
+                    "客户服务",
+                    "销售客服"
+                ],
+                "name": "CRM管理系统"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "市场"
+                ],
+                "name": "品牌认知调研"
+            },
+            {
+                "tags": [
+                    "电商运营",
+                    "运营"
+                ],
+                "name": "电商会员积分系统"
+            },
+            {
+                "tags": [
+                    "电商运营",
+                    "网络直播",
+                    "主播"
+                ],
+                "name": "电商直播管理"
+            },
+            {
+                "tags": [
+                    "商务合作",
+                    "网络直播"
+                ],
+                "name": "KOL管理"
+            },
+            {
+                "tags": [
+                    "网络直播",
+                    "主播",
+                    "商务合作"
+                ],
+                "name": "网络主播管理"
+            },
+            {
+                "tags": [
+                    "团队建设",
+                    "学习提升",
+                    "HR"
+                ],
+                "name": "年度员工培训计划"
+            },
+            {
+                "tags": [
+                    "绩效考核",
+                    "薪酬结算",
+                    "HR"
+                ],
+                "name": "员工薪酬管理"
+            },
+            {
+                "tags": [
+                    "资料汇总",
+                    "行政"
+                ],
+                "name": "办公工具包"
+            },
+            {
+                "tags": [
+                    "商务合作",
+                    "活动管理",
+                    "市场"
+                ],
+                "name": "行业奖项颁布管理"
+            },
+            {
+                "tags": [
+                    "个体商户",
+                    "进度管理"
+                ],
+                "name": "开店流程管理"
+            },
+            {
+                "tags": [
+                    "商务合作",
+                    "活动管理",
+                    "项目管理"
+                ],
+                "name": "行业交流活动项目"
+            },
+            {
+                "tags": [
+                    "校外培训",
+                    "教师"
+                ],
+                "name": "排课系统"
+            },
+            {
+                "tags": [
+                    "使用技巧"
+                ],
+                "name": "进度条制作"
+            },
+            {
+                "tags": [
+                    "使用技巧"
+                ],
+                "name": "自动化公式合集"
+            },
+            {
+                "tags": [
+                    "收支记账"
+                ],
+                "name": "个人财务管理"
+            },
+            {
+                "tags": [
+                    "广告跟踪",
+                    "产品研发",
+                    "产品经理"
+                ],
+                "name": "数据埋点管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "电商运营",
+                    "活动管理",
+                    "运营"
+                ],
+                "name": "运营必备-甘特图"
+            },
+            {
+                "tags": [
+                    "投资",
+                    "甘特图",
+                    "财务会计"
+                ],
+                "name": "股权投资-募资管理"
+            },
+            {
+                "tags": [
+                    "资料汇总",
+                    "高校管理",
+                    "教师"
+                ],
+                "name": "毕业生档案管理"
+            },
+            {
+                "tags": [
+                    "管理者",
+                    "工作规划",
+                    "进度管理"
+                ],
+                "name": "工作目标与任务管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "研发",
+                    "产品研发"
+                ],
+                "name": "软件开发实施"
+            },
+            {
+                "tags": [
+                    "招投标",
+                    "甘特图",
+                    "项目管理"
+                ],
+                "name": "招标全流程"
+            },
+            {
+                "tags": [
+                    "行政",
+                    "客户服务"
+                ],
+                "name": "客户赠礼管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "个体商户"
+                ],
+                "name": "美容中心连锁管理"
+            },
+            {
+                "tags": [
+                    "广告跟踪",
+                    "内容营销",
+                    "运营"
+                ],
+                "name": "SEM搜索引擎优化"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "研发"
+                ],
+                "name": "程序员调研"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应",
+                    "商业服务"
+                ],
+                "name": "餐饮采购仓储"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "客户服务"
+                ],
+                "name": "NPS 客户推荐值"
+            },
+            {
+                "tags": [
+                    "招聘",
+                    "甘特图",
+                    "HR"
+                ],
+                "name": "招聘过程管理"
+            },
+            {
+                "tags": [
+                    "招聘",
+                    "薪酬结算",
+                    "HR"
+                ],
+                "name": "新零售人力资源管理"
+            },
+            {
+                "tags": [
+                    "行政",
+                    "资产设备"
+                ],
+                "name": "公章使用管理"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "进销存",
+                    "行政"
+                ],
+                "name": "公用设备借还管理"
+            },
+            {
+                "tags": [
+                    "绩效考核",
+                    "薪酬结算",
+                    "HR"
+                ],
+                "name": "兼职人员管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "活动管理",
+                    "市场"
+                ],
+                "name": "传媒活动策划"
+            },
+            {
+                "tags": [
+                    "运营",
+                    "活动管理",
+                    "市场"
+                ],
+                "name": "展会活动全流程"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "个体商户"
+                ],
+                "name": "零售商品进销存"
+            },
+            {
+                "tags": [
+                    "公共服务",
+                    "志愿者"
+                ],
+                "name": "灾害救援"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "工程师",
+                    "进度管理"
+                ],
+                "name": "装修进度"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "OGSM 计划与执行"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "研发",
+                    "产品研发"
+                ],
+                "name": "Scrum 敏捷软件开发"
+            },
+            {
+                "tags": [
+                    "项目管理",
+                    "投资"
+                ],
+                "name": "融资项目管理"
+            },
+            {
+                "tags": [
+                    "采购供应",
+                    "市场"
+                ],
+                "name": "手机厂商 BOM"
+            },
+            {
+                "tags": [
+                    "绩效考核",
+                    "HR"
+                ],
+                "name": "员工职级评定"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "行政"
+                ],
+                "name": "差旅管理"
+            },
+            {
+                "tags": [
+                    "行政",
+                    "财务会计"
+                ],
+                "name": "经费发放与扣除"
+            },
+            {
+                "tags": [
+                    "广告跟踪",
+                    "个体商户"
+                ],
+                "name": "门店运营管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应",
+                    "个体商户"
+                ],
+                "name": "门店销售与采购"
+            },
+            {
+                "tags": [
+                    "运营",
+                    "客户服务"
+                ],
+                "name": "社群开发运营"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "快递运输"
+                ],
+                "name": "物流运输订单"
+            },
+            {
+                "tags": [
+                    "高校管理",
+                    "教师"
+                ],
+                "name": "学生宿舍分配"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "工作规划",
+                    "管理者"
+                ],
+                "name": "GTD 时间管理"
+            },
+            {
+                "tags": [
+                    "客户服务",
+                    "销售客服"
+                ],
+                "name": "客户成功管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "个体商户"
+                ],
+                "name": "社区团购"
+            },
+            {
+                "tags": [
+                    "HR",
+                    "招聘"
+                ],
+                "name": "新人入职协同"
+            },
+            {
+                "tags": [
+                    "行政"
+                ],
+                "name": "员工饮食偏好"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "管理者"
+                ],
+                "name": "排班管理系统"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "行政"
+                ],
+                "name": "固定资产管理"
+            },
+            {
+                "tags": [
+                    "透视表",
+                    "活动管理",
+                    "产品研发"
+                ],
+                "name": "应用内测活动"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "个体商户"
+                ],
+                "name": "美容会所会员管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "个体商户"
+                ],
+                "name": "私房烘焙"
+            },
+            {
+                "tags": [
+                    "资料汇总",
+                    "法律法务",
+                    "项目管理"
+                ],
+                "name": "专利项目管理"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "在线题库"
+            },
+            {
+                "tags": [
+                    "旅游出行",
+                    "收支记账"
+                ],
+                "name": "组队旅游记账"
+            },
+            {
+                "tags": [
+                    "电商运营",
+                    "商务合作",
+                    "运营"
+                ],
+                "name": "电商供应与选品"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "管理者"
+                ],
+                "name": "假期排班系统"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "行政"
+                ],
+                "name": "行政采购全流程"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "订单管理",
+                    "商业服务"
+                ],
+                "name": "企业包车安排"
+            },
+            {
+                "tags": [
+                    "志愿者",
+                    "疫情防控",
+                    "公共服务"
+                ],
+                "name": "健康申报管理"
+            },
+            {
+                "tags": [
+                    "巡查质检",
+                    "商业服务",
+                    "市场"
+                ],
+                "name": "连锁餐饮巡店流程"
+            },
+            {
+                "tags": [
+                    "财务会计"
+                ],
+                "name": "ESOP 股权激励方案"
+            },
+            {
+                "tags": [
+                    "内容营销",
+                    "活动管理",
+                    "运营"
+                ],
+                "name": "2023营销日历"
+            },
+            {
+                "tags": [
+                    "团队建设",
+                    "活动管理",
+                    "行政"
+                ],
+                "name": "一起猜灯谜"
+            },
+            {
+                "tags": [
+                    "学习提升",
+                    "大学生"
+                ],
+                "name": "资格考试学习计划"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "个体商户",
+                    "订单管理"
+                ],
+                "name": "代购管理"
+            },
+            {
+                "tags": [
+                    "行政",
+                    "团队建设",
+                    "采购供应"
+                ],
+                "name": "中秋礼盒发放管理"
+            },
+            {
+                "tags": [
+                    "团队建设",
+                    "行政",
+                    "活动管理"
+                ],
+                "name": "节日团建安排"
+            },
+            {
+                "tags": [
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "员工日报管理"
+            },
+            {
+                "tags": [
+                    "志愿者",
+                    "疫情防控",
+                    "公共服务"
+                ],
+                "name": "流动人员健康追踪"
+            },
+            {
+                "tags": [
+                    "志愿者",
+                    "公共服务",
+                    "活动管理"
+                ],
+                "name": "赛事筹备｜志愿者管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "远程办公解决方案"
+            },
+            {
+                "tags": [
+                    "产品研发",
+                    "项目管理",
+                    "进度管理"
+                ],
+                "name": "轻量型产品研发管理"
+            },
+            {
+                "tags": [
+                    "投资"
+                ],
+                "name": "风险投资管理系统"
+            },
+            {
+                "tags": [
+                    "收支记账",
+                    "透视表"
+                ],
+                "name": "家庭账本记录"
+            },
+            {
+                "tags": [
+                    "趣味测试",
+                    "招聘",
+                    "HR"
+                ],
+                "name": "MBTI人格测试"
+            },
+            {
+                "tags": [
+                    "疫情防控",
+                    "教师"
+                ],
+                "name": "疫情防控打卡系统"
+            },
+            {
+                "tags": [
+                    "政企服务",
+                    "医疗卫生"
+                ],
+                "name": "儿童疫苗接种管理"
+            },
+            {
+                "tags": [
+                    "游戏配置",
+                    "镜像",
+                    "产品研发",
+                    "设计师"
+                ],
+                "name": "游戏策划与设计"
+            },
+            {
+                "tags": [
+                    "快递运输",
+                    "订单管理",
+                    "进度管理"
+                ],
+                "name": "国际物流运输管理"
+            },
+            {
+                "tags": [
+                    "研发",
+                    "甘特图",
+                    "进度管理"
+                ],
+                "name": "企业 IT 运维流程"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "连接器"
+                ],
+                "name": "企业口碑增长飞轮"
+            },
+            {
+                "tags": [
+                    "连接器",
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "团队简报生成器"
+            },
+            {
+                "tags": [
+                    "连接器",
+                    "财务会计"
+                ],
+                "name": "财务报销自动化｜发票识别"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "活动管理",
+                    "市场"
+                ],
+                "name": "艺术策划展览管理"
+            },
+            {
+                "tags": [
+                    "设计师",
+                    "订单管理"
+                ],
+                "name": "家居定制设计管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "租赁"
+                ],
+                "name": "工程机械设备租赁"
+            },
+            {
+                "tags": [
+                    "生产制造",
+                    "订单管理",
+                    "采购供应"
+                ],
+                "name": "制造业订单管理流程"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "甘特图",
+                    "活动管理"
+                ],
+                "name": "市场营销策划基本流程"
+            },
+            {
+                "tags": [
+                    "疫情防控",
+                    "连接器",
+                    "公共服务"
+                ],
+                "name": "防疫健康管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "连接器",
+                    "电商运营"
+                ],
+                "name": "微信小商店订单管理"
+            },
+            {
+                "tags": [
+                    "商务合作",
+                    "镜像",
+                    "电商运营"
+                ],
+                "name": "样品寄送管理"
+            },
+            {
+                "tags": [
+                    "项目管理",
+                    "工程师"
+                ],
+                "name": "建设工程项目管理"
+            },
+            {
+                "tags": [
+                    "项目管理",
+                    "工程师",
+                    "进度管理"
+                ],
+                "name": "装饰装修工程管理"
+            },
+            {
+                "tags": [
+                    "团队建设",
+                    "行政",
+                    "连接器"
+                ],
+                "name": "行政小贴士"
+            },
+            {
+                "tags": [
+                    "广告跟踪",
+                    "连接器",
+                    "内容营销"
+                ],
+                "name": "百度营销投放跟踪"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "个体商户"
+                ],
+                "name": "电商节拼单攻略"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "管理者",
+                    "工作规划"
+                ],
+                "name": "工作计划管理"
+            },
+            {
+                "tags": [
+                    "公共服务",
+                    "志愿者"
+                ],
+                "name": "义工管理"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "我的阅读生涯"
+            },
+            {
+                "tags": [
+                    "教师",
+                    "高校管理"
+                ],
+                "name": "毕业生离校手续办理"
+            },
+            {
+                "tags": [
+                    "生产制造",
+                    "巡查质检",
+                    "生产员"
+                ],
+                "name": "模具验收与放行"
+            },
+            {
+                "tags": [
+                    "资产设备",
+                    "行政",
+                    "镜像"
+                ],
+                "name": "会议室预订管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "维修保洁"
+                ],
+                "name": "家电安装维修派单"
+            },
+            {
+                "tags": [
+                    "商务合作",
+                    "进度管理"
+                ],
+                "name": "翻译委托与结算"
+            },
+            {
+                "tags": [
+                    "学习提升",
+                    "甘特图"
+                ],
+                "name": "健身训练计划"
+            },
+            {
+                "tags": [
+                    "生产制造",
+                    "生产员",
+                    "资产设备"
+                ],
+                "name": "制造流程管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "商业服务"
+                ],
+                "name": "品牌连锁门店智能管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "个体商户"
+                ],
+                "name": "商业联盟订单流转管理"
+            },
+            {
+                "tags": [
+                    "电商运营",
+                    "活动管理"
+                ],
+                "name": "线上促销管理"
+            },
+            {
+                "tags": [
+                    "研发",
+                    "镜像",
+                    "进度管理"
+                ],
+                "name": "业务系统开发管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "商业服务",
+                    "管理者"
+                ],
+                "name": "新零售智慧经营"
+            },
+            {
+                "tags": [
+                    "学习提升",
+                    "团队建设",
+                    "法律法务"
+                ],
+                "name": "律所新人培训管理"
+            },
+            {
+                "tags": [
+                    "投资"
+                ],
+                "name": "家庭保单管理系统"
+            },
+            {
+                "tags": [
+                    "绩效考核",
+                    "大学生"
+                ],
+                "name": "青年协会期末考评"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "投资"
+                ],
+                "name": "VC 投后管理"
+            },
+            {
+                "tags": [
+                    "教师",
+                    "高校管理",
+                    "大学生"
+                ],
+                "name": "大学助教管理"
+            },
+            {
+                "tags": [
+                    "维修保洁",
+                    "订单管理"
+                ],
+                "name": "汽车维修工单"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "收支记账"
+                ],
+                "name": "账务处理节点"
+            },
+            {
+                "tags": [
+                    "坐标地图",
+                    "商业服务"
+                ],
+                "name": "连锁经营规划管理"
+            },
+            {
+                "tags": [
+                    "活动管理",
+                    "大学生"
+                ],
+                "name": "高校共青团活动安排"
+            },
+            {
+                "tags": [
+                    "教师",
+                    "高校管理"
+                ],
+                "name": "家校互通管理系统"
+            },
+            {
+                "tags": [
+                    "学习提升",
+                    "甘特图"
+                ],
+                "name": "PMP 备考计划"
+            },
+            {
+                "tags": [
+                    "投资"
+                ],
+                "name": "基金交易"
+            },
+            {
+                "tags": [
+                    "镜像",
+                    "高校管理",
+                    "教师"
+                ],
+                "name": "大学新生入学流程"
+            },
+            {
+                "tags": [
+                    "学习提升",
+                    "大学生"
+                ],
+                "name": "大学生考证计划"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "商业服务",
+                    "销售客服"
+                ],
+                "name": "电动车配件销售管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "快递运输",
+                    "商业服务"
+                ],
+                "name": "食材生产配送一体化"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "医疗卫生"
+                ],
+                "name": "HIS 智慧口腔医疗平台"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "商务合作"
+                ],
+                "name": "团购平台商户管理"
+            },
+            {
+                "tags": [
+                    "高校管理",
+                    "资产设备",
+                    "项目管理"
+                ],
+                "name": "高校实验室项目管理"
+            },
+            {
+                "tags": [
+                    "大学生",
+                    "薪酬结算"
+                ],
+                "name": "大学生兼职管理"
+            },
+            {
+                "tags": [
+                    "大学生",
+                    "团队建设"
+                ],
+                "name": "大学社团招新流程"
+            },
+            {
+                "tags": [
+                    "销售客服",
+                    "商业服务"
+                ],
+                "name": "酒店式公寓经营管理"
+            },
+            {
+                "tags": [
+                    "商业服务"
+                ],
+                "name": "商业停车场管理"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "采购供应"
+                ],
+                "name": "汽车零部件供应管理"
+            },
+            {
+                "tags": [
+                    "财务会计",
+                    "镜像"
+                ],
+                "name": "EFS企业财务预算"
+            },
+            {
+                "tags": [
+                    "项目管理",
+                    "进度管理"
+                ],
+                "name": "翻译项目管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "进销存",
+                    "客户服务"
+                ],
+                "name": "羽毛球会员管理"
+            },
+            {
+                "tags": [
+                    "教师",
+                    "公职人员"
+                ],
+                "name": "考试防疫管理"
+            },
+            {
+                "tags": [
+                    "教师",
+                    "公职人员"
+                ],
+                "name": "社会证书考试管理"
+            },
+            {
+                "tags": [
+                    "招聘",
+                    "透视表",
+                    "HR"
+                ],
+                "name": "招聘管理"
+            },
+            {
+                "tags": [
+                    "HR",
+                    "客户服务",
+                    "销售客服"
+                ],
+                "name": "销售公司 OA 系统"
+            },
+            {
+                "tags": [
+                    "学习提升",
+                    "团队建设",
+                    "HR"
+                ],
+                "name": "员工提升之python学习"
+            },
+            {
+                "tags": [
+                    "巡查质检",
+                    "市场"
+                ],
+                "name": "企业安全作业管理"
+            },
+            {
+                "tags": [
+                    "财务会计"
+                ],
+                "name": "财务管理"
+            },
+            {
+                "tags": [
+                    "校外培训",
+                    "教师"
+                ],
+                "name": "早教机构管理"
+            },
+            {
+                "tags": [
+                    "大学生",
+                    "资产设备"
+                ],
+                "name": "校园新媒体中心"
+            },
+            {
+                "tags": [
+                    "投资"
+                ],
+                "name": "投资理财管理"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "打卡：帕梅拉训练"
+            },
+            {
+                "tags": [
+                    "学习提升"
+                ],
+                "name": "公务员备考秘籍"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "项目管理"
+                ],
+                "name": "项目计划与控制"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "甘特图",
+                    "设计师"
+                ],
+                "name": "景观设计"
+            },
+            {
+                "tags": [
+                    "项目管理",
+                    "研发",
+                    "进度管理"
+                ],
+                "name": "TO-B 项目运维"
+            },
+            {
+                "tags": [
+                    "法律法务",
+                    "合同管理"
+                ],
+                "name": "合同管理"
+            },
+            {
+                "tags": [
+                    "订单管理",
+                    "客户服务",
+                    "销售客服"
+                ],
+                "name": "客诉管理系统"
+            },
+            {
+                "tags": [
+                    "任务排期",
+                    "甘特图",
+                    "设计师"
+                ],
+                "name": "设计需求管理"
+            },
+            {
+                "tags": [
+                    "甘特图",
+                    "设计师",
+                    "进度管理"
+                ],
+                "name": "视频设计需求"
+            },
+            {
+                "tags": [
+                    "进销存",
+                    "行政",
+                    "采购供应"
+                ],
+                "name": "行政采购"
+            },
+            {
+                "tags": [
+                    "咨询调研",
+                    "资料汇总"
+                ],
+                "name": "咨询公司资料管理"
+            },
+            {
+                "tags": [
+                    "校外培训",
+                    "教师"
+                ],
+                "name": "初创型K12课外辅导"
+            },
+            {
+                "tags": [
+                    "校外培训",
+                    "教师"
+                ],
+                "name": "成熟型K12课外辅导"
+            },
+            {
+                "tags": [
+                    "校外培训",
+                    "教师"
+                ],
+                "name": "在线教育CRM管理"
+            },
+            {
+                "tags": [
+                    "校外培训",
+                    "教师"
+                ],
+                "name": "早教机构内部管理"
+            },
+            {
+                "tags": [
+                    "绩效考核"
+                ],
+                "name": "成绩激励"
+            }
+        ]
+    }
+}

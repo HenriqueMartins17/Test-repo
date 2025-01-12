@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.template.mapper.TemplatePropertyRelMapper">
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}template_property_rel(id, template_id, property_code,
+        property_order)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.templateId}, #{item.propertyCode},
+                #{item.propertyOrder}
+            </trim>
+        </foreach>
+    </insert>
+
+    <delete id="delete">
+        DELETE
+        FROM ${tablePrefix}template_property_rel
+    </delete>
+</mapper>

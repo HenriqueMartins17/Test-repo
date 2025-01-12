@@ -1,0 +1,143 @@
+import java.nio.charset.StandardCharsets
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+plugins {
+  id 'java'
+  id 'org.springframework.boot' version '2.7.6'
+  id 'io.spring.dependency-management' version '1.1.0'
+  id 'idea'
+  id 'com.google.protobuf' version '0.8.14'
+}
+
+sourceCompatibility = '8'
+
+repositories {
+  mavenCentral()
+}
+
+dependencyManagement {
+  imports {
+    mavenBom("org.springframework.cloud:spring-cloud-dependencies:2021.0.5")
+  }
+}
+
+dependencies {
+  implementation "com.google.protobuf:protobuf-java:3.21.5"
+  implementation([
+    "io.grpc:grpc-netty-shaded",
+    "io.grpc:grpc-protobuf",
+    "io.grpc:grpc-stub",
+  ])
+  implementation "cn.vika:vika-social-dingtalk:1.0.1"
+  implementation "cn.hutool:hutool-all:5.5.9"
+  implementation "p6spy:p6spy:3.9.0"
+  implementation 'com.squareup.okhttp3:okhttp'
+  implementation([
+    "io.swagger:swagger-annotations:1.5.22",
+    "io.swagger:swagger-models:1.5.22"
+  ])
+  implementation "org.springframework.retry:spring-retry"
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation('org.springframework.boot:spring-boot-starter-data-redis') {
+    exclude group: 'io.lettuce', module: 'lettuce-core'
+  }
+  implementation('org.apache.commons:commons-pool2')
+  implementation "redis.clients:jedis"
+  implementation "net.devh:grpc-server-spring-boot-starter:2.13.1.RELEASE"
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+  implementation 'org.springframework.integration:spring-integration-redis'
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
+  implementation "org.springframework.cloud:spring-cloud-starter-sleuth"
+  
+  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+  
+  implementation "com.baomidou:mybatis-plus-boot-starter:3.5.1"
+  runtimeOnly 'mysql:mysql-connector-java'
+  
+  annotationProcessor 'org.projectlombok:lombok'
+  compileOnly 'org.projectlombok:lombok'
+  
+  
+  testCompileOnly 'org.projectlombok:lombok'
+  testAnnotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+jar {
+  enabled = false
+}
+processResources {
+  filesMatching("**/*.yml") {
+    if (it.name != 'application.yml') {
+      it.exclude()
+    }
+  }
+}
+
+compileJava.dependsOn processResources
+bootJar.dependsOn processResources
+
+// Compile Java Setting
+tasks.withType(JavaCompile) {
+  options.encoding = StandardCharsets.UTF_8
+  options.warnings = false
+  options.compilerArgs += '-Xlint:-deprecation'
+}
+
+bootJar {
+  mainClass.set('com.vikadata.social.service.dingtalk.SocialDingTalkApplication')
+  manifest {
+    attributes 'Start-Class': 'com.vikadata.social.service.dingtalk.SocialDingTalkApplication'
+    attributes 'Implementation-Version': archiveVersion
+    attributes 'Built-Gradle': gradle.gradleVersion
+    attributes 'Build-OS': System.getProperty("os.name")
+    attributes 'Built-By': System.getProperty("user.name")
+    attributes 'Build-Jdk': System.getProperty("java.version")
+    attributes 'Build-Timestamp': LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+  }
+}
+
+// SpringBoot Plugin On Gradle
+springBoot {
+  mainClass.set('com.vikadata.social.service.dingtalk.SocialDingTalkApplication')
+  // build-info.properties in resources/main/META-INF directory
+  buildInfo {
+    properties {
+      artifact = 'Socail Api Server'
+      version = rootProject.version
+      group = rootProject.group
+      name = 'Socail Api Server'
+    }
+  }
+}
+
+protobuf {
+  protoc {
+    artifact = "com.google.protobuf:protoc:3.21.5"
+  }
+  generatedFilesBaseDir = "$projectDir/src/generated"
+  clean {
+    delete generatedFilesBaseDir
+  }
+  plugins {
+    grpc {
+      artifact = "io.grpc:protoc-gen-grpc-java:1.49.0"
+    }
+  }
+  
+  generateProtoTasks {
+    all()*.plugins {
+      grpc {}
+    }
+  }
+}
+
+idea {
+  module {
+    sourceDirs += file('src/generated/main/java')
+    sourceDirs += file('src/generated/main/grpc')
+    generatedSourceDirs += file('src/generated/main/java')
+    generatedSourceDirs += file('src/generated/main/grpc')
+  }
+}

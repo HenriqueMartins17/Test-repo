@@ -1,0 +1,69 @@
+<!--wechat redis-->
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="redisHost"><span class="required">*</span>{{:: 'redisHost' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="redisHost" type="text" ng-model="identityProvider.config.redisHost" required>
+    </div>
+</div>
+
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="redisPort"><span class="required">*</span>{{:: 'redisPort' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="redisPort" type="text" ng-model="identityProvider.config.redisPort" required>
+    </div>
+</div>
+
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="redisPassword">{{:: 'redisPassword' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="redisPassword" kc-password ng-model="identityProvider.config.redisPassword">
+    </div>
+</div>
+
+<!--wechat authAppId-->
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="authAppId"><span class="required">*</span>{{:: 'authAppId' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="authAppId" type="text" ng-model="identityProvider.config.authAppId" required>
+    </div>
+</div>
+
+<!--wechat componentToken-->
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="componentToken"><span class="required">*</span>{{:: 'componentToken' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="componentToken" type="text" ng-model="identityProvider.config.componentToken" required>
+    </div>
+</div>
+
+<!--wechat componentAesKey-->
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="componentAesKey"><span class="required">*</span>{{:: 'componentAesKey' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="componentAesKey" type="text" ng-model="identityProvider.config.componentAesKey" required>
+    </div>
+</div>
+
+<!--wechat messageRemark-->
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="messageRemark"><span class="required">*</span>{{:: 'messageRemark' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="messageRemark" type="text" ng-model="identityProvider.config.messageRemark" required>
+    </div>
+</div>
+
+<!--wechat messageTemplateId-->
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="messageTemplateId"><span class="required">*</span>{{:: 'messageTemplateId' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="messageTemplateId" type="text" ng-model="identityProvider.config.messageTemplateId" required>
+    </div>
+</div>
+
+<!--login url-->
+<div class="form-group clearfix">
+    <label class="col-md-2 control-label" for="loginUrl"><span class="required">*</span>{{:: 'loginUrl' | translate}}</label>
+    <div class="col-md-6">
+        <input class="form-control" id="loginUrl" type="text" ng-model="identityProvider.config.loginUrl" required>
+    </div>
+</div>

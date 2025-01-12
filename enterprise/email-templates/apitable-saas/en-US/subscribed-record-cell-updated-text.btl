@@ -1,0 +1,21 @@
+{{MEMBER_NAME}} modified the "{{RECORD_TITLE}}" contents from the "{{NODE_NAME}}" datasheet
+
+--------------------------------------------------------------------------------
+
+From {{MEMBER_NAME}}
+
+Record: {{RECORD_TITLE}}
+
+Field Name：{{FIELD_NAME}}
+
+Original content："{{OLD_DISPLAY_VALUE}}"
+
+Latest content："{{NEW_DISPLAY_VALUE}}"
+
+View record
+{{URL}}
+
+
+© {{YEARS}} AITable Ltd.
+
+Contact us (https://aitable.ai?home=1)

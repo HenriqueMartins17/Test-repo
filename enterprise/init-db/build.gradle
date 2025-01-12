@@ -1,0 +1,65 @@
+plugins {
+    id 'java'
+    id 'org.liquibase.gradle' version "2.2.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    liquibaseRuntime 'mysql:mysql-connector-java:8.0.28'
+    liquibaseRuntime 'org.liquibase:liquibase-core:4.21.1'
+    liquibaseRuntime 'info.picocli:picocli:4.6.1'
+    liquibaseRuntime "ch.qos.logback:logback-core:1.2.3"
+    liquibaseRuntime "ch.qos.logback:logback-classic:1.2.3"
+}
+
+def dbHost = System.getenv('DB_HOST')
+def dbPort = System.getenv('DB_PORT')
+def dbName = System.getenv('DB_NAME')
+def dbUserName = System.getenv('DB_USERNAME')
+def dbPassword = System.getenv('DB_PASSWORD')
+def tablePrefix = System.getenv('DATABASE_TABLE_PREFIX')
+
+liquibase {
+    activities {
+        shared {
+            driver "com.mysql.cj.jdbc.Driver"
+            url "jdbc:mysql://$dbHost:$dbPort/$dbName?characterEncoding=utf8&autoReconnect=true&useSSL=true"
+            username "$dbUserName"
+            password "$dbPassword"
+            changelogFile "src/main/resources/shared/db/changelog/db.changelog-master.xml"
+            logLevel "warning"
+            changeLogParameters(['table.prefix': "$tablePrefix"])
+            classpath 'src/main/resources/shared'
+            databaseChangelogTableName "${tablePrefix}shared_enterprise_db_changelog"
+            databaseChangelogLockTableName "${tablePrefix}shared_enterprise_db_changelog_lock"
+        }
+        apitable {
+            driver "com.mysql.cj.jdbc.Driver"
+            url "jdbc:mysql://$dbHost:$dbPort/$dbName?characterEncoding=utf8&autoReconnect=true&useSSL=true"
+            username "$dbUserName"
+            password "$dbPassword"
+            changelogFile "src/main/resources/apitable-saas/db/changelog/db.changelog-master.xml"
+            logLevel "warning"
+            changeLogParameters(['table.prefix': "$tablePrefix"])
+            classpath 'src/main/resources/apitable-saas'
+            databaseChangelogTableName "${tablePrefix}saas_db_changelog"
+            databaseChangelogLockTableName "${tablePrefix}saas_db_changelog_lock"
+        }
+        vika {
+            driver "com.mysql.cj.jdbc.Driver"
+            url "jdbc:mysql://$dbHost:$dbPort/$dbName?characterEncoding=utf8&autoReconnect=true&useSSL=true"
+            username "$dbUserName"
+            password "$dbPassword"
+            changelogFile "src/main/resources/vika-saas/db/changelog/db.changelog-master.xml"
+            logLevel "warning"
+            changeLogParameters(['table.prefix': "$tablePrefix"])
+            classpath 'src/main/resources/vika-saas'
+            databaseChangelogTableName "${tablePrefix}enterprise_db_changelog"
+            databaseChangelogLockTableName "${tablePrefix}enterprise_db_changelog_lock"
+        }
+    }
+    runList = project.ext.runList
+}

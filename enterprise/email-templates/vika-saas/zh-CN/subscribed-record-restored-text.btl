@@ -1,0 +1,16 @@
+{{MEMBER_NAME}}还原了「{{NODE_NAME}}」中的记录
+--------------------------------------------------------------------------------
+
+还原的记录: {{RECORD_TITLE}}
+
+{{SPACE_NAME}}
+
+{{CREATED_AT}}
+
+查看记录
+
+{{URL}}
+
+copyright © 2019-{{YEARS}} 深圳维格云科技有限公司.All rights reserved.
+
+联系我们 (https://vika.cn?home=1)

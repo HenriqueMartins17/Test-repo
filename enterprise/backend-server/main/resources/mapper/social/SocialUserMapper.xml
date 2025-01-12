@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.social.mapper.SocialUserMapper">
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}social_user(id, union_id, platform)
+            VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.unionId}, #{item.platform}
+            </trim>
+        </foreach>
+    </insert>
+
+    <select id="selectByUnionId" resultType="com.apitable.enterprise.social.entity.SocialUserEntity">
+        SELECT *
+        FROM ${tablePrefix}social_user
+        WHERE union_id = #{unionId}
+        LIMIT 0,1
+    </select>
+
+    <delete id="deleteByUnionIds">
+        DELETE FROM ${tablePrefix}social_user
+        WHERE union_id IN
+        <foreach item="item" index="index" collection="unionIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>

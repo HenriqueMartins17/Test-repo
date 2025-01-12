@@ -1,0 +1,78 @@
+
+.drawerWrapper {
+  :global {
+    .ant-drawer-body {
+      padding-top: 0;
+    }
+  }
+}
+
+
+.selectDstItem {
+  //width: 564px;
+  padding: 8px;
+  background: var(--bgCommonHigh);
+  border: 1px solid var(--borderCommonDefault);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.nodeWrapper {
+  background: var(--bgCommonDefault);
+  border: 1px solid var(--borderCommonDefault);
+  border-radius: 4px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+
+  svg {
+    fill: var(--textCommonPrimary);
+  }
+
+
+}
+
+.reSelectBtn {
+  cursor: pointer;
+  width: max-content;
+}
+
+.botModal {
+  background: var(--bgControlsDefault);
+  padding: 8px !important;
+  border-radius: 4px !important;
+}
+
+.updateAvailable {
+  border-radius: 4px;
+  border: 1px solid var(--rainbowPurple5);
+  background: var(--rainbowPurple1);
+  font-size: 12px;
+  color: var(--textBrandDefault);
+  padding: 0px 4px;
+  margin-left: 4px;
+}
+
+
+.selectDst {
+  display: flex;
+  height: 40px;
+  padding: 10px 8px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  background: var(--bgControlsDefault);
+
+  &:hover {
+    background: var(--bgControlsHover);
+  }
+
+  &:active {
+    background: var(--bgControlsActive);
+  }
+}

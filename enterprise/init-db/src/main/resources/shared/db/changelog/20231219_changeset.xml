@@ -1,0 +1,55 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20231219-001" author="Zoe" labels="automation">
+        <comment>modify trigger_status column</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}automation_trigger_schedule`
+                MODIFY COLUMN `trigger_status` tinyint NOT NULL DEFAULT '0' COMMENT 'Scheduling status: 0-pending, 1-running, 2-stop';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20231219-002" author="Zoe" labels="automation">
+        <comment>add is_pushed column</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}automation_trigger_schedule`
+                ADD COLUMN `is_pushed` tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '0: No, 1: Yes' AFTER `trigger_status`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20231219-003" author="Zoe" labels="automation">
+        <comment>add unique index</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}automation_trigger_schedule`
+                ADD UNIQUE INDEX `uk_trigger_id`(`trigger_id`) USING BTREE;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20231219-004" author="Zoe" labels="automation">
+        <comment>drop index</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}automation_trigger_schedule` DROP INDEX `idx_trigger_id`;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

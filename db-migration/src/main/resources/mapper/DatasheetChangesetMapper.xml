@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vikadata.migration.mapper.DatasheetChangesetMapper">
+
+    <select id="selectPageById" resultType="java.lang.Long">
+        SELECT id
+        FROM vika_datasheet_changeset
+        WHERE id > #{id} AND
+              id &lt; '1203232065516998658'
+        order by id
+        limit #{count}
+    </select>
+
+    <select id="selectByDatasheetIdAndMigrationId" resultType="com.vikadata.migration.entity.DatasheetChangesetEntity">
+        SELECT *
+        FROM vika_datasheet_changeset
+        WHERE
+        dst_id = #{datasheetId}
+        AND id > #{migrationId}
+        order by id
+<!--        order by created_at, id-->
+        limit #{limitCount}
+    </select>
+
+    <select id="selectByMigrationId" resultType="com.vikadata.migration.entity.DatasheetChangesetEntity">
+        SELECT *
+        FROM vika_datasheet_changeset
+        WHERE
+        id > #{migrationId}
+        AND id &lt; '1203232065516998658'
+        order by id
+        <!--        order by created_at, id-->
+        limit #{limitCount}
+    </select>
+
+    <!--批量新增多个记录-->
+    <insert id="insertBatch">
+        INSERT INTO vika_datasheet_changeset(id, dst_id, message_id, member_id, operations, revision, is_deleted, created_at, updated_at, created_by, updated_by)
+        VALUES
+        <foreach collection="entities" item="element" index="index" separator=",">
+            <trim prefix="(" suffix=")">
+                #{element.id},#{element.dstId},#{element.messageId},#{element.memberId},#{element.operations},#{element.revision},#{element.isDeleted},#{element.createdAt},#{element.updatedAt},#{element.createdBy},#{element.updatedBy}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

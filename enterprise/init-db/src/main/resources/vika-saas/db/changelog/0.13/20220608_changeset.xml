@@ -1,0 +1,282 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.13-20220608-001" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Bundle Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_bundle` (
+                `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `bundle_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Bundle ID',
+                `state` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'State(active, expire)',
+                `start_date` datetime NOT NULL COMMENT 'Start Time',
+                `end_date` datetime NOT NULL COMMENT 'End Time',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_space_id` (`space_id`),
+                KEY `idx_bundle_id` (`bundle_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Bundle Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-002" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Subscription Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_subscription` (
+                `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `bundle_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Bundle ID',
+                `subscription_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Subscription ID',
+                `product_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product ID',
+                `product_category` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Type',
+                `plan_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Plan ID',
+                `state` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'State(active,expire)',
+                `phase` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'fixedterm' COMMENT 'Project Phase(trial,fixedterm)',
+                `bundle_start_date` datetime NOT NULL COMMENT 'Bundle Start Time',
+                `start_date` datetime NOT NULL COMMENT 'Start Time',
+                `expire_date` datetime NOT NULL COMMENT 'Expire Time',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_space_id` (`space_id`),
+                KEY `idx_subscription_id` (`subscription_id`),
+                KEY `idx_bundle_id` (`bundle_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Subscription Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-003" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Order Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_order` (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `order_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Order ID',
+                `order_channel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'vika' COMMENT 'Order Channel(vika,lark,dingtalk,wecom)',
+                `channel_order_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Order ID of other channels',
+                `order_type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT 'Order Type(BUY,UPGRADE,RENEW)',
+                `currency` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'ISO currency code (upper case letters)',
+                `original_amount` int unsigned NOT NULL DEFAULT '0' COMMENT 'Total order amount  (minimum currency unit of corresponding currency , RMB is cents)',
+                `discount_amount` int unsigned NOT NULL DEFAULT '0' COMMENT 'Total discount amount  (minimum currency unit of corresponding currency , RMB is cents)',
+                `amount` int unsigned NOT NULL DEFAULT '0' COMMENT 'Total pay amount  (minimum currency unit of corresponding currency , RMB is cents)',
+                `state` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Order Status(created,paid,refunded,canceled)',
+                `created_time` datetime NOT NULL COMMENT 'Order Create Time',
+                `is_paid` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Paid or not (0: No, 1: Yes)',
+                `paid_time` timestamp NULL DEFAULT NULL COMMENT 'Order payment completion time',
+                `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Remark',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `version` int unsigned NOT NULL DEFAULT '0' COMMENT 'Optimistic lock version number',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_order_id` (`order_id`) USING BTREE,
+                KEY `k_space_id` (`space_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Order Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-004" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Order Item Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_order_item` (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `order_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Order ID',
+                `product_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Name',
+                `product_category` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Type',
+                `plan_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Plan ID',
+                `seat` int DEFAULT NULL COMMENT 'Seat',
+                `months` int DEFAULT NULL COMMENT 'Number of months',
+                `subscription_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Subscription ID',
+                `start_date` datetime DEFAULT NULL COMMENT 'Start Date',
+                `end_date` datetime DEFAULT NULL COMMENT 'End Date',
+                `currency` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'ISO currency code (upper case letters)',
+                `amount` int NOT NULL COMMENT 'Payment scheme amount (unit: cents)',
+                `item_details` json DEFAULT NULL COMMENT 'Detail data',
+                `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Remark',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `k_space_id` (`space_id`) USING BTREE,
+                KEY `k_order_id` (`order_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Order Item Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-005" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Order Metadata Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_order_metadata` (
+                `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `order_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Order ID',
+                `order_channel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'vika' COMMENT 'Order Channel',
+                `metadata` json NOT NULL COMMENT 'Meta Data',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_order_id` (`order_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Order Metadata Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-006" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Order Payment Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_order_payment` (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `order_id` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Order ID',
+                `payment_transaction_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Payment transaction No',
+                `currency` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'ISO currency code (upper case letters)',
+                `amount` int unsigned NOT NULL DEFAULT '0' COMMENT 'Amount (the minimum monetary unit of the corresponding currency, RMB in cents)',
+                `subject` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Third party payment item title',
+                `pay_channel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Attribute value of payment channel',
+                `pay_channel_transaction_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Payment channel transaction ID',
+                `paid_time` datetime DEFAULT NULL COMMENT 'Payment time',
+                `payment_success` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Payment succeeded (0: No, 1: Yes)',
+                `raw_data` json DEFAULT NULL COMMENT 'Payment callback notification source data',
+                `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Description',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `version` int unsigned NOT NULL DEFAULT '0' COMMENT 'Optimistic lock version number',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_payment_transaction_id` (`payment_transaction_id`) USING BTREE,
+                KEY `k_order_id` (`order_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Order Payment Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-007" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Social DingTalk Order Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_social_dingtalk_order` (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `app_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Application ID',
+                `tenant_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Tenant ID',
+                `order_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'DingTalk Order ID',
+                `item_code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Commodity sku',
+                `order_data` json NOT NULL COMMENT 'Order Event Data',
+                `status` tinyint unsigned DEFAULT '0' COMMENT 'Processed or not (0: No, 1: Yes)',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_tenant_app` (`tenant_id`,`app_id`) USING BTREE COMMENT 'DingTalk Merchant application index',
+                KEY `idx_order_id` (`order_id`) USING BTREE COMMENT 'DingTalk Merchant Order Index'
+              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Social DingTalk Order Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-008" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Social DingTalk Refund Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_social_dingtalk_refund` (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `app_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Application ID',
+                `tenant_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Tenant ID',
+                `order_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'DingTalk Order ID',
+                `item_code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Refund SKU products',
+                `refund_data` json NOT NULL COMMENT 'Order Event Data',
+                `status` tinyint unsigned DEFAULT '0' COMMENT 'Processed or not (0: No, 1: Yes)',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_tenant_app` (`tenant_id`,`app_id`) USING BTREE,
+                KEY `k_order_id` (`order_id`) USING BTREE
+              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Social DingTalk Refund Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-009" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Social FeiShu Order Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_social_feishu_order` (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `app_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Application ID',
+                `tenant_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Tenant ID',
+                `order_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'FeiShu Order ID',
+                `order_data` json NOT NULL COMMENT 'Order Event Data',
+                `status` tinyint unsigned DEFAULT '0' COMMENT 'Processed or not (0: No, 1: Yes)',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_tenant_app_id` (`tenant_id`,`app_id`) USING BTREE COMMENT 'Joint index of enterprises and applications',
+                KEY `idx_order_id` (`tenant_id`,`app_id`) USING BTREE COMMENT 'FeiShu Order Index'
+              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Social Feishu Order Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.13-20220608-010" author="Shawn" labels="finance">
+        <comment>Billing System - Billing Social WeCom Order</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_social_wecom_order` (
+                `id` bigint NOT NULL COMMENT 'Primary Key',
+                `order_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'WeCom Order ID',
+                `order_status` tinyint(1) NOT NULL COMMENT 'Order Status.0: To be paid; 1: Paid; 2: Cancelled; 3: Payment is overdue; 4: Applying for refund; 5: Refund succeeded; 6: Refund refused',
+                `order_type` tinyint(1) NOT NULL COMMENT 'Order Type.0: New apps; 1: Number of users for capacity expansion; 2: Renewal application time; 3: Changed version',
+                `paid_corp_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Enterprise ID of the order',
+                `operator_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'The order placing operator userid. If the order is placed by the service provider, this field is unavailable',
+                `suite_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Suite ID',
+                `edition_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Purchased app version ID',
+                `price` int NOT NULL COMMENT 'Price payable. Unit: cents',
+                `user_count` bigint NOT NULL COMMENT 'Number of purchasers',
+                `order_period` int NOT NULL COMMENT 'Duration of purchase. Unit: day',
+                `order_time` datetime DEFAULT NULL COMMENT 'Order time ',
+                `paid_time` datetime DEFAULT NULL COMMENT 'Payment time',
+                `begin_time` datetime DEFAULT NULL COMMENT 'Start Time of the purchase effective period',
+                `end_time` datetime DEFAULT NULL COMMENT 'End Time of Purchase Effective Period',
+                `order_from` tinyint(1) NOT NULL COMMENT 'Place the order from. 0: The enterprise places an order; 1: The service provider places orders on behalf; 2: Agent orders',
+                `operator_corp_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Enterprise ID of the order',
+                `service_share_amount` int DEFAULT NULL COMMENT 'The amount shared by the service provider. Unit: cents',
+                `platform_share_amount` int DEFAULT NULL COMMENT 'Platform share amount. Unit: cents',
+                `dealer_share_amount` int DEFAULT NULL COMMENT 'Agent share amount. Unit: cents',
+                `dealer_corp_id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Agent enterprise ID',
+                `order_info` json NOT NULL COMMENT 'Order original data',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                UNIQUE KEY `uk_order_id` (`order_id`) USING BTREE,
+                KEY `idx_paid_corp_id` (`paid_corp_id`) USING BTREE
+              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Social WeCom Order';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,8 @@
+{
+  "modelPackage": "com.apitable.starter.databus.client.model",
+  "apiPackage": "com.apitable.starter.databus.client.api",
+  "hideGenerationTimestamp": true,
+  "library": "resttemplate",
+  "openApiNullable": false,
+  "useJakartaEe": true
+}

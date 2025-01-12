@@ -1,0 +1,87 @@
+{
+	"common_img_logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "/space/2022/12/20/cc62aaaea93c46f49d370f50e1490e9a",
+		".说明": "common_img_logo.png",
+		"FILE": [
+			{
+				"id": "atcC8OefS5FZ9",
+				"name": "common_img_logo.png",
+				"size": 2816,
+				"mimeType": "image/png",
+				"token": "space/2022/12/20/cc62aaaea93c46f49d370f50e1490e9a",
+				"width": 240,
+				"height": 64,
+				"url": "https://s1.vika.cn/space/2022/12/20/cc62aaaea93c46f49d370f50e1490e9a"
+			}
+		]
+	},
+	"favicon": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "/space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e",
+		".说明": "favicon.ico",
+		"FILE": [
+			{
+				"id": "atcju1q8A2pOe",
+				"name": "favicon.ico",
+				"size": 16958,
+				"mimeType": "image/vnd.microsoft.icon",
+				"token": "space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2022/12/20/73456950217f4f79b20c7ef1a49acf6e"
+			}
+		]
+	},
+	"logo": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "/space/2022/12/20/c50e1787ba4741bba3cdab78034636ce",
+		".说明": "logo.svg",
+		"FILE": [
+			{
+				"id": "atcvdAFUjYY2p",
+				"name": "logo.svg",
+				"size": 654,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/01/11/f9c23c8f339548959f4abd4d54af765e",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/01/11/f9c23c8f339548959f4abd4d54af765e"
+			}
+		]
+	},
+	"logo_text_light": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "/space/2023/01/11/0e944a3a264c4ab59181150726a7b0ed",
+		".说明": "logo_text_light.svg",
+		"FILE": [
+			{
+				"id": "atc5E8YeOmL1S",
+				"name": "logo_text_light.svg",
+				"size": 2607,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/01/11/e104c96fcbff49daab4c0c2ba7f89aee",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/01/11/e104c96fcbff49daab4c0c2ba7f89aee"
+			}
+		]
+	},
+	"logo_text_dark": {
+		"说明": "",
+		"OVERRIDDEN_KEY": "/space/2023/01/11/871db39e6fdf483089f7fd384f2c1fa3",
+		".说明": "logo_text_dark.svg",
+		"FILE": [
+			{
+				"id": "atc2CPmtULly7",
+				"name": "logo_text.svg",
+				"size": 2765,
+				"mimeType": "image/svg+xml",
+				"token": "space/2023/01/11/f30eb53a0f2a43fb99c30a545b3ec853",
+				"width": 0,
+				"height": 0,
+				"url": "https://s1.vika.cn/space/2023/01/11/f30eb53a0f2a43fb99c30a545b3ec853"
+			}
+		]
+	}
+}

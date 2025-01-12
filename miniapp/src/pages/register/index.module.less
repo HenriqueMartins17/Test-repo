@@ -1,0 +1,91 @@
+@import '~@styles/lib_var.less';
+
+
+
+.register {
+  padding-top: 32px;
+
+
+  .h1 {
+    font-size: 24px;
+    color: @fc1;
+  }
+
+
+  .registerPhone {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #D9DDE5;
+    padding-bottom: 12px;
+    margin-top: 44px;
+    margin-bottom: 32px;
+
+    &.focus {
+      border-color: @fc0;
+    }
+
+    &.error {
+      border-color: @fc10;
+    }
+
+    .registerPhoneCode {
+      margin-right: 16px;
+      width: 54px;
+      height: 26px;
+      background: @fc7;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    .registerPhoneInput {
+      flex: 1;
+    }
+
+  }
+
+  .registerCode {
+    border-bottom: 1px solid #D9DDE5;
+    display: flex;
+    align-items: center;
+    padding-bottom: 14px;
+
+    &.focus {
+      border-color: @fc0;
+    }
+
+    &.error {
+      border-color: @fc10;
+    }
+
+    .registerCodeInput {
+      flex: 1;
+
+    }
+
+    .registerCodeButton {
+      color: @fc0;
+      font-size: 15px;
+    }
+
+  }
+
+  .deal {
+    display: flex;
+    align-items: center;
+    color: @fc2;
+    font-size: 13px;
+    margin-top: 16px;
+
+    .blue {
+      color: @fc0
+    }
+  }
+
+  .login {
+    border-radius: 25px;
+    background: @fc0;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 95px;
+  }
+}

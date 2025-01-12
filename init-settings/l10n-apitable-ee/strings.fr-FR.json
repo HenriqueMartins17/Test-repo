@@ -1,0 +1,17 @@
+{
+  "backup_action_delete": "Supprimer l'instantané",
+  "backup_action_recover": "Récupérer",
+  "backup_create": "Créer un instantané",
+  "backup_create_success": "Snapshot créé avec succès",
+  "backup_creating": "Créer",
+  "backup_delete_text": "Après suppression, il ne peut pas être restauré. Etes-vous sûr de vouloir le supprimer?",
+  "backup_delete_title": "Supprimer l'instantané",
+  "backup_deleted": "Supprimé",
+  "backup_name_success_update": "Mise à jour réussie",
+  "backup_recover_dst_name_suffix": "Récupérer",
+  "backup_recover_modal_text": "Choisissez où placer l'instantané",
+  "backup_recover_success": "Récupéré avec succès",
+  "backup_recover_title": "Récupérer",
+  "backup_success_delete": "Snapshot supprimé avec succès",
+  "backup_title": "Instantané"
+}

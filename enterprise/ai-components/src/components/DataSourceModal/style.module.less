@@ -1,0 +1,94 @@
+.modalStyle {
+  width: 900px;
+
+  :global {
+    .ant-modal-content {
+      height: 560px !important;
+      display: flex;
+      flex-direction: column;
+    }
+    .ant-modal-body{
+      flex: 1;
+    }
+
+    .ant-modal-footer {
+      padding: 16px 24px 24px;
+    }
+  }
+}
+
+.selectBox {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--textCommonPrimary);
+  border: 1px dashed var(--borderCommonDefault);
+  cursor: pointer;
+  &:hover {
+    border: 1px dashed var(--borderCommonHover);
+  }
+  &:active {
+    border: 1px dashed var(--borderCommonActive);
+  }
+  &-description {
+    padding: 0 40px !important;
+  }
+}
+
+.modalTitle {
+  color: var(--textCommonPrimary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @apply vk-space-x-1;
+}
+
+.modalDescription {
+  color: var(--textCommonSecondary);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.tabItem {
+  @apply vk-space-y-6;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: var(--textCommonPrimary);
+  @apply vk-space-x-1;
+}
+
+.headerDescription {
+  color: var(--textCommonTertiary);
+}
+
+.selectLocalFilesTypography {
+  @apply vk-space-y-2;
+}
+
+.typographyTitle {
+  color: var(--textCommonPrimary);
+}
+
+.typographyDescription {
+  color: var(--textCommonTertiary);
+}
+
+.formItemDescription {
+  height: 14px;
+  min-height: 14px;
+  color: var(--textDangerDefault);
+  margin-top: 4px;
+  font-size: 12px;
+}

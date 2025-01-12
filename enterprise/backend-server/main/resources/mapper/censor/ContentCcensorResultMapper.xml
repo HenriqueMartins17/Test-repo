@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.enterprise.censor.mapper.ContentCensorResultMapper">
+    <select id="getPageByStatus" resultType="com.apitable.enterprise.censor.vo.ContentCensorResultVo">
+        SELECT
+        r.node_id,
+        s.share_id,
+        n.node_name,
+        r.report_result,
+        r.report_num,
+        r.created_at,
+        r.updated_at
+        FROM
+        ( ${tablePrefix}content_censor_result r INNER JOIN ${tablePrefix}node n ON r.node_id = n.node_id AND
+        r.report_result = #{status} )
+        INNER JOIN ${tablePrefix}node_share_setting s
+        ON r.node_id = s.node_id
+        ORDER BY
+        r.updated_at DESC
+    </select>
+
+    <select id="getByNodeId" resultType="com.apitable.enterprise.censor.entity.ContentCensorResultEntity">
+        SELECT * from ${tablePrefix}content_censor_result where node_id = #{nodeId}
+    </select>
+</mapper>

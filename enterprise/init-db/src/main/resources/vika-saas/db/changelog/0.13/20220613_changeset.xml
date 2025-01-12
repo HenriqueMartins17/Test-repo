@@ -1,0 +1,78 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.13-20220613-001" author="Shawn" labels="billing">
+        <comment>Create Billing Bundle History Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_bundle_history` (
+                `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `target_row_id` bigint NOT NULL COMMENT 'Record Line ID',
+                `change_type` varchar(6) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'Change type',
+                `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `bundle_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Bundle ID',
+                `state` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'State(active,expire)',
+                `start_date` datetime NOT NULL COMMENT 'Start Time',
+                `end_date` datetime NOT NULL COMMENT 'End Time',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_space_id` (`space_id`),
+                KEY `idx_bundle_id` (`bundle_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Bundle History Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.13-20220613-002" author="Shawn" labels="billing">
+        <comment>Create Billing Subscription History Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}billing_subscription_history` (
+                `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `target_row_id` bigint NOT NULL COMMENT 'Record Line ID',
+                `change_type` varchar(6) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'Change type',
+                `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space ID',
+                `bundle_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Bundle ID',
+                `subscription_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Subscription ID',
+                `product_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product ID',
+                `product_category` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Type',
+                `plan_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Product Plan ID',
+                `state` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'State(active,expire)',
+                `phase` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'fixedterm' COMMENT 'Project Phase(trial,fixedterm)',
+                `bundle_start_date` datetime NOT NULL COMMENT 'Bundle Start Time',
+                `start_date` datetime NOT NULL COMMENT 'Start Time',
+                `expire_date` datetime NOT NULL COMMENT 'Expire Time',
+                `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_by` bigint NOT NULL COMMENT 'Creator',
+                `updated_by` bigint NOT NULL COMMENT 'Last Update By',
+                `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY `idx_space_id` (`space_id`),
+                KEY `idx_subscription_id` (`subscription_id`),
+                KEY `idx_bundle_id` (`bundle_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Billing Subscription History Table';
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

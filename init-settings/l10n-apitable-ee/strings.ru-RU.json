@@ -1,0 +1,17 @@
+{
+  "backup_action_delete": "удалить снимок",
+  "backup_action_recover": "восстановление",
+  "backup_create": "создать снимок",
+  "backup_create_success": "снимок создан успешно",
+  "backup_creating": "создание",
+  "backup_delete_text": "после удаления он не может быть восстановлен. вы уверены, что хотите удалить его?",
+  "backup_delete_title": "удалить снимок",
+  "backup_deleted": "исключить",
+  "backup_name_success_update": "успешно обновлено",
+  "backup_recover_dst_name_suffix": "восстановление",
+  "backup_recover_modal_text": "выберите, куда поместить снимок",
+  "backup_recover_success": "успешно восстановлено",
+  "backup_recover_title": "восстановление",
+  "backup_success_delete": "Удалить снимок успешно",
+  "backup_title": "снимок"
+}

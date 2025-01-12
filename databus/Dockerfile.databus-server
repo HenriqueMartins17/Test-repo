@@ -1,0 +1,42 @@
+# Use a Rust base image
+FROM rust:1.71.0-buster as builder
+
+# Set the working directory
+WORKDIR /usr/src/myapp
+
+COPY . .
+# COPY ./databus-core ./databus-core
+# COPY ./databus-server ./databus-server
+# Copy the Cargo files
+# COPY ./databus-server/Cargo.toml ./
+# COPY ./Cargo.lock ./
+
+# Build the dependencies
+# RUN cargo build --release --locked
+
+# Copy the source code
+# COPY ./databus-server/src ./src
+
+# Build the application
+# RUN cd databus-server && cargo build --release
+RUN cargo build --bin databus-server --release --locked
+
+# Use a smaller image for deployment
+FROM debian:buster-slim
+
+# Set the working directory
+WORKDIR /usr/local/bin
+
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends \
+        ca-certificates
+
+# Copy the built binary from the builder image
+COPY --from=builder /usr/src/myapp/target/release/databus-server .
+
+# Expose the port
+EXPOSE 8625
+
+# Run the application
+CMD ["./databus-server"]

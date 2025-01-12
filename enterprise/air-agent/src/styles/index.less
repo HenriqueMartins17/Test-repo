@@ -1,0 +1,412 @@
+// @import "~antd/dist/antd.less";
+// @import "custom_antd_style.less";
+@import "~styles/lib_screen.less";
+@import "~styles/lib_mixins.less";
+@import './tailwindcss.less';
+
+svg {
+  display: inline;
+  vertical-align: unset;
+}
+
+img, video {
+  max-width: unset;
+  height: unset;
+}
+
+body {
+  margin: 0;
+  // font-family: -apple-system, "Helvetica Neue", PingFangSC-Regular, PingFang SC,
+  //   BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+  //   "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  overflow: hidden;
+  color: var(--fc1) !important;
+  background-color: var(--defaultBg) !important;
+
+  #root {
+    @media (any-hover: hover) {
+      height: 100vh;
+    }
+
+    @media (min-width: @w-md) {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+
+    overflow: auto;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+
+.main {
+  height: 100vh;
+}
+
+
+#__next {
+  height: 100%;
+
+  .__next_main > div {
+    height: 100%;
+  }
+
+  & > div {
+    height: 100%;
+  }
+}
+
+.script-loading-wrap-default {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .script-loading-wrap .script-loading-logo-img {
+    width: 54px !important;
+    height: 54px !important
+  }
+
+  .script-loading-logo-text-img {
+    opacity: 0 !important;
+  }
+
+  .script-loading-wrap-finished .script-loading-logo-img {
+    transform: translateX(0) !important;
+  }
+
+  .script-loading-wrap-finished .script-loading-logo-text-img {
+    transform: translateX(26px) !important
+  }
+}
+
+.script-loading-wrap,
+.script-loading-wrap > div {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  z-index: 99999;
+  transition: opacity .666s ease-in-out
+}
+
+.main-img-wrap {
+  transform: scale(0.9);
+}
+
+.script-loading-wrap .loading-static-animation {
+  transform: scale(1.2)
+}
+
+.script-loading-wrap .script-loading-logo-img {
+  display: inline-block;
+  position: relative;
+  width: 72px;
+  height: 72px;
+  transition: transform .666s ease-in-out;
+  vertical-align: middle
+}
+
+.script-loading-wrap .script-loading-logo-text-img {
+  position: absolute;
+  left: 0;
+  top: 9px;
+  height: 75%;
+  opacity: 0;
+  transition: transform .333s ease-in-out;
+  vertical-align: middle;
+  z-index: -1
+}
+
+.script-loading-wrap > div {
+  position: relative
+}
+
+.script-loading-wrap-finished .script-loading-logo-img {
+  transition-duration: .333s;
+  animation: none;
+  transform: translateX(-57px)
+}
+
+.script-loading-wrap-finished .script-loading-logo-text-img {
+  opacity: 1;
+  transform: translateX(36px);
+  vertical-align: middle
+}
+
+@keyframes __scale {
+  0% {
+    transform: translateX(0)
+  }
+  50% {
+    transform: scale(1.2)
+  }
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.treeViewRoot {
+  /* Clean up default styles */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@node-over-bg: var(--treeSelectedBg);
+@node-focused-bg: transparent;
+@node-selected-bg: var(--primaryLight);
+@node-disabled-bg: transparent;
+@node-drag-bg: var(--defaultBg);
+@node-selected-children-bg: var(--fill0);
+@node-drag-line-color: var(--primaryColor);
+@node-drag-line-size: 2px;
+@node-drag-dot-size: 6px;
+
+
+.treeItemRoot {
+  &,
+  .group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .treeItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: @node-drag-line-size solid transparent;
+    cursor: pointer;
+
+    .iconContainer {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+
+      .icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        cursor: pointer;
+        border-radius: 2px;
+        @media (any-hover: hover) {
+          &:hover {
+            background: var(--shadowColor);
+          }
+        }
+
+        .spin {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        svg {
+          fill: var(--fourthLevelText);
+          transform: rotate(0deg);
+          transition: transform 500ms ease;
+        }
+      }
+    }
+
+    .label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex: 1;
+      height: 100%;
+    }
+
+    // Line when dragging and dropping
+    .label::before {
+      display: none;
+      content: "\0020";
+      position: absolute;
+      left: @node-drag-dot-size - 1;
+      right: 0;
+      border-top: @node-drag-line-size @node-drag-line-color solid;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    // Point when dragging and dropping
+    .label::after {
+      display: none;
+      content: "\0020";
+      position: absolute;
+      width: @node-drag-dot-size;
+      height: @node-drag-dot-size;
+      border-radius: @node-drag-dot-size / 2;
+      border: @node-drag-line-size solid @node-drag-line-color;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media (any-hover: hover) {
+      // Node hover style
+      &:hover {
+        border-radius: 4px;
+        background: var(--fill0);
+      }
+    }
+
+    &:active {
+      background: var(--fill1);
+    }
+
+    // Style when nodes are expanded
+    &.expanded {
+      .iconContainer {
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    // Style when nodes are focused
+    // &.focused {
+    //   background: @node-focused-bg;
+    // }
+
+    // Style when node is selected
+    &.selected {
+      background: @node-selected-bg;
+
+      & + .group {
+        background: @node-selected-children-bg;
+        border-radius: 0 0 4px 4px;
+      }
+    }
+
+    &.selected.expanded {
+      border-radius: 4px 4px 0 0;
+    }
+
+    // Style when node is disabled
+    &.disabled {
+      background: @node-disabled-bg;
+    }
+
+    // Style of nodes when they are dragged and dropped
+    &.dragNodeHighlight {
+      background: @node-drag-bg;
+    }
+
+    &.parentHighlight {
+      border-color: @node-drag-line-color;
+    }
+
+    &.draggable {
+      .label {
+        cursor: pointer;
+      }
+    }
+
+    &.dragging {
+      .label {
+        cursor: grabbing;
+      }
+    }
+
+    &.dragOverGapTop .label::before {
+      display: block;
+      top: -@node-drag-line-size - 1px;
+    }
+
+    &.dragOverGapTop .label::after {
+      display: block;
+      top: -@node-drag-dot-size - 1px + @node-drag-line-size;
+    }
+
+    &.dragOverGapBottom .label::before {
+      display: block;
+      bottom: -@node-drag-line-size - 1px;
+    }
+
+    &.dragOverGapBottom .label::after {
+      display: block;
+      bottom: -@node-drag-dot-size - 1px + @node-drag-line-size;
+    }
+
+    &.dragOver {
+      border-color: var(--primaryColor);
+    }
+  }
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primaryColor);
+}
+
+a {
+  color: var(--primaryColor);
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+
+.ant-tabs-tab-btn:focus,
+.ant-tabs-tab-remove:focus,
+.ant-tabs-tab-btn:active,
+.ant-tabs-tab-remove:active {
+  color: var(--black_900);
+}
+
+
+#dingtalk_qrcode {
+  width: 100%;
+  height: 100%;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.intercom-lightweight-app {
+  z-index: 1000 !important;
+}
+
+.intercom-app {
+  position: relative;
+  z-index: 1000 !important;
+}
+
+.form-control-password {
+  background: var(--fill0) !important;
+  border-color: transparent !important;
+
+  input {
+    caret-color: unset !important;
+  }
+}
+
+#chat-widget-container {
+  z-index: 1003 !important;
+}

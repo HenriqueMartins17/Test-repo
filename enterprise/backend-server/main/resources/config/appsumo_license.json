@@ -1,0 +1,27 @@
+{
+  "aitable_tier1": {
+    "plan_id": "aitable_tier1",
+    "product_id": "appsumo_tier1",
+    "product_name": "APPSUMO License Tier 1"
+  },
+  "aitable_tier2": {
+    "plan_id": "aitable_tier2",
+    "product_id": "appsumo_tier2",
+    "product_name": "APPSUMO License Tier 2"
+  },
+  "aitable_tier3": {
+    "plan_id": "aitable_tier3",
+    "product_id": "appsumo_tier3",
+    "product_name": "APPSUMO License Tier 3"
+  },
+  "aitable_tier4": {
+    "plan_id": "aitable_tier4",
+    "product_id": "appsumo_tier4",
+    "product_name": "APPSUMO License Tier 4"
+  },
+  "aitable_tier5": {
+    "plan_id": "aitable_tier5",
+    "product_id": "appsumo_tier5",
+    "product_name": "APPSUMO License Tier 5"
+  }
+}

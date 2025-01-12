@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="V0.12-20220228-001" author="Zoe" labels="order">
+        <comment>Create Social Tenant Order Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}social_tenant_order` (
+                `id` BIGINT ( 20 ) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                `channel_order_id` VARCHAR ( 100 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Channel Order ID',
+                `app_id` VARCHAR ( 255 ) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Application ID',
+                `tenant_id` VARCHAR ( 255 ) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The unique identifier of the enterprise. The terms of the major platforms are inconsistent. Tenants are used here to represent',
+                `platform` TINYINT UNSIGNED NOT NULL COMMENT 'Platform (1: WeCom, 2: DingTalk, 3: Feishu)',
+                `order_data` json DEFAULT NULL COMMENT 'Order Data',
+                `is_deleted` TINYINT UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY ( `id` ) USING BTREE,
+                KEY `idx_tenant_app` ( `tenant_id`, `app_id` ) USING BTREE COMMENT 'Tenant application ID',
+                KEY `idx_channel_order_id` ( `channel_order_id` ) USING BTREE COMMENT 'Tenant Order ID'
+            ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'Third Party Platform Integration - Social Tenant Order Table';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.12-20220228-002" author="Shawn" labels="appstore">
+        <comment>App Store - App Instance Table add type field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}app_instance`
+                ADD COLUMN `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Application Type' AFTER `app_secret`;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

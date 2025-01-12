@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.social.mapper.SocialCpTenantUserMapper">
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}social_cp_tenant_user(id, tenant_id, app_id, cp_user_id)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.tenantId}, #{item.appId}, #{item.cpUserId}
+            </trim>
+        </foreach>
+    </insert>
+
+    <select id="selectOpenIdsByTenantId"
+            resultType="com.apitable.enterprise.social.model.CpTenantUserDTO">
+        SELECT id AS cpTenantUserId, cp_user_id AS cpUserId
+        FROM ${tablePrefix}social_cp_tenant_user
+        WHERE tenant_id = #{tenantId}
+          AND app_id = #{appId}
+    </select>
+
+    <delete id="batchDeleteByCorpAgent">
+        DELETE FROM ${tablePrefix}social_cp_tenant_user
+        WHERE
+        tenant_id = #{tenantId} AND app_id = #{appId} AND
+        cp_user_id IN
+        <foreach collection="cpUserIds" index="index" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+    <select id="selectByTenantIdAndAppIdAndCpUserId"
+            resultType="com.apitable.enterprise.social.entity.SocialCpTenantUserEntity">
+        SELECT *
+        FROM ${tablePrefix}social_cp_tenant_user
+        WHERE tenant_id = #{tenantId}
+          AND app_id = #{appId}
+          AND cp_user_id = #{cpUserId}
+    </select>
+
+    <select id="selectByTenantIdAndAppIdAndCpUserIds"
+            resultType="com.apitable.enterprise.social.entity.SocialCpTenantUserEntity">
+        SELECT *
+        FROM ${tablePrefix}social_cp_tenant_user
+        WHERE tenant_id = #{tenantId}
+          AND app_id = #{appId}
+          AND cp_user_id IN
+        <foreach collection="cpUserIds" item="cpUserId" open="(" separator="," close=")">
+            #{cpUserId}
+        </foreach>
+    </select>
+
+    <select id="selectByTenantIdAndAppIdAndUserId"
+            resultType="com.apitable.enterprise.social.entity.SocialCpTenantUserEntity">
+        SELECT vsctu.*
+        FROM (
+            SELECT cp_tenant_user_id
+            FROM `${tablePrefix}social_cp_user_bind`
+            WHERE `user_id` = #{userId}
+        ) vscub INNER JOIN (
+            SELECT *
+            FROM `${tablePrefix}social_cp_tenant_user`
+            WHERE `tenant_id` = #{tenantId}
+            AND `app_id` = #{appId}
+        ) vsctu ON vscub.cp_tenant_user_id = vsctu.id
+    </select>
+
+    <select id="selectIdByTenantIdAndAppIdAndCpUserId" resultType="java.lang.Long">
+        SELECT id
+        FROM ${tablePrefix}social_cp_tenant_user
+        WHERE tenant_id = #{tenantId}
+          AND app_id = #{appId}
+          AND cp_user_id = #{cpUserId}
+    </select>
+
+</mapper>

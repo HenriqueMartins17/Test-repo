@@ -1,0 +1,17 @@
+{
+  "backup_action_delete": "スナップショットの削除",
+  "backup_action_recover": "回復する．",
+  "backup_create": "スナップショットを作成する",
+  "backup_create_success": "スナップショットの作成に成功しました",
+  "backup_creating": "創造する",
+  "backup_delete_text": "削除後、回復できません。これを削除するのは確かですか？",
+  "backup_delete_title": "スナップショットの削除",
+  "backup_deleted": "削除",
+  "backup_name_success_update": "更新に成功しました",
+  "backup_recover_dst_name_suffix": "回復する．",
+  "backup_recover_modal_text": "スナップショットの配置場所の選択",
+  "backup_recover_success": "回復に成功しました",
+  "backup_recover_title": "回復する．",
+  "backup_success_delete": "スナップショットの削除に成功しました",
+  "backup_title": "スナップ写真"
+}

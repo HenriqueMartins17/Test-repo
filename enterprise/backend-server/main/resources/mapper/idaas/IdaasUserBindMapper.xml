@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.idaas.mapper.IdaasUserBindMapper">
+    <select id="selectByUserId" resultType="com.apitable.enterprise.idaas.entity.IdaasUserBindEntity">
+        SELECT *
+        FROM ${tablePrefix}idaas_user_bind
+        WHERE user_id = #{userId}
+        AND is_deleted = 0
+    </select>
+
+    <select id="selectAllByUserIdsIgnoreDeleted"
+            resultType="com.apitable.enterprise.idaas.entity.IdaasUserBindEntity">
+        SELECT *
+        FROM ${tablePrefix}idaas_user_bind
+        WHERE user_id IN
+        <foreach collection="userIds" item="userId" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </select>
+
+    <select id="selectAllByVikaUserIdsIgnoreDeleted"
+            resultType="com.apitable.enterprise.idaas.entity.IdaasUserBindEntity">
+        SELECT *
+        FROM ${tablePrefix}idaas_user_bind
+        WHERE vika_user_id IN
+        <foreach collection="vikaUserIds" item="vikaUserId" open="(" separator="," close=")">
+            #{vikaUserId}
+        </foreach>
+    </select>
+</mapper>

@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="V0.10-20220215-001" author="zoe" labels="social">
+        <comment>Third Party Platform Integration-Social Tenant User Table - delete index</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_user` DROP INDEX `uk_tenant_user`;
+        </sql>
+    </changeSet>
+    <changeSet id="V0.10-20220215-002" author="zoe" labels="social">
+        <comment>Third Party Platform Integration-Social Tenant User Table - modify field length - app_id</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_user` MODIFY COLUMN `app_id` varchar (100) COLLATE utf8mb4_unicode_ci
+                DEFAULT NULL COMMENT 'Application ID';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.10-20220215-003" author="zoe" labels="social">
+        <comment>Third Party Platform Integration-Social Tenant User Table - modify field length - tenant_id</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_user` MODIFY COLUMN `tenant_id` varchar (100) CHARACTER SET utf8mb4 COLLATE
+                utf8mb4_unicode_ci NOT NULL COMMENT 'Enterprise ID';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.10-20220215-004" author="zoe" labels="social">
+        <comment>Third Party Platform Integration-Social Tenant User Table - modify field length - open_id</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_user` MODIFY COLUMN `open_id` varchar (100) CHARACTER SET utf8mb4 COLLATE
+                utf8mb4_unicode_ci NOT NULL COMMENT 'User ID of the third-party platform, unique within the application';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.10-20220215-005" author="zoe" labels="social">
+        <comment>Third Party Platform Integration-Social Tenant User Table - modify field length - union_id</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_user` MODIFY COLUMN `union_id` varchar (100) CHARACTER SET utf8mb4 COLLATE
+                utf8mb4_unicode_ci DEFAULT NULL COMMENT 'User unique identification on the platform';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.10-20220215-006" author="zoe" labels="social">
+        <comment>Third Party Platform Integration-Social Tenant User Table - add unique index</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_user`
+                ADD UNIQUE INDEX uk_tenant_user (`app_id`, `tenant_id`, `open_id`, `union_id`);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,118 @@
+.agentInfoItem,
+.agentInfoItemSelected {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  @apply vk-p-3 vk-space-x-3 vk-transition vk-ease-in-out vk-duration-100;
+}
+
+.agentInfoItem:hover {
+  background-color: var(--bgCommonDefault);
+}
+
+.agentInfoItemSelected {
+  background-color: var(--bgCommonDefault);
+}
+
+.agentInfoItemTitle,
+.agentInfoItemSelected .agentInfoItemTitle {
+  font-weight: 500;
+  font-size: v14px;
+  line-height: 20px;
+  color: var(--textCommonPrimary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  @apply vk-space-x-2;
+}
+
+.agentInfoItemSelected .agentInfoItemTitle {
+  color: var(--textBrandDefault);
+  @apply vk-font-semibold;
+}
+
+.agentInfoItemTitle:hover BsChatSquareDots,
+.agentInfoItemSelected .agentInfoItemTitle:hover BsChatSquareDots {
+  visibility: visible;
+}
+
+.agentInfoItemTitle BsChatSquareDots {
+  visibility: hidden;
+}
+
+.agentInfoItemAction,
+.agentInfoItemActionDelete,
+.agentInfoItemSelected .agentInfoItemAction,
+.agentInfoItemSelected .agentInfoItemActionDelete {
+  display: flex;
+  align-items: center;
+}
+
+.agentInfoItemActionDelete,
+.agentInfoItemSelected .agentInfoItemActionDelete {
+  width: 16px;
+  height: 16px;
+}
+
+.menu {
+  width: 200px;
+  padding: 8px;
+  border-radius: 4px;
+
+  :global {
+    .ant-dropdown-menu-item.ant-dropdown-menu-item-active.ant-dropdown-menu-item-only-child {
+      border-radius: 4px;
+    }
+
+    .ant-dropdown-menu-item.ant-dropdown-menu-item-active {
+      background-color: var(--bgBglessActive);
+    }
+  }
+}
+
+.menuItem {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  @apply vk-space-x-3;
+}
+
+.renameTick,
+.dropdownSelect {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+
+  @apply vk-space-x-2 vk-transition vk-p-0.5 vk-ease-in-out vk-duration-100;
+
+  &:hover {
+    background-color: var(--bgBglessActive);
+  }
+}
+
+.renameInput {
+  font-weight: 500;
+  font-size: v14px;
+  line-height: 20px;
+  color: var(--textCommonPrimary);
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 30px;
+  width: 150px;
+}

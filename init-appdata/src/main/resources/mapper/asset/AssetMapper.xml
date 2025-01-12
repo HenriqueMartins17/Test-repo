@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.asset.mapper.AssetMapper">
+    <select id="selectByIds" resultType="com.apitable.appdata.shared.asset.pojo.Asset">
+        SELECT *
+        FROM ${tablePrefix}asset
+        WHERE id IN
+        <foreach item="item" index="index" collection="assetIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 0
+    </select>
+
+    <select id="selectByFileUrls"
+            resultType="com.apitable.appdata.shared.asset.pojo.Asset">
+        SELECT *
+        FROM ${tablePrefix}asset
+        WHERE file_url IN
+        <foreach item="item" index="index" collection="fileUrls" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 0
+    </select>
+
+    <select id="selectByChecksums"
+            resultType="com.apitable.appdata.shared.asset.pojo.Asset">
+        SELECT *
+        FROM ${tablePrefix}asset
+        WHERE checksum IN
+        <foreach item="item" index="index" collection="checksums" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}asset(id, checksum, head_sum, bucket, bucket_name,
+        file_size, file_url, mime_type, extension_name, preview, height, width)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.checksum}, #{item.headSum}, #{item.bucket},
+                #{item.bucketName}, #{item.fileSize}, #{item.fileUrl}, #{item.mimeType},
+                #{item.extensionName}, #{item.preview}, #{item.height}, #{item.width}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

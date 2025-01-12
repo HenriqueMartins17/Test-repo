@@ -1,0 +1,47 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20231206-001" author="Zoe" labels="automation">
+        <comment>add agent share table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}automation_trigger_schedule` (
+            `id` bigint unsigned NOT NULL COMMENT 'Primary Key',
+            `space_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Space unique identifier character',
+            `trigger_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Custom trigger id',
+            `schedule_conf` json NOT NULL COMMENT 'Trigger schedule config',
+            `trigger_status` tinyint NOT NULL DEFAULT '0' COMMENT 'Scheduling status: 0-stop, 1-pushed, 2-running',
+            `trigger_last_time` timestamp DEFAULT NULL COMMENT 'Last scheduled time',
+            `trigger_next_time` timestamp DEFAULT NULL COMMENT 'Next scheduling time',
+            `is_deleted` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete tag(0: No, 1: Yes)',
+            `created_by` bigint DEFAULT NULL COMMENT 'Creator',
+            `updated_by` bigint DEFAULT NULL COMMENT 'Last Update By',
+            `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+            `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+            PRIMARY KEY (`id`) USING BTREE,
+            KEY `idx_space_id` (`space_id`) USING BTREE,
+            KEY `idx_trigger_id` (`trigger_id`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Automation - Trigger Schedule';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

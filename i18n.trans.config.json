@@ -1,0 +1,35 @@
+{
+  "files": [
+    {
+      "id": "apitable_base_string",
+      "name": "strings.json",
+      "description": "basic strings for apitable ce",
+      "source": "./apitable/packages/l10n/base/strings.en-US.json",
+      "target": "{sourcePath}/strings.{local}.json"
+    }
+  ],
+  "config": {
+    "sourceLang": "en-US",
+    "targetLangs": ["zh-HK", "fr-FR", "de-DE", "ja-JP", "ko-KR", "ru-RU", "it-IT", "es-ES"],
+    "commandDefaultAPI": "google",
+    "trans": {
+      "baidu": {
+        "appId": "20190411000286885",
+        "secretKey": "o4QcLbl7zlhkvNTJQfWY"
+      },
+      "google": {
+        "apiKey": "AIzaSyBVKELOzsUKUWyAE1udlWwHPVhTCLN2-vI"
+      },
+      "tencent": {
+        "secretId": "AKIDNboskN2bv42rWt2wc4KPFsITUHyRgkeM",
+        "secretKey": "b0DBxYCnCRacT7zlMjy3tTpyvfFaVFj0"
+      }
+    },
+    "apiTable": {
+      "host": "https://integration.vika.ltd",
+      "dstId": "dstpJlNlMUPDyy6MAw",
+      "authorization": "uskM9c6MzfkHMeCJVipM1zv",
+      "viewId": "viw14DsmzdpVt"
+    }
+  }
+}

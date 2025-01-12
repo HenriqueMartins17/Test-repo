@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.organization.mapper.UnitMapper">
+    <insert id="insert">
+        INSERT INTO ${tablePrefix}unit(id, unit_id, space_id, unit_type,
+        unit_ref_id)
+        VALUES (#{entity.id}, #{entity.unitId}, #{entity.spaceId},
+        #{entity.unitType}, #{entity.unitRefId})
+    </insert>
+</mapper>

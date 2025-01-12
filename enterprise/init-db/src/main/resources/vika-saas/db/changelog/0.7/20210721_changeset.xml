@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.7-20210721-003" author="Zoe" labels="social">
+        <comment>social_tenant_bind table add app_id fields are compatible with enterprise internal applications</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_bind` ADD COLUMN app_id varchar(255) NULL DEFAULT NULL COMMENT 'Application ID';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.7-20210721-004" author="Zoe" labels="social">
+        <comment>social_tenant table add auth_info field to save enterprise authorization information</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant` ADD COLUMN auth_info json null comment 'Enterprise authorization information';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.7-20210721-005" author="Zoe" labels="social">
+        <comment>Adjust social_tenant_bind table app_id field position</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_bind` MODIFY COLUMN app_id varchar(255) NULL DEFAULT NULL COMMENT 'Application ID' AFTER `tenant_department_id`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.7-20210721-006" author="Zoe" labels="social">
+        <comment>Adjust social_tenant table auth_info field position</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant` MODIFY COLUMN auth_info json null comment 'Enterprise authorization information' AFTER `contact_auth_scope`;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

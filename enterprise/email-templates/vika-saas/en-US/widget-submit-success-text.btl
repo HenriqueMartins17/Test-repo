@@ -1,0 +1,9 @@
+Your {{WIDGET_NAME}} {{WIDGET_VERSION}} widget has been published and recommended
+
+Dear developer, your application to publish your {{WIDGET_NAME}} widget has been approved. The published version is {{WIDGET_VERSION}}. Thanks for your contribution.
+
+Note: If you need to continue updating this widget, please refer to the documentation https://developers.vika.cn/widget/publish-widget#%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0%E5%B7%B2%E4%B8%8A%E6%9E%B6%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F
+
+copyright © 2019-{{YEARS}} vikadata.All rights reserved.
+
+Contact us (https://vika.cn?home=1)

@@ -1,0 +1,52 @@
+import java.nio.charset.StandardCharsets
+
+plugins {
+    id 'java'
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    enabled = false
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(libs.spring.boot.batch)
+    implementation(libs.picocli)
+    implementation(libs.mybatis.plus) {
+        exclude(group: 'org.mybatis', module: 'mybatis-spring')
+    }
+    implementation libs.mybatis.spring
+    runtimeOnly(libs.mysql)
+    implementation(libs.jackson)
+    implementation(libs.bundles.hutool)
+    implementation(libs.v.client) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    implementation(libs.aws)
+    implementation(libs.qiniu)
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
+
+    testImplementation(libs.spring.boot.test)
+    testImplementation(libs.spring.batch.test)
+}
+
+// Compile Java Setting
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = StandardCharsets.UTF_8
+}
+
+test {
+    // Stops test execution after the first failed test.
+    failFast = true
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.apitable.enterprise.ai.mapper.AiCreditTransactionOverallMapper">
+
+    <insert id="insertBatch">
+        INSERT INTO ${tablePrefix}ai_credit_transaction_overall(id, space_id, period, start_date, end_date, total_amount, average_amount)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id},#{item.spaceId},#{item.period},#{item.startDate}, #{item.endDate}, #{item.totalAmount}, #{item.averageAmount}
+            </trim>
+        </foreach>
+    </insert>
+
+    <select id="selectBySpaceIdAndPeriod"
+            resultType="com.apitable.enterprise.ai.entity.AiCreditTransactionOverallEntity">
+        SELECT
+            *
+        FROM
+            ${tablePrefix}ai_credit_transaction_overall
+        WHERE space_id = #{spaceId}
+        AND period = #{period}
+        AND DATE_FORMAT( start_date, '%Y-%m-%d' ) = #{startDate}
+        LIMIT 1
+    </select>
+
+    <select id="selectBySpaceIdAndStartDate"
+            resultType="com.apitable.enterprise.ai.entity.AiCreditTransactionOverallEntity">
+        SELECT
+            *
+        FROM
+            ${tablePrefix}ai_credit_transaction_overall
+        WHERE space_id = #{spaceId}
+        AND period = #{period}
+        AND DATE_FORMAT( start_date, '%Y-%m-%d' ) = #{startDate};
+    </select>
+
+    <select id="summaryThisWeekday" resultType="com.apitable.interfaces.ai.model.CreditTransactionChartData">
+        SELECT
+        dates.weekday as dateline,
+        COALESCE(cto.total_amount, 0) AS total_count
+        FROM (
+        SELECT 1 AS weekday UNION ALL
+        SELECT 2 AS weekday UNION ALL
+        SELECT 3 AS weekday UNION ALL
+        SELECT 4 AS weekday UNION ALL
+        SELECT 5 AS weekday UNION ALL
+        SELECT 6 AS weekday UNION ALL
+        SELECT 7 AS weekday
+        ) AS dates
+        LEFT JOIN (
+        SELECT space_id, period, start_date, total_amount
+        FROM ${tablePrefix}ai_credit_transaction_overall
+        WHERE space_id = #{spaceId}
+        AND period = 'day'
+        AND start_date >= DATE_SUB(#{currentDate}, INTERVAL WEEKDAY(#{currentDate}) DAY)
+        AND start_date <![CDATA[<]]> DATE_ADD(DATE_SUB(#{currentDate}, INTERVAL WEEKDAY(#{currentDate}) DAY), INTERVAL 7 DAY)
+        ) AS cto ON dates.weekday = (WEEKDAY(cto.start_date) + 1)
+        ORDER BY dates.weekday;
+    </select>
+
+    <select id="summaryThisMonth" resultType="com.apitable.interfaces.ai.model.CreditTransactionChartData">
+        SELECT
+        DAY(start_date) as dateline,
+        SUM(total_amount) AS total_count
+        FROM ${tablePrefix}ai_credit_transaction_overall
+        WHERE space_id = #{spaceId}
+        AND period = 'day'
+        AND MONTH(start_date) = MONTH(#{currentDate})
+        AND start_date <![CDATA[<=]]> #{currentDate}
+        GROUP BY start_date;
+    </select>
+
+    <select id="summaryThisYear" resultType="com.apitable.interfaces.ai.model.CreditTransactionChartData">
+        SELECT
+            MONTH(start_date) as dateline,
+            total_amount AS total_count
+        FROM ${tablePrefix}ai_credit_transaction_overall
+        WHERE space_id = #{spaceId}
+        AND period = 'month'
+        AND YEAR(start_date) = YEAR(#{currentDate});
+    </select>
+
+    <select id="summaryByDate" resultType="com.apitable.enterprise.ai.model.CreditAmountSummary">
+        SELECT
+            space_id,
+            SUM(total_amount) AS totalAmount,
+            AVG(average_amount) AS averageAmount
+        FROM ${tablePrefix}ai_credit_transaction_overall
+        WHERE period = 'day'
+        AND start_date <![CDATA[>=]]> #{startDate}
+        AND end_date <![CDATA[<=]]> #{endDate}
+        GROUP BY space_id;
+    </select>
+
+    <select id="summaryBySpaceIdAndDate" resultType="com.apitable.enterprise.ai.model.CreditAmountSummary">
+        SELECT
+            space_id,
+            SUM(total_amount) AS totalAmount,
+            AVG(average_amount) AS averageAmount
+        FROM ${tablePrefix}ai_credit_transaction_overall
+        WHERE space_id = #{spaceId}
+          AND period = 'day'
+          AND start_date <![CDATA[>=]]> #{startDate}
+          AND end_date <![CDATA[<=]]> #{endDate}
+    </select>
+</mapper>

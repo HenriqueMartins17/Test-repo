@@ -1,0 +1,47 @@
+@import "~pc/styles/lib_var.less";
+
+
+.linkInput {
+  background-color: var(--bgCommonHighest);
+  border: 1px solid var(--borderCommonDefault);
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  input {
+    width: 200px;
+  }
+  button {
+    margin-left: 8px;
+    flex: none;
+    padding: 6px 12px;
+  }
+  .deleteIcon {
+    margin-left: 4px;
+    svg {
+      fill: var(--textCommonTertiary);
+    }
+  }
+}
+span.linkIcon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  svg {
+    fill: var(--textCommonPrimary);
+  }
+  &:hover {
+    background-color: var(--bgBglessHover);
+  }
+  &.active{
+    background-color: var(--bgBrandLightDefault);
+    svg {
+      fill: var(--primaryColor);
+    }
+  }
+}

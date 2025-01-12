@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230228-001" author="Shawn" labels="billing">
+        <comment>Create Subscription Report History Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}subscription_report_history`
+            (
+                `id`              bigint unsigned NOT NULL COMMENT 'Primary Key',
+                `subscription_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Subscription ID',
+                `report_type`     varchar(20) COLLATE utf8mb4_unicode_ci                                DEFAULT NULL COMMENT 'Report Type',
+                `report_date`     date                                                         NOT NULL COMMENT 'Report Time',
+                `is_deleted`      tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Delete Tag(0: No, 1: Yes)',
+                `created_at`      timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`      timestamp                                                    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY               `idx_subscription_id` (`subscription_id`) USING BTREE,
+                KEY               `idx_report_date` (`report_date`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Billing System - Subscription Report History';
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230228-002" author="Shawn" labels="billing">
+        <comment>add index for state in subscription table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}subscription`
+                ADD INDEX `idx_state`(`state`);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

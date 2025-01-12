@@ -1,0 +1,35 @@
+@import "~pc/styles/lib_var.less";
+@import "~pc/styles/lib_mixins.less";
+
+
+.toolbar {
+  height: 40px;
+  min-height: 40px;
+  background: var(--bgCommonDefault);
+  padding: 0 16px;
+  border-bottom: 1px solid var(--borderCommonDefault);
+}
+
+
+.operateItem {
+  display: flex;
+  align-items: center;
+  color: var(--textCommonPrimary);
+  font-size: 14px;
+  // padding: 4px 0;
+  svg {
+    fill: var(--textCommonTertiary);
+  }
+}
+
+.side {
+  background-color: var(--primaryColor);
+  width: 32px;
+  height: 32px;
+  border-radius: 0 50% 50% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .px2vw(16px) [ @res];
+  flex-shrink: 0;
+}

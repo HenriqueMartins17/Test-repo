@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230328-001" author="Chambers" labels="space">
+        <comment>create space audit table</comment>
+        <sql>
+            CREATE TABLE IF NOT EXISTS `${table.prefix}space_audit`
+            (
+                `id`          bigint                                                        NOT NULL,
+                `space_id`    varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL,
+                `member_id`   bigint                                                        NOT NULL DEFAULT '0',
+                `member_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL,
+                `ip_address`  varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci          DEFAULT NULL,
+                `user_agent`  longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+                `category`    varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+                `action`      varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+                `info`        json                                                          NOT NULL DEFAULT ('{}') COMMENT 'Action Detailed Information',
+                `created_by`  bigint                                                                 DEFAULT NULL,
+                `created_at`  timestamp                                                     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY (`id`) USING BTREE,
+                KEY           `idx_space_id` (`space_id`) USING BTREE,
+                KEY           `idx_member_id` (`member_id`) USING BTREE,
+                KEY           `idx_action` (`action`) USING BTREE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Space Management - Space Audit Table';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

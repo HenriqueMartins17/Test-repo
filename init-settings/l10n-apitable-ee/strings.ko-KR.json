@@ -1,0 +1,17 @@
+{
+  "backup_action_delete": "스냅샷 삭제",
+  "backup_action_recover": "회복",
+  "backup_create": "스냅샷 생성",
+  "backup_create_success": "스냅샷이 생성되었습니다.",
+  "backup_creating": "창조",
+  "backup_delete_text": "삭제하면 복구할 수 없습니다.삭제하시겠습니까?",
+  "backup_delete_title": "스냅샷 삭제",
+  "backup_deleted": "삭제",
+  "backup_name_success_update": "업데이트 성공",
+  "backup_recover_dst_name_suffix": "회복",
+  "backup_recover_modal_text": "샷을 배치할 위치 선택",
+  "backup_recover_success": "복구가 완료되었습니다.",
+  "backup_recover_title": "회복",
+  "backup_success_delete": "스냅샷이 삭제되었습니다.",
+  "backup_title": "스냅샷"
+}

@@ -1,0 +1,15 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.5-20200917-002" author="Shawn" labels="integral">
+        <comment>Integral History Table add parameter field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}integral_history` ADD COLUMN `parameter` json NULL COMMENT 'Parameter Field' AFTER `total_integral`;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

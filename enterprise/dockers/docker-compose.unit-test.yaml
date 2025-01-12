@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  test-init-db-vika-saas:
+    container_name: test-init-db-vika-saas
+    networks:
+      - unit-test
+    build:
+      context: ../init-db
+      dockerfile: ./Dockerfile
+    environment:
+      - TZ=Asia/Singapore
+      - ACTION=update
+      - DB_HOST=test-mysql
+      - DB_PORT=3306
+      - DB_NAME=apitable_test
+      - DB_USERNAME=apitable
+      - DB_PASSWORD=password
+      - DATABASE_TABLE_PREFIX=apitable_
+      - EDITION=vika-saas
+
+  test-init-db-apitable-saas:
+    container_name: test-init-db-apitable-saas
+    networks:
+      - unit-test
+    build:
+      context: ../init-db
+      dockerfile: ./Dockerfile
+    environment:
+      - TZ=Asia/Singapore
+      - ACTION=update
+      - DB_HOST=test-mysql
+      - DB_PORT=3306
+      - DB_NAME=apitable_test
+      - DB_USERNAME=apitable
+      - DB_PASSWORD=password
+      - DATABASE_TABLE_PREFIX=apitable_
+      - EDITION=apitable-saas
+
+networks:
+  unit-test:
+    name: apitable-unit-test

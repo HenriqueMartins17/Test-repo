@@ -1,0 +1,5 @@
+custom
+public
+build-image.sh
+Dockerfile
+.dockerignore

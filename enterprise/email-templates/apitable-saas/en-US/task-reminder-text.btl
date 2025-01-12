@@ -1,0 +1,8 @@
+Your task "{{RECORD_TITLE}}" in the datasheet "{{NODE_NAME}}" is about due
+
+------------
+
+Task name: {{RECORD_TITLE}}
+Due date: {{TASK_EXPIRE_AT}}
+
+View Record {{URL}}

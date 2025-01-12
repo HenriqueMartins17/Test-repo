@@ -1,0 +1,27 @@
+
+.header {
+  margin-bottom: 12px;
+}
+.radio {
+  display: flex;
+  padding: 8px;
+  border-radius: 4px;
+  background: var(--bgCommonHigh);
+  margin-bottom: 4px;
+  &:hover {
+    background: var(--bgBglessHover);
+  }
+  &:active {
+    background: var(--bgBglessActive);
+  }
+  cursor: pointer;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    &:hover {
+      background: var(--bgCommonHigh);
+    }
+  }
+}

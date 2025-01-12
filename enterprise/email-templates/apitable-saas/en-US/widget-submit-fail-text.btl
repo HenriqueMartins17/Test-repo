@@ -1,0 +1,13 @@
+{{WIDGET_NAME}} {{WIDGET_VERSION}} widget failed to be published and recommended
+
+Dear developer, your application to publish your {{WIDGET_NAME}} (version {{WIDGET_VERSION}}) widget has been rejected. The reason is as below:
+
+{{WIDGET_EVALUATE_FAIL_REASON}}
+
+Please submit the application again after you fix the problems. Thanks for your support.
+
+Note: To ensure a successful application, refer to Widget publish checklist
+
+© {{YEARS}} AITable Ltd.
+
+Contact us (https://aitable.ai?home=1)

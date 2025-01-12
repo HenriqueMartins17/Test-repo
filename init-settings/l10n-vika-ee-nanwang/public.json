@@ -1,0 +1,92 @@
+{
+	"common_img_logo.png": {
+		"file": [
+			{
+				"id": "atcjBj0Te0bft",
+				"name": "image.png",
+				"size": 3375,
+				"mimeType": "image/png",
+				"token": "space/2022/07/11/d82ed47c764543368baf96fed4493f3f",
+				"width": 309,
+				"height": 131,
+				"url": "https://s4.vika.cn/space/2022/07/11/d82ed47c764543368baf96fed4493f3f"
+			}
+		],
+		"描述": ""
+	},
+	"favicon.ico": {
+		"file": [
+			{
+				"id": "atcQOvGo9Idly",
+				"name": "favicon.ico",
+				"size": 968,
+				"mimeType": "image/vnd.microsoft.icon",
+				"token": "space/2022/09/08/c27ead5644df4bbfb4b6f3c66c58e98b",
+				"width": 64,
+				"height": 64,
+				"url": "https://s4.vika.cn/space/2022/09/08/c27ead5644df4bbfb4b6f3c66c58e98b"
+			}
+		],
+		"描述": ""
+	},
+	"logo.png": {
+		"file": [
+			{
+				"id": "atcVX1EN3kQC9",
+				"name": "image.png",
+				"size": 4907,
+				"mimeType": "image/png",
+				"token": "space/2022/07/15/a91d0167fbfd49099f055337fa8540d9",
+				"width": 176,
+				"height": 154,
+				"url": "https://s4.vika.cn/space/2022/07/15/a91d0167fbfd49099f055337fa8540d9"
+			}
+		],
+		"描述": ""
+	},
+	"logo.svg": {
+		"file": [
+			{
+				"id": "atcOG0q6QUCoH",
+				"name": "logo .svg",
+				"size": 902,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/09/08/70ec9fa8508946c5bfb17f803e821b6a",
+				"width": 0,
+				"height": 0,
+				"url": "https://s4.vika.cn/space/2022/09/08/70ec9fa8508946c5bfb17f803e821b6a"
+			}
+		],
+		"描述": ""
+	},
+	"logo_text_light.svg": {
+		"file": [
+			{
+				"id": "atcri7HSSYxc6",
+				"name": "logo_text.svg",
+				"size": 3772,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/09/23/9de5dbb6a80e485ea84a2fc46e1b90af",
+				"width": 0,
+				"height": 0,
+				"url": "https://s4.vika.cn/space/2022/09/23/9de5dbb6a80e485ea84a2fc46e1b90af"
+			}
+		],
+		"描述": "logo 单个 文字(深色背景)"
+	},
+	"logo_text_dark.svg": {
+		"file": [
+			{
+				"id": "atcDnoNCTVzBX",
+				"name": "logo_text_light.svg",
+				"size": 3788,
+				"mimeType": "image/svg+xml",
+				"token": "space/2022/09/23/8ca6c99660a24f999404b68008fba72d",
+				"width": 0,
+				"height": 0,
+				"url": "https://s4.vika.cn/space/2022/09/23/8ca6c99660a24f999404b68008fba72d"
+			}
+		],
+		"描述": "logo 单个 文字(浅色背景)"
+	}
+}

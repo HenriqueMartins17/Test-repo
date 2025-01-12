@@ -1,0 +1,42 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230906-001" author="Shawn" labels="ai">
+        <comment>add counted state</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai_credit_transaction`
+                ADD COLUMN `is_counted` tinyint(1) UNSIGNED NULL DEFAULT 0 COMMENT 'Whether counted' AFTER `amount`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230906-002" author="Shawn" labels="ai">
+        <comment>add audit field for overall table</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai_credit_transaction_overall`
+                ADD COLUMN `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time' AFTER `average_amount`,
+                ADD COLUMN `updated_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time' AFTER `created_at`;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,10 @@
+create table a1 (
+  ID auto number primary key,
+  name text,
+  price currency unit EUR,
+);
+create table tt3 (
+  str url title primary key,
+  to_a1 link to a1 multi primary,
+  primary key to_a1,
+);

@@ -1,0 +1,23 @@
+@import "~pc/styles/lib_var.less";
+@import "~pc/styles/lib_mixins.less";
+
+
+.selectDatasheet {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--textCommonPrimary);
+  border: 1px dashed var(--borderCommonDefault);
+  cursor: pointer;
+  &:hover {
+    border: 1px dashed var(--borderCommonHover);
+  }
+  &:active {
+    border: 1px dashed var(--borderCommonActive);
+  }
+  &-description {
+    padding: 0 40px !important;
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="V0.7-20210315-006" author="Shawn" labels="space">
+        <comment>social_tenant add index</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant`
+            ADD INDEX `k_tenant_id` (`tenant_id`) COMMENT 'Tenant ID Index';
+        </sql>
+    </changeSet>
+    <changeSet id="V0.7-20210315-007" author="Shawn" labels="space">
+        <comment>social_tenant add index</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}social_tenant_bind`
+            ADD INDEX `k_tenant_id` (`tenant_id`) COMMENT 'Tenant ID Index';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

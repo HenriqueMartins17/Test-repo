@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vikadata.scheduler.space.mapper.workspace.DatasheetRecordMapper">
+
+    <resultMap id="dataSheetRecordDto" type="com.vikadata.scheduler.space.model.DataSheetRecordDto">
+        <result column="dst_id" property="dstId"/>
+        <collection property="dataList" ofType="java.lang.String">
+            <result column="data"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectDtoByNodeIds" resultMap="dataSheetRecordDto">
+        SELECT dst_id, `data`
+        FROM ${tablePrefix}datasheet_record
+        WHERE dst_id IN
+        <foreach item="item" index="index" collection="nodeIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        AND is_deleted = 0
+    </select>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.appdata.shared.workspace.mapper.NodeRelMapper">
+    <select id="selectByMainNodeIds"
+            resultType="com.apitable.appdata.shared.workspace.pojo.NodeRel">
+        SELECT *
+        FROM ${tablePrefix}node_rel
+        WHERE main_node_id IN
+        <foreach item="item" index="index" collection="mainNodeIds" open="(" separator=","
+                 close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertBatch">
+        REPLACE INTO ${tablePrefix}node_rel(id, main_node_id, rel_node_id, extra,
+        created_by)
+        VALUES
+        <foreach item="item" index="index" collection="entities" separator=",">
+            <trim prefix="(" suffix=")">
+                #{item.id}, #{item.mainNodeId}, #{item.relNodeId}, #{item.extra},
+                #{userId}
+            </trim>
+        </foreach>
+    </insert>
+</mapper>

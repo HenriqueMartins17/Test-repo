@@ -1,0 +1,97 @@
+server:
+  port: 8082
+  shutdown: graceful
+
+spring:
+  application:
+    name: appdata
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:apitable}?characterEncoding=utf8&autoReconnect=true&useSSL=true&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:password}
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 60000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 60000
+      connection-test-query: SELECT 1
+logging:
+  level:
+    root: INFO
+
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: ${DATABASE_TABLE_PREFIX:apitable_}
+  configuration-properties:
+    tablePrefix: ${DATABASE_TABLE_PREFIX:apitable_}
+
+generator:
+  oss-host: ${ASSETS_URL:https://s1.vika.cn}
+  skip-widget-center: ${SKIP_WIDGET_CENTER_GENERATOR:false}
+  skip-template-center: ${SKIP_TEMPLATE_CENTER_GENERATOR:false}
+  template-space-id: ${GENERATOR_TEMPLATE_SPACE_ID:spcNTxlv8Drra}
+  skip-automation: ${SKIP_AUTOMATION_GENERATOR:false}
+  skip-lab-feature: ${SKIP_LAB_FEATURE_GENERATOR:false}
+  skip-wizard: ${SKIP_WIZARD_GENERATOR:false}
+  init-setting-oss:
+    skip: ${SKIP_SETTING_OSS_GENERATOR:false}
+    host: ${SETTING_OSS_API_HOST:}
+    token: ${SETTING_OSS_API_TOKEN:}
+    base:
+      datasheet-id: ${SETTING_OSS_BASE_DATASHEET_ID:}
+      view-id: ${SETTING_OSS_BASE_VIEW_ID:}
+    customization:
+      datasheet-id: ${SETTING_OSS_CUSTOMIZE_DATASHEET_ID:}
+      view-id: ${SETTING_OSS_CUSTOMIZE_VIEW_ID:}
+
+loader:
+  oss-bucket-name: ${ASSETS_BUCKET:assets}
+  skip-asset-load: ${SKIP_ASSET_LOADER:false}
+  template-center:
+    skip: ${SKIP_TEMPLATE_CENTER_LOADER:false}
+    template-space-id: ${LOADER_TEMPLATE_SPACE_ID:spcNTxlv8Drra}
+    skip-config: ${SKIP_TEMPLATE_CENTER_CONFIG_LOADER:false}
+  widget-center:
+    skip: ${SKIP_WIDGET_CENTER_LOADER:false}
+    widget-space-id: ${LOADER_WIDGET_SPACE_ID:spcNTxlv8Drra}
+  automation:
+    skip: ${SKIP_AUTOMATION_LOADER:false}
+  lab-feature:
+    skip: ${SKIP_LAB_FEATURE_LOADER:false}
+  wizard:
+    skip: ${SKIP_WIZARD_LOADER:false}
+
+initializer:
+  user:
+    batch-enabled: ${INIT_TEST_ACCOUNT_ENABLED:false}
+    count: ${INIT_TEST_USER_COUNT:10}
+    email-prefix: ${INIT_TEST_USER_EMAIL_PREFIX:test}
+    email-suffix: ${INIT_TEST_USER_EMAIL_SUFFIX:@apitable.com}
+  space:
+    enabled: ${INIT_CONFIG_SPACE_ENABLED:false}
+    config-space-id: ${INIT_CONFIG_SPACE_ID:spcNTxlv8Drra}
+    admin-user-credential: ${ADMIN_USER_CREDENTIAL:}
+    mandatory-coverage-enabled: ${MANDATORY_COVERAGE_ENABLED:false}
+    create-config-table-enabled: ${CREATE_CONFIG_TABLE_ENABLED:false}
+
+starter:
+  api:
+    enabled: ${API_ENABLED:false}
+    host: ${DEFAULT_API_HOST}
+    token: ${DEFAULT_API_TOKEN}
+  oss:
+    enabled: ${OSS_ENABLED:false}
+    access-key-id: ${AWS_ACCESS_KEY:apitable}
+    access-key-secret: ${AWS_ACCESS_SECRET:apitable@com}
+    endpoint: ${AWS_ENDPOINT:http://minio:9000}
+    region: ${AWS_REGION:us-east-1}
+    bucket-policy: ${BUCKET_POLICY:{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Principal":{"AWS":["*"]},"Action":["s3:GetBucketLocation","s3:ListBucket"],"Resource":["arn:aws:s3:::assets"]},{"Effect":"Allow","Principal":{"AWS":["*"]},"Action":["s3:GetObject"],"Resource":["arn:aws:s3:::assets/*"]}]}}
+    signature:
+      enabled: ${OSS_SIGNATURE_ENABLED:false}
+      expire-second: ${OSS_SIGNATURE_EXPIRE_SECOND:7200}
+      encrypt-key: ${OSS_SIGNATURE_CDN_ENCRYPT_KEY:}

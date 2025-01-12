@@ -1,0 +1,106 @@
+{
+    "en_US": {
+        "i18n": "en_US",
+        "recommend": {
+            "banners": [
+                {
+                    "template_name": "Project Management",
+                    "title": "Project Management",
+                    "desc": "Plan, track, and manage complex projects across multiple teams.",
+                    "image": "space/2023/01/29/108c66a0fae5409d9cec7b1c30d60368",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Course Scheduling",
+                    "title": "Course Scheduling",
+                    "desc": "Centralize all of the information including courses, rooms, classes into one intuitive system.",
+                    "image": "space/2023/01/29/1267a01f32c54aa1a4af9df13ddd687f",
+                    "color": "#262626"
+                },
+                {
+                    "template_name": "Marketing Campaign Management",
+                    "title": "Marketing Campaign Management",
+                    "desc": "Track, manage and evaluate each marketing campaign.",
+                    "image": "space/2023/01/29/5448db34ed484a6e975a161364cd333a",
+                    "color": "#262626"
+                }
+            ],
+            "album_groups": [
+            ],
+            "template_groups": [
+                {
+                    "name": "Other users also like",
+                    "template_names": [
+                        "Content calendar",
+                        "Sprints Management",
+                        "Real estate CRM"
+                    ]
+                }
+            ]
+        },
+        "categories": [
+            {
+                "name": "\uD83C\uDF1F Featured",
+                "template_names": [
+                    "Project Management",
+                    "OKR Tracking",
+                    "Content calendar",
+                    "Product Release Plan",
+                    "Sprints Management",
+                    "Video Production Management",
+                    "Customer projects",
+                    "Single Project",
+                    "Internal request management",
+                    "Real estate CRM"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCC6 Marketing",
+                "template_names": [
+                    "Content calendar",
+                    "Project Management",
+                    "Video Production Management",
+                    "Marketing Campaign Management"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFAF Project Management",
+                "template_names": [
+                    "OKR Tracking",
+                    "Product Release Plan",
+                    "Project Management",
+                    "Sprints Management",
+                    "Customer projects",
+                    "Single Project",
+                    "Internal request management"
+                ]
+            },
+            {
+                "name": "\uD83E\uDD1D Sales & Customers",
+                "template_names": [
+                    "Customer projects",
+                    "Real estate CRM",
+                    "Inventory Management"
+                ]
+            },
+            {
+                "name": "\uD83C\uDFC8 Product & design & UX",
+                "template_names": [
+                    "User Research Management",
+                    "Internal request management",
+                    "OKR Tracking"
+                ]
+            },
+            {
+                "name": "\uD83D\uDCDA Education",
+                "template_names": [
+                    "Course Scheduling"
+                ]
+            }
+        ],
+        "albums": [
+        ],
+        "templates_with_tag": [
+        ]
+    }
+}

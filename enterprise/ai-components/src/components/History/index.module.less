@@ -1,0 +1,54 @@
+.popup {
+  :global {
+    .ant-drawer-body {
+      padding: 0;
+    }
+  }
+}
+.history {
+  width: 320px;
+  flex-shrink: 0;
+  // overflow: auto;
+  position: relative;
+  background-color: var(--bgCommonDefault);
+  border-left: 1px solid var(--borderCommonDefault);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  &.mobile {
+    padding: 0 8px 8px 8px
+  }
+  &-title {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // position: sticky;
+    // top: 0;
+    // right: 0;
+    // left: 0;
+    background-color: var(--bgCommonDefault);
+  }
+  &-list {
+    flex: 1;
+    padding: 0 8px;
+    overflow: auto;
+  }
+  &-item {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    &-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &:hover {
+      background-color: var(--bgBglessHover);
+    }
+    &.active {
+      background-color: var(--bgBrandLightDefault);
+      color: var(--textBrandDefault);
+    }
+  }
+}

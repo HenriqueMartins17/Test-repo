@@ -1,0 +1,45 @@
+{
+  "active": true,
+  "billing_scheme": "tiered",
+  "created": 1682503589,
+  "currency": "usd",
+  "currency_options": null,
+  "custom_unit_amount": null,
+  "deleted": null,
+  "id": "price_1N15F3H4MhQOilwxK2976ZHb",
+  "livemode": false,
+  "lookup_key": null,
+  "metadata": {},
+  "nickname": "Yearly Regular New",
+  "object": "price",
+  "product": "prod_NH8mBOjosj3Qgz",
+  "recurring": {
+    "aggregate_usage": null,
+    "interval": "year",
+    "interval_count": 1,
+    "trial_period_days": null,
+    "usage_type": "licensed"
+  },
+  "tax_behavior": "exclusive",
+  "tiers": [
+    {
+      "flat_amount": 22800,
+      "flat_amount_decimal": 22800,
+      "unit_amount": null,
+      "unit_amount_decimal": null,
+      "up_to": 2
+    },
+    {
+      "flat_amount": null,
+      "flat_amount_decimal": null,
+      "unit_amount": 14400,
+      "unit_amount_decimal": 14400,
+      "up_to": null
+    }
+  ],
+  "tiers_mode": "graduated",
+  "transform_quantity": null,
+  "type": "recurring",
+  "unit_amount": null,
+  "unit_amount_decimal": null
+}

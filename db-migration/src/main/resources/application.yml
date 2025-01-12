@@ -1,0 +1,51 @@
+server:
+  port: 9113
+  shutdown: graceful
+
+spring:
+  application:
+    name: data-migration
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:33060}/${MYSQL_DATABASE:vika_dev}?characterEncoding=utf8&autoReconnect=true&useSSL=true&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: ${MYSQL_USERNAME:vika}
+    password: ${MYSQL_PASSWORD:password}
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 60000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 60000
+      connection-test-query: SELECT 1
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST:'10.66.66.66:30001,10.66.66.66:30002,10.66.66.66:30003'}/${MONGO_DATABASE:vikadata}?${MONGO_PARAMS:''}
+#      uri: mongodb://root:hrq*btk8MHT2ncz8fqp@localhost:3717/vikadata-integration?authSource=admin&directConnection=true
+#      uri: mongodb://10.66.66.66:30001,10.66.66.66:30002,10.66.66.66:30003/vikadata
+      # ?replicaSet=rs0?retryWrites=false&connectTimeoutMS=60000&socketTimeoutMS=120000&waitQueueTimeoutMS=120000&wtimeoutMS=120000&maxIdleTimeMS=30000&keepAlive=true
+
+logging:
+  level:
+    root: INFO
+#  file:
+#    name: runtime.log
+
+vika:
+  tasks:
+    - pool:
+        core-size: ${MIGRATION_TASK_POOL_CORE:10}
+        max-size: ${MIGRATION_TASK_POOL_MAX_SIZE:10}
+        queue-capacity: ${MIGRATION_TASK_POOL_QUEUE_CAPACITY:20}
+        allow-core-thread-timeout: ${MIGRATION_TASK_POOL_ALLOW_TIMEOUT:true}
+      thread-name-prefix: ${MIGRATION_TASK_NAME_PREFIX:'m-task-'}
+    - pool:
+        core-size: ${CHECK_TASK_POOL_CORE:10}
+        max-size: ${CHECK_TASK_POOL_MAX_SIZE:10}
+        queue-capacity: ${CHECK_TASK_POOL_QUEUE_CAPACITY:20}
+        allow-core-thread-timeout: ${CHECK_TASK_POOL_ALLOW_TIMEOUT:true}
+      thread-name-prefix: ${CHECK_TASK_NAME_PREFIX:'c-task-'}
+migration:
+  enabled: ${MIGRATION_ENABLED:true}
+  limitCount: ${MIGRRATION_LIMIT_COUNT:200}

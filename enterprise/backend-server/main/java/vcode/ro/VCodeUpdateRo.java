@@ -1,0 +1,57 @@
+/*
+ * APITable Ltd. <legal@apitable.com>
+ * Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+ *
+ * This code file is part of APITable Enterprise Edition.
+ *
+ * It is subject to the APITable Commercial License and conditional on having a fully paid-up
+ * license from APITable.
+ *
+ * Access to this code file or other code files in this `enterprise` directory and its
+ * subdirectories does not constitute permission to use this code or APITable Enterprise Edition
+ * features.
+ *
+ * Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+ *
+ * For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+ */
+
+package com.apitable.enterprise.vcode.ro;
+
+import com.apitable.core.support.deserializer.StringToLongDeserializer;
+import com.apitable.shared.support.deserializer.DateFormatToLocalDateTimeDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import io.swagger.v3.oas.annotations.media.Schema;
+import java.time.LocalDateTime;
+import jakarta.validation.constraints.Min;
+import lombok.Data;
+
+/**
+ * <p>
+ * V code modification request parameters.
+ * </p>
+ */
+@Data
+@Schema(description = "V code modification request parameters")
+public class VCodeUpdateRo {
+
+    @Schema(description = "Redemption template ID (modifiable only when the type is redemption "
+        + "code)", type = "java.lang.String", example = "1296402001573097473")
+    @JsonDeserialize(using = StringToLongDeserializer.class)
+    private Long templateId;
+
+    @Schema(description = "Total Available", type = "java.lang.Integer", example = "100")
+    @Min(value = -1, message = "Total number available setting error")
+    private Integer availableTimes;
+
+    @Schema(description = "Limit the number of uses per person", type = "java.lang.Integer",
+        example = "5")
+    @Min(value = -1, message = "Wrong setting of single person limit")
+    private Integer limitTimes;
+
+    @Schema(description = "Expiration time", example = "2020-03-18T15:29:59.000Z/yyyy-MM-dd( "
+        + "HH:mm(:ss)(.SSS))")
+    @JsonDeserialize(using = DateFormatToLocalDateTimeDeserializer.class)
+    private LocalDateTime expireTime;
+
+}

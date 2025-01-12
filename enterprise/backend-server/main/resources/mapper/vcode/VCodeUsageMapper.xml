@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ APITable Ltd. <legal@apitable.com>
+ Copyright (C)  2022 APITable Ltd. <https://apitable.com>
+
+ This code file is part of APITable Enterprise Edition.
+
+ It is subject to the APITable Commercial License and conditional on having a fully paid-up license from APITable.
+
+ Access to this code file or other code files in this `enterprise` directory and its subdirectories does not constitute permission to use this code or APITable Enterprise Edition features.
+
+ Unless otherwise noted, all files Copyright © 2022 APITable Ltd.
+
+ For purchase of APITable Enterprise Edition license, please contact <sales@apitable.com>.
+-->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apitable.enterprise.vcode.mapper.VCodeUsageMapper">
+    <select id="countByCodeAndType" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM ${tablePrefix}code_usage
+        WHERE code = #{code} AND `type` = #{type}
+        <if test="operator != null">
+            AND operator = #{operator}
+        </if>
+    </select>
+
+    <select id="selectInvitorUserId" resultType="com.apitable.enterprise.vcode.dto.VCodeDTO">
+        SELECT vc.ref_id AS userId, vc.`code` AS vCode, vc.type
+        FROM ${tablePrefix}code_usage vcu
+                 JOIN ${tablePrefix}code vc ON vcu.`code` = vc.`code` AND vc.type IN (0, 1)
+        WHERE vcu.operator = #{userId}
+          AND vcu.type = 1
+        LIMIT 1
+    </select>
+</mapper>

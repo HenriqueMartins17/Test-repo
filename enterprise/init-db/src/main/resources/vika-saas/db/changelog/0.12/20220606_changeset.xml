@@ -1,0 +1,174 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="V0.12-20220606-001" author="CodeMan" labels="IDaaS">
+        <comment>Create IDaaS Tenant Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}idaas_tenant`
+            (
+                `id`              bigint(20) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                `tenant_name`     varchar(64) NOT NULL COMMENT 'Tenant Name',
+                `service_account` json        NOT NULL COMMENT 'Tenant level ServiceAccount',
+                `is_deleted`      tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Delete Tags. 0: No; 1: Yes',
+                `created_at`      timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`      timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                UNIQUE INDEX `uk_tenant_name`(`tenant_name`) USING BTREE
+            ) ENGINE = InnoDB COMMENT = 'IDaaS Tenant Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-002" author="CodeMan" labels="IDaaS">
+        <comment>Create IDaaS App Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}idaas_app`
+            (
+                `id`                     bigint(20) UNSIGNED NOT NULL COMMENT 'Primary Key ID',
+                `tenant_name`            varchar(64)  NOT NULL COMMENT 'Tenant Name',
+                `client_id`              varchar(64)  NOT NULL COMMENT 'Application Client ID',
+                `client_secret`          varchar(64)  NOT NULL COMMENT 'Application Client Secret',
+                `authorization_endpoint` varchar(256) NOT NULL COMMENT 'URL for obtaining authorization',
+                `token_endpoint`         varchar(256) NOT NULL COMMENT 'Get the URL of the Token',
+                `userinfo_endpoint`      varchar(256) NOT NULL COMMENT 'URL for obtaining user information',
+                `is_deleted`             tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Delete Tags. 0: No; 1: Yes',
+                `created_at`             timestamp    NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`             timestamp    NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                UNIQUE INDEX `uk_client_id`(`client_id`) USING BTREE
+            ) ENGINE = InnoDB COMMENT = 'IDaaS App Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-003" author="CodeMan" labels="IDaaS">
+        <comment>Create IDaaS App Bind Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}idaas_app_bind`
+            (
+                `id`          bigint(20) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                `tenant_name` varchar(64) NOT NULL COMMENT 'Tenant Name',
+                `client_id`   varchar(64) NOT NULL COMMENT 'Application Client ID',
+                `space_id`    varchar(50) NOT NULL COMMENT 'Space ID',
+                `is_deleted`  tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Delete Tags. 0: No; 1: Yes',
+                `created_at`  timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`  timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                INDEX         `idx_client_id`(`client_id`) USING BTREE,
+                INDEX         `idx_space_id`(`space_id`) USING BTREE
+            ) ENGINE = InnoDB COMMENT = 'IDaaS App Bind Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-004" author="CodeMan" labels="IDaaS">
+        <comment>Create IDaaS Group Bind Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}idaas_group_bind`
+            (
+                `id`          bigint(20) UNSIGNED NOT NULL COMMENT 'Primary Key ID',
+                `tenant_name` varchar(64) NOT NULL COMMENT 'Tenant Name',
+                `group_id`    varchar(64) NOT NULL COMMENT 'User Group ID',
+                `group_name`  varchar(64) NOT NULL COMMENT 'User group name',
+                `group_order` int(10) UNSIGNED NOT NULL COMMENT 'User Group Sort Value',
+                `space_id`    varchar(50) NOT NULL COMMENT 'Space ID',
+                `team_id`     bigint(20) UNSIGNED NOT NULL COMMENT 'Space address book group ID',
+                `is_deleted`  tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Delete Tags. 0: No; 1: Yes',
+                `created_at`  timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`  timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                INDEX         `idx_group_id`(`group_id`) USING BTREE,
+                INDEX         `idx_space_id`(`space_id`) USING BTREE,
+                INDEX         `idx_team_id`(`team_id`) USING BTREE
+            ) ENGINE = InnoDB COMMENT = 'IDaaS Group Bind Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-005" author="CodeMan" labels="IDaaS">
+        <comment>Create IDaaS User Bind Table</comment>
+        <sql>
+            CREATE TABLE `${table.prefix}idaas_user_bind`
+            (
+                `id`           bigint(20) UNSIGNED NOT NULL COMMENT 'Primary Key',
+                `tenant_name`  varchar(64) NOT NULL COMMENT 'Tenant Name',
+                `user_id`      varchar(64) NOT NULL COMMENT 'IDaaS User ID',
+                `nick_name`    varchar(64) NULL COMMENT 'Nick Name',
+                `email`        varchar(128) NULL COMMENT 'Email',
+                `mobile`       varchar(32) NULL COMMENT 'Mobile Phone Number',
+                `group_ids`    json NULL COMMENT 'List of user group IDs',
+                `vika_user_id` bigint(20) UNSIGNED NOT NULL COMMENT 'Bind User ID',
+                `is_deleted`   tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Delete Tags. 0: No; 1: Yes',
+                `created_at`   timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Create Time',
+                `updated_at`   timestamp   NOT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time',
+                PRIMARY KEY (`id`),
+                INDEX          `idx_user_id`(`user_id`) USING BTREE,
+                INDEX          `idx_vika_user_id`(`vika_user_id`) USING BTREE
+            ) ENGINE = InnoDB COMMENT = 'IDaaS User Bind Table';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-006" author="CodeMan" labels="IDaaS">
+        <comment>Adjust IDaaS Tenant Table time field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}idaas_tenant`
+                MODIFY COLUMN `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time' AFTER `is_deleted`,
+                MODIFY COLUMN `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time' AFTER `created_at`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-007" author="CodeMan" labels="IDaaS">
+        <comment>Adjust IDaaS App Table time field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}idaas_app`
+                MODIFY COLUMN `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time' AFTER `is_deleted`,
+                MODIFY COLUMN `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time' AFTER `created_at`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-008" author="CodeMan" labels="IDaaS">
+        <comment>Adjust IDaaS App Bind Table time field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}idaas_app_bind`
+                MODIFY COLUMN `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time' AFTER `is_deleted`,
+                MODIFY COLUMN `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time' AFTER `created_at`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-009" author="CodeMan" labels="IDaaS">
+        <comment>Adjust IDaaS Group Bind Table time field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}idaas_group_bind`
+                MODIFY COLUMN `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time' AFTER `is_deleted`,
+                MODIFY COLUMN `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time' AFTER `created_at`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="V0.12-20220606-010" author="CodeMan" labels="IDaaS">
+        <comment>Adjust IDaaS Tenant Table time field</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}idaas_tenant`
+                MODIFY COLUMN `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time' AFTER `is_deleted`,
+                MODIFY COLUMN `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Update Time' AFTER `created_at`;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,79 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="20230728-001" author="Shawn" labels="ai">
+        <comment>ai table drop column model</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+                CHANGE COLUMN `model` `type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'AI Type' AFTER `ai_id`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230728-002" author="Shawn" labels="ai">
+        <comment>ai table drop column idk</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+            DROP COLUMN `idk`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230728-003" author="Shawn" labels="ai">
+        <comment>ai table drop column is_enabled_suggestion_tips</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+            DROP COLUMN `is_enabled_suggestion_tips`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230728-004" author="Shawn" labels="ai">
+        <comment>ai table drop column is_enabled_recommended_hint</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+            DROP COLUMN `is_enabled_recommended_hint`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230728-005" author="Shawn" labels="ai">
+        <comment>ai table add column prompt</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+                ADD COLUMN `prompt` text NULL COMMENT 'AI Prompt' AFTER `prologue`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230728-006" author="Shawn" labels="ai">
+        <comment>ai table add column setting</comment>
+        <sql>
+            ALTER TABLE `${table.prefix}ai`
+                ADD COLUMN `setting` json NULL COMMENT 'AI Setting' AFTER `prompt`;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20230728-007" author="Shawn" labels="ai">
+        <comment>drop ai prompt table</comment>
+        <sql>
+            DROP TABLE IF EXISTS `${table.prefix}ai_prompt`
+        </sql>
+    </changeSet>
+</databaseChangeLog>
