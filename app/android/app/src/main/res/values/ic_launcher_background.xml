@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#7B67EE</color>
+    <dimen name="ic_launcher_img_width">150dp</dimen>
+    <dimen name="ic_launcher_img_height">40dp</dimen>
+</resources>

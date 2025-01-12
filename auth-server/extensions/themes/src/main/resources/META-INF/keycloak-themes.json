@@ -1,0 +1,52 @@
+{
+    "themes": [
+        {
+            "name": "apps",
+            "types": [
+                "login"
+            ]
+        },
+        {
+            "name": "custom",
+            "types": [
+                "login"
+            ]
+        },
+        {
+            "name": "internal",
+            "types": [
+                "account",
+                "email",
+                "login"
+            ]
+        },
+        {
+            "name": "internal-modern",
+            "types": [
+                "account",
+                "login"
+            ]
+        },
+        {
+            "name": "vika",
+            "types": [
+                "login"
+            ]
+        },
+        {
+            "name": "keycloak-extension",
+            "types": [
+                "account",
+                "admin",
+                "email",
+                "login"
+            ]
+        },
+        {
+            "name": "keycloak-man",
+            "types": [
+                "account"
+            ]
+        }
+    ]
+}

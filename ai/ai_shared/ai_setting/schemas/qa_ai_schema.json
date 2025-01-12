@@ -1,0 +1,273 @@
+{
+  "JSONSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "QA Agent Setting JSON Schema",
+    "type": "object",
+    "properties": {
+      "type": {
+        "title": "Agent Type",
+        "type": "string"
+      },
+      "mode": {
+        "title": "Agent Mode",
+        "description": "Advanced mode allows users to customize prompts, providing greater control over the behavior and responses of the chatbot.",
+        "type": "string",
+        "default": "wizard",
+        "oneOf": [
+          {
+            "type": "string",
+            "title": "Wizard",
+            "enum": [
+              "wizard"
+            ]
+          },
+          {
+            "type": "string",
+            "title": "Advanced",
+            "enum": [
+              "advanced"
+            ]
+          }
+        ]
+      },
+      "model": {
+        "title": "AI model",
+        "type": "string",
+        "enum": [],
+        "default": ""
+      },
+      "prologue": {
+        "title": "Opening remarks",
+        "default": "Hi there, I'm an AI chatbot. Nice to meet you! With my training on various datasets, I'm capable of answering your questions.",
+        "type": "string"
+      },
+      "isEnabledPromptBox": {
+        "title": "Show explore card",
+        "default": true,
+        "$ref": "#/definitions/checkbox"
+      },
+      "isEnabledPromptTips": {
+        "title": "Show suggestions for follow-up messages",
+        "default": true,
+        "$ref": "#/definitions/checkbox"
+      },
+      "idk": {
+        "title": "AI agent's response for unanswerable queries:",
+        "default": "I'm sorry, but I currently don't have any relevant information in my knowledge base to answer your question.",
+        "type": "string"
+      },
+      "isEnableOpenUrl": {
+        "title": "Open specified url when agent don't know the answer",
+        "$ref": "#/definitions/checkbox",
+        "default": false
+      },
+      "isEnableCollectInformation": {
+        "title": "Using form to collect information",
+        "$ref": "#/definitions/checkbox",
+        "default": false
+      },
+      "scoreThreshold": {
+        "title": "Similarity Filter",
+        "description": "The relevance level of the chatbot when retrieving related knowledge. Lower thresholds may result in irrelevant information, while higher thresholds may miss useful information.",
+        "default": 0.6001,
+        "type": "number",
+        "anyOf": [
+          {
+            "type": "number",
+            "title": "ai_settings_similarity_filter_relaxed",
+            "enum": [
+              0.0001
+            ]
+          },
+          {
+            "type": "number",
+            "title": "ai_settings_similarity_filter_moderate",
+            "enum": [
+              0.6001
+            ]
+          },
+          {
+            "type": "number",
+            "title": "ai_settings_similarity_filter_strict",
+            "enum": [
+              0.8001
+            ]
+          }
+        ]
+      }
+    },
+    "required": [],
+    "definitions": {
+      "checkbox": {
+        "type": "boolean"
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "mode": {
+              "const": "advanced"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "prompt": {
+              "title": "Prompt",
+              "default": "Use the following pieces of context to answer the question at the end. \n\nIf you don't know the answer, just say that you don't know, don't try to make up an answer. \n\nContext:\n{context} \n\nChat History:\n{history}\n\nQuestion: {input}\nHelpful Answer:",
+              "type": "string"
+            },
+            "temperature": {
+              "title": "Temperature",
+              "description": "The higher the temperature, the more creative the chatbot will be. The lower the temperature, the more predictable the chatbot will be.",
+              "default": 0.7,
+              "type": "number",
+              "minimum": 0.01,
+              "maximum": 1,
+              "multipleOf": 0.01
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "isEnableCollectInformation": {
+              "enum": [
+                true
+              ]
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "formId": {
+              "title": "Form Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "formId"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "isEnableOpenUrl": {
+              "enum": [
+                true
+              ]
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "openUrl": {
+              "title": "Url",
+              "minLength": 1,
+              "type": "string"
+            },
+            "openUrlTitle": {
+              "title": "Url title",
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "openUrl",
+            "openUrlTitle"
+          ]
+        }
+      }
+    ]
+  },
+  "UISchema": {
+    "type": {
+      "ui:title": "ai_robot_type_title"
+    },
+    "mode": {
+      "ui:title": "ai_advanced_mode_title",
+      "ui:description": "ai_advanced_mode_desc"
+    },
+    "model": {
+      "ui:title": "ai_bot_model_title"
+    },
+    "isEnabledPromptBox": {
+      "ui:title": "ai_show_explore_card_title",
+      "ui:description": "ai_show_explore_card_desc"
+    },
+    "isEnabledPromptTips": {
+      "ui:title": "ai_show_suggestion_for_follow_tip_title",
+      "ui:description": "ai_show_suggestion_for_follow_tip_desc"
+    },
+    "idk": {
+      "ui:widget": "textarea",
+      "ui:title": "ai_fallback_message_title",
+      "ui:description": "ai_fallback_message_desc",
+      "ui:options": {
+        "rows": 8
+      }
+    },
+    "isEnableOpenUrl": {
+      "ui:title": "ai_setting_open_url_title",
+      "ui:description": "ai_setting_open_url_desc"
+    },
+    "openUrl": {
+      "ui:title": "ai_setting_open_url_label"
+    },
+    "openUrlTitle": {
+      "ui:title": "ai_setting_open_url_title_label"
+    },
+    "isEnableCollectInformation": {
+      "ui:title": "ai_setting_enable_collect_information_title",
+      "ui:description": "ai_setting_enable_collect_information_desc"
+    },
+    "prologue": {
+      "ui:widget": "textarea",
+      "ui:title": "ai_open_remark_title",
+      "ui:description": "ai_open_remark_desc",
+      "ui:options": {
+        "rows": 8
+      }
+    },
+    "prompt": {
+      "ui:widget": "textarea",
+      "ui:title": "ai_prompt_title",
+      "ui:description": "ai_prompt_desc",
+      "ui:options": {
+        "rows": 8
+      }
+    },
+    "temperature": {
+      "ui:title": "ai_setting_temperature",
+      "ui:description": "ai_setting_temperature_desc",
+      "ui:widget": "range"
+    },
+    "scoreThreshold": {
+      "ui:title": "ai_settings_similarity_filter",
+      "ui:description": "ai_settings_similarity_filter_desc"
+    },
+    "formId": {
+      "ui:title": "form",
+      "ui:widget": "SelectFormWidget"
+    },
+    "ui:order": [
+      "*",
+      "prologue",
+      "prompt",
+      "temperature",
+      "scoreThreshold",
+      "idk",
+      "isEnabledPromptBox",
+      "isEnabledPromptTips",
+      "isEnableOpenUrl",
+      "openUrl",
+      "openUrlTitle",
+      "openFormIfIDK",
+      "isEnableCollectInformation",
+      "formId"
+    ]
+  }
+}

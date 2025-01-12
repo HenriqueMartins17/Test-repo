@@ -1,0 +1,47 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Flutter profile",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "flutterMode": "profile",
+            "args" : [
+                "--dart-define=SENTRY_DSN=https://d478ae09487e418da78f11be846305be@sentry.vika.cn/11", 
+                "--dart-define=SENTRY_RELEASE=0.0.1-debug+1",
+                "--dart-define=SENTRY_DIST=1",
+                "--dart-define=SENTRY_ENVIRONMENT=debug",
+                "--dart-define=APP_ENV=enterprise",
+            ]
+        },
+        {
+            "name": "Flutter",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args" : [
+                "--dart-define=SENTRY_DSN=https://d478ae09487e418da78f11be846305be@sentry.vika.cn/11", 
+                "--dart-define=SENTRY_RELEASE=0.0.1-debug+1",
+                "--dart-define=SENTRY_DIST=1",
+                "--dart-define=SENTRY_ENVIRONMENT=debug",
+                "--dart-define=APP_ENV=enterprise",
+            ]
+        },
+        {
+            "name": "Flutter: Run all Tests",
+            "type": "dart",
+            "request": "launch",
+            "program": "./test/"
+        },
+        {
+            "name": "Flutter: Attach to Device",
+            "type": "dart",
+            "request": "attach"
+        }
+    ]
+}

@@ -1,0 +1,2 @@
+class MarkdownRefiner:
+    pass

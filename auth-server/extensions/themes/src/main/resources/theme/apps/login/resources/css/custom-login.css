@@ -1,0 +1,21 @@
+/* acme login css */
+
+.card-pf {
+    background-color: whitesmoke;
+}
+
+.login-pf {
+    background: darkgray;
+}
+
+.login-pf body {
+    background: none;
+}
+
+/*#kc-form-login {*/
+/*    display: none;*/
+/*}*/
+
+/*#kc-social-providers > h4 {*/
+/*    display: none;*/
+/*}*/

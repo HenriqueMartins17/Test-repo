@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap android:gravity="fill" android:src="@drawable/background"/>
+    </item>
+    <item
+        android:width="@dimen/ic_launcher_img_width"
+        android:height="@dimen/ic_launcher_img_height"
+        android:gravity="center">
+        <bitmap android:src="@drawable/splash"/>
+    </item>
+</layer-list>

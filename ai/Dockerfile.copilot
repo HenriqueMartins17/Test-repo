@@ -1,0 +1,9 @@
+FROM alpine
+WORKDIR /app
+
+ARG COPILOT_CHROMA_FOLDER
+
+# edition is either "vika_copilot" or "aitable_copilot"
+COPY .data/${COPILOT_CHROMA_FOLDER}/ ${COPILOT_CHROMA_FOLDER}
+
+CMD ["cp", "-a", "./${COPILOT_CHROMA_FOLDER}", "./data/${COPILOT_CHROMA_FOLDER}"]

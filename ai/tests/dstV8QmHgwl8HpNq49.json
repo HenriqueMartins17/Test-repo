@@ -1,0 +1,1196 @@
+{
+  "code": 200,
+  "data": {
+    "datasheet": {
+      "description": "{}",
+      "extra": {
+        "showRecordHistory": true
+      },
+      "icon": "",
+      "id": "dstV8QmHgwl8HpNq49",
+      "name": "Objectives",
+      "nodeFavorite": false,
+      "nodePermitSet": false,
+      "nodeShared": false,
+      "parentId": "fodtKE1H05unJ",
+      "permissions": {
+        "readable": true
+      },
+      "revision": 0,
+      "role": "",
+      "spaceId": "spcNTxlv8Drra"
+    },
+    "foreignDatasheetMap": {
+      "dstRS7YqZC1hPQmGww": {
+        "datasheet": {
+          "description": "{}",
+          "extra": {
+            "showRecordHistory": true
+          },
+          "icon": "",
+          "id": "dstRS7YqZC1hPQmGww",
+          "name": "Key results",
+          "nodeFavorite": false,
+          "nodePermitSet": false,
+          "nodeShared": false,
+          "parentId": "fodtKE1H05unJ",
+          "permissions": {
+            "readable": true
+          },
+          "revision": 0,
+          "role": "",
+          "spaceId": "spcNTxlv8Drra"
+        },
+        "snapshot": {
+          "datasheetId": "dstRS7YqZC1hPQmGww",
+          "meta": {
+            "fieldMap": {
+              "fld2lVejXH7tS": {
+                "id": "fld2lVejXH7tS",
+                "name": " Quarter",
+                "property": {
+                  "datasheetId": "dstRS7YqZC1hPQmGww",
+                  "lookUpTargetFieldId": "fldxg530ocPGk",
+                  "relatedLinkFieldId": "fldLP3LSDmbfp"
+                },
+                "type": 14
+              },
+              "fld5K12ThFT5K": {
+                "id": "fld5K12ThFT5K",
+                "name": "Lead",
+                "property": {
+                  "isMulti": false,
+                  "shouldSendMsg": false,
+                  "unitIds": [
+                    "1277498207091896321",
+                    "1470338788133507074",
+                    "1403259741103169538",
+                    "1333641953933082625",
+                    "1365126636007665665",
+                    "1373829804087484418",
+                    "1441238664465219585",
+                    "1460121586863362049",
+                    "1275766197272494081",
+                    "1352533915663200258",
+                    "1397839774629675010",
+                    "1333608613015642113",
+                    "1371691897148870657"
+                  ]
+                },
+                "type": 13
+              },
+              "fld78zQUiPkwS": {
+                "id": "fld78zQUiPkwS",
+                "name": "Complete",
+                "property": {
+                  "precision": 0
+                },
+                "type": 18
+              },
+              "fldLP3LSDmbfp": {
+                "id": "fldLP3LSDmbfp",
+                "name": "Objectives",
+                "property": {
+                  "brotherFieldId": "fldTcsU9ZD5lF",
+                  "foreignDatasheetId": "dstV8QmHgwl8HpNq49"
+                },
+                "type": 7
+              },
+              "fldRkmAAQyboE": {
+                "id": "fldRkmAAQyboE",
+                "name": "Complete✅",
+                "property": {
+                  "datasheetId": "dstRS7YqZC1hPQmGww",
+                  "expression": "if({fld78zQUiPkwS} < 0.1, \" \"&{fld78zQUiPkwS}*100&\"%\",\nif({fld78zQUiPkwS} < 0.2, \"🟩 \"&{fld78zQUiPkwS}*100&\"%\",\nif({fld78zQUiPkwS} < 0.3, \"🟩🟩 \"&{fld78zQUiPkwS}*100&\"%\",\nif({fld78zQUiPkwS} < 0.4, \"🟩🟩🟩 \"&{fld78zQUiPkwS}*100&\"%\",\nif({fld78zQUiPkwS} < 0.5, \"🟩🟩🟩🟩 \"&{fld78zQUiPkwS}*100&\"%\",\nif({fld78zQUiPkwS} < 0.6, \"🟩🟩🟩🟩🟩 \"&{fld78zQUiPkwS}*100&\"%\",\nif({fld78zQUiPkwS} < 0.7, \"🟩🟩🟩🟩🟩🟩 \"&{fld78zQUiPkwS}*100&“%”,\nif({fld78zQUiPkwS} < 0.8, \"🟩🟩🟩🟩🟩🟩🟩 \"&{fld78zQUiPkwS}*100&“%”,\nif({fld78zQUiPkwS}< 0.9, \"🟩🟩🟩🟩🟩🟩🟩🟩 \"&{fld78zQUiPkwS}*100&“%”,\nif({fld78zQUiPkwS} < 1, \"🟩🟩🟩🟩🟩🟩🟩🟩🟩 \"&{fld78zQUiPkwS}*100&“%”,\"🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 \"&{fld78zQUiPkwS}*100&“%”))))))))))"
+                },
+                "type": 16
+              },
+              "fldtZzGJWOynl": {
+                "id": "fldtZzGJWOynl",
+                "name": "Last edited time",
+                "property": {
+                  "collectType": 1,
+                  "datasheetId": "dstRS7YqZC1hPQmGww",
+                  "dateFormat": 0,
+                  "fieldIdCollection": [
+                    "fld78zQUiPkwS"
+                  ],
+                  "includeTime": false,
+                  "timeFormat": 1
+                },
+                "type": 22
+              },
+              "fldvYq7ei52jY": {
+                "id": "fldvYq7ei52jY",
+                "name": "Key Results",
+                "property": {
+                  "defaultValue": ""
+                },
+                "type": 19
+              }
+            },
+            "views": [
+              {
+                "autoSave": false,
+                "columns": [
+                  {
+                    "fieldId": "fldvYq7ei52jY",
+                    "statType": 1,
+                    "width": 348.0
+                  },
+                  {
+                    "fieldId": "fldLP3LSDmbfp",
+                    "width": 202.0
+                  },
+                  {
+                    "fieldId": "fld2lVejXH7tS",
+                    "width": 135.0
+                  },
+                  {
+                    "fieldId": "fld5K12ThFT5K",
+                    "width": 139.0
+                  },
+                  {
+                    "fieldId": "fld78zQUiPkwS",
+                    "width": 134.0
+                  },
+                  {
+                    "fieldId": "fldRkmAAQyboE",
+                    "width": 184.0
+                  },
+                  {
+                    "fieldId": "fldtZzGJWOynl",
+                    "width": 166.0
+                  }
+                ],
+                "frozenColumnCount": 1,
+                "groupInfo": [
+                  {
+                    "desc": true,
+                    "fieldId": "fld2lVejXH7tS"
+                  }
+                ],
+                "id": "viwSmNQ1cw5io",
+                "name": "Key results",
+                "rows": [
+                  {
+                    "recordId": "recKeMnnVkSef"
+                  },
+                  {
+                    "recordId": "recLpRrUVb7yT"
+                  },
+                  {
+                    "recordId": "recc0LZkHWcEF"
+                  },
+                  {
+                    "recordId": "rec0YAePXu459"
+                  },
+                  {
+                    "recordId": "reciv5AdslDaX"
+                  },
+                  {
+                    "recordId": "recQn3ilkCHOw"
+                  },
+                  {
+                    "recordId": "recWOHUtGkksG"
+                  },
+                  {
+                    "recordId": "recTScb5wC9AB"
+                  },
+                  {
+                    "recordId": "recPdFCSiX1kM"
+                  },
+                  {
+                    "recordId": "recPhqC5m0h1i"
+                  },
+                  {
+                    "recordId": "recu7tRlXWeSR"
+                  },
+                  {
+                    "recordId": "rec18GJxeEgGS"
+                  },
+                  {
+                    "recordId": "recTkOMYJMNpo"
+                  }
+                ],
+                "type": 1
+              }
+            ],
+            "widgetPanels": [
+              {
+                "id": "wplDnEHoQzDsn",
+                "name": "Widget board",
+                "widgets": [
+                  {
+                    "height": 6.2,
+                    "id": "wdtaoD9QC8BC0v27YZ",
+                    "y": 9007199254740991.0
+                  }
+                ]
+              }
+            ]
+          },
+          "recordMap": {
+            "rec0YAePXu459": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1333641953933082625"
+                ],
+                "fld78zQUiPkwS": 0.45,
+                "fldLP3LSDmbfp": [
+                  "recVA96aLJmKW"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Increase social media followers to 20000",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "rec0YAePXu459",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "rec18GJxeEgGS": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1333608613015642113"
+                ],
+                "fld78zQUiPkwS": 0.25,
+                "fldLP3LSDmbfp": [
+                  "recs4bH1zprXb"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Host 12 peer-to-peer conversations",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "rec18GJxeEgGS",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recKeMnnVkSef": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1277498207091896321"
+                ],
+                "fld78zQUiPkwS": 0.2,
+                "fldLP3LSDmbfp": [
+                  "recmdzAeL1Lgs"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Take less than 5 clicks to access functions",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recKeMnnVkSef",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recLpRrUVb7yT": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1470338788133507074"
+                ],
+                "fld78zQUiPkwS": 0.3,
+                "fldLP3LSDmbfp": [
+                  "recmdzAeL1Lgs"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Demand response timeliness increased to 30%",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recLpRrUVb7yT",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recPdFCSiX1kM": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1275766197272494081"
+                ],
+                "fld78zQUiPkwS": 0.5,
+                "fldLP3LSDmbfp": [
+                  "reccLuYwqNsG4"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Analyze competing products and write 12 reports",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recPdFCSiX1kM",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recPhqC5m0h1i": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1352533915663200258"
+                ],
+                "fld78zQUiPkwS": 0.2,
+                "fldLP3LSDmbfp": [
+                  "rec5mlMenADCM"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Web traffic grow with rate of 30%",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recPhqC5m0h1i",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recQn3ilkCHOw": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1373829804087484418"
+                ],
+                "fld78zQUiPkwS": 0.2,
+                "fldLP3LSDmbfp": [
+                  "recKUAt2wmli1"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "All-hands meeting per month",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recQn3ilkCHOw",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recTScb5wC9AB": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1460121586863362049"
+                ],
+                "fld78zQUiPkwS": 0.3,
+                "fldLP3LSDmbfp": [
+                  "recc7BILyU5oR"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Improve NPS rate to 80%",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recTScb5wC9AB",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recTkOMYJMNpo": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1371691897148870657"
+                ],
+                "fld78zQUiPkwS": 0.4,
+                "fldLP3LSDmbfp": [
+                  "recMqU7WEZ1aV"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Conduct 120 customer visits",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recTkOMYJMNpo",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recWOHUtGkksG": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1441238664465219585"
+                ],
+                "fld78zQUiPkwS": 0.15,
+                "fldLP3LSDmbfp": [
+                  "recc7BILyU5oR"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Improve customer conversion rate to 10%",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recWOHUtGkksG",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recc0LZkHWcEF": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1403259741103169538"
+                ],
+                "fld78zQUiPkwS": 0.5,
+                "fldLP3LSDmbfp": [
+                  "recVA96aLJmKW"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Post 10 customer stories",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recc0LZkHWcEF",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "reciv5AdslDaX": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1365126636007665665"
+                ],
+                "fld78zQUiPkwS": 0.25,
+                "fldLP3LSDmbfp": [
+                  "recKUAt2wmli1"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "All team agile iterations",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "reciv5AdslDaX",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            },
+            "recu7tRlXWeSR": {
+              "commentCount": 0,
+              "createdAt": 1701167322000,
+              "data": {
+                "fld5K12ThFT5K": [
+                  "1397839774629675010"
+                ],
+                "fld78zQUiPkwS": 0.3,
+                "fldLP3LSDmbfp": [
+                  "recjzNBdcmUy6"
+                ],
+                "fldvYq7ei52jY": [
+                  {
+                    "text": "Partner with at least 12 influencers",
+                    "type": 1
+                  }
+                ]
+              },
+              "id": "recu7tRlXWeSR",
+              "recordMeta": {
+                "createdAt": 1701167322536,
+                "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+              },
+              "revisionHistory": [
+                0
+              ],
+              "updatedAt": 1701167322000
+            }
+          }
+        }
+      }
+    },
+    "snapshot": {
+      "datasheetId": "dstV8QmHgwl8HpNq49",
+      "meta": {
+        "fieldMap": {
+          "fldC3ednVaOkW": {
+            "id": "fldC3ednVaOkW",
+            "name": "Lead",
+            "property": {
+              "isMulti": false,
+              "shouldSendMsg": false,
+              "unitIds": [
+                "1352533915663200258",
+                "1397839774629675010",
+                "1333608613015642113",
+                "1371691897148870657",
+                "1424542142864936961",
+                "1275766197272494081"
+              ]
+            },
+            "type": 13
+          },
+          "fldGbDTzYvSuk": {
+            "id": "fldGbDTzYvSuk",
+            "name": "Complete",
+            "property": {
+              "datasheetId": "dstV8QmHgwl8HpNq49",
+              "formatting": {
+                "formatType": 18,
+                "precision": 2,
+                "symbol": "¥"
+              },
+              "lookUpTargetFieldId": "fld78zQUiPkwS",
+              "relatedLinkFieldId": "fldTcsU9ZD5lF",
+              "rollUpType": "AVERAGE"
+            },
+            "type": 14
+          },
+          "fldSdYrtoEqqe": {
+            "id": "fldSdYrtoEqqe",
+            "name": "Objectives",
+            "property": {
+              "defaultValue": ""
+            },
+            "type": 19
+          },
+          "fldTcsU9ZD5lF": {
+            "id": "fldTcsU9ZD5lF",
+            "name": "Associated KRs",
+            "property": {
+              "brotherFieldId": "fldLP3LSDmbfp",
+              "foreignDatasheetId": "dstRS7YqZC1hPQmGww"
+            },
+            "type": 7
+          },
+          "fldTuqZv1jprt": {
+            "id": "fldTuqZv1jprt",
+            "name": "Associated objectives",
+            "property": {
+              "foreignDatasheetId": "dstV8QmHgwl8HpNq49"
+            },
+            "type": 7
+          },
+          "fldxg530ocPGk": {
+            "id": "fldxg530ocPGk",
+            "name": "Period",
+            "property": {
+              "options": [
+                {
+                  "color": 14,
+                  "id": "opt47nbOrS9KA",
+                  "name": "2022Q1"
+                },
+                {
+                  "color": 17,
+                  "id": "optpnHZAapfIt",
+                  "name": "2022Q2"
+                },
+                {
+                  "color": 15,
+                  "id": "optZzRccIdPtR",
+                  "name": "2022Q3"
+                },
+                {
+                  "color": 13,
+                  "id": "optTh4AGJzviU",
+                  "name": "2022Q4"
+                },
+                {
+                  "color": 9,
+                  "id": "optGBsbDYdRcq",
+                  "name": "2022"
+                }
+              ]
+            },
+            "type": 4
+          },
+          "fldz02Kjx5hEU": {
+            "id": "fldz02Kjx5hEU",
+            "name": "Level",
+            "type": 1
+          }
+        },
+        "views": [
+          {
+            "columns": [
+              {
+                "fieldId": "fldSdYrtoEqqe"
+              },
+              {
+                "fieldId": "fldTuqZv1jprt",
+                "hidden": true,
+                "hiddenInOrgChart": true
+              },
+              {
+                "fieldId": "fldTcsU9ZD5lF",
+                "hidden": true,
+                "hiddenInOrgChart": true
+              },
+              {
+                "fieldId": "fldGbDTzYvSuk",
+                "hidden": true,
+                "hiddenInOrgChart": true
+              },
+              {
+                "fieldId": "fldC3ednVaOkW",
+                "hidden": false,
+                "hiddenInOrgChart": false
+              },
+              {
+                "fieldId": "fldxg530ocPGk",
+                "hidden": false,
+                "hiddenInOrgChart": false
+              },
+              {
+                "fieldId": "fldz02Kjx5hEU",
+                "hidden": true,
+                "hiddenInOrgChart": true
+              }
+            ],
+            "id": "viw5HDZgyqHoq",
+            "name": "OKR structure",
+            "rows": [
+              {
+                "recordId": "reccLuYwqNsG4"
+              },
+              {
+                "recordId": "rec5mlMenADCM"
+              },
+              {
+                "recordId": "recjzNBdcmUy6"
+              },
+              {
+                "recordId": "recs4bH1zprXb"
+              },
+              {
+                "recordId": "recMqU7WEZ1aV"
+              },
+              {
+                "recordId": "recmdzAeL1Lgs"
+              },
+              {
+                "recordId": "recVA96aLJmKW"
+              },
+              {
+                "recordId": "recKUAt2wmli1"
+              },
+              {
+                "recordId": "recc7BILyU5oR"
+              }
+            ],
+            "style": {
+              "horizontal": true,
+              "isColNameVisible": true,
+              "isCoverFit": false,
+              "linkFieldId": "fldTuqZv1jprt"
+            },
+            "type": 7
+          },
+          {
+            "autoSave": false,
+            "columns": [
+              {
+                "fieldId": "fldSdYrtoEqqe",
+                "statType": 1,
+                "width": 229.0
+              },
+              {
+                "fieldId": "fldTuqZv1jprt",
+                "hidden": false,
+                "width": 237.0
+              },
+              {
+                "fieldId": "fldxg530ocPGk",
+                "width": 110.0
+              },
+              {
+                "fieldId": "fldTcsU9ZD5lF",
+                "hidden": false,
+                "width": 175.0
+              },
+              {
+                "fieldId": "fldGbDTzYvSuk",
+                "hidden": false
+              },
+              {
+                "fieldId": "fldC3ednVaOkW",
+                "width": 128.0
+              },
+              {
+                "fieldId": "fldz02Kjx5hEU"
+              }
+            ],
+            "filterInfo": {
+              "conditions": [
+                {
+                  "conditionId": "cdtjY2e6CEjpU",
+                  "fieldId": "fldxg530ocPGk",
+                  "fieldType": 4,
+                  "operator": "is",
+                  "value": [
+                    "optGBsbDYdRcq"
+                  ]
+                }
+              ],
+              "conjunction": "and"
+            },
+            "frozenColumnCount": 1,
+            "id": "viwfv0LxrJERC",
+            "name": "Objectives of 2022Y",
+            "rowHeightLevel": 2,
+            "rows": [
+              {
+                "recordId": "reccLuYwqNsG4"
+              },
+              {
+                "recordId": "rec5mlMenADCM"
+              },
+              {
+                "recordId": "recjzNBdcmUy6"
+              },
+              {
+                "recordId": "recs4bH1zprXb"
+              },
+              {
+                "recordId": "recMqU7WEZ1aV"
+              },
+              {
+                "recordId": "recmdzAeL1Lgs"
+              },
+              {
+                "recordId": "recVA96aLJmKW"
+              },
+              {
+                "recordId": "recKUAt2wmli1"
+              },
+              {
+                "recordId": "recc7BILyU5oR"
+              }
+            ],
+            "type": 1
+          },
+          {
+            "columns": [
+              {
+                "fieldId": "fldSdYrtoEqqe",
+                "width": 241.0
+              },
+              {
+                "fieldId": "fldTuqZv1jprt",
+                "hidden": true,
+                "width": 213.0
+              },
+              {
+                "fieldId": "fldTcsU9ZD5lF",
+                "width": 243.0
+              },
+              {
+                "fieldId": "fldxg530ocPGk",
+                "width": 118.0
+              },
+              {
+                "fieldId": "fldGbDTzYvSuk",
+                "width": 196.0
+              },
+              {
+                "fieldId": "fldC3ednVaOkW",
+                "width": 128.0
+              },
+              {
+                "fieldId": "fldz02Kjx5hEU",
+                "hidden": true
+              }
+            ],
+            "filterInfo": {
+              "conditions": [
+                {
+                  "conditionId": "cdtlo7UBQ6RcE",
+                  "fieldId": "fldxg530ocPGk",
+                  "fieldType": 4,
+                  "operator": "is",
+                  "value": [
+                    "optpnHZAapfIt"
+                  ]
+                }
+              ],
+              "conjunction": "and"
+            },
+            "frozenColumnCount": 1,
+            "id": "viwDEGcuCm1Bk",
+            "name": "Objectives of 2022Q2",
+            "rowHeightLevel": 1,
+            "rows": [
+              {
+                "recordId": "reccLuYwqNsG4"
+              },
+              {
+                "recordId": "rec5mlMenADCM"
+              },
+              {
+                "recordId": "recjzNBdcmUy6"
+              },
+              {
+                "recordId": "recs4bH1zprXb"
+              },
+              {
+                "recordId": "recMqU7WEZ1aV"
+              },
+              {
+                "recordId": "recmdzAeL1Lgs"
+              },
+              {
+                "recordId": "recVA96aLJmKW"
+              },
+              {
+                "recordId": "recKUAt2wmli1"
+              },
+              {
+                "recordId": "recc7BILyU5oR"
+              }
+            ],
+            "type": 1
+          }
+        ]
+      },
+      "recordMap": {
+        "rec5mlMenADCM": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1352533915663200258"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "User growth",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optGBsbDYdRcq"
+            ]
+          },
+          "id": "rec5mlMenADCM",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "recKUAt2wmli1": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1333608613015642113"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Making remote working a fixture",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optpnHZAapfIt"
+            ]
+          },
+          "id": "recKUAt2wmli1",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "recMqU7WEZ1aV": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1371691897148870657"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Sales growth",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optGBsbDYdRcq"
+            ]
+          },
+          "id": "recMqU7WEZ1aV",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "recVA96aLJmKW": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1352533915663200258"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Spread content publications",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optpnHZAapfIt"
+            ]
+          },
+          "id": "recVA96aLJmKW",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "recc7BILyU5oR": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1371691897148870657"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Improve customer experience",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optpnHZAapfIt"
+            ]
+          },
+          "id": "recc7BILyU5oR",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "reccLuYwqNsG4": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1275766197272494081"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Improve company ranking",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optGBsbDYdRcq"
+            ]
+          },
+          "id": "reccLuYwqNsG4",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "recjzNBdcmUy6": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1397839774629675010"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Build a great brand reputation",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optGBsbDYdRcq"
+            ]
+          },
+          "id": "recjzNBdcmUy6",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "recmdzAeL1Lgs": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1397839774629675010"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Increase user retention",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optpnHZAapfIt"
+            ]
+          },
+          "id": "recmdzAeL1Lgs",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        },
+        "recs4bH1zprXb": {
+          "commentCount": 0,
+          "createdAt": 1701167322000,
+          "data": {
+            "fldC3ednVaOkW": [
+              "1333608613015642113"
+            ],
+            "fldSdYrtoEqqe": [
+              {
+                "text": "Build team culture",
+                "type": 1
+              }
+            ],
+            "fldxg530ocPGk": [
+              "optGBsbDYdRcq"
+            ]
+          },
+          "id": "recs4bH1zprXb",
+          "recordMeta": {
+            "createdAt": 1701167322536,
+            "createdBy": "aa8ad2e78a254eb5853a3a388a925faa"
+          },
+          "revisionHistory": [
+            0
+          ],
+          "updatedAt": 1701167322000
+        }
+      }
+    },
+    "units": []
+  },
+  "message": "SUCCESS",
+  "success": true
+}

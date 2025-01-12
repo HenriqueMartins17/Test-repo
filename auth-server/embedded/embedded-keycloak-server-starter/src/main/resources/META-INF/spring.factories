@@ -1,0 +1,5 @@
+org.springframework.context.ApplicationListener=\
+cn.vika.starter.keycloak.EmbeddedKeycloakServerApplicationListener
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.vika.starter.keycloak.EmbeddedKeycloakAutoConfiguration

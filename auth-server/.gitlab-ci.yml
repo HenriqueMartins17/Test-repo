@@ -1,0 +1,105 @@
+# 定义执行阶段
+stages:
+  - build
+  - push
+  - deploy
+
+variables:
+  DEPLOY_NAME: keycloak-v1
+  HOST: cargo.vikadata.com
+  APP_NAME: keycloak
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository/
+
+# 版本号
+.create_build_version: &create_build_version
+  before_script:
+    # 环境版本类型：integration=alpha, staging=beta 不是这几个分支一律按feature处理,
+    - echo ${CI_PIPELINE_ID}
+    - BUILD_ENV=$([[ "$CI_COMMIT_REF_NAME" == "master" ]] && echo "production" || ([[ "$CI_COMMIT_REF_NAME" == "integration" ]] && echo "integration"))
+    - VERSION_TYPE=$([[ "$BUILD_ENV" == "production" ]] && echo "release" || ([[ "$BUILD_ENV" == "integration" ]] && echo "alpha"))
+    - BUILD_VERSION=$(echo ${VERSION_TAG}.${BUILD_ENV}.${VERSION_TYPE}.${CI_PIPELINE_ID} | sed 's/\"//g'|sed 's/ //g')
+    - REPOSITORY=$([[ "$BUILD_ENV" == "production" ]] && echo "vika-prod_release" || ([[ "$BUILD_ENV" == "integration" ]] && echo "system-tenant_integration"))
+    - echo $BUILD_VERSION
+    # 仓库地址
+    - echo $REPOSITORY
+    # 应用名称（容器云设置同步）
+    - APP_NAME="keycloak"
+    # 镜像名称
+    - BUILD_IMAGE_NAME=$(echo $HOST/$REPOSITORY/$APP_NAME)
+    - echo $BUILD_IMAGE_NAME
+    # 镜像标签：版本号-版本类型.CI流水线ID
+    - IMAGE_TAG=$(echo $BUILD_VERSION)
+
+# 制作镜像脚本
+.build_keycloak_script: &build_keycloak_script
+  script:
+    - echo "分支名称：$CI_COMMIT_REF_NAME"
+    - docker info
+    # 容器云平台登录认证，登录账户、密码与ECR地址存储在Gitlab Group变量中
+    - docker login -u $HUB_USER_NAME -p $HUB_PASSWORD $HUB_DOMAIN
+    # 构造镜像推送到私有仓库
+    - ls -la
+    - docker pull $BUILD_IMAGE_NAME:latest || true
+    - docker build --cache-from $BUILD_IMAGE_NAME:latest --tag $BUILD_IMAGE_NAME:$IMAGE_TAG --tag $BUILD_IMAGE_NAME:latest  .
+    - docker push $BUILD_IMAGE_NAME:$IMAGE_TAG
+    - docker push $BUILD_IMAGE_NAME:latest
+
+build_keycloak:
+  image: maven:3.6.0-jdk-8
+  stage: build
+  script:
+    - ls
+    - mvn package
+  artifacts:
+    name: $CI_JOB_ID
+    paths:
+      - extensions/authenticators/basic-authenticator/target/basic-authenticator-*-jar-with-dependencies.jar
+      - extensions/authenticators/social-authenticator/target/social-authenticator-*-jar-with-dependencies.jar
+      - extensions/providers/vika-sheet-provider/target/vika-sheet-provider-*-with-dependencies.jar
+      - extensions/providers/vika-jdbc-provider/target/vika-jdbc-provider-*-with-dependencies.jar
+    expire_in: 1 day
+  only:
+    refs:
+      - integration
+      - master
+
+push_keycloak:
+  stage: push
+  image: vikadata/dind-java:latest
+  dependencies:
+    - build_keycloak
+  services:
+    - name: vikadata/dind-java:latest
+      command: [ "--registry-mirror", "https://nt14bg6k.mirror.aliyuncs.com" ]
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: "tcp://vikadata__dind-java:2375"
+  <<: *create_build_version
+  <<: *build_keycloak_script
+  only:
+    refs:
+      - integration
+      - master
+
+deploy_keycloak:
+  stage: deploy
+  image: python:3.9.4-alpine3.12
+  <<: *create_build_version
+  dependencies:
+    - push_keycloak
+  only:
+    refs:
+      - master
+      - integration
+  script:
+    - pip install requests
+    - NAMESPACE=$([[ "$CI_COMMIT_REF_NAME" == "master" ]] && echo "production" || ([[ "$CI_COMMIT_REF_NAME" == "integration" ]] && echo "integration"))
+    - DEPLOY_SERVER=$([[ "$CI_COMMIT_REF_NAME" == "master" ]] && echo "http://10.0.20.14:31000/rollingUpdate" || ([[ "$CI_COMMIT_REF_NAME" == "integration" ]] && echo "http://172.16.50.167:31000/rollingUpdate"))
+    - EKS_SERVER=$([[ "$CI_COMMIT_REF_NAME" == "master" ]] && echo "https://DD0A14D35441423ADC840071E0926891.sk1.cn-northwest-1.eks.amazonaws.com.cn" || ([[ "$CI_COMMIT_REF_NAME" == "integration" ]] && echo "https://F62153C8CA4BCE5444F19F4ADA0DE845.yl4.cn-northwest-1.eks.amazonaws.com.cn"))
+    - echo "部署服务器：" $DEPLOY_SERVER  "更新对应集群：" $EKS_SERVER  "对应项目：" $NAMESPACE  "对应服务：" $DEPLOY_NAME "当前更新镜像：" $BUILD_IMAGE_NAME:$IMAGE_TAG
+    - python3 deploy-eks.py $DEPLOY_SERVER $EKS_SERVER $NAMESPACE $DEPLOY_NAME $BUILD_IMAGE_NAME:$IMAGE_TAG

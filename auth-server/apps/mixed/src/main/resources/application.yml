@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  forward-headers-strategy: native
+
+spring:
+  datasource:
+    url: jdbc:h2:./data/mixed-keycloak;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    hikari:
+      maximum-pool-size: 25
+      minimum-idle: 2
+  liquibase:
+    enabled: false
+
+keycloak:
+  context-path: /auth
+  admin:
+    username: admin
+    password: admin
+  # 开发环境领域，配置与线上配置一模一样,放在运行jar的同级目录下
+  realm-file: ../../development-realm-config.json
